@@ -839,12 +839,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Interactive Brochure Download
+    // 5. Interactive Brochure Download with Marketing Tracking
     const brochureBtns = document.querySelectorAll('.brochure-dl');
     if (brochureBtns.length > 0 && toastContainer) {
         brochureBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
+
+                // Track Marketing Event
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'download_brochure');
+                    console.log(`Marketing Event Fired: fbq(download_brochure)`);
+                }
+                if (typeof gtag === 'function') {
+                    gtag('event', 'download_brochure', {
+                        'event_category': 'engagement',
+                        'event_label': 'button_click'
+                    });
+                    console.log(`Marketing Event Fired: gtag(download_brochure)`);
+                }
+
                 const toast = document.createElement('div');
                 toast.className = 'toast';
                 // Show immediately
@@ -875,3 +889,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+    // Track WhatsApp Clicks
+    const whatsappBtn = document.querySelector('.floating-whatsapp');
+    if (whatsappBtn) {
+        whatsappBtn.addEventListener('click', () => {
+            if (typeof fbq === 'function') fbq('trackCustom', 'WhatsApp_Chat_Initiated');
+            if (typeof gtag === 'function') gtag('event', 'whatsapp_click');
+        });
+    }
+
