@@ -4,55 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Kumar Magnacity</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Page Not Found | Kumar Magnacity Pune</title>
+    <meta name="description"
+        content="The page you are looking for might have been moved. Explore NA bungalow plots in Hadapsar, Manjari, and Kharadi at Kumar Magnacity.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
-        .error-page {
-            height: 100vh;
+        .error-section {
+            height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: var(--color-dark);
-            color: var(--color-white);
-            padding: 2rem;
         }
 
-        .error-container h1 {
-            font-size: 8rem;
-            margin: 0;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            background: var(--gradient-luxury);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-family: var(--font-heading);
+            margin-bottom: 20px;
         }
 
-        .error-container h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .error-container p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            max-width: 500px;
-            margin: 0 auto 2rem;
+        .error-nav {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
         }
     </style>
 </head>
 
 <body>
-    <div class="error-page">
-        <div class="error-container">
-            <h1>404</h1>
-            <h2>Oops! Land Not Found.</h2>
-            <p>The page you are looking for might have been moved or doesn't exist. Let's get you back to the premier
-                township.</p>
-            <a href="index.html" class="btn-primary">Return to Home</a>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-emblem">K</div>
+                <div class="logo-text">
+                    <span class="brand-classic">Kumar</span>
+                    <span class="brand-modern">MagnaCity</span>
+                </div>
+            </a>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <section class="error-section">
+            <div class="container">
+                <div class="error-code">404</div>
+                <h2>Oops! This Plot is Off the Map.</h2>
+                <p>The page you are looking for doesn't exist or has been moved to a new destination.</p>
+
+                <div class="error-nav">
+                    <a href="index.html" class="btn-primary">Back to Homepage</a>
+                    <a href="pages/na-bungalow-plots-in-manjari-pune.html" class="btn-outline">Plots in Manjari</a>
+                    <a href="pages/na-bungalow-plots-in-hadapsar-pune.html" class="btn-outline">Plots in Hadapsar</a>
+                    <a href="pages/na-bungalow-plots-near-kharadi-pune.html" class="btn-outline">Plots in Kharadi</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Kumar Magnacity. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -6,6 +6,34 @@
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#107a5e",
+    "orientation": "portrait",
+    "categories": [
+        "lifestyle",
+        "real estate",
+        "business"
+    ],
+    "shortcuts": [
+        {
+            "name": "View Plots",
+            "url": "/#plots",
+            "icons": [
+                {
+                    "src": "assets/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "Contact Sales",
+            "url": "/#contact",
+            "icons": [
+                {
+                    "src": "assets/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
     "icons": [
         {
             "src": "assets/icon-192.png",

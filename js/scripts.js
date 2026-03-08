@@ -248,62 +248,59 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-            submitBtn.disabled = true;
+            // Perform Actual Submission to FormSubmit
+            const formData = new FormData(this);
+            // Convert FormData to JSON for AJAX
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value });
 
-            // EmailJS Integration (Placeholder for real credentials)
-            // if (typeof emailjs !== 'undefined') {
-            //     emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-            //         from_name: this.name.value,
-            //         from_email: this.email.value,
-            //         from_phone: this.phone.value,
-            //         message: "New Enquiry from Kumar Magnacity Website"
-            //     }).then(() => {
-            //         showSuccess();
-            //     });
-            // } else {
-            //     simulation(...);
-            // }
+            fetch("https://formsubmit.co/ajax/propsmartrealty@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Success message in form
+                    formMessage.style.display = 'block';
+                    formMessage.style.backgroundColor = '#d4edda';
+                    formMessage.style.color = '#155724';
+                    formMessage.style.border = '1px solid #c3e6cb';
+                    formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your exclusive layout tour request has been received.';
 
-            // Simulate API webhook call (e.g., EmailJS or Zapier)
-            setTimeout(() => {
-                // Success message in form
-                formMessage.style.display = 'block';
-                formMessage.style.backgroundColor = '#d4edda';
-                formMessage.style.color = '#155724';
-                formMessage.style.border = '1px solid #c3e6cb';
-                formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your exclusive layout tour request has been received.';
+                    // Trigger Marketing Intelligence Events
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead');
+                    }
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', {
+                            'event_category': 'engagement',
+                            'event_label': 'form_submission'
+                        });
+                    }
 
-                // Trigger Marketing Intelligence Events
-                if (typeof fbq === 'function') {
-                    fbq('track', 'Lead');
-                    console.log('Marketing Event Fired: fbq(Lead)');
-                }
-                if (typeof gtag === 'function') {
-                    gtag('event', 'generate_lead', {
-                        'event_category': 'engagement',
-                        'event_label': 'form_submission'
-                    });
-                    console.log('Marketing Event Fired: gtag(generate_lead)');
-                }
+                    // Trigger Thank You Modal
+                    const thankyouModal = document.getElementById('thankyou-modal');
+                    if (thankyouModal) thankyouModal.classList.add('active');
 
-                // Trigger Thank You Modal
-                const thankyouModal = document.getElementById('thankyou-modal');
-                if (thankyouModal) thankyouModal.classList.add('active');
-
-                // Reset form
-                enquiryForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-
-                // Hide inline message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }, 1800);
+                    // Reset form
+                    enquiryForm.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    formMessage.style.display = 'block';
+                    formMessage.style.backgroundColor = '#f8d7da';
+                    formMessage.style.color = '#721c24';
+                    formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> There was an error. Please try again or contact us via WhatsApp.';
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 
@@ -890,12 +887,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-    // Track WhatsApp Clicks
-    const whatsappBtn = document.querySelector('.floating-whatsapp');
-    if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', () => {
-            if (typeof fbq === 'function') fbq('trackCustom', 'WhatsApp_Chat_Initiated');
-            if (typeof gtag === 'function') gtag('event', 'whatsapp_click');
-        });
-    }
+// Track WhatsApp Clicks
+const whatsappBtn = document.querySelector('.floating-whatsapp');
+if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', () => {
+        if (typeof fbq === 'function') fbq('trackCustom', 'WhatsApp_Chat_Initiated');
+        if (typeof gtag === 'function') gtag('event', 'whatsapp_click');
+    });
+}
 
