@@ -687,68 +687,13 @@ document.addEventListener('DOMContentLoaded', () => {
         adminKeys = "";
     }
 
-    /* ==========================================================================
-       Urgency (FOMO) Ticker Logic
-       ========================================================================== */
-    const fomoTicker = document.getElementById('fomo-ticker');
-    const fomoText = document.getElementById('fomo-text');
-    const messages = [
-        "Recent Booking: Plot P-203 from Magarpatta.",
-        "Only 4 plots left in Phase 1!",
-        "Interest high from Kharadi IT professionals.",
-        "Site visit scheduled: 12 families today.",
-        "Price appreciation predicted soon!"
-    ];
-    let msgIndex = 0;
 
-    function showTicker() {
-        fomoText.innerText = messages[msgIndex];
-        fomoTicker.classList.add('show');
-        msgIndex = (msgIndex + 1) % messages.length;
-
-        setTimeout(() => {
-            fomoTicker.classList.remove('show');
-        }, 5000);
-    }
-
-    // Show every 15 seconds
-    if (fomoTicker) {
-        setTimeout(showTicker, 10000);
-        setInterval(showTicker, 20000);
-    }
 
     /* ==========================================================================
        PHASE 17: CONVERSION PSYCHOLOGY & SCARCITY TRIGGERS
        ========================================================================== */
 
-    // 1. Price Hike Countdown Timer
-    function startCountdown() {
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 4); // 4 days from now
-        targetDate.setHours(23, 59, 59);
 
-        const countdownInterval = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = targetDate.getTime() - now;
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById('countdown-timer').innerHTML = "EXPIRED";
-                return;
-            }
-
-            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = d.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = h.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
-        }, 1000);
-    }
-    startCountdown();
 
     // 2. Social Proof Toast Notifications
     const toastContainer = document.getElementById('toast-container');
