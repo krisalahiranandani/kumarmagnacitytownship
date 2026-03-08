@@ -277,6 +277,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 formMessage.style.border = '1px solid #c3e6cb';
                 formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your exclusive layout tour request has been received.';
 
+                // Trigger Marketing Intelligence Events
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead');
+                    console.log('Marketing Event Fired: fbq(Lead)');
+                }
+                if (typeof gtag === 'function') {
+                    gtag('event', 'generate_lead', {
+                        'event_category': 'engagement',
+                        'event_label': 'form_submission'
+                    });
+                    console.log('Marketing Event Fired: gtag(generate_lead)');
+                }
+
                 // Trigger Thank You Modal
                 const thankyouModal = document.getElementById('thankyou-modal');
                 if (thankyouModal) thankyouModal.classList.add('active');
