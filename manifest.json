@@ -2,7 +2,7 @@
     "name": "Kumar Magnacity Bungalow Plots",
     "short_name": "Kumar Magnacity",
     "description": "Premium NA Bungalow Plots in Hadapsar, Pune by Kumar Properties.",
-    "start_url": "/index.html",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#107a5e",

@@ -1,7 +1,7 @@
 const CACHE_NAME = 'kumar-magnacity-v1';
 const ASSETS_TO_CACHE = [
     '/',
-    '/index.html',
+    '/mr',
     '/css/styles.css',
     '/js/scripts.js',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
