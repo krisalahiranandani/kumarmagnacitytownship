@@ -82,6 +82,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.addEventListener('scroll', scrollSpy);
 
+    // Hash-Free Scroll Interceptor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+
+                // Update URL without hash
+                if (history.pushState) {
+                    history.pushState(null, null, window.location.pathname);
+                }
+            }
+        });
+    });
+
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
@@ -727,8 +751,8 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
 
 
-
-    // 2. Social Proof Toast Notifications
+    /*
+    // 2. Social Proof Toast Notifications (DISABLED)
     const toastContainer = document.getElementById('toast-container');
     const toastMessages = [
         { name: "Rahul S. (Kharadi IT)", action: "downloaded the ROI Report" },
@@ -744,7 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const toast = document.createElement('div');
         toast.className = 'toast';
         toast.innerHTML = `
-            <div class="toast-icon"><i class="fas fa-user-check"></i></div>
+            <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
             <div class="toast-content">
                 <strong>${msg.name}</strong>
                 <p>just ${msg.action} • 1m ago</p>
@@ -762,7 +786,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(showToast, 12000);
     setInterval(showToast, 25000);
 
-    // 3. Exit Intent Popup Logic
+    // 3. Exit Intent Popup Logic (DISABLED)
     const exitModal = document.getElementById('exit-modal');
     const closeModal = document.getElementById('close-modal');
     let modalShown = false;
@@ -783,9 +807,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function triggerExitModal() {
         if (modalShown) return;
-        exitModal.classList.add('active');
-        modalShown = true;
-        sessionStorage.setItem('exitModalShown', 'true');
+        if (exitModal) {
+            exitModal.classList.add('active');
+            modalShown = true;
+            sessionStorage.setItem('exitModalShown', 'true');
+        }
     }
 
     if (closeModal) {
@@ -793,12 +819,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Also close on overlay click
-    exitModal.addEventListener('click', (e) => {
-        if (e.target === exitModal) exitModal.classList.remove('active');
-    });
+    if (exitModal) {
+        exitModal.addEventListener('click', (e) => {
+            if (e.target === exitModal) exitModal.classList.remove('active');
+        });
+    }
 
     // Check session storage
     if (sessionStorage.getItem('exitModalShown')) modalShown = true;
+    */
 
     // 4. Progress Bar Scroll Animation Re-trigger (GSAP)
     gsap.utils.toArray('.progress-bar').forEach(bar => {
