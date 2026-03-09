@@ -1,7 +1,21 @@
-# Clean URLs
-/*.html /:1 301
+# Clean URLs for Main Pages
 /index / 301
 /index-mr /mr 301
+/*.html /:1 301
+
+# Clean Section Paths (Internal Routing)
+/about / 200
+/neighborhood / 200
+/plots / 200
+/investment / 200
+/contact / 200
+
+# Marathi Section Paths
+/mr/about /mr 200
+/mr/neighborhood /mr 200
+/mr/plots /mr 200
+/mr/investment /mr 200
+/mr/contact /mr 200
 
 # 404
 /* /404.html 404

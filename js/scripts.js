@@ -72,23 +72,35 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionHeight = current.offsetHeight;
             const sectionTop = current.offsetTop - 100;
             const sectionId = current.getAttribute('id');
+            const langPrefix = document.documentElement.lang === 'mr' ? '/mr' : '';
+            const cleanPath = langPrefix + (sectionId === 'hero' ? '/' : '/' + sectionId);
 
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelector('.nav-links a[href*=' + sectionId + ']')?.classList.add('active');
-            } else {
-                document.querySelector('.nav-links a[href*=' + sectionId + ']')?.classList.remove('active');
+                document.querySelectorAll('.nav-links a').forEach(a => {
+                    const href = a.getAttribute('href');
+                    if (href === cleanPath || (sectionId === 'about' && href === '/about') || (sectionId === 'about' && href === '/mr/about')) {
+                        a.classList.add('active');
+                    } else {
+                        a.classList.remove('active');
+                    }
+                });
             }
         });
     }
     window.addEventListener('scroll', scrollSpy);
 
-    // Hash-Free Scroll Interceptor
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Hash-Free Scroll Interceptor (Updated for Clean URLs)
+    document.querySelectorAll('a[href^="/"]').forEach(anchor => {
+        const href = anchor.getAttribute('href');
+        // Filter out actual page links and language switches
+        if (['/', '/mr'].includes(href) || href.startsWith('/pages') || href.includes('investor-guide')) return;
+
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            const sectionId = href.split('/').pop();
+            const targetElement = document.getElementById(sectionId);
+
             if (targetElement) {
+                e.preventDefault();
                 const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -98,9 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: "smooth"
                 });
 
-                // Update URL without hash
+                // Update URL to clean path without hash
                 if (history.pushState) {
-                    history.pushState(null, null, window.location.pathname);
+                    history.pushState(null, null, href);
                 }
             }
         });
