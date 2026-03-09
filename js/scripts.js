@@ -35,12 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
        Mobile Menu Toggle
        ========================================================================== */
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinksContainer = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
     mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+        navLinksContainer.classList.toggle('active');
         const icon = mobileMenuBtn.querySelector('i');
-        if (navLinks.classList.contains('active')) {
+        if (navLinksContainer.classList.contains('active')) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
         } else {
@@ -48,6 +49,38 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.add('fa-bars');
         }
     });
+
+    // Close mobile menu on link click
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinksContainer.classList.remove('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+
+    /* ==========================================================================
+       ScrollSpy: Highlight Active Link
+       ========================================================================== */
+    const sections = document.querySelectorAll('section[id]');
+
+    function scrollSpy() {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 100;
+            const sectionId = current.getAttribute('id');
+
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document.querySelector('.nav-links a[href*=' + sectionId + ']')?.classList.add('active');
+            } else {
+                document.querySelector('.nav-links a[href*=' + sectionId + ']')?.classList.remove('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', scrollSpy);
 
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {

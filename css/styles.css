@@ -204,76 +204,68 @@ img {
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: var(--transition-slow);
-    padding: 1.5rem 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.2rem 0;
 }
 
 .header.scrolled {
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
+    background: transparent;
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 0.8rem 2.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 0.7rem 2rem;
     border-radius: 100px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: var(--transition-slow);
-    max-width: 1300px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 1400px;
     margin: 0 auto;
-    width: 92%;
+    width: 94%;
 }
 
 .header.scrolled .nav-container {
-    background-color: rgba(10, 58, 42, 0.95);
-    border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    transform: scale(0.98);
+    background: rgba(10, 58, 42, 0.85);
+    backdrop-filter: blur(25px) saturate(140%);
+    -webkit-backdrop-filter: blur(25px) saturate(140%);
+    border-color: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    transform: translateY(5px);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
     text-decoration: none;
     transition: var(--transition-slow);
 }
 
 .logo-emblem {
-    width: 48px;
-    height: 48px;
-    background: radial-gradient(circle at 30% 30%, #F3E5AB 0%, #D4AF37 40%, #B8860B 100%);
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #F3E5AB 0%, var(--color-gold) 100%);
     color: var(--color-primary);
-    /* Antique Crest Shield Shape */
-    clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 800;
     font-family: var(--font-heading);
     position: relative;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    transition: var(--transition-slow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
 }
 
-/* Double Frame Effect for Antique Look */
-.logo-emblem::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    right: 3px;
-    bottom: 3px;
-    border: 1px solid rgba(212, 175, 55, 0.5);
-    clip-path: inherit;
-    pointer-events: none;
+.logo:hover .logo-emblem {
+    transform: rotate(10deg) scale(1.05);
 }
 
 .logo-text {
@@ -284,69 +276,76 @@ img {
 
 .brand-classic {
     font-family: var(--font-heading);
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     color: var(--color-primary);
     font-weight: 700;
-    letter-spacing: 0.5px;
-    /* Antique Engraving Effect */
-    text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.3), -0.5px -0.5px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
 }
 
 .brand-modern {
     font-family: var(--font-brand);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--color-accent);
     text-transform: uppercase;
-    letter-spacing: 5px;
-    /* Aggressive Modern spacing */
+    letter-spacing: 4px;
     font-weight: 600;
-    margin-top: 0px;
-    opacity: 0.9;
+    margin-top: -2px;
 }
 
 .header.scrolled .brand-classic {
     color: var(--color-white);
 }
 
-.header.scrolled .logo-emblem {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.8rem;
 }
 
 .nav-links a {
     color: var(--color-dark);
     font-family: var(--font-brand);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.8rem;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
     position: relative;
-    transition: var(--transition-fast);
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
 }
 
 .header.scrolled .nav-links a {
-    color: var(--color-white);
+    color: rgba(255, 255, 255, 0.85);
 }
 
-.header.scrolled .nav-links a:hover {
-    color: var(--color-accent);
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary);
 }
 
-.nav-links a:not(.btn-primary)::after {
+.header.scrolled .nav-links a:hover,
+.header.scrolled .nav-links a.active {
+    color: var(--color-gold);
+}
+
+.nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
+    bottom: 0;
+    left: 50%;
     width: 0;
     height: 2px;
-    background-color: var(--color-accent);
-    transition: var(--transition-fast);
+    background-color: currentColor;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
 }
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
 
 .nav-links a:not(.btn-primary):hover::after {
     width: 100%;
