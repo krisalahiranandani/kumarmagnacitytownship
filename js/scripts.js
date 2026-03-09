@@ -384,6 +384,103 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
+       Phased Enquiry Popup Controller
+       ========================================================================== */
+    const enquiryModal = document.getElementById('enquiry-modal');
+    const closeEnquiry = document.getElementById('close-enquiry');
+    const popupForm = document.getElementById('popupEnquiryForm');
+    const popupFormMessage = document.getElementById('popupFormMessage');
+
+    function showEnquiryModal() {
+        if (!sessionStorage.getItem('enquiryModalShown') && enquiryModal) {
+            enquiryModal.classList.add('active');
+            sessionStorage.setItem('enquiryModalShown', 'true');
+        }
+    }
+
+    // 1. Timed Trigger (15 Seconds)
+    setTimeout(() => {
+        showEnquiryModal();
+    }, 15000);
+
+    // 2. Exit Intent Trigger (Desktop focus only)
+    document.addEventListener('mouseleave', (e) => {
+        if (e.clientY < 0) {
+            showEnquiryModal();
+        }
+    });
+
+    // 3. Modal Close Logic
+    if (enquiryModal && closeEnquiry) {
+        closeEnquiry.addEventListener('click', () => enquiryModal.classList.remove('active'));
+        enquiryModal.addEventListener('click', (e) => {
+            if (e.target === enquiryModal) enquiryModal.classList.remove('active');
+        });
+    }
+
+    // 4. Popup Form Submission
+    if (popupForm) {
+        popupForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value });
+
+            fetch("https://formsubmit.co/ajax/propsmartrealty@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (popupFormMessage) {
+                        popupFormMessage.style.display = 'block';
+                        popupFormMessage.style.backgroundColor = '#d4edda';
+                        popupFormMessage.style.color = '#155724';
+                        popupFormMessage.style.border = '1px solid #c3e6cb';
+                        popupFormMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your enquiry has been sent.';
+                    }
+
+                    // Track events
+                    if (typeof fbq === 'function') fbq('track', 'Lead');
+                    if (typeof gtag === 'function') gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'popup_form' });
+
+                    setTimeout(() => {
+                        if (enquiryModal) enquiryModal.classList.remove('active');
+                        popupForm.reset();
+                        if (popupFormMessage) popupFormMessage.style.display = 'none';
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+
+                        // Show global thank you modal
+                        const thankyouModal = document.getElementById('thankyou-modal');
+                        if (thankyouModal) thankyouModal.classList.add('active');
+                    }, 2000);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    if (popupFormMessage) {
+                        popupFormMessage.style.display = 'block';
+                        popupFormMessage.style.backgroundColor = '#f8d7da';
+                        popupFormMessage.style.color = '#721c24';
+                        popupFormMessage.style.border = '1px solid #f5c6cb';
+                        popupFormMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error. Please try again or use WhatsApp.';
+                    }
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
+    /* ==========================================================================
        Plot Price & EMI Calculator
        ========================================================================== */
     const plotSizeInput = document.getElementById('plotSize');
@@ -540,7 +637,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "banner-text": "⚠️ <strong>किंमत लवकरच वाढणार!</strong> पुढील टप्पा गाठण्यासाठी शिल्लक वेळ:",
             "banner-btn": "चालू किंमत लॉक करा",
             "thankyou-title": "तुमची चौकशी प्राप्त झाली!",
-            "thankyou-desc": "<strong>कुमार मॅग्नासिटी</strong> मध्ये स्वारस्य दाखवल्याबद्दल धन्यवाद. आमचे विक्री तज्ज्ञ २४ तासांच्या आत तुमच्याशी संपर्क साधतील."
+            "thankyou-desc": "<strong>कुमार मॅग्नासिटी</strong> मध्ये स्वारस्य दाखवल्याबद्दल धन्यवाद. आमचे विक्री तज्ज्ञ २४ तासांच्या आत तुमच्याशी संपर्क साधतील.",
+            "enquiry-modal-title": "मोठ्या संधीची चौकशी करा!",
+            "enquiry-modal-desc": "तुमच्या स्वप्नातील बंगल्याच्या प्लॉटसाठी आजच आमचा संपर्क साधा.",
+            "form-name-label": "पूर्ण नाव",
+            "form-phone-label": "मोबाईल नंबर",
+            "form-email-label": "ईमेल पत्ता",
+            "form-interest-label": "तुमची आवड",
+            "form-submit-btn": "सबमिट करा"
         },
         en: {
             "nav-concept": "The Concept",
@@ -632,7 +736,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "banner-text": "⚠️ <strong>Price Revision Incoming!</strong> Next appreciation milestone in:",
             "banner-btn": "Lock Current Price",
             "thankyou-title": "Enquiry Received!",
-            "thankyou-desc": "Thank you for your interest in <strong>Kumar Magnacity</strong>. Our dedicated sales expert will contact you within 24 hours to schedule your exclusive site tour."
+            "thankyou-desc": "Thank you for your interest in <strong>Kumar Magnacity</strong>. Our dedicated sales expert will contact you within 24 hours to schedule your exclusive site tour.",
+            "enquiry-modal-title": "Secure Your Future Today!",
+            "enquiry-modal-desc": "Get exclusive details on premium NA Bungalow Plots at Kumar Magnacity.",
+            "form-name-label": "Full Name",
+            "form-phone-label": "Phone Number",
+            "form-email-label": "Email Address",
+            "form-interest-label": "Interested In",
+            "form-submit-btn": "Submit Enquiry"
         }
     };
 

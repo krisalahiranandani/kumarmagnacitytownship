@@ -2370,3 +2370,73 @@ body.admin-mode .plot {
         font-size: 0.8rem;
     }
 }
+/* 5. Enquiry Modal specific */
+.modal-enquiry .modal-content {
+    max-width: 550px;
+    padding: 2.5rem;
+    overflow: hidden;
+}
+
+.modal-enquiry .modal-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-enquiry .modal-header h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.modal-enquiry .modal-header p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+.enquiry-form-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.enquiry-form-modal .form-group {
+    margin-bottom: 0;
+}
+
+.enquiry-form-modal .form-group label {
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    margin-bottom: 0.4rem;
+}
+
+.enquiry-form-modal input, 
+.enquiry-form-modal select, 
+.enquiry-form-modal textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.enquiry-form-modal input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(10, 58, 42, 0.1);
+}
+
+.enquiry-form-modal .btn-primary {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    .modal-enquiry .modal-content {
+        padding: 2rem 1.5rem;
+        width: 95%;
+    }
+}
