@@ -3,6 +3,19 @@
 /index-mr /mr 301
 /*.html /:1 301
 
+# Sub-pages Rewrites (Ensure clean URLs resolve)
+/pages/na-bungalow-plots-in-hadapsar-pune /pages/na-bungalow-plots-in-hadapsar-pune.html 200
+/pages/na-bungalow-plots-in-hadapsar-pune-mr /pages/na-bungalow-plots-in-hadapsar-pune-mr.html 200
+/pages/na-bungalow-plots-in-manjari-pune /pages/na-bungalow-plots-in-manjari-pune.html 200
+/pages/na-bungalow-plots-in-manjari-pune-mr /pages/na-bungalow-plots-in-manjari-pune-mr.html 200
+/pages/na-bungalow-plots-near-kharadi-pune /pages/na-bungalow-plots-near-kharadi-pune.html 200
+/pages/na-bungalow-plots-near-kharadi-pune-mr /pages/na-bungalow-plots-near-kharadi-pune-mr.html 200
+
+# Comparison & Guide Pages Rewrites
+/plots-vs-apartments-comparison-pune /plots-vs-apartments-comparison-pune.html 200
+/plots-vs-apartments-comparison-pune-mr /plots-vs-apartments-comparison-pune-mr.html 200
+/investor-guide-pune-real-estate-2026 /investor-guide-pune-real-estate-2026.html 200
+
 # Clean Section Paths (Internal Routing)
 /about / 200
 /neighborhood / 200
