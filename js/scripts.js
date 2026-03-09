@@ -641,6 +641,38 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('lang-en').addEventListener('click', () => updateLanguage('en'));
     document.getElementById('lang-mr').addEventListener('click', () => updateLanguage('mr'));
 
+    // Mobile Instruction Update
+    if ('ontouchstart' in window) {
+        const subtitle = document.querySelector('.inventory-subtitle');
+        if (subtitle) {
+            subtitle.setAttribute('data-i18n', 'inventory-subtitle-mobile');
+            if (document.documentElement.lang === 'mr') {
+                subtitle.innerHTML = 'प्लॉट्सचा आकार पाहण्यासाठी खालील नकाशावर टॅप करा.';
+            } else {
+                subtitle.innerHTML = 'Tap on the plots below to check dimensions and status.';
+            }
+        }
+    }
+
+    // Hide Floating Buttons on Mobile near Bottom
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 768) {
+            const floatBtns = document.querySelectorAll('.whatsapp-float, .mobile-call-btn, .vr-float');
+            const scrollPos = window.innerHeight + window.scrollY;
+            const threshold = document.documentElement.scrollHeight - 100;
+
+            floatBtns.forEach(btn => {
+                if (scrollPos > threshold) {
+                    btn.style.opacity = '0';
+                    btn.style.pointerEvents = 'none';
+                } else {
+                    btn.style.opacity = '1';
+                    btn.style.pointerEvents = 'auto';
+                }
+            });
+        }
+    });
+
     /* ==========================================================================
        Dynamic Inventory Controller
        ========================================================================== */
@@ -674,11 +706,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const tooltip = document.getElementById('plot-tooltip');
     document.querySelectorAll('.plot').forEach(plot => {
         plot.addEventListener('mouseenter', () => {
-            const num = plot.getAttribute('data-plot');
-            const size = plot.getAttribute('data-size');
-            let status = "Available";
-            if (plot.classList.contains('sold')) status = "Sold Out";
-            if (plot.classList.contains('fast-selling')) status = "Fast Selling";
+            const num = plot.getAttribute('data-plot') || 'N/A';
+            const size = plot.getAttribute('data-size') || 'Consult Sales';
+            let status = plot.getAttribute('data-status') || 'Available';
+
+            if (status === 'sold') status = 'Sold Out';
+            if (status === 'fast-selling') status = 'Fast Selling';
+            if (status === 'available') status = 'Available';
 
             tooltip.innerHTML = `<strong>Plot: ${num}</strong><br>Size: ${size}<br>Status: ${status}`;
             tooltip.style.opacity = '1';
