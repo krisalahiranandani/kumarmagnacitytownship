@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.w3.org/1999/xhtml http://www.sitemaps.org/schemas/sitemap/0.9/xhtml.xsd"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.kumarmagnacitytownship.com/</loc>
@@ -76,5 +78,21 @@
     <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kumarmagnacitytownship.com/plots-vs-apartments-comparison-pune</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.kumarmagnacitytownship.com/plots-vs-apartments-comparison-pune" />
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://www.kumarmagnacitytownship.com/plots-vs-apartments-comparison-pune-mr" />
+  </url>
+  <url>
+    <loc>https://www.kumarmagnacitytownship.com/plots-vs-apartments-comparison-pune-mr</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://www.kumarmagnacitytownship.com/plots-vs-apartments-comparison-pune-mr" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.kumarmagnacitytownship.com/plots-vs-apartments-comparison-pune" />
   </url>
 </urlset>
