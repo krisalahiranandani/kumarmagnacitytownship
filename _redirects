@@ -1,87 +1,11 @@
-# Clean URLs for Main Pages
-/index / 301
+# Cloudflare Pages Redirects
+# Standard clean URLs are handled automatically by Cloudflare
+# No explicit rewrites needed for .html files
+
+# Secondary Marathi Root
 /mr /mr.html 200
 /mr/ /mr.html 200
+
+# Thank You & Search Console
 /thank-you /thank-you.html 200
 /privacy-policy /privacy-policy.html 200
-
-# Sub-pages Rewrites (Ensure clean URLs resolve)
-/pages/na-bungalow-plots-in-hadapsar-pune /pages/na-bungalow-plots-in-hadapsar-pune.html 200
-/pages/na-bungalow-plots-in-hadapsar-pune-mr /pages/na-bungalow-plots-in-hadapsar-pune-mr.html 200
-/pages/na-bungalow-plots-in-manjari-pune /pages/na-bungalow-plots-in-manjari-pune.html 200
-/pages/na-bungalow-plots-in-manjari-pune-mr /pages/na-bungalow-plots-in-manjari-pune-mr.html 200
-/pages/na-bungalow-plots-near-kharadi-pune /pages/na-bungalow-plots-near-kharadi-pune.html 200
-/pages/na-bungalow-plots-near-kharadi-pune-mr /pages/na-bungalow-plots-near-kharadi-pune-mr.html 200
-
-/pages/last-na-plots-in-pune-2026 /pages/last-na-plots-in-pune-2026.html 200
-/pages/last-na-plots-in-pune-2026-mr /pages/last-na-plots-in-pune-2026-mr.html 200
-/pages/luxury-bungalow-plots-pune-east /pages/luxury-bungalow-plots-pune-east.html 200
-/pages/luxury-bungalow-plots-pune-east-mr /pages/luxury-bungalow-plots-pune-east-mr.html 200
-/pages/rera-approved-na-plots-pune /pages/rera-approved-na-plots-pune.html 200
-/pages/rera-approved-na-plots-pune-mr /pages/rera-approved-na-plots-pune-mr.html 200
-/pages/na-plots-with-7-12-extract-pune /pages/na-plots-with-7-12-extract-pune.html 200
-/pages/na-plots-with-7-12-extract-pune-mr /pages/na-plots-with-7-12-extract-pune-mr.html 200
-/pages/gated-community-plots-pune-solapur-highway /pages/gated-community-plots-pune-solapur-highway.html 200
-/pages/gated-community-plots-pune-solapur-highway-mr /pages/gated-community-plots-pune-solapur-highway-mr.html 200
-/pages/kumar-magnacity-price-list-2026 /pages/kumar-magnacity-price-list-2026.html 200
-/pages/kumar-magnacity-price-list-2026-mr /pages/kumar-magnacity-price-list-2026-mr.html 200
-/pages/na-plots-near-magarpatta-city-pune /pages/na-plots-near-magarpatta-city-pune.html 200
-/pages/na-plots-near-magarpatta-city-pune-mr /pages/na-plots-near-magarpatta-city-pune-mr.html 200
-/pages/na-plots-near-pune-ring-road /pages/na-plots-near-pune-ring-road.html 200
-/pages/na-plots-near-pune-ring-road-mr /pages/na-plots-near-pune-ring-road-mr.html 200
-/pages/branded-vs-local-na-plots-pune /pages/branded-vs-local-na-plots-pune.html 200
-/pages/branded-vs-local-na-plots-pune-mr /pages/branded-vs-local-na-plots-pune-mr.html 200
-/pages/na-plots-for-nri-investment-pune /pages/na-plots-for-nri-investment-pune.html 200
-/pages/na-plots-for-nri-investment-pune-mr /pages/na-plots-for-nri-investment-pune-mr.html 200
-# Comparison & Guide Pages Rewrites
-/plots-vs-apartments-comparison-pune /plots-vs-apartments-comparison-pune.html 200
-/plots-vs-apartments-comparison-pune-mr /plots-vs-apartments-comparison-pune-mr.html 200
-/investor-guide-pune-real-estate-2026 /investor-guide-pune-real-estate-2026.html 200
-
-# Blog & Expansive Content Rewrites
-/blog/the-great-pune-land-scarcity-2026 /blog/the-great-pune-land-scarcity-2026.html 200
-/blog/the-great-pune-land-scarcity-2026-mr /blog/the-great-pune-land-scarcity-2026-mr.html 200
-/blog/east-vs-south-pune-real-estate-comparison /blog/east-vs-south-pune-real-estate-comparison.html 200
-/blog/east-vs-south-pune-real-estate-comparison-mr /blog/east-vs-south-pune-real-estate-comparison-mr.html 200
-/blog/na-plots-vs-commercial-pune-2026-shift /blog/na-plots-vs-commercial-pune-2026-shift.html 200
-/blog/na-plots-vs-commercial-pune-2026-shift-mr /blog/na-plots-vs-commercial-pune-2026-shift-mr.html 200
-/pages/na-bungalow-plots-in-south-pune /pages/na-bungalow-plots-in-south-pune.html 200
-/pages/na-bungalow-plots-in-south-pune-mr /pages/na-bungalow-plots-in-south-pune-mr.html 200
-/pages/kumar-magnacity-vs-competitors-pune-east /pages/kumar-magnacity-vs-competitors-pune-east.html 200
-/pages/kumar-magnacity-vs-competitors-pune-east-mr /pages/kumar-magnacity-vs-competitors-pune-east-mr.html 200
-/pages/manjari-pune-real-estate-market-analysis-2026 /pages/manjari-pune-real-estate-market-analysis-2026.html 200
-/pages/manjari-pune-real-estate-market-analysis-2026-mr /pages/manjari-pune-real-estate-market-analysis-2026-mr.html 200
-
-# Clean Section Paths (Internal Routing)
-/about / 200
-/neighborhood / 200
-/plots / 200
-/investment / 200
-/contact / 200
-
-# Marathi Section Paths
-/mr/about /mr 200
-/mr/neighborhood /mr 200
-/mr/plots /mr 200
-/mr/investment /mr 200
-/mr/contact /mr 200
-
-# 404
-/* /404.html 404
-
-
-# New SEO Blogs
-/blog/why-na-plots-are-extinct-in-pune-2026 /blog/why-na-plots-are-extinct-in-pune-2026.html 200
-/blog/why-na-plots-are-extinct-in-pune-2026-mr /blog/why-na-plots-are-extinct-in-pune-2026-mr.html 200
-/blog/10-reasons-buy-land-pune-east-2026 /blog/10-reasons-buy-land-pune-east-2026.html 200
-/blog/10-reasons-buy-land-pune-east-2026-mr /blog/10-reasons-buy-land-pune-east-2026-mr.html 200
-/blog/kumar-properties-59-year-legacy-trust /blog/kumar-properties-59-year-legacy-trust.html 200
-/blog/kumar-properties-59-year-legacy-trust-mr /blog/kumar-properties-59-year-legacy-trust-mr.html 200
-/blog/pune-outer-ring-road-impact-land-prices /blog/pune-outer-ring-road-impact-land-prices.html 200
-/blog/pune-outer-ring-road-impact-land-prices-mr /blog/pune-outer-ring-road-impact-land-prices-mr.html 200
-/blog/rera-approved-vs-non-rera-plots-pune /blog/rera-approved-vs-non-rera-plots-pune.html 200
-/blog/rera-approved-vs-non-rera-plots-pune-mr /blog/rera-approved-vs-non-rera-plots-pune-mr.html 200
-/blog/ultra-luxury-bungalow-plots-rarest-asset-pune /blog/ultra-luxury-bungalow-plots-rarest-asset-pune.html 200
-/blog/ultra-luxury-bungalow-plots-rarest-asset-pune-mr /blog/ultra-luxury-bungalow-plots-rarest-asset-pune-mr.html 200
-/blog/nri-guide-buying-land-pune-2026 /blog/nri-guide-buying-land-pune-2026.html 200
-/blog/nri-guide-buying-land-pune-2026-mr /blog/nri-guide-buying-land-pune-2026-mr.html 200
