@@ -1,11 +1,9 @@
 # Clean URLs for Main Pages
 /index / 301
-/index-mr /mr 301
 /mr /mr.html 200
 /mr/ /mr.html 200
 /thank-you /thank-you.html 200
 /privacy-policy /privacy-policy.html 200
-/*.html /:1 301
 
 # Sub-pages Rewrites (Ensure clean URLs resolve)
 /pages/na-bungalow-plots-in-hadapsar-pune /pages/na-bungalow-plots-in-hadapsar-pune.html 200
