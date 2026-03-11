@@ -2,37 +2,29 @@
    CSS Variables & Resets
    ========================================================================== */
 :root {
-    /* Color Palette */
-    --color-primary: #0A3A2A;
-    /* Deep Emerald Green */
-    --color-primary-light: #165b44;
-    --color-accent: #D4AF37;
-    /* Rich Gold */
-    --color-accent-hover: #F3E5AB;
-    /* Light Gold */
-    --color-dark: #1A1A1A;
-    /* Charcoal Black */
-    --color-dark-muted: #2C2C2C;
-    --color-light: #F9F9F9;
-    /* Off White */
+    /* Super Brand Color Palette (Quiet Luxury) */
+    --color-primary: #0A4D3C; /* Darker Estate Green */
+    --color-primary-light: #12634e;
+    --color-accent: #C5A059; /* Muted Luxury Gold */
+    --color-accent-hover: #e0c58e;
+    --color-dark: #121212; /* Deep Obsidian */
+    --color-dark-muted: #1e1e1e;
+    --color-light: #FBF9F6; /* Warm Paper White */
     --color-white: #FFFFFF;
-    --color-text: #4A4A4A;
-    /* Dark Gray text */
-    --color-text-light: #888888;
+    --color-text: #2D2D2D; /* Softer Slate */
+    --color-text-light: #6B6B6B;
+    --color-glass: rgba(255, 255, 255, 0.08);
 
-    /* Typography */
+    /* Typography - Architectural Standards */
     --font-heading: 'Playfair Display', serif;
-    --font-body: 'Roboto', sans-serif;
+    --font-body: 'Outfit', sans-serif; /* Moving Body to Outfit for modern feel */
     --font-brand: 'Outfit', sans-serif;
 
-    /* Transitions */
-    --transition-fast: 0.3s ease;
-    --transition-slow: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-
-    /* Shadows */
-    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.2);
+    /* Spacing & Borders */
+    --border-radius-sm: 4px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 30px;
+    --transition-luxury: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Reset & Base Styles */
@@ -159,16 +151,18 @@ img {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary), #1a5c43);
+    background: var(--color-primary);
     color: var(--color-white);
-    border: none;
-    box-shadow: 0 4px 15px rgba(10, 58, 42, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(10, 77, 60, 0.15);
+    transition: var(--transition-luxury);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #1a5c43, var(--color-primary));
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(10, 58, 42, 0.3);
+    background: var(--color-primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(10, 77, 60, 0.25);
+    letter-spacing: 2.5px;
 }
 
 .btn-outline {
@@ -743,8 +737,11 @@ img {
    Contact Section
    ========================================================================== */
 .contact-card {
-    background-color: var(--color-white);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -795,24 +792,22 @@ img {
     color: var(--color-dark);
 }
 
-.form-group input {
+.form-group input, .form-group select, .form-group textarea {
     width: 100%;
-    padding: 1rem 1.2rem;
-    border: 1px solid #e0e0e0;
-    background-color: #fafafa;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     font-family: var(--font-body);
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: var(--transition-luxury);
 }
 
 .form-group input:focus {
+    background: var(--color-white);
+    border-color: var(--color-accent);
     outline: none;
-    border-color: var(--color-primary);
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgba(10, 58, 42, 0.1);
+    box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
 }
-
 /* ==========================================================================
    Footer
    ========================================================================== */

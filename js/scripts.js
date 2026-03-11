@@ -352,14 +352,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                     }
 
-                    // Trigger Thank You Modal
+                    // Show global thank you modal
                     const thankyouModal = document.getElementById('thankyou-modal');
                     if (thankyouModal) thankyouModal.classList.add('active');
 
+                    // Redirect to thank-you page after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = '/thank-you';
+                    }, 2000);
+
                     // Reset form
                     enquiryForm.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -460,9 +463,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
 
-                        // Show global thank you modal
+                        // Show global thank you modal and then redirect
                         const thankyouModal = document.getElementById('thankyou-modal');
                         if (thankyouModal) thankyouModal.classList.add('active');
+                        
+                        setTimeout(() => {
+                            window.location.href = '/thank-you';
+                        }, 2000);
                     }, 2000);
                 })
                 .catch(error => {
@@ -908,8 +915,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
 
 
-    /*
-    // 2. Social Proof Toast Notifications (DISABLED)
+    // 2. Social Proof Toast Notifications
     const toastContainer = document.getElementById('toast-container');
     const toastMessages = [
         { name: "Rahul S. (Kharadi IT)", action: "downloaded the ROI Report" },
@@ -943,7 +949,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(showToast, 12000);
     setInterval(showToast, 25000);
 
-    // 3. Exit Intent Popup Logic (DISABLED)
+    // 3. Exit Intent Popup Logic
     const exitModal = document.getElementById('exit-modal');
     const closeModal = document.getElementById('close-modal');
     let modalShown = false;
@@ -984,7 +990,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check session storage
     if (sessionStorage.getItem('exitModalShown')) modalShown = true;
-    */
 
     // 4. Progress Bar Scroll Animation Re-trigger (GSAP)
     gsap.utils.toArray('.progress-bar').forEach(bar => {
