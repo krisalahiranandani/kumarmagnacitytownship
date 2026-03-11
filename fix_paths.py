@@ -3,16 +3,22 @@ import re
 
 def fix_html_paths(base_dir):
     # Regex patterns for various attribute types
+    # We want to catch 'assets/', '../assets/', '../../assets/' etc.
+    # And convert them to '/assets/'
+    
+    # We'll use a specific replacement strategy: 
+    # Find src="[...]assets/" and replace the whole [...] part with /
+    
     patterns = [
-        (r'src="assets/', 'src="/assets/'),
-        (r'src="js/', 'src="/js/'),
-        (r'href="css/', 'href="/css/'),
-        (r'href="assets/', 'href="/assets/'),
-        (r'href="favicon', 'href="/favicon'),
-        (r'href="apple-touch-icon', 'href="/apple-touch-icon'),
-        (r'content="assets/', 'content="/assets/'),
-        (r'url\(\'assets/', "url('/assets/"),
-        (r'url\("assets/', 'url("/assets/'),
+        (r'src="(?:\.\.\/)*assets/', 'src="/assets/'),
+        (r'src="(?:\.\.\/)*js/', 'src="/js/'),
+        (r'href="(?:\.\.\/)*css/', 'href="/css/'),
+        (r'href="(?:\.\.\/)*assets/', 'href="/assets/'),
+        (r'href="(?:\.\.\/)*favicon', 'href="/favicon'),
+        (r'href="(?:\.\.\/)*apple-touch-icon', 'href="/apple-touch-icon'),
+        (r'content="(?:\.\.\/)*assets/', 'content="/assets/'),
+        (r'url\(\'(?:\.\.\/)*assets/', "url('/assets/"),
+        (r'url\("(?:\.\.\/)*assets/', 'url("/assets/'),
     ]
 
     for root, dirs, files in os.walk(base_dir):
