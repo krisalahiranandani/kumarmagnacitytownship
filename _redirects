@@ -1,11 +1,2 @@
-# Cloudflare Pages Redirects
-# Standard clean URLs are handled automatically by Cloudflare
-# No explicit rewrites needed for .html files
-
-# Secondary Marathi Root
-/mr /mr.html 200
-/mr/ /mr.html 200
-
-# Thank You & Search Console
-/thank-you /thank-you.html 200
-/privacy-policy /privacy-policy.html 200
+# Clean Slate - No custom redirects to avoid loops
+# Cloudflare Pages native routing will handle Clean URLs automatically
