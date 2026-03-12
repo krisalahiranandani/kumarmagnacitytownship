@@ -123,10 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 // If target not found and it's a section link, it must be on the homepage
-                // Redirect to homepage with hash
+                // Redirect to homepage with hash, preserving language
                 if (!href.includes('.html') && !href.startsWith('/pages')) {
                     e.preventDefault();
-                    window.location.href = '/#' + sectionId;
+                    // Determine language from current page
+                    const isMarathi = document.documentElement.lang === 'mr' || window.location.pathname.startsWith('/mr');
+                    const langPrefix = isMarathi ? '/mr' : '/';
+                    window.location.href = langPrefix + '#' + sectionId;
                 }
             }
         });
