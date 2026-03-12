@@ -1035,24 +1035,7 @@ img {
 /* ==========================================================================
    Virtual Tour Floating CTA
    ========================================================================== */
-.vr-float {
-    position: fixed;
-    bottom: 110px;
-    right: 30px;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold-dark));
-    color: var(--color-white);
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    text-decoration: none;
-    z-index: 9998;
-    box-shadow: 0 10px 30px rgba(184, 134, 11, 0.4);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
+
 
 .vr-float i {
     font-size: 1.2rem;
@@ -1064,25 +1047,14 @@ img {
     letter-spacing: 1px;
 }
 
-.vr-float:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(184, 134, 11, 0.6);
-    background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold-light));
-}
+
 
 @media (max-width: 768px) {
     .vr-float span {
         display: none;
     }
 
-    .vr-float {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        justify-content: center;
-        padding: 0;
-        bottom: 110px;
-    }
+    
 }
 
 /* ==========================================================================
@@ -1139,37 +1111,11 @@ img {
 /* ==========================================================================
    WhatsApp Floating CTA
    ========================================================================== */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: var(--color-white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    z-index: 9999;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: whatsapp-pulse 2s infinite;
-    text-decoration: none;
-}
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
-}
 
-@keyframes whatsapp-pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-    }
 
-    70% {
+
+70% {
         box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
     }
 
@@ -1689,29 +1635,10 @@ img {
 /* ==========================================================================
    Mobile Call Button & FOMO Ticker
    ========================================================================== */
-.mobile-call-btn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color: var(--color-white);
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    z-index: 9999;
-    box-shadow: 0 4px 20px rgba(46, 125, 50, 0.4);
-    text-decoration: none;
-    transition: var(--transition-medium);
-}
+
 
 @media (max-width: 768px) {
-    .mobile-call-btn {
-        display: flex;
-    }
+    
 }
 
 
@@ -2334,44 +2261,13 @@ body.admin-mode .plot {
 /* Floating Buttons Stylings */
 .whatsapp-float,
 .mobile-call-btn,
-.vr-float {
-    position: fixed;
-    z-index: 2000;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: var(--shadow-lg);
-    transition: all 0.3s ease;
-}
 
-.whatsapp-float {
-    bottom: 100px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-}
 
-.mobile-call-btn {
-    bottom: 170px;
-    right: 20px;
-    background-color: var(--color-primary);
-    color: white;
-}
 
-.vr-float {
-    bottom: 240px;
-    right: 20px;
-    background-color: var(--color-accent);
-    color: var(--color-dark);
-    flex-direction: column;
-    font-size: 1rem;
-    padding: 10px;
-    text-align: center;
-}
+
+
+
+
 
 .vr-float i {
     font-size: 1.4rem;
@@ -2388,24 +2284,13 @@ body.admin-mode .plot {
 
     .whatsapp-float,
     .mobile-call-btn,
-    .vr-float {
-        width: 50px;
-        height: 50px;
-        font-size: 1.4rem;
-    }
+    
 
-    .mobile-call-btn {
-        bottom: 160px;
-    }
+    
 
-    .whatsapp-float {
-        bottom: 90px;
-    }
+    
 
-    .vr-float {
-        bottom: 230px;
-        font-size: 0.8rem;
-    }
+    
 }
 /* 5. Enquiry Modal specific */
 .modal-enquiry .modal-content {

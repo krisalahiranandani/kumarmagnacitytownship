@@ -1056,12 +1056,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Track WhatsApp Clicks
-const whatsappBtn = document.querySelector('.floating-whatsapp');
-if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', () => {
-        if (typeof fbq === 'function') fbq('trackCustom', 'WhatsApp_Chat_Initiated');
-        if (typeof gtag === 'function') gtag('event', 'whatsapp_click');
-    });
-}
+
 
