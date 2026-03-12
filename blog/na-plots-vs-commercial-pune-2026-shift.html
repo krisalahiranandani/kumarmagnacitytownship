@@ -20,17 +20,7 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container nav-container">
-            <a href="/" class="logo">
-                <div class="logo-emblem">K</div>
-                <div class="logo-text">
-                    <span class="brand-classic">Kumar</span>
-                    <span class="brand-modern">MagnaCity</span>
-                </div>
-            </a>
-        </div>
-    </header>
+    <header id="header" class="header"><div class="container nav-container"><a href="/" class="logo"><div class="logo-emblem">K</div><div class="logo-text"><span class="brand-classic">Kumar</span><span class="brand-modern">MagnaCity</span></div></a><button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button><nav class="nav-links"><a href="/#about" data-i18n="nav-concept">The Concept</a><a href="/#neighborhood" data-i18n="nav-neighborhood">Neighborhood</a><a href="/#plots" data-i18n="nav-plots">Our Plots</a><a href="/#gallery" data-i18n="nav-masterplan">Master Plan</a><a href="/#amenities" data-i18n="nav-amenities">Amenities</a><a href="/#investment" data-i18n="nav-investment">Investment</a><a href="/#contact" class="btn-primary" data-i18n="nav-contact">Enquire Now</a><div class="lang-switch"><a href="/" id="lang-en" class="lang-btn active">EN</a><span class="divider">|</span><a href="/mr" id="lang-mr" class="lang-btn">मराठी</a></div></nav></div></header>
 
     <main class="blog-content container" style="padding: 100px 20px;">
         <article>
@@ -93,5 +83,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="/js/scripts.min.js?v=20260312" defer></script>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-mobile-cta">
+        <a href="tel:+917744009295" class="sticky-cta-btn sticky-cta-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <a href="https://wa.me/917744009295?text=Hi!%20I'm%20interested%20in%20Kumar%20Magnacity%20NA%20Plots" target="_blank" class="sticky-cta-btn sticky-cta-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
 </body>
 </html>
