@@ -950,33 +950,44 @@ img {
     .nav-links {
         position: fixed;
         top: 90px;
-        left: -110%;
+        left: 5%;
         width: 90%;
-        margin: 0 5%;
         border-radius: 24px;
         height: auto;
         padding: 3rem 1.5rem;
-        background-color: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.5);
         flex-direction: column;
         justify-content: center;
-        transition: var(--transition-slow);
+        transition: transform 0.4s cubic-bezier(0.1, 0.5, 0.5, 1), opacity 0.4s ease, visibility 0.4s;
+        transform: translateY(-20px) scale(0.98);
+        opacity: 0;
+        visibility: hidden;
         z-index: 1001;
     }
 
     .nav-links.active {
-        left: 0;
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        visibility: visible;
     }
 
-    .nav-links a {
+    .nav-links a, 
+    .header.scrolled .nav-links a {
         width: 100%;
         text-align: center;
         padding: 1rem;
         font-size: 1.1rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        color: var(--color-dark) !important;
+    }
+
+    .header.scrolled .nav-links a:hover, 
+    .header.scrolled .nav-links a.active {
+        color: var(--color-primary) !important;
     }
 
     .nav-links a:last-child {
@@ -1113,12 +1124,13 @@ img {
    ========================================================================== */
 
 
-
-
-70% {
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
         box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
     }
-
     100% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
@@ -2281,16 +2293,10 @@ body.admin-mode .plot {
 }
 
 @media (max-width: 768px) {
-
     .whatsapp-float,
-    .mobile-call-btn,
-    
-
-    
-
-    
-
-    
+    .mobile-call-btn {
+        display: none;
+    }
 }
 /* 5. Enquiry Modal specific */
 .modal-enquiry .modal-content {
