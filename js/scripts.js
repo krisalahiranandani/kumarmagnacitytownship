@@ -89,19 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.addEventListener('scroll', scrollSpy);
 
-    // Hash-Free Scroll Interceptor (Updated for Clean URLs)
+    // Enhanced Navigation Interceptor (Handles hashes and cross-page section links)
     document.querySelectorAll('a[href^="/"]').forEach(anchor => {
         const href = anchor.getAttribute('href');
         // Filter out actual page links and language switches
-        if (['/', '/mr'].includes(href) || href.startsWith('/pages') || href.includes('investor-guide')) return;
+        if (['/', '/mr', '/index.html'].includes(href) || 
+            href.startsWith('/pages') || 
+            href.includes('investor-guide') || 
+            href.includes('.html') || 
+            href.includes('blog/')) return;
 
         anchor.addEventListener('click', function (e) {
-            const sectionId = href.split('/').pop();
+            let sectionId = href.includes('#') ? href.split('#').pop() : href.split('/').pop();
+            if (!sectionId) return;
+
             const targetElement = document.getElementById(sectionId);
 
             if (targetElement) {
                 e.preventDefault();
-                const headerOffset = 80;
+                const headerOffset = 90;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -112,15 +118,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Update URL to clean path without hash
                 if (history.pushState) {
-                    history.pushState(null, null, href);
+                    const cleanPath = href.replace('#', '');
+                    history.pushState(null, null, cleanPath);
+                }
+            } else {
+                // If target not found and it's a section link, it must be on the homepage
+                // Redirect to homepage with hash
+                if (!href.includes('.html') && !href.startsWith('/pages')) {
+                    e.preventDefault();
+                    window.location.href = '/#' + sectionId;
                 }
             }
         });
     });
 
+    // Handle initial hash on page load for smooth entry
+    if (window.location.hash) {
+        setTimeout(() => {
+            const hash = window.location.hash.substring(1);
+            const targetElement = document.getElementById(hash);
+            if (targetElement) {
+                const headerOffset = 90;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }, 300);
+    }
+
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+            navLinksContainer.classList.remove('active');
             const icon = mobileMenuBtn.querySelector('i');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
@@ -784,24 +815,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Hide Floating Buttons on Mobile near Bottom
-    window.addEventListener('scroll', () => {
-        if (window.innerWidth <= 768) {
-            const floatBtns = document.querySelectorAll('.whatsapp-float, .mobile-call-btn, .vr-float');
-            const scrollPos = window.innerHeight + window.scrollY;
-            const threshold = document.documentElement.scrollHeight - 100;
-
-            floatBtns.forEach(btn => {
-                if (scrollPos > threshold) {
-                    btn.style.opacity = '0';
-                    btn.style.pointerEvents = 'none';
-                } else {
-                    btn.style.opacity = '1';
-                    btn.style.pointerEvents = 'auto';
-                }
-            });
-        }
-    });
 
     /* ==========================================================================
        Dynamic Inventory Controller
