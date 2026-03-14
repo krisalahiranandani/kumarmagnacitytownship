@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /thank-you.html
 Disallow: /thank-you
 Allow: /
-Sitemap: https://www.kumarmagnacitytownship.com/sitemap.xml
+Sitemap: https://kumarmagnacitytownship.com/sitemap.xml
