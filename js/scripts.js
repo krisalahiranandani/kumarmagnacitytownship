@@ -1190,14 +1190,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Absolute Clean URL: Global Modal Interceptor
+    // Absolute Clean URL: Global Silent Scroll & Modal Interceptor
     document.addEventListener('click', function(e) {
-        const target = e.target.closest('a[href="#contact"], .trigger-enquiry');
-        if (target) {
-            e.preventDefault();
-            if (enquiryModal) {
-                enquiryModal.classList.add('active');
-                // Optional: Smooth scroll to top if needed, but modal is usually fixed
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+            const href = anchor.getAttribute('href');
+            if (href === '#' || href === 'javascript:void(0)') return;
+
+            // Handle Contact Modal separately
+            if (href === '#contact' || anchor.classList.contains('trigger-enquiry')) {
+                e.preventDefault();
+                if (enquiryModal) enquiryModal.classList.add('active');
+                return;
+            }
+
+            // Handle Silent Scroll for all other sections
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         }
     });
