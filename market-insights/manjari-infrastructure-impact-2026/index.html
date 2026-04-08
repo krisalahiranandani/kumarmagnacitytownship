@@ -77,7 +77,7 @@
         <div class="container text-center" style="max-width: 600px;">
             <h2 class="section-title mb-4">Secure Your Future Asset</h2>
             <p class="mb-5">Join the ranks of savvy investors capitalizing on the Pune East infrastructure boom. Book your site visit today.</p>
-            <form action="mailto:propsmartrealty@gmail.com?subject=Enquiry from Kumar Magnacity" method="post" enctype="text/plain">
+            <form id="enquiryForm" class="enquiry-form">
                 <div class="mb-3"><input type="text" name="name" class="form-control p-3" placeholder="Full Name" required></div>
                 <div class="mb-3"><input type="tel" name="phone" class="form-control p-3" placeholder="Phone Number" required></div>
                 <button type="submit" class="btn-primary w-100 p-3">Request Infrastructure Briefing</button>
@@ -109,7 +109,7 @@
             <i class="fas fa-chart-line modal-icon"></i>
             <h2 class="fw-bold mb-3">Download ROI Report</h2>
             <p class="mb-4">Get our exclusive 2026 price projection report for Manjari NA plots before you leave!</p>
-            <form action="https://formspree.io/f/propsmartrealty@gmail.com" method="POST" class="text-start">
+            <form id="popupEnquiryForm" class="enquiry-form-modal">
                 <div class="mb-3">
                     <input type="text" name="name" class="form-control" placeholder="Full Name" required>
                 </div>
@@ -121,5 +121,6 @@
         </div>
     </div>
 
+    <script src="/js/scripts.js" defer></script>
 </body>
 </html>

@@ -77,7 +77,7 @@
         <div class="container text-center" style="max-width: 600px;">
             <h2 class="section-title mb-4">तुमची भविष्यकालीन मालमत्ता सुरक्षित करा</h2>
             <p class="mb-5">पुणे पूर्व मधील पायाभूत सुविधांच्या लाटेचा फायदा घेणाऱ्या चतुर गुंतवणूकदारांच्या गटात सामील व्हा. आजच साइट व्हिजिट बुक करा.</p>
-            <form action="mailto:propsmartrealty@gmail.com?subject=Enquiry from Kumar Magnacity" method="post" enctype="text/plain">
+            <form id="enquiryForm" class="enquiry-form">
                 <div class="mb-3"><input type="text" name="name" class="form-control p-3" placeholder="पूर्ण नाव" required></div>
                 <div class="mb-3"><input type="tel" name="phone" class="form-control p-3" placeholder="फोन नंबर" required></div>
                 <button type="submit" class="btn-primary w-100 p-3">पायाभूत सुविधा ब्रीफिंगची विनंती करा</button>
@@ -109,7 +109,7 @@
             <i class="fas fa-chart-line modal-icon"></i>
             <h2 class="fw-bold mb-3">ROI रिपोर्ट डाऊनलोड करा</h2>
             <p class="mb-4">जाण्यापूर्वी मांजरी NA प्लॉट्ससाठी आमचा विशेष २०२६ किमतींचा अंदाज रिपोर्ट मिळवा!</p>
-            <form action="https://formspree.io/f/propsmartrealty@gmail.com" method="POST" class="text-start">
+            <form id="popupEnquiryForm" class="enquiry-form-modal">
                 <div class="mb-3">
                     <input type="text" name="name" class="form-control" placeholder="पूर्ण नाव" required>
                 </div>
@@ -121,5 +121,6 @@
         </div>
     </div>
 
+    <script src="/js/scripts.js" defer></script>
 </body>
 </html>
