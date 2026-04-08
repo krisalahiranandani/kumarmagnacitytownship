@@ -1190,6 +1190,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Absolute Clean URL: Global Modal Interceptor
+    document.addEventListener('click', function(e) {
+        const target = e.target.closest('a[href="#contact"], .trigger-enquiry');
+        if (target) {
+            e.preventDefault();
+            if (enquiryModal) {
+                enquiryModal.classList.add('active');
+                // Optional: Smooth scroll to top if needed, but modal is usually fixed
+            }
+        }
+    });
+
     // Update WhatsApp Floating Button
     const waButton = document.querySelector('.whatsapp-pulse');
     if (waButton) {
