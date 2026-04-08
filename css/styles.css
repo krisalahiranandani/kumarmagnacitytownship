@@ -5,26 +5,32 @@
     /* Super Brand Color Palette (Quiet Luxury) */
     --color-primary: #0A4D3C; /* Darker Estate Green */
     --color-primary-light: #12634e;
+    --color-emerald-glass: rgba(10, 77, 60, 0.85);
     --color-accent: #C5A059; /* Muted Luxury Gold */
     --color-accent-hover: #e0c58e;
-    --color-dark: #121212; /* Deep Obsidian */
-    --color-dark-muted: #1e1e1e;
-    --color-light: #FBF9F6; /* Warm Paper White */
+    --color-gold-pulse: rgba(197, 160, 89, 0.4);
+    --color-dark: #0F0F0F; /* Deep Obsidian */
+    --color-dark-muted: #1A1A1A;
+    --color-light: #F9F7F2; /* Warm Cream Paper */
     --color-white: #FFFFFF;
     --color-text: #2D2D2D; /* Softer Slate */
     --color-text-light: #6B6B6B;
-    --color-glass: rgba(255, 255, 255, 0.08);
+    --color-glass-base: rgba(255, 255, 255, 0.1);
+    --color-glass-border: rgba(255, 255, 255, 0.2);
 
     /* Typography - Architectural Standards */
     --font-heading: 'Playfair Display', serif;
-    --font-body: 'Outfit', sans-serif; /* Moving Body to Outfit for modern feel */
+    --font-body: 'Outfit', sans-serif;
     --font-brand: 'Outfit', sans-serif;
 
     /* Spacing & Borders */
-    --border-radius-sm: 4px;
-    --border-radius-md: 12px;
-    --border-radius-lg: 30px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 40px;
     --transition-luxury: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.08);
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Reset & Base Styles */
@@ -134,6 +140,70 @@ img {
     font-size: 1.25rem;
     color: var(--color-text-light);
     margin-bottom: 3rem;
+}
+
+/* Glassmorphism Utilities */
+.glass-card {
+    background: var(--color-glass-base);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-glass);
+}
+
+.glass-dark {
+    background: rgba(15, 15, 15, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Luxury Animations */
+@keyframes luxuryPulse {
+    0% { box-shadow: 0 0 0 0 var(--color-gold-pulse); }
+    70% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+}
+
+.luxury-pulse {
+    animation: luxuryPulse 2s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+}
+
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-25deg);
+    animation: shine 4s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
 }
 
 /* Buttons */
@@ -1599,16 +1669,28 @@ img {
 
 .plot-tooltip {
     position: absolute;
-    background: var(--color-dark);
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 0.85rem;
+    background: rgba(10, 77, 60, 0.95);
+    color: white;
+    padding: 15px 20px;
+    border-radius: var(--border-radius-md);
+    font-size: 0.9rem;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-accent);
+    backdrop-filter: blur(8px);
+    width: 220px;
+    text-align: left;
+}
+
+.plot-tooltip strong {
+    color: var(--color-accent);
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
 }
 
 .inventory-legend {
@@ -1862,55 +1944,7 @@ img {
 /* ==========================================================================
    Sticky Mobile CTA (Phase 5)
    ========================================================================== */
-.sticky-mobile-cta {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-around;
-    padding: 12px 15px;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
-    border-top: 1px solid rgba(13, 58, 42, 0.1);
-}
-
-@media (min-width: 769px) {
-    .sticky-mobile-cta {
-        display: none;
-    }
-}
-
-.sticky-cta-btn {
-    flex: 1;
-    margin: 0 5px;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-family: var(--font-brand);
-}
-
-.sticky-cta-call {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-.sticky-cta-whatsapp {
-    background-color: #25D366;
-    color: var(--color-white);
-}
-
-.sticky-cta-btn i {
-    font-size: 16px;
-}
+/* Legacy Sticky CTA Removed - Replaced by Sovereign Conversion Bar */
 
 .roi-stat-card .stat-icon {
     width: 50px;
@@ -2039,27 +2073,25 @@ img {
 /* 3. Social Proof Toast Notifications */
 .toast-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 100px;
     left: 20px;
-    z-index: 3000;
+    z-index: 10000;
 }
 
 .toast {
-    background: white;
-    padding: 1rem 1.25rem;
-    border-radius: 8px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
-    border-left: 4px solid var(--color-gold);
-    animation: slideInLeft 0.5s ease forwards;
+    gap: 15px;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    animation: slideInLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     max-width: 320px;
-}
-
-.toast.fade-out {
-    animation: slideOutLeft 0.5s ease forwards;
 }
 
 /* ==========================================================================
@@ -2109,24 +2141,117 @@ img {
 .toast-icon {
     width: 40px;
     height: 40px;
-    background: #f0fdf4;
-    color: var(--color-emerald);
+    background: var(--color-accent);
+    color: var(--color-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .toast-content p {
     margin: 0;
     font-size: 0.85rem;
-    color: #475569;
+    color: var(--color-white);
+    line-height: 1.4;
 }
 
 .toast-content strong {
-    color: var(--color-emerald);
+    color: var(--color-accent);
     display: block;
+    font-family: var(--font-heading);
+}
+
+/* ==========================================================================
+   Sovereign Conversion Bar (Mobile Sticky)
+   ========================================================================== */
+.sovereign-conversion-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 77, 60, 0.85); /* Emerald Glass */
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border-top: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 12px 20px;
+    z-index: 10001;
+    display: none; /* Shown via JS on scroll */
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .sovereign-conversion-bar {
+        display: flex;
+    }
+}
+
+.conv-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    font-family: var(--font-brand);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-fast);
+}
+
+.conv-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.conv-call {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.conv-item:active {
+    transform: scale(0.95);
+}
+
+.conv-item i {
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Sovereign Landed Estate Refinements
+   ========================================================================== */
+.luxury-concept-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.luxury-concept-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(197, 160, 89, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.luxury-ticks li {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.5px;
+}
+
+.luxury-ticks i {
+    margin-top: 4px;
 }
 
 /* 4. Exit Intent Modal */
@@ -2224,6 +2349,10 @@ img {
     }
 }
 
+.toast.fade-out {
+    animation: slideOutLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 @media (max-width: 768px) {
     .progress-grid {
         grid-template-columns: 1fr;
@@ -2235,6 +2364,16 @@ img {
 
     .banner-flex {
         gap: 0.75rem;
+    }
+    
+    .toast-container {
+        bottom: 80px; /* Above the mobile conversion bar */
+        left: 10px;
+        right: 10px;
+    }
+    
+    .toast {
+        max-width: 100%;
     }
 }
 
@@ -2367,4 +2506,32 @@ body.admin-mode .plot {
         padding: 2rem 1.5rem;
         width: 95%;
     }
+}
+
+/* Landing Entry Popup Animations */
+@keyframes modalEntry {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-content {
+    animation: modalEntry 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.modal-header h2 {
+    background: var(--gradient-luxury);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.modal-pulse-btn {
+    animation: modalBtnPulse 2s infinite;
+}
+
+@keyframes modalBtnPulse {
+    0% { box-shadow: 0 0 0 0 rgba(197, 160, 95, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(197, 160, 95, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(197, 160, 95, 0); }
 }

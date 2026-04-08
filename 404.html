@@ -50,7 +50,7 @@
 </head>
 
 <body>
-    <header id="header" class="header"><div class="container nav-container"><a href="/" class="logo"><div class="logo-emblem">K</div><div class="logo-text"><span class="brand-classic">Kumar</span><span class="brand-modern">MagnaCity</span></div></a><button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button><nav class="nav-links"><a href="/#about" data-i18n="nav-concept">The Concept</a><a href="/#neighborhood" data-i18n="nav-neighborhood">Neighborhood</a><a href="/#plots" data-i18n="nav-plots">Our Plots</a><a href="/#gallery" data-i18n="nav-masterplan">Master Plan</a><a href="/#amenities" data-i18n="nav-amenities">Amenities</a><a href="/#investment" data-i18n="nav-investment">Investment</a><a href="/#contact" class="btn-primary" data-i18n="nav-contact">Enquire Now</a><div class="lang-switch"><a href="/" id="lang-en" class="lang-btn active">EN</a><span class="divider">|</span><a href="/mr" id="lang-mr" class="lang-btn">मराठी</a></div></nav></div></header>
+    <header id="header" class="header"><div class="container nav-container"><a href="/" class="logo"><div class="logo-emblem">K</div><div class="logo-text"><span class="brand-classic">Kumar</span><span class="brand-modern">MagnaCity</span></div></a><button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button><nav class="nav-links"><a href="/concept/" data-i18n="nav-concept">The Concept</a><a href="/location/" data-i18n="nav-neighborhood">Neighborhood</a><a href="/availability/" data-i18n="nav-plots">Our Plots</a><a href="/master-plan/" data-i18n="nav-masterplan">Master Plan</a><a href="/amenities/" data-i18n="nav-amenities">Amenities</a><a href="/investment/" data-i18n="nav-investment">Investment</a><a href="/#contact" class="btn-primary" data-i18n="nav-contact">Enquire Now</a><div class="lang-switch"><a href="/" id="lang-en" class="lang-btn active">EN</a><span class="divider">|</span><a href="/mr" id="lang-mr" class="lang-btn">मराठी</a></div></nav></div></header>
 
     <main>
         <section class="error-section">
@@ -61,9 +61,9 @@
 
                 <div class="error-nav">
                     <a href="/" class="btn-primary">Back to Homepage</a>
-                    <a href="/pages/na-bungalow-plots-in-manjari-pune.html" class="btn-outline">Plots in Manjari</a>
-                    <a href="/pages/na-bungalow-plots-in-hadapsar-pune.html" class="btn-outline">Plots in Hadapsar</a>
-                    <a href="/pages/na-bungalow-plots-near-kharadi-pune.html" class="btn-outline">Plots in Kharadi</a>
+                    <a href="/hadapsar-annexe/na-bungalow-plots-in-manjari-pune/" class="btn-outline">Plots in Manjari</a>
+                    <a href="/hadapsar-annexe/na-bungalow-plots-in-hadapsar-pune/" class="btn-outline">Plots in Hadapsar</a>
+                    <a href="/hadapsar-annexe/na-bungalow-plots-near-kharadi-pune/" class="btn-outline">Plots in Kharadi</a>
                 </div>
             </div>
         </section>
@@ -84,11 +84,6 @@
             </div>
             <div class="modal-body">
                 <form id="popupEnquiryForm" class="enquiry-form-modal">
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Website Popup Enquiry!">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="honeypot" style="display:none">
                     
                     <div class="form-group">
                         <label for="popup-name" data-i18n="form-name-label">Full Name</label>
@@ -118,11 +113,38 @@
     </div>
 
 
-    <!-- Sticky Mobile CTA -->
-    <div class="sticky-mobile-cta">
-        <a href="tel:+917744009295" class="sticky-cta-btn sticky-cta-call"><i class="fas fa-phone-alt"></i> Call Now</a>
-        <a href="https://wa.me/917744009295?text=Hi!%20I'm%20interested%20in%20Kumar%20Magnacity%20NA%20Plots" target="_blank" class="sticky-cta-btn sticky-cta-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    
+
+    <!-- Lead Machine: Sticky Mobile Concierge Bar -->
+    <div class="mobile-sticky-bar">
+        <a href="tel:+917744009295" class="sticky-bar-btn sticky-call">
+            <i class="fas fa-phone-alt"></i> Call Now
+        </a>
+        <a href="#contact" class="sticky-bar-btn sticky-enquire luxury-pulse">
+            <i class="fas fa-calendar-check"></i> VIP Tour
+        </a>
     </div>
+
+
+    <!-- Lead Machine: Exit-Intent Recovery Modal -->
+    <div class="modal-overlay" id="exit-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal">&times;</button>
+            <i class="fas fa-chart-line modal-icon"></i>
+            <h2 class="fw-bold mb-3">Download ROI Report</h2>
+            <p class="mb-4">Get our exclusive 2026 price projection report for Manjari NA plots before you leave!</p>
+            <form action="https://formspree.io/f/propsmartrealty@gmail.com" method="POST" class="text-start">
+                <div class="mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+                </div>
+                <button type="submit" class="btn-primary w-100">Download Now <i class="fas fa-download mx-2"></i></button>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>

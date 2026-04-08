@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        if (window.scrollY > 20) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
@@ -351,13 +351,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Perform Actual Submission to FormSubmit
+            // Perform Actual Submission to Web3Forms
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
             const formData = new FormData(this);
-            // Convert FormData to JSON for AJAX
             const data = {};
             formData.forEach((value, key) => { data[key] = value });
+            
+            // Forensic Metadata
+            data.source_url = window.location.href;
 
-            fetch("https://formsubmit.co/ajax/propsmartrealty@gmail.com", {
+            fetch("/api/enquiry", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -365,45 +372,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(data)
             })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    // Success message in form
-                    formMessage.style.display = 'block';
-                    formMessage.style.backgroundColor = '#d4edda';
-                    formMessage.style.color = '#155724';
-                    formMessage.style.border = '1px solid #c3e6cb';
-                    formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your exclusive layout tour request has been received.';
-
-                    // Trigger Marketing Intelligence Events
-                    if (typeof fbq === 'function') {
-                        fbq('track', 'Lead');
-                    }
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'generate_lead', {
-                            'event_category': 'engagement',
-                            'event_label': 'form_submission'
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(errData => {
+                            throw new Error(errData.error || `Status ${response.status}`);
+                        }).catch(() => {
+                            throw new Error(`Status ${response.status}`);
                         });
                     }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        console.log('Success:', data);
+                        // Success message in form
+                        formMessage.style.display = 'block';
+                        formMessage.style.backgroundColor = '#d4edda';
+                        formMessage.style.color = '#155724';
+                        formMessage.style.border = '1px solid #c3e6cb';
+                        formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your exclusive layout tour request has been received.';
 
-                    // Show global thank you modal
-                    const thankyouModal = document.getElementById('thankyou-modal');
-                    if (thankyouModal) thankyouModal.classList.add('active');
+                        // Trigger Marketing Intelligence Events
+                        if (typeof fbq === 'function') fbq('track', 'Lead');
+                        if (typeof gtag === 'function') gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'form_submission' });
 
-                    // Redirect to thank-you page after 2 seconds
-                    setTimeout(() => {
-                        window.location.href = '/thank-you';
-                    }, 2000);
+                        // Show global thank you modal
+                        const thankyouModal = document.getElementById('thankyou-modal');
+                        if (thankyouModal) thankyouModal.classList.add('active');
 
-                    // Reset form
-                    enquiryForm.reset();
+                        // Redirect to thank-you page after 2 seconds
+                        setTimeout(() => {
+                            window.location.href = '/thank-you';
+                        }, 2000);
+
+                        // Reset form
+                        enquiryForm.reset();
+                    } else {
+                        console.error('Mailchannels Relay Error:', data);
+                        throw new Error(data.error || 'Relay failed');
+                    }
                 })
                 .catch(error => {
-                    console.error('Error:', error);
+                    // Environment check for local testing
+                    const isLocalFile = window.location.protocol === 'file:';
+                    const errorMsg = isLocalFile 
+                        ? 'Local testing detected. Cloudflare Functions (/api/enquiry) require a live server or "wrangler pages dev" to run.' 
+                        : error.message;
+
+                    console.error('Lead Capture Forensic Log:', {
+                        error: error.toString(),
+                        timestamp: new Date().toISOString(),
+                        url: window.location.href,
+                        protocol: window.location.protocol,
+                        isLocal: isLocalFile
+                    });
+
                     formMessage.style.display = 'block';
                     formMessage.style.backgroundColor = '#f8d7da';
                     formMessage.style.color = '#721c24';
-                    formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> There was an error. Please try again or contact us via WhatsApp.';
+                    formMessage.innerHTML = `<i class="fas fa-exclamation-circle"></i> Error: ${errorMsg}. Please contact us via WhatsApp if this persists.`;
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 });
@@ -435,12 +462,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 1. Timed Trigger (15 Seconds)
+    // 1. Timed Trigger (7 Seconds)
     setTimeout(() => {
         showEnquiryModal();
-    }, 15000);
+    }, 7000);
 
-    // 2. Exit Intent Trigger (Desktop focus only)
+    // 2. Scroll Trigger (25% down the page)
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrolled / totalHeight) * 100;
+
+        if (scrollPercent >= 25) {
+            showEnquiryModal();
+        }
+    });
+
+    // 3. Exit Intent Trigger (Desktop focus only)
     document.addEventListener('mouseleave', (e) => {
         if (e.clientY < 0) {
             showEnquiryModal();
@@ -464,11 +502,33 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
 
+            // 10-digit Phone Validation
+            const phoneInput = this.querySelector('input[type="tel"]');
+            const phoneValue = phoneInput.value.trim();
+            const phoneRegex = /^[6-9]\d{9}$/;
+
+            if (!phoneRegex.test(phoneValue)) {
+                if (popupFormMessage) {
+                    popupFormMessage.style.display = 'block';
+                    popupFormMessage.style.backgroundColor = '#f8d7da';
+                    popupFormMessage.style.color = '#721c24';
+                    popupFormMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter a valid 10-digit Indian mobile number.';
+                }
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 100);
+                return;
+            }
+
             const formData = new FormData(this);
             const data = {};
             formData.forEach((value, key) => { data[key] = value });
+            
+            // Metadata
+            data.source_url = window.location.href;
 
-            fetch("https://formsubmit.co/ajax/propsmartrealty@gmail.com", {
+            fetch("/api/enquiry", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -476,44 +536,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(data)
             })
-                .then(response => response.json())
-                .then(data => {
-                    if (popupFormMessage) {
-                        popupFormMessage.style.display = 'block';
-                        popupFormMessage.style.backgroundColor = '#d4edda';
-                        popupFormMessage.style.color = '#155724';
-                        popupFormMessage.style.border = '1px solid #c3e6cb';
-                        popupFormMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your enquiry has been sent.';
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(errData => {
+                            throw new Error(errData.error || `Status ${response.status}`);
+                        }).catch(() => {
+                            throw new Error(`Status ${response.status}`);
+                        });
                     }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        if (popupFormMessage) {
+                            popupFormMessage.style.display = 'block';
+                            popupFormMessage.style.backgroundColor = '#d4edda';
+                            popupFormMessage.style.color = '#155724';
+                            popupFormMessage.style.border = '1px solid #c3e6cb';
+                            popupFormMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your enquiry has been sent.';
+                        }
 
-                    // Track events
-                    if (typeof fbq === 'function') fbq('track', 'Lead');
-                    if (typeof gtag === 'function') gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'popup_form' });
+                        // Track events
+                        if (typeof fbq === 'function') fbq('track', 'Lead');
+                        if (typeof gtag === 'function') gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'popup_form' });
 
-                    setTimeout(() => {
-                        if (enquiryModal) enquiryModal.classList.remove('active');
-                        popupForm.reset();
-                        if (popupFormMessage) popupFormMessage.style.display = 'none';
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-
-                        // Show global thank you modal and then redirect
-                        const thankyouModal = document.getElementById('thankyou-modal');
-                        if (thankyouModal) thankyouModal.classList.add('active');
-                        
                         setTimeout(() => {
-                            window.location.href = '/thank-you';
+                            if (enquiryModal) enquiryModal.classList.remove('active');
+                            popupForm.reset();
+                            if (popupFormMessage) popupFormMessage.style.display = 'none';
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+
+                            // Show global thank you modal and then redirect
+                            const thankyouModal = document.getElementById('thankyou-modal');
+                            if (thankyouModal) thankyouModal.classList.add('active');
+                            
+                            setTimeout(() => {
+                                window.location.href = '/thank-you';
+                            }, 2000);
                         }, 2000);
-                    }, 2000);
+                    } else {
+                        console.error('Mailchannels Popup Error:', data);
+                        throw new Error(data.error || 'Relay failed');
+                    }
                 })
                 .catch(error => {
-                    console.error('Error:', error);
+                    const isLocalFile = window.location.protocol === 'file:';
+                    console.error('Popup Forensic Log:', {
+                        error: error.toString(),
+                        timestamp: new Date().toISOString(),
+                        url: window.location.href,
+                        protocol: window.location.protocol
+                    });
                     if (popupFormMessage) {
                         popupFormMessage.style.display = 'block';
                         popupFormMessage.style.backgroundColor = '#f8d7da';
                         popupFormMessage.style.color = '#721c24';
-                        popupFormMessage.style.border = '1px solid #f5c6cb';
-                        popupFormMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error. Please try again or use WhatsApp.';
+                        popupFormMessage.innerHTML = isLocalFile 
+                            ? `<i class="fas fa-exclamation-circle"></i> Error: Functions require a server.`
+                            : `<i class="fas fa-exclamation-circle"></i> Submission Error: ${error.message}`;
                     }
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
@@ -939,7 +1020,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Social Proof Toast Notifications
     const toastContainer = document.getElementById('toast-container');
-    const toastMessages = [
+    const isMarathi = document.documentElement.lang === 'mr';
+    
+    const toastMessagesEN = [
         { name: "Rahul S. (Kharadi IT)", action: "downloaded the ROI Report" },
         { name: "Priya V. (Amanora)", action: "booked a site visit for P-104" },
         { name: "Sanjay M. (Magarpatta)", action: "enquired about 3 BHK plots" },
@@ -947,16 +1030,28 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Deepa R. (Hadapsar)", action: "requested a personalized quote" }
     ];
 
+    const toastMessagesMR = [
+        { name: "राहुल एस. (खराडी IT)", action: "ROI रिपोर्ट डाउनलोड केला" },
+        { name: "प्रिया व्ही. (अमनोरा)", action: "प्लॉट P-104 साठी साईट व्हिजिट बुक केली" },
+        { name: "संजय एम. (मगरपट्टा)", action: "प्लॉट्सबद्दल माहिती विचारली" },
+        { name: "अमित के. (EON IT पार्क)", action: "सद्य किंमत लॉक केली" },
+        { name: "दीपा आर. (हडपसर)", action: "कोटेशनची विनंती केली" }
+    ];
+
     function showToast() {
         if (!toastContainer) return;
-        const msg = toastMessages[Math.floor(Math.random() * toastMessages.length)];
+        const messages = isMarathi ? toastMessagesMR : toastMessagesEN;
+        const msg = messages[Math.floor(Math.random() * messages.length)];
         const toast = document.createElement('div');
         toast.className = 'toast';
+        const suffix = isMarathi ? "पूर्वी" : "ago";
+        const justPrefix = isMarathi ? "आत्ताच" : "just";
+        
         toast.innerHTML = `
             <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
             <div class="toast-content">
                 <strong>${msg.name}</strong>
-                <p>just ${msg.action} • 1m ago</p>
+                <p>${justPrefix} ${msg.action} • 1m ${suffix}</p>
             </div>
         `;
         toastContainer.appendChild(toast);
@@ -967,9 +1062,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 6000);
     }
 
-    // Start toasting after 20 seconds, repeat every 30
+    // Start toasting after 12 seconds, repeat every 25
     setTimeout(showToast, 12000);
     setInterval(showToast, 25000);
+
+    /* ==========================================================================
+       Scroll-Aware Sovereign Conversion Bar
+       ========================================================================== */
+    const sovereignBar = document.querySelector('.sovereign-conversion-bar');
+    if (sovereignBar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                sovereignBar.style.display = 'flex';
+                sovereignBar.style.opacity = '1';
+                sovereignBar.style.transform = 'translateX(-50%) translateY(0)';
+            } else {
+                sovereignBar.style.opacity = '0';
+                sovereignBar.style.transform = 'translateX(-50%) translateY(20px)';
+                // Maintain display flex but hidden via opacity/transform for smooth transition
+            }
+        });
+    }
 
     // 3. Exit Intent Popup Logic
     const exitModal = document.getElementById('exit-modal');
@@ -1075,6 +1188,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2500);
             });
         });
+    }
+
+    // Update WhatsApp Floating Button
+    const waButton = document.querySelector('.whatsapp-pulse');
+    if (waButton) {
+        waButton.setAttribute('href', 'https://wa.me/917744009295?text=Hi,%20I%20am%20interested%20in%20Kumar%20Magnacity%20NA%20plots.%20Please%20share%20details.');
+    }
+
+    // High-Intent WhatsApp Bridge (Inject into Thank You Modal)
+    const thankyouModal = document.getElementById('thankyou-modal');
+    if (thankyouModal) {
+        const modalBody = thankyouModal.querySelector('.modal-body');
+        if (modalBody && !modalBody.querySelector('.executive-wa-bridge')) {
+            const bridge = document.createElement('div');
+            bridge.className = 'executive-wa-bridge';
+            bridge.style.marginTop = '20px';
+            bridge.style.textAlign = 'center';
+            bridge.innerHTML = `
+                <p style="margin-bottom: 15px; font-size: 0.9rem; color: #666;">For an immediate response, connect with our Sales Executive directly:</p>
+                <a href="https://wa.me/917744009295?text=I%20just%20submitted%20my%20enquiry%20on%20the%20website.%20I%20would%20like%20to%20discuss%20plot%20availability." 
+                   style="display: inline-block; background-color: #25d366; color: white; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: transform 0.3s ease;">
+                   <i class="fab fa-whatsapp"></i> Chat with Executive Now
+                </a>
+            `;
+            modalBody.appendChild(bridge);
+        }
     }
 });
 
