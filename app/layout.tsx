@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${outfit.variable} antialiased`}>
-        {/* Deployment V2.1.0 - Hardened Restoration active */}
+        {/* Deployment V2.1.3 - Final Restoration Active */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
