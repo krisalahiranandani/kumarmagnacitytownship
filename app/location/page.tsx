@@ -5,7 +5,7 @@ import { MapPin, Plane, Train, Building2, School } from "lucide-react";
 export const runtime = "edge";
 
 export const metadata = {
-  title: "Strategic Neighborhood | Kumar Magnacity Location",
+  title: "Strategic Neighborhood & Location | Kumar Magnacity | The Pride of Pune's Rising East",
   description: "Explore the location matrix of Kumar Magnacity in Manjari-Hadapsar, Pune. Seamless connectivity to Magarpatta, Kharadi, and the upcoming Ring Road."
 };
 

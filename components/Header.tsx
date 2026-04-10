@@ -58,8 +58,9 @@ export default function Header() {
               Kumar
             </span>
             <span className="text-[10px] text-accent font-bold uppercase tracking-[3px] -mt-1">
-              MagnaCity
+               MagnaCity
             </span>
+            {/* Build Atomic: v2.2.0 */}
           </div>
         </Link>
 

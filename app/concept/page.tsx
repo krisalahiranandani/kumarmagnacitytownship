@@ -5,7 +5,7 @@ import { Shield, MapPin, LandPlot, TrendingUp, Gem, Sparkles } from "lucide-reac
 export const runtime = "edge";
 
 export const metadata = {
-  title: "The Concept | Kumar Magnacity",
+  title: "The Vision & Concept | Kumar Magnacity | The Pride of Pune's Rising East",
   description: "Experience the vision of a 150-acre Sovereign Landed Estate. Discover the architectural philosophy behind Kumar Magnacity's luxury plots."
 };
 

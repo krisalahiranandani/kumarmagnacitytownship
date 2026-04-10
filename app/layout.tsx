@@ -28,11 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <title>The Pride of Pune&apos;s Rising East | Kumar Magnacity</title>
-      </head>
       <body className={`${playfair.variable} ${outfit.variable} antialiased`}>
-        {/* Deployment V2.1.4 - Deep Stabilization Active */}
+        {/* Deployment V2.2.0 - Atomic Synchronization Active */}
         <script
           dangerouslySetInnerHTML={{
             __html: `

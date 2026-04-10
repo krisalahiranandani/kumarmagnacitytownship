@@ -5,7 +5,7 @@ import { Sparkles, Waves, Dumbbell, TreePine, Coffee, ShieldCheck } from "lucide
 export const runtime = "edge";
 
 export const metadata = {
-  title: "World-Class Amenities | Kumar Magnacity Luxury Features",
+  title: "World-Class Amenities & Safety | Kumar Magnacity | The Pride of Pune's Rising East",
   description: "Discover the luxury amenities at Kumar Magnacity. From designer clubhouses and olympic pools to 3-tier security and sustainable infrastructure."
 };
 
