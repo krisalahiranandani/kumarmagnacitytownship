@@ -1,8 +1,18 @@
+#:schema node_modules/wrangler/config-schema.json
 name = "kumarmagnacity"
-compatibility_date = "2024-03-09"
-pages_build_output_dir = "."
+main = ".vercel/output/static/_worker.js"
+compatibility_date = "2024-11-18"
+compatibility_flags = ["nodejs_compat"]
 
-[env.production]
-name = "kumarmagnacity"
-# Route to custom domain handled via Cloudflare Dashboard
-# This config ensures Wrangler always targets the correct project
+[vars]
+# Add environment variables here
+
+[[kv_namespaces]]
+# binding = "MY_KV"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+[site]
+bucket = ".vercel/output/static"
+
+[observability]
+enabled = true

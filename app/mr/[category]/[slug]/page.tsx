@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SovereignBar from "@/components/SovereignBar";
 
+export const runtime = 'edge';
+
 // This would eventually fetch from a database or JSON file
 const getPageData = (category: string, slug: string) => {
   // Mock data for initial implementation
@@ -52,7 +54,7 @@ export default async function SEONodePage({ params }: PageProps) {
           </h1>
           <div className="w-20 h-1 bg-accent mx-auto" />
           <p className="text-xl text-dark/70 leading-relaxed max-w-2xl mx-auto">
-             Experience the pinnacle of luxury land ownership in Pune's most promising growth corridor.
+             Experience the pinnacle of luxury land ownership in Pune&apos;s most promising growth corridor.
           </p>
         </div>
       </section>

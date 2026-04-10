@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SovereignBar from "@/components/SovereignBar";
 import Link from "next/link";
-import { ChevronRight, ArrowRight, ShieldCheck, LandPlot, TrendingUp } from "lucide-react";
+import { ArrowRight, ShieldCheck, LandPlot, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "कुमार मॅ्नासििटी | मांजरी-हडपसर, पुणे येथे प्रीमियम NA बंगलो प्लॉट्स",
