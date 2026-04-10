@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { HeaderProps } from "@/types/components";
 
 const NAV_LINKS = [
   { name: "The Concept", href: "/concept" },

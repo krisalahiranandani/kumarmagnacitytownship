@@ -8,30 +8,13 @@ import FAQSection from "@/components/FAQSection";
 import InventoryBadge from "@/components/InventoryBadge";
 import registry from "@/data/seo-registry.json";
 import { ShieldCheck, TrendingUp, ArrowRight, Download } from "lucide-react";
+import { SEOPageData, SEORegistry } from "@/types/seo";
 
 export const runtime = 'edge';
 
-interface SEOPageData {
-  title: string;
-  description: string;
-  hero_badge?: string;
-  hero_title: string;
-  hero_subtitle: string;
-  faq_json: {
-    mainEntity: {
-      "@type": string;
-      name: string;
-      acceptedAnswer: {
-        "@type": string;
-        text: string;
-      };
-    }[];
-  } | null;
-}
-
 const getPageData = (category: string, slug: string): SEOPageData | null => {
   const key = `${category}/${slug}`;
-  return (registry as Record<string, SEOPageData>)[key] || null;
+  return (registry as SEORegistry)[key] || null;
 };
 
 interface PageProps {
