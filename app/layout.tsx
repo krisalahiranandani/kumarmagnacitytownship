@@ -28,25 +28,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>The Pride of Pune&apos;s Rising East | Kumar Magnacity</title>
+      </head>
       <body className={`${playfair.variable} ${outfit.variable} antialiased`}>
-        {/* Deployment V2.1.3 - Final Restoration Active */}
+        {/* Deployment V2.1.4 - Deep Stabilization Active */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(registrations => {
-                  for (let registration of registrations) {
-                    registration.unregister();
-                  }
-                });
+              // Force-sync Title
+              document.title = "The Pride of Pune's Rising East | Kumar Magnacity";
+              
+              const REVISION = "2.1.4-v7";
+              if (localStorage.getItem('km-revision') !== REVISION) {
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.getRegistrations().then(registrations => {
+                    for (let registration of registrations) registration.unregister();
+                  });
+                }
+                localStorage.setItem('km-revision', REVISION);
+                location.reload(true); // Nuclear hard refresh
               }
-              // DOM Eraser: Forcefully remove legacy UI artifacts
+
+              // Continuous cleanup
               const cleanup = () => {
                 document.querySelectorAll('.revision-milestone, .revision-banner, #revision-milestone, .clock, .countdown').forEach(el => el.remove());
               };
               cleanup();
-              setTimeout(cleanup, 1000); // Catch late injections
-              window.addEventListener('load', cleanup);
+              setTimeout(cleanup, 1000);
             `,
           }}
         />
