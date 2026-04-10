@@ -16,8 +16,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Kumar Magnacity | Premium NA Bungalow Plots in Manjari-Hadapsar, Pune",
-  description: "Invest in Pune's most secure, RERA-registered 150-acre township. Zero encroachment risk, 100% legal title, and high-appreciation NA plots by Kumar Properties.",
+  title: "The Pride of Pune's Rising East | Kumar Magnacity",
+  description: "Secure your legacy with premium NA bungalow plots in Pune's most successful 150-acre township. RERA registered, 100% legal title, and world-class amenities by Kumar Properties.",
   keywords: "kumar magnacity, na plots pune, bungalow plots manjari, hadapsar annexe real estate, kumar properties, land investment pune",
 };
 
@@ -29,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${outfit.variable} antialiased`}>
+        {/* Deployment V2.1.0 - Hardened Restoration active */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
