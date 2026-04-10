@@ -5,6 +5,9 @@ import SovereignBar from "@/components/SovereignBar";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, LandPlot, TrendingUp } from "lucide-react";
 
+export const runtime = "edge";
+
+
 export const metadata: Metadata = {
   title: "कुमार मॅ्नासििटी | मांजरी-हडपसर, पुणे येथे प्रीमियम NA बंगलो प्लॉट्स",
   description: "पुण्यातील सर्वात सुरक्षित, RERA-नोंदणीकृत १५०-एकर टाउनशिपमध्ये गुंतवणूक करा. कुमार प्रॉपर्टीजद्वारे शून्य अतिक्रमण जोखीम आणि उच्च-परतावा NA प्लॉट्स.",

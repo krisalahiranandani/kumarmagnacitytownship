@@ -2,8 +2,6 @@ const CACHE_NAME = 'kumar-magnacity-v20260312';
 const ASSETS_TO_CACHE = [
     '/',
     '/mr',
-    '/css/styles.min.css?v=20260312',
-    '/js/scripts.min.js?v=20260312',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
     'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js',

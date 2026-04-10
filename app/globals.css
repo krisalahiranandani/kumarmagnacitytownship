@@ -103,3 +103,21 @@ h1, h2, h3, h4, h5, h6 {
   animation: pulse-slow 3s infinite ease-in-out;
 }
 
+
+/* 
+  Legacy Component Shield 
+  Permanently hides old marketing banners and countdown timers
+*/
+.revision-milestone,
+.revision-banner,
+#revision-milestone,
+.clock,
+.countdown,
+#clock,
+#countdown {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}

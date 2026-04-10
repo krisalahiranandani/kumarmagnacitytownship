@@ -4,6 +4,9 @@ import SovereignBar from "@/components/SovereignBar";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, LandPlot, TrendingUp } from "lucide-react";
 
+export const runtime = "edge";
+
+
 export default function Home() {
   return (
     <main className="min-h-screen">

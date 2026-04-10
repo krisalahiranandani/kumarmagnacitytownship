@@ -32,8 +32,8 @@ export default function Header() {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 w-100 z-[1000] transition-all duration-500 py-4 px-4 w-full",
-        isScrolled ? "py-2" : "py-4"
+        "fixed top-0 left-0 w-full z-[1000] transition-all duration-500",
+        isScrolled ? "py-2 px-4" : "py-0 px-4 pt-4"
       )}
     >
       <div 
