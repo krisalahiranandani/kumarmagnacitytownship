@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand Colors */
+  --color-primary: #0A4D3C;
+  --color-primary-light: #12634E;
+  --color-accent: #C5A059;
+  --color-accent-hover: #E0C58E;
+  --color-dark: #0F0F0F;
+  --color-light: #F9F7F2;
+  
+  /* Utilities */
+  --color-emerald-glass: rgba(10, 77, 60, 0.85);
+  --color-gold-pulse: rgba(197, 160, 89, 0.4);
+  
+  /* Fonts */
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-outfit);
+}
+
+:root {
+  --background: #F9F7F2;
+  --foreground: #2D2D2D;
+  --primary: #0A4D3C;
+  --accent: #C5A059;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), serif;
+  color: var(--color-dark);
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Luxury Animations */
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-25deg);
+  animation: shine 4s infinite;
+}
