@@ -12,7 +12,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # Configuration
-SITEMAP_PATH = "../sitemap.xml"
+SITEMAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../sitemap.xml")
 KEY_FILE = "service_account.json"
 SCOPES = ["https://www.googleapis.com/auth/indexing"]
 ENDPOINT = "https://indexing.googleapis.com/v3/urlNotifications:publish"
@@ -70,12 +70,20 @@ def trigger_indexing(urls, dry_run=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Google Indexing API Trigger")
     parser.add_argument("--dry-run", action="store_true", help="Perform a dry run without calling the API")
+    parser.add_argument("--limit", type=int, default=200, help="Maximum number of URLs to process (Quota limit)")
+    parser.add_argument("--offset", type=int, default=0, help="Starting index in the sitemap")
     args = parser.parse_args()
 
-    urls_to_index = get_urls_from_sitemap(SITEMAP_PATH)
+    all_urls = get_urls_from_sitemap(SITEMAP_PATH)
     
-    if not urls_to_index:
+    if not all_urls:
         print("No URLs found to index.")
         sys.exit(1)
+
+    # Slice the URLs based on limit and offset
+    urls_to_index = all_urls[args.offset : args.offset + args.limit]
+    
+    print(f"Total URLs in sitemap: {len(all_urls)}")
+    print(f"Processing range: {args.offset} to {args.offset + len(urls_to_index)}")
         
     trigger_indexing(urls_to_index, dry_run=args.dry_run)

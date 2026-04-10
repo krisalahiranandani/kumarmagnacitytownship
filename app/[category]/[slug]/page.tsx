@@ -3,19 +3,35 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SovereignBar from "@/components/SovereignBar";
+import EnquiryForm from "@/components/EnquiryForm";
+import FAQSection from "@/components/FAQSection";
+import InventoryBadge from "@/components/InventoryBadge";
+import registry from "@/data/seo-registry.json";
+import { ShieldCheck, TrendingUp, ArrowRight, Download } from "lucide-react";
 
 export const runtime = 'edge';
 
-// This would eventually fetch from a database or JSON file
-const getPageData = (category: string, slug: string) => {
-  // Mock data for initial implementation
-  return {
-    title: `${slug.replace(/-/g, ' ')} | Kumar Magnacity`,
-    description: `Secure your future with ${slug.replace(/-/g, ' ')} at Kumar Magnacity Hadapsar Annexe.`,
-    category: category,
-    slug: slug,
-    isMarathi: false,
-  };
+interface SEOPageData {
+  title: string;
+  description: string;
+  hero_badge?: string;
+  hero_title: string;
+  hero_subtitle: string;
+  faq_json: {
+    mainEntity: {
+      "@type": string;
+      name: string;
+      acceptedAnswer: {
+        "@type": string;
+        text: string;
+      };
+    }[];
+  } | null;
+}
+
+const getPageData = (category: string, slug: string): SEOPageData | null => {
+  const key = `${category}/${slug}`;
+  return (registry as Record<string, SEOPageData>)[key] || null;
 };
 
 interface PageProps {
@@ -28,9 +44,17 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category, slug } = await params;
   const data = getPageData(category, slug);
+  if (!data) return { title: "Page Not Found" };
+  
   return {
     title: data.title,
     description: data.description,
+    alternates: {
+       canonical: `https://kumarmagnacitytownship.com/${category}/${slug}/`,
+       languages: {
+          'mr-IN': `https://kumarmagnacitytownship.com/mr/${category}/${slug}/`,
+       }
+    }
   };
 }
 
@@ -40,34 +64,195 @@ export default async function SEONodePage({ params }: PageProps) {
 
   if (!data) notFound();
 
+  // Structured Data
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": data.hero_title,
+    "description": data.description,
+    "brand": {
+      "@type": "Brand",
+      "name": "Kumar Properties"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "INR",
+      "price": "14900000"
+    }
+  };
+
   return (
-    <main className="min-h-screen pt-24">
+    <main className="min-h-screen bg-light">
       <Header />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       
-      <section className="container mx-auto max-w-7xl px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <span className="text-accent font-bold uppercase tracking-widest text-sm">
-            {category.replace(/-/g, ' ')}
-          </span>
-          <h1 className="text-4xl md:text-6xl font-heading font-bold capitalize leading-tight">
-            {slug.replace(/-/g, ' ')}
-          </h1>
-          <div className="w-20 h-1 bg-accent mx-auto" />
-          <p className="text-xl text-dark/70 leading-relaxed max-w-2xl mx-auto">
-             Experience the pinnacle of luxury land ownership in Pune&apos;s most promising growth corridor.
-          </p>
+      {/* Dynamic Hero Section */}
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-primary">
+        {/* Background elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 skew-x-12 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2" />
+        
+        <div className="container mx-auto max-w-7xl px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-7 space-y-8 animate-fade-in">
+              <div className="space-y-4">
+                <InventoryBadge />
+                <h1 className="text-4xl md:text-7xl font-heading font-bold text-white leading-[1.1] tracking-tight">
+                  {data.hero_title}
+                </h1>
+                <p className="text-xl md:text-2xl text-white/60 leading-relaxed font-light max-w-2xl">
+                  {data.hero_subtitle}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-6 pt-4">
+                 <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                       <ShieldCheck size={20} />
+                    </div>
+                    <div className="flex flex-col">
+                       <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Registration</span>
+                       <span className="text-sm text-white font-medium">RERA Verified Land</span>
+                    </div>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                       <TrendingUp size={20} />
+                    </div>
+                    <div className="flex flex-col">
+                       <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Appreciation</span>
+                       <span className="text-sm text-white font-medium">12.5% Historical CAGR</span>
+                    </div>
+                 </div>
+              </div>
+
+              <div className="hidden lg:block pt-8">
+                 <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl space-y-4">
+                    <h4 className="text-white font-heading font-bold text-xl italic text-accent">Investment Insight</h4>
+                    <p className="text-white/50 leading-relaxed text-sm">
+                       Pune East is the epicenter of the next real estate boom. With the upcoming <span className="text-white font-bold">Ring Road</span> and <span className="text-white font-bold">Metro expansion</span>, land values in Manjari-Hadapsar are projected to grow by 22% by 2028.
+                    </p>
+                 </div>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-5 relative animate-fade-in [animation-delay:200ms]">
+               <EnquiryForm 
+                title="Sovereign Access" 
+                subtitle="Download the direct pricing sheet and cluster inventory map."
+                buttonText="Get Floor Plans & Rates"
+               />
+               
+               {/* Quick stats below form */}
+               <div className="mt-8 flex items-center justify-center gap-8 opacity-40">
+                  <div className="text-center">
+                     <p className="text-2xl font-heading font-bold text-white tracking-widest">150</p>
+                     <p className="text-[8px] uppercase tracking-widest text-white/50">Acres</p>
+                  </div>
+                  <div className="w-[1px] h-8 bg-white/20" />
+                  <div className="text-center">
+                     <p className="text-2xl font-heading font-bold text-white tracking-widest">59</p>
+                     <p className="text-[8px] uppercase tracking-widest text-white/50">Year Legacy</p>
+                  </div>
+                  <div className="w-[1px] h-8 bg-white/20" />
+                  <div className="text-center">
+                     <p className="text-2xl font-heading font-bold text-white tracking-widest">3T</p>
+                     <p className="text-[8px] uppercase tracking-widest text-white/50">Security</p>
+                  </div>
+               </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Placeholder for dynamic content blocks */}
-      <section className="bg-white py-20">
-        <div className="container mx-auto max-w-7xl px-4 text-center">
-          <p className="text-dark/50 italic">Content for this node will be mapped from the legacy database...</p>
+      {/* Trust & Intelligence Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto max-w-7xl px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="space-y-8">
+               <h2 className="text-4xl md:text-5xl font-heading font-bold text-dark leading-tight">
+                 Why Pune Smart Investors <br /> Choose <span className="text-accent underline decoration-accent/30 underline-offset-8 italic">Kumar Magnacity</span>
+               </h2>
+               <p className="text-lg text-dark/60 leading-relaxed font-light">
+                 Unlike disorganized local layouts, Kumar Magnacity offers the security of a Tier-1 developer combined with the freedom of owning your own NA bungalow land. It&apos;s a legacy you build, on a foundation of trust.
+               </p>
+               <div className="space-y-4">
+                  {[
+                    "Individual 7/12 Extract for every plot",
+                    "PMRDA Sanctioned & RERA Registered",
+                    "Integrated Underground Utility Grids",
+                    "Grand Clubhouse & 12+ Premium Amenities"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                       <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                          <CheckIcon size={12} />
+                       </div>
+                       <span className="text-dark/80 font-medium">{item}</span>
+                    </div>
+                  ))}
+               </div>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-6">
+               <div className="space-y-6">
+                  <div className="p-8 rounded-[2.5rem] bg-light border border-dark/5 space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2">
+                     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-lg text-primary">
+                        <Download size={24} />
+                     </div>
+                     <h4 className="font-heading font-bold text-xl">Legal Kit</h4>
+                     <p className="text-xs text-dark/50 leading-relaxed italic">Download the 7/12 Extract samples and RERA compliance docs.</p>
+                  </div>
+                  <div className="p-8 rounded-[2.5rem] bg-dark text-white space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2">
+                     <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-accent">
+                        <TrendingUp size={24} />
+                     </div>
+                     <h4 className="font-heading font-bold text-xl">ROI Guide</h4>
+                     <p className="text-xs text-white/40 leading-relaxed italic">Detailed analysis of Manjari-Hadapsar land appreciation 2026.</p>
+                  </div>
+               </div>
+               <div className="space-y-6 pt-12">
+                  <div className="p-8 rounded-[2.5rem] bg-accent text-dark space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2 font-bold">
+                     <div className="w-12 h-12 bg-dark rounded-2xl flex items-center justify-center text-accent shadow-xl">
+                        <ArrowRight size={24} />
+                     </div>
+                     <h4 className="font-heading text-xl">Site Visit</h4>
+                     <p className="text-xs text-dark/70 leading-relaxed italic">Experience the master-planned grandeur in person today.</p>
+                  </div>
+               </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* FAQ Section with Context */}
+      <FAQSection faqJson={data.faq_json} />
       
       <Footer />
       <SovereignBar />
     </main>
   );
 }
+
+function CheckIcon({ size = 16, className = "" }) {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="3" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+    >
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+  );
+}
+
