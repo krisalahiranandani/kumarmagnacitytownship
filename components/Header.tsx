@@ -58,7 +58,7 @@ export default function Header() {
               Kumar MagnaCity
             </span>
             <span className="text-[7px] text-accent/50 font-bold uppercase tracking-widest -mt-0.5 block">
-              Build v6.0.0 (PropSmart Edition)
+              Build v7.0.0 (PropSmart Secure)
             </span>
           </div>
         </Link>
