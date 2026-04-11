@@ -55,12 +55,10 @@ export default function Header() {
               "font-heading font-bold text-xl tracking-tight transition-colors",
               isScrolled ? "text-white" : "text-primary"
             )}>
-              Kumar
-            </span>
-               MagnaCity
+              Kumar MagnaCity
             </span>
             <span className="text-[7px] text-accent/50 font-bold uppercase tracking-widest -mt-0.5 block">
-              Build v4.0.0 (Nuclear Restoration)
+              Build v5.0.0 (Vercel Ready)
             </span>
           </div>
         </Link>
