@@ -1,5 +1,6 @@
 export interface HeaderProps {
     isMarathi?: boolean;
+    transparent?: boolean;
 }
 
 export interface FooterProps {
