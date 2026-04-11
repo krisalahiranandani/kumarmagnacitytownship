@@ -60,7 +60,7 @@ export default function Header() {
                MagnaCity
             </span>
             <span className="text-[7px] text-accent/50 font-bold uppercase tracking-widest -mt-0.5 block">
-              Build v3.0.0 (PropSmart Ready)
+              Build v4.0.0 (Nuclear Restoration)
             </span>
           </div>
         </Link>
