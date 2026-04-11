@@ -57,10 +57,11 @@ export default function Header() {
             )}>
               Kumar
             </span>
-            <span className="text-[10px] text-accent font-bold uppercase tracking-[3px] -mt-1">
                MagnaCity
             </span>
-            {/* Build Atomic: v2.2.0 */}
+            <span className="text-[7px] text-accent/50 font-bold uppercase tracking-widest -mt-0.5 block">
+              Build v2.5.0
+            </span>
           </div>
         </Link>
 
