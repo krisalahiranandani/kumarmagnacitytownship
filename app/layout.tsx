@@ -29,33 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${outfit.variable} antialiased`}>
-        {/* Deployment V2.2.0 - Atomic Synchronization Active */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Force-sync Title
-              document.title = "The Pride of Pune's Rising East | Kumar Magnacity";
-              
-              const REVISION = "2.1.4-v7";
-              if (localStorage.getItem('km-revision') !== REVISION) {
-                if ('serviceWorker' in navigator) {
-                  navigator.serviceWorker.getRegistrations().then(registrations => {
-                    for (let registration of registrations) registration.unregister();
-                  });
-                }
-                localStorage.setItem('km-revision', REVISION);
-                location.reload(true); // Nuclear hard refresh
-              }
-
-              // Continuous cleanup
-              const cleanup = () => {
-                document.querySelectorAll('.revision-milestone, .revision-banner, #revision-milestone, .clock, .countdown').forEach(el => el.remove());
-              };
-              cleanup();
-              setTimeout(cleanup, 1000);
-            `,
-          }}
-        />
+        {/* Deployment V2.3.1 - Restoration Fix */}
         {children}
       </body>
     </html>

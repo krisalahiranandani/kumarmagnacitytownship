@@ -1,6 +1,5 @@
-"use client";
-
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +20,7 @@ export default function EnquiryForm({
   buttonText = "Get Details",
   isModal = false,
 }: EnquiryFormProps) {
+  const router = useRouter();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -48,6 +48,10 @@ export default function EnquiryForm({
 
       if (response.ok) {
         setStatus("success");
+        // Smooth transition to thank you page
+        setTimeout(() => {
+          router.push("/thank-you");
+        }, 1200);
       } else {
         throw new Error("Failed to submit. Please try again.");
       }
@@ -60,12 +64,14 @@ export default function EnquiryForm({
 
   if (status === "success") {
     return (
-      <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl text-center space-y-4">
-        <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto text-accent">
-          <CheckCircle2 size={32} />
+      <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-12 rounded-[2.5rem] text-center space-y-6 animate-pulse">
+        <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto text-accent border border-accent/30 shadow-[0_0_30px_rgba(201,162,39,0.3)]">
+          <CheckCircle2 size={40} />
         </div>
-        <h3 className="text-2xl font-heading font-bold text-white">Message Received</h3>
-        <p className="text-white/60">Our relationship manager will connect with you within 30 minutes in your timezone.</p>
+        <div className="space-y-2">
+            <h3 className="text-3xl font-heading font-bold text-white">Redirecting...</h3>
+            <p className="text-white/60 text-sm">Validating your VIP access brief.</p>
+        </div>
       </div>
     );
   }
