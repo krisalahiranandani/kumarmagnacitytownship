@@ -58,7 +58,7 @@ export default function Header() {
               Kumar MagnaCity
             </span>
             <span className="text-[7px] text-accent/50 font-bold uppercase tracking-widest -mt-0.5 block">
-              Build v8.0.0 (Vercel Pure)
+              Build v9.0.0 (The Final Victory)
             </span>
           </div>
         </Link>
