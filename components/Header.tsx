@@ -11,9 +11,9 @@ const NAV_LINKS = [
   { name: "The Concept", href: "/concept" },
   { name: "Neighborhood", href: "/location" },
   { name: "Our Plots", href: "/availability" },
-  { name: "Master Plan", href: "/master-plan" },
   { name: "Amenities", href: "/amenities" },
   { name: "Investment", href: "/investment" },
+  { name: "Insights", href: "/market-insights" },
 ];
 
 export default function Header() {
@@ -60,7 +60,7 @@ export default function Header() {
                MagnaCity
             </span>
             <span className="text-[7px] text-accent/50 font-bold uppercase tracking-widest -mt-0.5 block">
-              Build v2.5.0
+              Build v3.0.0 (PropSmart Ready)
             </span>
           </div>
         </Link>
