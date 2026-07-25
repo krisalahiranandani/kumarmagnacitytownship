@@ -51,6 +51,9 @@ const SolarSustainabilitySuite = dynamic(() => import("@/components/SolarSustain
 const LegalTransparencyVault = dynamic(() => import("@/components/LegalTransparencyVault"), { ssr: false });
 const PriceEscalationTimer = dynamic(() => import("@/components/PriceEscalationTimer"), { ssr: false });
 const PriceComparisonMatrix = dynamic(() => import("@/components/PriceComparisonMatrix"), { ssr: false });
+const CommuteTimeMatrix = dynamic(() => import("@/components/CommuteTimeMatrix"), { ssr: false });
+const RentalYieldCalculator = dynamic(() => import("@/components/RentalYieldCalculator"), { ssr: false });
+const WhatsAppCallbackScheduler = dynamic(() => import("@/components/WhatsAppCallbackScheduler"), { ssr: false });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -513,12 +516,15 @@ export default function Home() {
       <Township3DVisualizer />
       <VirtualVRHub />
       <MortgageEligibilitySuite />
+      <CommuteTimeMatrix />
+      <RentalYieldCalculator />
       <InstantTokenBooking />
       <SiteVisitCabTracker />
       <LiveConstructionTracker />
       <AIVoiceAssistant />
       <SolarSustainabilitySuite />
       <LegalTransparencyVault />
+      <WhatsAppCallbackScheduler />
       <NRICurrencySuite />
       <SiteVisitScheduler />
 
