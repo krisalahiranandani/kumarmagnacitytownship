@@ -368,7 +368,7 @@ export default function Home() {
                 viewport={{ once: true, margin: "-100px" }}
                 className="relative z-10 rounded-[4rem] overflow-hidden shadow-[0_50px_100px_rgba(212,175,55,0.15)] group"
               >
-                <Image src="/assets/plot-layout.jpg" alt="Masterplan" width={1200} height={800} className="w-full h-auto transition-transform duration-[3s] group-hover:scale-110" />
+                <Image src="/assets/plot-layout.jpg" alt="Kumar Magnacity 150 Acre Master Plan Layout Hadapsar Annexe Manjari Pune" width={1200} height={800} className="w-full h-auto transition-transform duration-[3s] group-hover:scale-110" />
                 <div className="absolute inset-0 bg-dark/20 group-hover:bg-dark/40 transition-colors" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                    <div className="bg-white px-8 py-4 rounded-full text-[10px] font-bold tracking-widest uppercase text-dark flex items-center gap-2">

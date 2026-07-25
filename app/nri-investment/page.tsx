@@ -25,7 +25,7 @@ export default function NRIInvestmentPage() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/assets/hero-bg.jpg" 
-            alt="Kumar Magnacity Masterplan" 
+            alt="Kumar Magnacity 150-Acre Township Master Plan for NRI Investment" 
             fill 
             className="object-cover opacity-20"
             priority

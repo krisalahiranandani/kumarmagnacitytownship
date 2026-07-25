@@ -69,7 +69,7 @@ export default function InteractivePlotGrid({ imagePath, fallbackPath }: { image
       {/* Base Image */}
       <Image 
         src={imagePath} 
-        alt="Interactive Masterplan"
+        alt="Kumar Magnacity NA Villa Plots Sanctioned Layout Plan"
         fill
         className="object-contain"
         onError={(e) => { e.currentTarget.src = fallbackPath; }}

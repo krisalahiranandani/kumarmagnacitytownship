@@ -62,7 +62,7 @@ export default function ParallaxHero({
         ) : imagePath ? (
           <Image 
             src={imagePath} 
-            alt="Hero Background"
+            alt="Kumar Magnacity G+30 High-Rise Luxury Towers Manjari Pune East"
             fill
             priority
             className="w-full h-full object-cover"
