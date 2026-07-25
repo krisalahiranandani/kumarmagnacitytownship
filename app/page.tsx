@@ -36,6 +36,10 @@ const InteractiveLayoutViewer = dynamic(() => import("@/components/InteractiveLa
   ssr: false,
   loading: () => <div className="w-full aspect-video md:aspect-[21/9] bg-white/5 animate-pulse rounded-[2rem]" />
 });
+const InteractiveTownshipMap = dynamic(() => import("@/components/InteractiveTownshipMap"), { ssr: false });
+const PropertyComparison = dynamic(() => import("@/components/PropertyComparison"), { ssr: false });
+const NRICurrencySuite = dynamic(() => import("@/components/NRICurrencySuite"), { ssr: false });
+const SiteVisitScheduler = dynamic(() => import("@/components/SiteVisitScheduler"), { ssr: false });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -372,7 +376,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2.5 PREMIUM APARTMENTS SHOWCASE */}
+      {/* 2.2 INTERACTIVE 100-ACRE TOWNSHIP MAP */}
+      <InteractiveTownshipMap />
+
+      {/* 2.3 SIDE-BY-SIDE PROPERTY COMPARISON */}
+      <PropertyComparison />
       <section className="py-24 md:py-40 bg-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(201,162,39,0.08),transparent_60%)]" />
         <div className="container mx-auto max-w-7xl px-6 relative z-10">
@@ -485,6 +493,10 @@ export default function Home() {
           <AmenityGrid />
         </div>
       </section>
+
+      {/* 3.5 GLOBAL NRI SUITE & SITE VISIT SCHEDULER */}
+      <NRICurrencySuite />
+      <SiteVisitScheduler />
 
       {/* 4. INVESTMENT INTELLIGENCE (Data-Driven Detailed Section) */}
       <section className="py-24 md:py-40 bg-light">
