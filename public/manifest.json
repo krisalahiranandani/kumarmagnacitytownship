@@ -1,23 +1,23 @@
 {
-  "name": "Kumar Magnacity Township",
-  "short_name": "Magnacity",
-  "description": "Premium 150-acre township at Manjari near Hadapsar by Kumar Properties.",
+  "name": "Kumar Magnacity Township Hadapsar Annexe",
+  "short_name": "Kumar Magnacity",
+  "description": "Official portal for Kumar Magnacity Township, Hadapsar Annexe, Manjari, Pune. 2 BHK & 3 BHK Luxury Apartments & NA Bungalow Plots.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#c9a227",
-  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/assets/favicon.png",
+      "src": "/icon.svg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/apple-touch-icon.png",
+      "src": "/icon.svg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ]
 }

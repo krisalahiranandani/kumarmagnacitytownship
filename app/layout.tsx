@@ -30,6 +30,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kumarmagnacitytownship.com"),
+  manifest: "/manifest.json",
+  themeColor: "#c9a227",
   title: {
     default: "Kumar Magnacity Township Hadapsar Annexe, Manjari | 2BHK & 3BHK Flats + NA Plots",
     template: "%s | Kumar Magnacity Township Hadapsar Annexe"
