@@ -70,10 +70,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pSEOLocations = [
     'magarpatta-city',
     'kharadi-it-park',
+    'eon-it-park-phase-2',
+    'world-trade-center-pune',
     'sp-infocity',
+    'hadapsar-industrial-estate',
+    'amanora-town-centre',
     'viman-nagar',
     'koregaon-park',
-    'pune-station'
+    'keshav-nagar',
+    'solapur-highway',
+    'hadapsar-railway-station',
+    'pune-airport',
+    'pune-station',
+    'loni-kalbhor'
   ];
 
   const pSEORoutes: MetadataRoute.Sitemap = pSEOLocations.map((slug) => ({

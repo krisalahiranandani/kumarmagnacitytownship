@@ -12,10 +12,19 @@ import AdvancedEnquiryForm from '@/components/AdvancedEnquiryForm';
 const LOCATIONS = [
   { slug: 'magarpatta-city', name: 'Magarpatta City', distance: '10 Mins', type: 'IT Hub' },
   { slug: 'kharadi-it-park', name: 'Kharadi IT Park', distance: '15 Mins', type: 'Tech Corridor' },
+  { slug: 'eon-it-park-phase-2', name: 'EON IT Park Phase 2', distance: '12 Mins', type: 'Tech Hub' },
+  { slug: 'world-trade-center-pune', name: 'World Trade Center Pune', distance: '14 Mins', type: 'Financial Hub' },
   { slug: 'sp-infocity', name: 'SP Infocity', distance: '15 Mins', type: 'IT SEZ' },
+  { slug: 'hadapsar-industrial-estate', name: 'Hadapsar Industrial Estate', distance: '8 Mins', type: 'Industrial Zone' },
+  { slug: 'amanora-town-centre', name: 'Amanora Town Centre', distance: '10 Mins', type: 'Lifestyle Node' },
   { slug: 'viman-nagar', name: 'Viman Nagar', distance: '25 Mins', type: 'Commercial Hub' },
   { slug: 'koregaon-park', name: 'Koregaon Park', distance: '20 Mins', type: 'Premium Hub' },
-  { slug: 'pune-station', name: 'Pune Station', distance: '30 Mins', type: 'Transit Hub' },
+  { slug: 'keshav-nagar', name: 'Keshav Nagar', distance: '12 Mins', type: 'Residential Belt' },
+  { slug: 'solapur-highway', name: 'Pune-Solapur Highway', distance: '5 Mins', type: 'Express Corridor' },
+  { slug: 'hadapsar-railway-station', name: 'Hadapsar Railway Station', distance: '7 Mins', type: 'Transit Node' },
+  { slug: 'pune-airport', name: 'Pune International Airport', distance: '30 Mins', type: 'Aviation Node' },
+  { slug: 'pune-station', name: 'Pune Railway Station', distance: '30 Mins', type: 'Transit Hub' },
+  { slug: 'loni-kalbhor', name: 'Loni Kalbhor', distance: '15 Mins', type: 'Growth Suburb' },
 ];
 
 export async function generateStaticParams() {
