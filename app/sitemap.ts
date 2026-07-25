@@ -34,15 +34,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   corePages.forEach((route) => {
     // English
     sitemapEntries.push({
-      url: `${baseUrl}${route}/`,
-      lastModified: new Date('2026-04-12'), // Hardocoded to last major infrastructure update
+      url: `${baseUrl}${route}`,
+      lastModified,
       changeFrequency: route === "" ? 'always' : 'daily',
       priority: route === "" ? 1.0 : 0.9,
     });
     // Marathi
     sitemapEntries.push({
-      url: `${baseUrl}/mr${route}/`,
-      lastModified: new Date('2026-04-12'),
+      url: `${baseUrl}/mr${route}`,
+      lastModified,
       changeFrequency: route === "" ? 'always' : 'daily',
       priority: 0.8,
     });
@@ -52,14 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   Object.keys(registry as SEORegistry).forEach((key) => {
     // English Node
     sitemapEntries.push({
-      url: `${baseUrl}/${key}/`,
+      url: `${baseUrl}/${key}`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.6,
     });
     // Marathi Node
     sitemapEntries.push({
-      url: `${baseUrl}/mr/${key}/`,
+      url: `${baseUrl}/mr/${key}`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.5,

@@ -6,6 +6,18 @@ export async function GET() {
   // Define all high-value SEO images
   const images = [
     {
+      url: `${baseUrl}/assets/official-logo.png`,
+      title: "Kumar Realty | Magnacity Official Logo",
+      caption: "Official logo of Kumar Magnacity Township by Kumar Properties in Manjari, Hadapsar Annexe, Pune.",
+      geo_location: "Pune, Maharashtra, India"
+    },
+    {
+      url: `${baseUrl}/assets/hero-bg.jpg`,
+      title: "Kumar Magnacity G+30 High-Rise Luxury Towers",
+      caption: "Exterior view of G+30 high-rise luxury towers at Kumar Magnacity 150-acre township.",
+      geo_location: "Pune, Maharashtra, India"
+    },
+    {
       url: `${baseUrl}/assets/master_layout.jpg`,
       title: "Kumar Magnacity 150 Acre Master Plan",
       caption: "The official master layout showing the 150-acre township, residential towers, and NA bungalow plots in Manjari, Pune East.",
