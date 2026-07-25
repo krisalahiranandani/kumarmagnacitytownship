@@ -5,38 +5,70 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, Network } from "lucide-react";
 
 // The Matrix: Defines which URLs belong to which Silo
+// The 6 Master Programmatic Silos centered on Kumar Magnacity Township
 const SILO_MAP = {
-  investment: {
-    hub: { title: "Pune East Investment Hub", url: "/investment-pune-east" },
+  township_brand: {
+    hub: { title: "Kumar Magnacity Master Township", url: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" },
     spokes: [
-      { title: "NRI Investment Guide", url: "/insights/nri-investment-manjari" },
-      { title: "Pune East Market Data", url: "/kumar-magnacity-market-data-pune-east" },
-      { title: "ROI Calculator", url: "/roi-calculator" },
-      { title: "Ring Road Impact", url: "/insights/pune-ring-road-impact" },
-      { title: "Investment Matrix", url: "/kumar-magnacity-investment-plan-pune-east" }
-    ],
-    triggers: ["investment", "roi", "market-data", "ring-road", "insights"]
-  },
-  location: {
-    hub: { title: "Pune East Location Hub", url: "/flats-in-pune-east" },
-    spokes: [
-      { title: "Magarpatta Proximity", url: "/flats-near-magarpatta-city" },
-      { title: "Kharadi IT Park Flats", url: "/flats-near-kharadi-it-park" },
-      { title: "Manjari Location Map", url: "/kumar-magnacity-manjari-location-map" },
-      { title: "Location Advantages", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" }
-    ],
-    triggers: ["near", "location", "map", "hadapsar", "hadapsar-annexe", "manjari", "kharadi", "magarpatta", "magnacity-township"]
-  },
-  product: {
-    hub: { title: "Luxury Apartments Hub", url: "/luxury-apartments-pune" },
-    spokes: [
-      { title: "2BHK Price & Details", url: "/kumar-magnacity-2bhk-flats-hadapsar-pune-price" },
-      { title: "3BHK Price & Details", url: "/kumar-magnacity-3bhk-apartments-manjari-pune-price" },
+      { title: "Project Overview & Overview", url: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" },
+      { title: "Specifications & Fittings", url: "/kumar-magnacity-specifications-apartments" },
       { title: "Floor Plans (2BHK & 3BHK)", url: "/kumar-magnacity-floor-plan-2bhk-3bhk" },
-      { title: "NA Bungalow Plots", url: "/kumar-magnacity-na-bungalow-plots-concept" },
-      { title: "Master Layout", url: "/kumar-magnacity-na-bungalow-plots-master-plan" }
+      { title: "Location Advantages", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" },
+      { title: "NRI Investment Guide", url: "/nri-investment" }
     ],
-    triggers: ["2bhk", "3bhk", "floor-plan", "plots", "concept", "master-plan", "vs", "godrej", "vtp", "amanora", "nyati", "kolte", "price", "brochure", "rera"]
+    triggers: ["magnacity", "township", "kumar", "project", "brand", "overview", "residential", "sovereign"]
+  },
+  location_corridor: {
+    hub: { title: "Hadapsar Annexe & Location Hub", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" },
+    spokes: [
+      { title: "Manjari Location Map", url: "/kumar-magnacity-manjari-location-map" },
+      { title: "Magarpatta City Connectivity", url: "/flats-near-magarpatta-city" },
+      { title: "Kharadi IT Park Corridor", url: "/flats-near-kharadi-it-park" },
+      { title: "EON IT Park Phase 2", url: "/flats-near-eon-it-park-phase-2" },
+      { title: "World Trade Center Pune", url: "/flats-near-world-trade-center-pune" },
+      { title: "Flats in Pune East", url: "/flats-in-pune-east" }
+    ],
+    triggers: ["near", "location", "map", "hadapsar", "annexe", "manjari", "kharadi", "magarpatta", "eon", "wtc", "corridor"]
+  },
+  residences_floorplan: {
+    hub: { title: "High-Rise Residences & Floor Plans", url: "/kumar-magnacity-floor-plan-2bhk-3bhk" },
+    spokes: [
+      { title: "2 BHK Price & Layout (757 sq.ft)", url: "/kumar-magnacity-2bhk-flats-hadapsar-pune-price" },
+      { title: "3 BHK Price & Layout (1053 sq.ft)", url: "/kumar-magnacity-3bhk-apartments-manjari-pune-price" },
+      { title: "Luxury Apartments Hub", url: "/luxury-apartments-pune" },
+      { title: "Apartment Specifications", url: "/kumar-magnacity-specifications-apartments" }
+    ],
+    triggers: ["2bhk", "3bhk", "floor-plan", "flats", "apartments", "homes", "g+30", "carpet", "price"]
+  },
+  plots_land: {
+    hub: { title: "NA Villa Bungalow Plots", url: "/kumar-magnacity-na-bungalow-plots-concept" },
+    spokes: [
+      { title: "NA Plots Master Layout", url: "/kumar-magnacity-na-bungalow-plots-master-plan" },
+      { title: "NA Plot Availability", url: "/kumar-magnacity-na-bungalow-plots-availability" },
+      { title: "NA Plot Amenities", url: "/kumar-magnacity-na-bungalow-plots-amenities" },
+      { title: "NA Plots FAQ", url: "/kumar-magnacity-na-bungalow-plots-faq" }
+    ],
+    triggers: ["plots", "bungalow", "land", "villa-plots", "concept", "availability", "master-plan"]
+  },
+  investment_roi: {
+    hub: { title: "Investment, Price & Market Data", url: "/kumar-magnacity-market-data-pune-east" },
+    spokes: [
+      { title: "Investment Strategy & ROI", url: "/kumar-magnacity-investment-plan-pune-east" },
+      { title: "Pune East Investment Hub", url: "/investment-pune-east" },
+      { title: "Interactive ROI Calculator", url: "/roi-calculator" },
+      { title: "Ring Road Growth Impact", url: "/insights/pune-ring-road-impact" },
+      { title: "NRI Investment Guide", url: "/insights/nri-investment-manjari" }
+    ],
+    triggers: ["investment", "market-data", "roi", "calculator", "cost", "appreciation", "rental", "ring-road", "insights"]
+  },
+  lifestyle_amenities: {
+    hub: { title: "Township Lifestyle & Podar School", url: "/kumar-magnacity-na-bungalow-plots-amenities" },
+    spokes: [
+      { title: "Podar International School Campus", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" },
+      { title: "1 Lakh Sq.Ft Clubhouse", url: "/kumar-magnacity-na-bungalow-plots-amenities" },
+      { title: "Competitor Comparison Guide", url: "/kumar-magnacity-market-data-pune-east" }
+    ],
+    triggers: ["amenities", "clubhouse", "podar", "school", "lifestyle", "hospitals", "malls", "vs", "godrej", "vtp", "amanora"]
   }
 };
 
