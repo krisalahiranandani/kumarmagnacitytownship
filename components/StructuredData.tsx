@@ -40,7 +40,7 @@ export default function StructuredData() {
             "@type": "Offer",
             "name": "NA Villa Bungalow Plot",
             "priceCurrency": "INR",
-            "price": "10800000",
+            "price": "14900000",
             "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
             "itemOffered": {

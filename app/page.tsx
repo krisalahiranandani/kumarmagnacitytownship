@@ -162,13 +162,33 @@ export default function Home() {
       "@type": "AggregateOffer",
       "priceCurrency": "INR",
       "lowPrice": "7299000",
-      "highPrice": "10500000",
+      "highPrice": "14900000",
       "offerCount": "200"
+    }
+  };
+
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Kumar Magnacity Township Experience Center",
+    "image": "https://kumarmagnacitytownship.com/assets/hero-bg.jpg",
+    "url": "https://kumarmagnacitytownship.com",
+    "telephone": "+917744009295",
+    "priceRange": "₹72.99L - ₹1.49Cr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kumar Magnacity Township, Manjari Road",
+      "addressLocality": "Hadapsar Annexe, Manjari",
+      "addressRegion": "Maharashtra",
+      "postalCode": "412307",
+      "addressCountry": "IN"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "124"
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "124"
     }
   };
 
@@ -214,6 +234,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(townshipSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
       />
       <script
         type="application/ld+json"
