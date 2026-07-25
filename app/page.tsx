@@ -46,6 +46,10 @@ const VirtualVRHub = dynamic(() => import("@/components/VirtualVRHub"), { ssr: f
 const InstantTokenBooking = dynamic(() => import("@/components/InstantTokenBooking"), { ssr: false });
 const SiteVisitCabTracker = dynamic(() => import("@/components/SiteVisitCabTracker"), { ssr: false });
 const LiveConstructionTracker = dynamic(() => import("@/components/LiveConstructionTracker"), { ssr: false });
+const AIVoiceAssistant = dynamic(() => import("@/components/AIVoiceAssistant"), { ssr: false });
+const SolarSustainabilitySuite = dynamic(() => import("@/components/SolarSustainabilitySuite"), { ssr: false });
+const LegalTransparencyVault = dynamic(() => import("@/components/LegalTransparencyVault"), { ssr: false });
+const PriceEscalationTimer = dynamic(() => import("@/components/PriceEscalationTimer"), { ssr: false });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -500,6 +504,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Price Escalation Urgency Alert Bar */}
+      <PriceEscalationTimer />
+
       {/* 3.5 GLOBAL NRI SUITE, SITE VISIT SCHEDULER & INNOVATION SUITES */}
       <Township3DVisualizer />
       <VirtualVRHub />
@@ -507,6 +514,9 @@ export default function Home() {
       <InstantTokenBooking />
       <SiteVisitCabTracker />
       <LiveConstructionTracker />
+      <AIVoiceAssistant />
+      <SolarSustainabilitySuite />
+      <LegalTransparencyVault />
       <NRICurrencySuite />
       <SiteVisitScheduler />
 
