@@ -82,7 +82,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'hadapsar-railway-station',
     'pune-airport',
     'pune-station',
-    'loni-kalbhor'
+    'loni-kalbhor',
+    'hadapsar-gadital',
+    'phursungi-it-park',
+    'shewalewadi',
+    'uruli-kanchan',
+    'saswad-road',
+    'mundhwa',
+    'fatima-nagar',
+    'ramtekdi-industrial-area',
+    'solapur-toll-plaza',
+    'manjari-railway-station'
   ];
 
   const pSEORoutes: MetadataRoute.Sitemap = pSEOLocations.map((slug) => ({

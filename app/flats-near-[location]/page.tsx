@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 import SovereignBar from '@/components/SovereignBar';
 import AdvancedEnquiryForm from '@/components/AdvancedEnquiryForm';
 
-// The Data Engine for Programmatic SEO
+// The Data Engine for Programmatic SEO (25 Micro-Market Corridors)
 const LOCATIONS = [
   { slug: 'magarpatta-city', name: 'Magarpatta City', distance: '10 Mins', type: 'IT Hub' },
   { slug: 'kharadi-it-park', name: 'Kharadi IT Park', distance: '15 Mins', type: 'Tech Corridor' },
@@ -25,6 +25,16 @@ const LOCATIONS = [
   { slug: 'pune-airport', name: 'Pune International Airport', distance: '30 Mins', type: 'Aviation Node' },
   { slug: 'pune-station', name: 'Pune Railway Station', distance: '30 Mins', type: 'Transit Hub' },
   { slug: 'loni-kalbhor', name: 'Loni Kalbhor', distance: '15 Mins', type: 'Growth Suburb' },
+  { slug: 'hadapsar-gadital', name: 'Hadapsar Gadital Junction', distance: '6 Mins', type: 'Transit Hub' },
+  { slug: 'phursungi-it-park', name: 'Phursungi IT Park', distance: '10 Mins', type: 'IT Zone' },
+  { slug: 'shewalewadi', name: 'Shewalewadi Corridor', distance: '4 Mins', type: 'Residential Node' },
+  { slug: 'uruli-kanchan', name: 'Uruli Kanchan Corridor', distance: '20 Mins', type: 'Eastern Corridor' },
+  { slug: 'saswad-road', name: 'Saswad Road Corridor', distance: '12 Mins', type: 'Connecting Highway' },
+  { slug: 'mundhwa', name: 'Mundhwa IT Corridor', distance: '15 Mins', type: 'Growth Belt' },
+  { slug: 'fatima-nagar', name: 'Fatima Nagar Junction', distance: '15 Mins', type: 'Retail Hub' },
+  { slug: 'ramtekdi-industrial-area', name: 'Ramtekdi Industrial Area', distance: '12 Mins', type: 'Industrial Zone' },
+  { slug: 'solapur-toll-plaza', name: 'Solapur Toll Plaza Corridor', distance: '8 Mins', type: 'Highway Node' },
+  { slug: 'manjari-railway-station', name: 'Manjari Railway Station', distance: '5 Mins', type: 'Rail Transit' },
 ];
 
 export async function generateStaticParams() {

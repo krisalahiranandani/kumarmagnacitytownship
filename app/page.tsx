@@ -50,6 +50,7 @@ const AIVoiceAssistant = dynamic(() => import("@/components/AIVoiceAssistant"), 
 const SolarSustainabilitySuite = dynamic(() => import("@/components/SolarSustainabilitySuite"), { ssr: false });
 const LegalTransparencyVault = dynamic(() => import("@/components/LegalTransparencyVault"), { ssr: false });
 const PriceEscalationTimer = dynamic(() => import("@/components/PriceEscalationTimer"), { ssr: false });
+const PriceComparisonMatrix = dynamic(() => import("@/components/PriceComparisonMatrix"), { ssr: false });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -508,6 +509,7 @@ export default function Home() {
       <PriceEscalationTimer />
 
       {/* 3.5 GLOBAL NRI SUITE, SITE VISIT SCHEDULER & INNOVATION SUITES */}
+      <PriceComparisonMatrix />
       <Township3DVisualizer />
       <VirtualVRHub />
       <MortgageEligibilitySuite />
