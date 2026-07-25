@@ -18,6 +18,7 @@ import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { Suspense } from "react";
 import ScrollProgress from "@/components/ScrollProgress";
 import MobileQuickBar from "@/components/MobileQuickBar";
+import FeaturedSnippetsSchema from "@/components/FeaturedSnippetsSchema";
 
 export const runtime = "nodejs";
 
@@ -117,7 +118,9 @@ export default function RootLayout({
       </head>
       <body className={`${playfair.variable} font-sans antialiased bg-dark text-white`}>
         <NRIGeoBanner />
+        <GoogleConsent />
         <StructuredData />
+        <FeaturedSnippetsSchema />
         {/* Google Consent Mode V2 (Must be loaded FIRST) */}
         <GoogleConsent />
         {/* Google Tag Manager (Loads asynchronously without blocking rendering) */}
