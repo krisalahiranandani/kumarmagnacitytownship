@@ -105,3 +105,19 @@
 .font-heading {
   font-family: var(--font-playfair);
 }
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F9E596 0%, #D4AF37 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-gold-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-gold-hover:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
+  transform: translateY(-4px);
+}
