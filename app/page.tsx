@@ -43,6 +43,9 @@ const SiteVisitScheduler = dynamic(() => import("@/components/SiteVisitScheduler
 const Township3DVisualizer = dynamic(() => import("@/components/Township3DVisualizer"), { ssr: false });
 const MortgageEligibilitySuite = dynamic(() => import("@/components/MortgageEligibilitySuite"), { ssr: false });
 const VirtualVRHub = dynamic(() => import("@/components/VirtualVRHub"), { ssr: false });
+const InstantTokenBooking = dynamic(() => import("@/components/InstantTokenBooking"), { ssr: false });
+const SiteVisitCabTracker = dynamic(() => import("@/components/SiteVisitCabTracker"), { ssr: false });
+const LiveConstructionTracker = dynamic(() => import("@/components/LiveConstructionTracker"), { ssr: false });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -501,6 +504,9 @@ export default function Home() {
       <Township3DVisualizer />
       <VirtualVRHub />
       <MortgageEligibilitySuite />
+      <InstantTokenBooking />
+      <SiteVisitCabTracker />
+      <LiveConstructionTracker />
       <NRICurrencySuite />
       <SiteVisitScheduler />
 
