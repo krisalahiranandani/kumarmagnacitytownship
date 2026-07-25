@@ -8,6 +8,8 @@ import { Menu, X, ArrowRight, Home, LayoutGrid, Info, MessageSquare, Building2 }
 import { useModal } from "@/lib/modal-context";
 import { motion, AnimatePresence } from "framer-motion";
 
+import BrandLogo from "@/components/BrandLogo";
+
 const NAV_LINKS = [
   { name: "100-ACRE TOWNSHIP", href: "/kumar-magnacity-na-bungalow-plots-concept", icon: Home },
   { name: "2 & 3 BHK RESIDENCES", href: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune", icon: Building2 },
@@ -52,14 +54,9 @@ export default function Header() {
       >
         <div className="container mx-auto px-6 lg:px-10 flex items-center justify-between gap-4">
           
-          {/* LOGO AREA - Strong Anchor */}
-          <Link href={isMarathi ? "/mr" : "/"} className="flex flex-col group shrink-0">
-              <span className="text-lg md:text-xl lg:text-2xl font-heading font-black tracking-[0.15em] text-white group-hover:text-accent transition-colors duration-500">
-                KUMAR MAGNACITY
-              </span>
-              <span className="text-[7px] md:text-[8px] font-bold text-accent/80 tracking-[0.4em] uppercase mt-0.5">
-                 100+ Acre Mega Township • Manjari Pune
-              </span>
+          {/* LOGO AREA - Official Brand Logo */}
+          <Link href={isMarathi ? "/mr" : "/"} className="flex items-center group shrink-0">
+            <BrandLogo height={44} />
           </Link>
 
 
@@ -133,10 +130,9 @@ export default function Header() {
           >
             {/* Header in Menu */}
             <div className="flex items-center justify-between px-8 py-8 border-b border-white/10">
-                <div className="flex flex-col">
-                  <span className="text-xl font-heading font-black tracking-widest text-white uppercase">KUMAR Magnacity</span>
-                  <span className="text-[8px] font-bold text-accent tracking-[0.4em] uppercase">100+ Acre Township | Plots & Apartments</span>
-                </div>
+                <Link href={isMarathi ? "/mr" : "/"} onClick={() => setMobileMenuOpen(false)}>
+                  <BrandLogo height={40} />
+                </Link>
                <button onClick={() => setMobileMenuOpen(false)} className="text-white p-2 bg-white/5 rounded-full">
                   <X size={28} />
                </button>

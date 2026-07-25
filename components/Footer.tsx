@@ -5,6 +5,7 @@ import { useModal } from "@/lib/modal-context";
 import { Phone, Mail, MapPin, Globe, ShieldCheck } from "lucide-react";
 import SemanticKeywordsCloud from "./SemanticKeywordsCloud";
 import SiloInterlinkMatrix from "./SiloInterlinkMatrix";
+import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
   const { openModal } = useModal();
@@ -22,13 +23,7 @@ export default function Footer() {
           {/* Brand Vision */}
           <div className="space-y-8">
             <Link href="/" className="flex items-center gap-5 group">
-              <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent-hover text-dark flex items-center justify-center font-black text-2xl rounded-2xl shadow-2xl hover:rotate-6 transition-all duration-500 border border-white/30 shine-effect">
-                K
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-heading font-bold text-2xl tracking-tight text-white uppercase">KUMAR Magnacity</span>
-                <span className="text-[10px] text-accent font-bold uppercase tracking-[0.4em] -mt-0.5">100+ Acre Mega Township</span>
-              </div>
+              <BrandLogo height={48} />
             </Link>
             <p className="text-white/40 text-base leading-relaxed font-light">
               Building trust since 1966. Kumar Magnacity by Kumar Properties is Pune East&apos;s premier 100+ acre mega township at <span className="text-white font-medium">Manjari near Hadapsar</span>, featuring Podar International School, high-rise 2 & 3 BHK luxury residences, and NA Villa Plots.
