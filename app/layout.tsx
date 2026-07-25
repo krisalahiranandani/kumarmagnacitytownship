@@ -12,6 +12,8 @@ import NRIGeoBanner from "@/components/NRIGeoBanner";
 import MetaPixel from "@/components/MetaPixel";
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { Suspense } from "react";
+import ScrollProgress from "@/components/ScrollProgress";
+import MobileQuickBar from "@/components/MobileQuickBar";
 
 export const runtime = "nodejs";
 
@@ -124,11 +126,13 @@ export default function RootLayout({
         
         {/* Deployment V2.3.1 - Restoration Fix */}
         <ModalProvider>
+          <ScrollProgress />
           {children}
           <EnquiryModal />
           <ExitIntentModal />
           <AIChatWidget />
           <WhatsAppWidget />
+          <MobileQuickBar />
           <Suspense fallback={null}>
             <MetaPixel />
           </Suspense>
