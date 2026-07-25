@@ -40,6 +40,9 @@ const InteractiveTownshipMap = dynamic(() => import("@/components/InteractiveTow
 const PropertyComparison = dynamic(() => import("@/components/PropertyComparison"), { ssr: false });
 const NRICurrencySuite = dynamic(() => import("@/components/NRICurrencySuite"), { ssr: false });
 const SiteVisitScheduler = dynamic(() => import("@/components/SiteVisitScheduler"), { ssr: false });
+const Township3DVisualizer = dynamic(() => import("@/components/Township3DVisualizer"), { ssr: false });
+const MortgageEligibilitySuite = dynamic(() => import("@/components/MortgageEligibilitySuite"), { ssr: false });
+const VirtualVRHub = dynamic(() => import("@/components/VirtualVRHub"), { ssr: false });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -494,7 +497,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3.5 GLOBAL NRI SUITE & SITE VISIT SCHEDULER */}
+      {/* 3.5 GLOBAL NRI SUITE, SITE VISIT SCHEDULER & INNOVATION SUITES */}
+      <Township3DVisualizer />
+      <VirtualVRHub />
+      <MortgageEligibilitySuite />
       <NRICurrencySuite />
       <SiteVisitScheduler />
 
