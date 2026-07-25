@@ -2,6 +2,7 @@
 
 import { FileCheck, ShieldCheck, Download, CheckCircle2 } from "lucide-react";
 import { useModal } from "@/lib/modal-context";
+import MahaRERAQRCodeModal from "@/components/MahaRERAQRCodeModal";
 
 const LEGAL_DOCS = [
   {
@@ -46,6 +47,9 @@ export default function LegalTransparencyVault() {
           <p className="text-sm md:text-base text-gray-400">
             Download government RERA certificates, PMRDA sanctioned layouts, and legal title opinion documents.
           </p>
+          <div className="pt-2">
+            <MahaRERAQRCodeModal />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
