@@ -102,7 +102,7 @@ export default function Home() {
         "name": "What is the possession date for the G+30 high-rise towers in Manjari?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The targeted possession date for the new G+30 high-rise luxury apartments at Kumar Magnacity is December 2028."
+          "text": "The targeted possession date for the new G+30 high-rise luxury apartments at Kumar Magnacity is December 2027."
         }
       },
       {
@@ -236,7 +236,7 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-obsidian border border-accent/40 text-accent font-bold text-[10px] md:text-[11px] uppercase tracking-[0.4em] backdrop-blur-3xl shadow-2xl mx-auto ring-1 ring-white/10">
                <Gem size={14} className="animate-pulse text-accent" />
-               100+ ACRE MEGA TOWNSHIP • MANJARI HADAPSAR PUNE
+               150-ACRE TOWNSHIP • 3 TOWERS G+30 • HADAPSAR PUNE
             </div>
             
             <div className="space-y-6">

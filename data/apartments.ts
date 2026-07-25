@@ -58,7 +58,7 @@ export const apartmentTypes: ApartmentConfig[] = [
     emiFrom: 18500,
     flatsPerFloor: 8,
     rera: "P52100052096",
-    possession: "December 2028",
+    possession: "December 2027",
     highlights: [
       "Compact yet spacious 757 sq.ft carpet area",
       "Vastu-compliant east/west facing units",
@@ -92,7 +92,7 @@ export const apartmentTypes: ApartmentConfig[] = [
     emiFrom: 25300,
     flatsPerFloor: 8,
     rera: "P52100054476",
-    possession: "December 2028",
+    possession: "December 2027",
     highlights: [
       "Expansive 1,053 sq.ft carpet area",
       "3 bedrooms with 2 attached bathrooms",
@@ -193,10 +193,9 @@ export const apartmentSpecs: ApartmentSpec[] = [
 // ─── Tower Data ──────────────────────────────────────────────────────────────
 
 export const towerData: TowerData[] = [
-  { name: "Tower A", floors: 24, unitsPerFloor: 8, lifts: 2, phase: "Phase 1" },
-  { name: "Tower B", floors: 24, unitsPerFloor: 8, lifts: 2, phase: "Phase 1" },
-  { name: "Tower C", floors: 24, unitsPerFloor: 8, lifts: 2, phase: "Phase 1" },
-  { name: "Tower D", floors: 24, unitsPerFloor: 8, lifts: 2, phase: "Phase 2" },
+  { name: "Tower A", floors: 30, unitsPerFloor: 8, lifts: 2, phase: "Phase 1" },
+  { name: "Tower B", floors: 30, unitsPerFloor: 8, lifts: 2, phase: "Phase 1" },
+  { name: "Tower C", floors: 30, unitsPerFloor: 8, lifts: 2, phase: "Phase 1" },
 ];
 
 // ─── Nearby Landmarks ────────────────────────────────────────────────────────
