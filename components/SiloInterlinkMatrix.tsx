@@ -36,7 +36,7 @@ const SILO_MAP = {
       { title: "NA Bungalow Plots", url: "/kumar-magnacity-na-bungalow-plots-concept" },
       { title: "Master Layout", url: "/kumar-magnacity-na-bungalow-plots-master-plan" }
     ],
-    triggers: ["2bhk", "3bhk", "floor-plan", "plots", "concept", "master-plan"]
+    triggers: ["2bhk", "3bhk", "floor-plan", "plots", "concept", "master-plan", "vs", "godrej", "vtp", "amanora", "nyati", "kolte", "price", "brochure", "rera"]
   }
 };
 
