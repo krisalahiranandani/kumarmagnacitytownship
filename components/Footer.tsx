@@ -27,11 +27,11 @@ export default function Footer() {
               </div>
               <div className="flex flex-col leading-none">
                 <span className="font-heading font-bold text-2xl tracking-tight text-white uppercase">KUMAR Magnacity</span>
-                <span className="text-[10px] text-accent font-bold uppercase tracking-[0.4em] -mt-0.5">Premium NA Plots</span>
+                <span className="text-[10px] text-accent font-bold uppercase tracking-[0.4em] -mt-0.5">100+ Acre Mega Township</span>
               </div>
             </Link>
             <p className="text-white/40 text-base leading-relaxed font-light">
-              Designing legacies since 1966. Kumar MagnaCity Bungalow Plots represent the pinnacle of landed estate investment at <span className="text-white">Manjari near Hadapsar</span>.
+              Building trust since 1966. Kumar Magnacity by Kumar Properties is Pune East&apos;s premier 100+ acre mega township at <span className="text-white font-medium">Manjari near Hadapsar</span>, featuring Podar International School, high-rise 2 & 3 BHK luxury residences, and NA Villa Plots.
             </p>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-white/5 w-fit">
                <ShieldCheck size={14} className="text-accent" />
@@ -41,13 +41,13 @@ export default function Footer() {
 
           {/* Site Architecture */}
           <div>
-            <h4 className="text-accent uppercase tracking-[0.3em] text-[11px] font-bold mb-10">THE ESTATE</h4>
+            <h4 className="text-accent uppercase tracking-[0.3em] text-[11px] font-bold mb-10">THE TOWNSHIP</h4>
             <ul className="space-y-5">
-              <li><Link href="/kumar-magnacity-na-bungalow-plots-concept" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">Philosophy & Vision</Link></li>
-              <li><Link href="/kumar-magnacity-manjari-location-map" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">Location Intelligence</Link></li>
-              <li><Link href="/kumar-magnacity-na-bungalow-plots-availability" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">Inventory Suite</Link></li>
+              <li><Link href="/kumar-magnacity-na-bungalow-plots-concept" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">100-Acre Master Plan</Link></li>
+              <li><Link href="/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">2 & 3 BHK Luxury Residences</Link></li>
+              <li><Link href="/kumar-magnacity-na-bungalow-plots-availability" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">NA Villa Plots Suite</Link></li>
+              <li><Link href="/kumar-magnacity-location-advantages-hadapsar-manjari" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">Location & Podar School</Link></li>
               <li><Link href="/kumar-magnacity-investment-plan-pune-east" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">Investment ROI Matrix</Link></li>
-              <li><Link href="/kumar-magnacity-na-bungalow-plots-amenities" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">Botanical Sanctuary</Link></li>
             </ul>
           </div>
 

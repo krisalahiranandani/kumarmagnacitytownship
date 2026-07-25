@@ -9,11 +9,11 @@ import { useModal } from "@/lib/modal-context";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { name: "THE CONCEPT", href: "/kumar-magnacity-na-bungalow-plots-concept", icon: Home },
-  { name: "APARTMENTS", href: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune", icon: Building2 },
-  { name: "OUR PLOTS", href: "/kumar-magnacity-na-bungalow-plots-availability", icon: LayoutGrid },
-  { name: "INVESTMENT", href: "/kumar-magnacity-investment-plan-pune-east", icon: Info },
-  { name: "FAQ VAULT", href: "/kumar-magnacity-na-bungalow-plots-faq", icon: MessageSquare },
+  { name: "100-ACRE TOWNSHIP", href: "/kumar-magnacity-na-bungalow-plots-concept", icon: Home },
+  { name: "2 & 3 BHK RESIDENCES", href: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune", icon: Building2 },
+  { name: "VILLA PLOTS", href: "/kumar-magnacity-na-bungalow-plots-availability", icon: LayoutGrid },
+  { name: "LOCATION & SCHOOL", href: "/kumar-magnacity-location-advantages-hadapsar-manjari", icon: Info },
+  { name: "ROI MATRIX", href: "/kumar-magnacity-investment-plan-pune-east", icon: MessageSquare },
 ];
 
 export default function Header() {
@@ -57,8 +57,8 @@ export default function Header() {
               <span className="text-lg md:text-xl lg:text-2xl font-heading font-black tracking-[0.15em] text-white group-hover:text-accent transition-colors duration-500">
                 KUMAR MAGNACITY
               </span>
-              <span className="text-[7px] md:text-[8px] font-bold text-accent/60 tracking-[0.4em] uppercase mt-0.5">
-                 Sovereign Real Estate Node
+              <span className="text-[7px] md:text-[8px] font-bold text-accent/80 tracking-[0.4em] uppercase mt-0.5">
+                 100+ Acre Mega Township • Manjari Pune
               </span>
           </Link>
 
@@ -135,10 +135,10 @@ export default function Header() {
             <div className="flex items-center justify-between px-8 py-8 border-b border-white/10">
                 <div className="flex flex-col">
                   <span className="text-xl font-heading font-black tracking-widest text-white uppercase">KUMAR Magnacity</span>
-                  <span className="text-[8px] font-bold text-accent tracking-[0.4em] uppercase">Premium NA Plots</span>
+                  <span className="text-[8px] font-bold text-accent tracking-[0.4em] uppercase">100+ Acre Township | Plots & Apartments</span>
                 </div>
                <button onClick={() => setMobileMenuOpen(false)} className="text-white p-2 bg-white/5 rounded-full">
-                 <X size={28} />
+                  <X size={28} />
                </button>
             </div>
 

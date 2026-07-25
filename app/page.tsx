@@ -231,19 +231,19 @@ export default function Home() {
             className="space-y-8"
           >
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-obsidian border border-accent/40 text-accent font-bold text-[10px] md:text-[11px] uppercase tracking-[0.4em] backdrop-blur-3xl shadow-2xl mx-auto ring-1 ring-white/10">
-               <Gem size={14} className="animate-pulse" />
-               RERA: P52100052096 | P52100054476
+               <Gem size={14} className="animate-pulse text-accent" />
+               100+ ACRE MEGA TOWNSHIP • MANJARI HADAPSAR PUNE
             </div>
             
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-8xl lg:text-[10rem] font-heading font-bold text-white leading-[0.85] tracking-tighter">
-                Absolute <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent-hover italic font-light">Sovereignty</span>
+              <h1 className="text-5xl md:text-8xl lg:text-[9rem] font-heading font-bold text-white leading-[0.88] tracking-tighter">
+                The Heart of <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent-hover italic font-light">New Pune</span>
               </h1>
               
-              <p className="max-w-2xl mx-auto text-base md:text-xl lg:text-2xl text-white/40 font-light leading-relaxed px-4">
-                The ultimate 150-acre sanctuary at <span className="text-white font-medium">Manjari near Hadapsar</span>. 
-                Securing generational wealth through branded horizontal luxury in Pune East.
+              <p className="max-w-3xl mx-auto text-base md:text-xl lg:text-2xl text-white/50 font-light leading-relaxed px-4">
+                100+ Acres of integrated township living by <span className="text-white font-medium">Kumar Properties</span> (59 Years Trust). 
+                Featuring Podar International School, G+30 High-Rise 2 & 3 BHK Luxury Apartments, and Premium NA Villa Plots.
               </p>
             </div>
 
@@ -290,9 +290,9 @@ export default function Home() {
             <div className="space-y-12">
               <SectionHeader 
                 align="left"
-                badge="The 150-Acre Vision"
-                title="A City Within <br/> A Sanctuary."
-                subtitle="Integrated within Pune East&apos;s most successful residential ecosystem, Kumar Magnacity is not just a layout; it's a future-proofed micro-market designed for the elite."
+                badge="100+ Acre Master Plan"
+                title="A Complete Ecosystem <br/> For Modern Life."
+                subtitle="Integrated within Pune East&apos;s most successful residential ecosystem, Kumar Magnacity combines Podar International School, high-street shopping, healthcare, and 40+ lifestyle amenities under one roof."
               />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
