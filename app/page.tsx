@@ -74,7 +74,7 @@ export default function Home() {
         "name": "What is the price of 2BHK flats in Kumar Magnacity Hadapsar Pune?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The price for premium 2BHK flats in Kumar Magnacity (Manjari, near Hadapsar, Pune) starts from ₹67.99 Lakhs onwards for a spacious 757 sq.ft carpet area."
+          "text": "The price for premium 2BHK flats in Kumar Magnacity (Manjari, near Hadapsar, Pune) starts from ₹72.99 Lakhs onwards for a spacious 757 sq.ft carpet area."
         }
       },
       {
@@ -82,7 +82,7 @@ export default function Home() {
         "name": "Are there luxury 3BHK apartments available near EON IT Park or Kharadi?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Kumar Magnacity offers expansive 1053 sq.ft 3BHK apartments starting at ₹92.99 Lakhs, strategically located near major IT hubs like EON IT Park, Kharadi, and Magarpatta City."
+          "text": "Yes, Kumar Magnacity offers expansive 1053 sq.ft 3BHK apartments starting at ₹1.05 Crore, strategically located near major IT hubs like EON IT Park, Kharadi, and Magarpatta City."
         }
       },
       {
@@ -143,8 +143,8 @@ export default function Home() {
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "INR",
-      "lowPrice": "6799000",
-      "highPrice": "10800000",
+      "lowPrice": "7299000",
+      "highPrice": "10500000",
       "offerCount": "200"
     },
     "aggregateRating": {
@@ -408,8 +408,8 @@ export default function Home() {
                   <div className="text-sm text-white/40 leading-relaxed">Compact yet spacious carpet area — perfect for young IT professionals and first-time homebuyers.</div>
                 </div>
                 <div className="flex items-end gap-2">
-                  <div className="text-3xl font-heading font-bold text-accent">₹67.99L</div>
-                  <div className="text-sm text-white/30 pb-1">onwards</div>
+                  <div className="text-3xl font-heading font-bold text-accent">₹72.99L</div>
+                  <div className="text-sm text-white/30 pb-1">onwards*</div>
                 </div>
                 <Link 
                   href="/kumar-magnacity-2bhk-flats-hadapsar-pune-price"
@@ -444,8 +444,8 @@ export default function Home() {
                   <div className="text-sm text-white/40 leading-relaxed">Expansive 3-bedroom layout with premium finishes — designed for growing families and space-seekers.</div>
                 </div>
                 <div className="flex items-end gap-2">
-                  <div className="text-3xl font-heading font-bold text-accent">₹92.99L</div>
-                  <div className="text-sm text-white/30 pb-1">onwards</div>
+                  <div className="text-3xl font-heading font-bold text-accent">₹1.05Cr</div>
+                  <div className="text-sm text-white/30 pb-1">onwards*</div>
                 </div>
                 <Link 
                   href="/kumar-magnacity-3bhk-apartments-manjari-pune-price"

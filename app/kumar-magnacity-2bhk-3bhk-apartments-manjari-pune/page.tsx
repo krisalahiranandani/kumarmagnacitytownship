@@ -9,8 +9,8 @@ import AdvancedEnquiryForm from '@/components/AdvancedEnquiryForm';
 
 
 export const metadata: Metadata = {
-  title: 'Kumar Magnacity 2BHK & 3BHK Apartments in Manjari Pune | ₹67.99L Onwards',
-  description: 'Explore premium 2BHK and 3BHK apartments at Kumar Magnacity, Manjari, Pune. Experience luxury living with prices starting from ₹67.99L. View floor plans, pricing, and amenities.',
+  title: 'Kumar Magnacity 2BHK & 3BHK Apartments in Manjari Pune | ₹72.99L Onwards',
+  description: 'Explore premium 2BHK and 3BHK apartments at Kumar Magnacity, Manjari, Pune. Experience luxury living with prices starting from ₹72.99L. View floor plans, pricing, and amenities.',
   keywords: 'Kumar Magnacity apartments, 2BHK flats in Manjari, 3BHK flats in Pune, new launch apartments Hadapsar, luxury flats Manjari Pune',
 };
 

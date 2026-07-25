@@ -11,12 +11,12 @@ import PersonaDeepDive from '@/components/PersonaDeepDive';
 import { MapPin, Home, HeartHandshake, Briefcase } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '2BHK Flats in Hadapsar Pune | Kumar Magnacity 757 sqft @ ₹67.99L',
-  description: 'Book your dream 2BHK flat in Hadapsar, Pune at Kumar Magnacity. Spacious 757 sqft layouts starting at just ₹67.99L. Perfect for young professionals and families.',
+  title: '2BHK Flats in Hadapsar Pune | Kumar Magnacity 757 sqft @ ₹72.99L',
+  description: 'Book your dream 2BHK flat in Hadapsar, Pune at Kumar Magnacity. Spacious 757 sqft layouts starting at just ₹72.99L. Perfect for young professionals and families.',
   keywords: '2BHK flats in Hadapsar Pune, Kumar Magnacity 2BHK price, 2BHK apartments near Magarpatta, 757 sqft flats Pune',
   openGraph: {
     title: '2BHK Flats in Hadapsar Pune | Kumar Magnacity',
-    description: 'Spacious 757 sqft layouts starting at just ₹67.99L. Perfect for young professionals and families.',
+    description: 'Spacious 757 sqft layouts starting at just ₹72.99L. Perfect for young professionals and families.',
     url: 'https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-flats-hadapsar-pune-price',
   },
   alternates: {
@@ -33,7 +33,7 @@ export default function TwoBHKPage() {
     '@context': 'https://schema.org',
     '@type': 'RealEstateListing',
     name: 'Premium 2BHK Flats at Kumar Magnacity',
-    description: 'Spacious 757 sqft 2BHK flats starting at ₹67.99L in Manjari/Hadapsar, Pune.',
+    description: 'Spacious 757 sqft 2BHK flats starting at ₹72.99L in Manjari/Hadapsar, Pune.',
     offers: {
       '@type': 'Offer',
       price: '6799000',
@@ -59,7 +59,7 @@ export default function TwoBHKPage() {
     },
     {
       title: "Premium Investment Value",
-      description: "Priced perfectly at ₹67.99L, securing your footprint in Pune's fastest growing eastern corridor ensures high rental yields and robust capital appreciation.",
+      description: "Priced perfectly at ₹72.99L, securing your footprint in Pune's fastest growing eastern corridor ensures high rental yields and robust capital appreciation.",
       icon: <Briefcase size={24} />
     }
   ];
@@ -72,7 +72,7 @@ export default function TwoBHKPage() {
       
       <ParallaxHero 
         title="Luxurious 2BHK Flats"
-        subtitle="757 sq.ft. of thoughtfully designed space starting at ₹67.99L"
+        subtitle="757 sq.ft. of thoughtfully designed space starting at ₹72.99L"
         badge="PUNE EAST HUB"
         accentColor="gold"
       />

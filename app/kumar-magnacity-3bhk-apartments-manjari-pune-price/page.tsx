@@ -11,12 +11,12 @@ import PersonaDeepDive from '@/components/PersonaDeepDive';
 import { Users, Expand, Shield, Trees } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '3BHK Apartments in Manjari Pune | Kumar Magnacity 1053 sqft @ ₹92.99L',
-  description: 'Experience grandeur with premium 3BHK apartments at Kumar Magnacity in Manjari, Pune. Expansive 1053 sqft layouts priced from ₹92.99L. Ideal for growing families.',
+  title: '3BHK Apartments in Manjari Pune | Kumar Magnacity 1053 sqft @ ₹1.05Cr',
+  description: 'Experience grandeur with premium 3BHK apartments at Kumar Magnacity in Manjari, Pune. Expansive 1053 sqft layouts priced from ₹1.05Cr. Ideal for growing families.',
   keywords: '3BHK apartments Manjari Pune, Kumar Magnacity 3BHK, luxury 3BHK flats Pune, 1053 sqft apartments',
   openGraph: {
     title: '3BHK Apartments in Manjari Pune | Kumar Magnacity',
-    description: 'Expansive 1053 sqft 3BHK apartments starting at ₹92.99L in Manjari, Pune. Ideal for growing families.',
+    description: 'Expansive 1053 sqft 3BHK apartments starting at ₹1.05Cr in Manjari, Pune. Ideal for growing families.',
     url: 'https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price',
   },
   alternates: {
@@ -33,7 +33,7 @@ export default function ThreeBHKPage() {
     '@context': 'https://schema.org',
     '@type': 'RealEstateListing',
     name: 'Luxury 3BHK Apartments at Kumar Magnacity',
-    description: 'Expansive 1053 sqft 3BHK apartments starting at ₹92.99L in Manjari, Pune.',
+    description: 'Expansive 1053 sqft 3BHK apartments starting at ₹1.05Cr in Manjari, Pune.',
     offers: {
       '@type': 'Offer',
       price: '9299000',
@@ -72,7 +72,7 @@ export default function ThreeBHKPage() {
       
       <ParallaxHero 
         title="Premium 3BHK Apartments"
-        subtitle="Expansive 1053 sq.ft. layouts starting at ₹92.99L"
+        subtitle="Expansive 1053 sq.ft. layouts starting at ₹1.05Cr"
         badge="TOWNSHIP LIVING"
         accentColor="green"
       />
