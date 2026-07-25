@@ -25,7 +25,7 @@ const SILO_MAP = {
       { title: "Manjari Location Map", url: "/kumar-magnacity-manjari-location-map" },
       { title: "Location Advantages", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" }
     ],
-    triggers: ["near", "location", "map", "hadapsar", "manjari", "kharadi", "magarpatta"]
+    triggers: ["near", "location", "map", "hadapsar", "hadapsar-annexe", "manjari", "kharadi", "magarpatta", "magnacity-township"]
   },
   product: {
     hub: { title: "Luxury Apartments Hub", url: "/luxury-apartments-pune" },

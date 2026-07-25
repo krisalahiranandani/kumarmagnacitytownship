@@ -6,19 +6,35 @@ import Link from "next/link";
 
 const KEYWORD_CLUSTERS = [
   {
+    category: "Kumar Magnacity Hadapsar Annexe",
+    keywords: [
+      "Kumar Magnacity Township Hadapsar Annexe",
+      "Kumar Magnacity Hadapsar Annexe Manjari",
+      "Kumar Magnacity 2 BHK Hadapsar Annexe",
+      "Kumar Magnacity 3 BHK Hadapsar Annexe",
+      "Kumar Magnacity NA Plots Hadapsar Annexe",
+      "Kumar Magnacity Podar School Hadapsar Annexe",
+      "Kumar Magnacity Hadapsar Annexe Price",
+      "Kumar Magnacity Hadapsar Annexe Floor Plans",
+      "Kumar Magnacity Hadapsar Annexe Location",
+      "Kumar Magnacity Hadapsar Annexe Possession Dec 2027",
+      "Kumar Properties Hadapsar Annexe"
+    ]
+  },
+  {
     category: "Kumar Magnacity Township",
     keywords: [
       "Kumar Magnacity Township Pune",
-      "Kumar Magnacity Hadapsar Manjari",
+      "Kumar Magnacity Manjari Pune East",
       "Kumar Magnacity Apartments & Flats",
       "Kumar Magnacity Residential Township",
-      "Kumar Magnacity Premium Homes",
+      "Kumar Magnacity 150 Acre Township",
       "Kumar Magnacity New Launch 2 BHK",
       "Kumar Magnacity Luxury 3 BHK",
-      "Kumar Magnacity investment",
-      "Kumar Magnacity property price",
-      "Kumar Magnacity floor plans",
-      "Kumar Magnacity RERA & reviews"
+      "Kumar Magnacity Investment ROI",
+      "Kumar Magnacity Property Price List",
+      "Kumar Magnacity Master Plan & Layout",
+      "Kumar Magnacity RERA P52100052096"
     ]
   },
   {

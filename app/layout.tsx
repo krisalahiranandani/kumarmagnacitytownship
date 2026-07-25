@@ -29,24 +29,19 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kumarmagnacitytownship.com"),
   title: {
-    default: "Kumar Magnacity Township | 2BHK & 3BHK Apartments + NA Plots | Manjari Pune",
-    template: "%s | Kumar Magnacity Township"
+    default: "Kumar Magnacity Township Hadapsar Annexe, Manjari | 2BHK & 3BHK Flats + NA Plots",
+    template: "%s | Kumar Magnacity Township Hadapsar Annexe"
   },
-  description: "Kumar Magnacity — Pune's premier 100-acre township at Manjari near Hadapsar. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + RERA-approved NA bungalow plots. 50+ amenities, grand clubhouse, Podar International School. By Kumar Properties (59-year legacy).",
+  description: "Kumar Magnacity Township Hadapsar Annexe, Manjari — Pune's premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.08Cr. Podar International School inside campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
   keywords: [
-    "Kumar Magnacity Township", "Kumar Magnacity Pune", "Kumar Magnacity Hadapsar", 
-    "Kumar Magnacity Manjari", "Kumar Magnacity Apartments", "Kumar Magnacity Flats", 
-    "Kumar Magnacity Property", "Kumar Magnacity New Launch", "Kumar Magnacity 2 BHK", 
-    "Kumar Magnacity 3 BHK", "Kumar Magnacity property price", "Kumar Magnacity floor plans",
-    "Hadapsar Real Estate", "Hadapsar Property Market", "Flats in Hadapsar", 
-    "Luxury Flats Hadapsar", "Invest in Hadapsar", "Manjari Real Estate", 
-    "Flats in Manjari", "New Projects in Manjari", "East Pune Real Estate", 
-    "East Pune Residential Projects", "Best Township East Pune", "Pune Real Estate", 
-    "Pune Property Market", "Pune Residential Projects", "Pune Township Projects", 
-    "Buy Flat in Hadapsar", "Buy Flat in Manjari", "Buy Apartment Pune", 
-    "Invest in Pune Property", "Best Flats Near Magarpatta", "Property Near EON IT Park", 
-    "Pune Investment Property", "Real Estate Appreciation Pune", "Premium Township Pune",
-    "Pune Metro Real Estate", "Pune Ring Road Real Estate"
+    "Kumar Magnacity Township", "Kumar Magnacity Hadapsar Annexe", "Kumar Magnacity Manjari", 
+    "Kumar Magnacity Township Pune", "Kumar Magnacity Hadapsar Annexe Manjari", "Kumar Magnacity 2 BHK", 
+    "Kumar Magnacity 3 BHK", "Kumar Magnacity NA Plots", "Kumar Magnacity property price", 
+    "Kumar Magnacity floor plans", "Hadapsar Annexe Real Estate", "Flats in Hadapsar Annexe", 
+    "Flats in Manjari Pune", "Township in Manjari East Pune", "Kumar Properties Manjari", 
+    "Podar International School Kumar Magnacity", "Luxury Flats Hadapsar Annexe", 
+    "Buy 2 BHK Hadapsar Annexe", "Buy 3 BHK Manjari", "Invest in Hadapsar Annexe", 
+    "Best Township Hadapsar Annexe", "Kumar Magnacity RERA P52100052096"
   ],
   robots: {
     index: true,
