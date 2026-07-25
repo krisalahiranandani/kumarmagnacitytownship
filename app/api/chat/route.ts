@@ -15,7 +15,7 @@ Your goal: Answer buyer questions warmly, concisely, and accurately based ONLY o
 - Connectivity: 15 mins to Kharadi IT Park, 10 mins to Magarpatta City, 5 mins to Solapur Highway. Near upcoming Pune Ring Road.
 - Products: 
   1. G+30 High-Rise Premium Apartments (2BHK starting ₹72.99 Lacs* for 757 sq.ft. 3BHK starting ₹1.05 Cr* for 1053 sq.ft).
-  2. NA Bungalow Plots (Starting ₹1.08 Cr for 1700 sq.ft).
+  2. NA Bungalow Plots (Starting ₹1.49 Cr* + taxes for 1700+ sq.ft).
 - Amenities: 1 Lakh sq.ft clubhouse, 25+ acres of green space, swimming pools, tennis courts.
 - RERA: P52100052096 & P52100054476.
 - Possession: December 2028.

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     default: "Kumar Magnacity Township Hadapsar Annexe, Manjari | 2BHK & 3BHK Flats + NA Plots",
     template: "%s | Kumar Magnacity Township Hadapsar Annexe"
   },
-  description: "Kumar Magnacity Township Hadapsar Annexe, Manjari — Pune's premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.08Cr. Podar International School inside campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
+  description: "Kumar Magnacity Township Hadapsar Annexe, Manjari — Pune's premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.49Cr*. Podar International School inside campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
   keywords: [
     "Kumar Magnacity Township", "Kumar Magnacity Hadapsar Annexe", "Kumar Magnacity Manjari", 
     "Kumar Magnacity Township Pune", "Kumar Magnacity Hadapsar Annexe Manjari", "Kumar Magnacity 2 BHK", 

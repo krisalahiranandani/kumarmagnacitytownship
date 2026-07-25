@@ -27,7 +27,7 @@ const UNITS = [
     id: "plots",
     title: "NA Villa Bungalow Plot",
     carpet: "1,700+ Sq.Ft Plot Area",
-    price: "₹1.08 Cr.*",
+    price: "₹1.49 Cr* + taxes",
     token: "₹50,000",
     possession: "Immediate Possession",
     badge: "Limited Plots"

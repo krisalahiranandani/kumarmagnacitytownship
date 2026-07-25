@@ -40,7 +40,7 @@ const INVENTORY = [
     carpet: "1,700+ Sq.Ft Plot Area",
     facing: "Custom Villa Plot Layout",
     tower: "Gated Bungalow Sector",
-    launchPrice: "₹1.08 Cr.*",
+    launchPrice: "₹1.49 Cr* + taxes",
     possession: "Immediate Demarcation",
     features: [
       "100% NA Sanctioned Plot",

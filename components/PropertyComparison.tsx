@@ -55,7 +55,7 @@ const PROPERTY_OPTIONS: PropertyOption[] = [
     type: "NA Villa Bungalow Plot",
     badge: "Landed Legacy",
     carpetArea: "1,700+ sq.ft",
-    price: "₹1.08 Cr*",
+    price: "₹1.49 Cr* + taxes",
     emi: "Custom Loan",
     possession: "Immediate Possession",
     idealFor: "Bungalow Buyers & Land Investors",

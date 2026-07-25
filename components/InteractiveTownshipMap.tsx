@@ -36,7 +36,7 @@ const SECTORS: Sector[] = [
     name: "Sector 2: Sovereign NA Villa Plots",
     category: "plots",
     tagline: "Bungalow Plots with Individual 7/12",
-    price: "From ₹1.08 Crore*",
+    price: "From ₹1.49 Crore* + taxes",
     specs: "1700+ sq.ft Custom Plots",
     description: "Build your dream custom bungalow within a secure gated community. Complete NA titles and individual 7/12 extract documentation.",
     icon: Landmark,
