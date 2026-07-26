@@ -2,16 +2,21 @@ export const GAS_URL = "https://script.google.com/macros/s/AKfycbzQF_zr_Sv_arp6G
 
 export async function submitLead(data: any) {
   // Anti-bot & honeypot check
-  if (data?.website || data?.honeypot || data?.fax) {
+  if (data?.website || data?.honeypot || data?.fax || data?._honey) {
     console.warn("Bot lead submission blocked.");
     return true; // Silent rejection for bots
   }
 
   // Input Sanitization
+  let rawPhone = data?.phone ? String(data.phone).replace(/[^\d+]/g, "").trim() : "";
+  if (rawPhone.startsWith("+91")) rawPhone = rawPhone.slice(3);
+  else if (rawPhone.startsWith("91") && rawPhone.length === 12) rawPhone = rawPhone.slice(2);
+  else if (rawPhone.startsWith("0") && rawPhone.length === 11) rawPhone = rawPhone.slice(1);
+
   const sanitizedData = {
     ...data,
     name: data?.name ? String(data.name).trim() : "",
-    phone: data?.phone ? String(data.phone).replace(/[^\d+]/g, "").trim() : "",
+    phone: rawPhone,
     email: data?.email ? String(data.email).trim().toLowerCase() : "",
     timestamp: new Date().toISOString()
   };

@@ -39,9 +39,39 @@ export async function GET(request: NextRequest) {
   }
 }
 
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+
+function checkRateLimit(ip: string, limit = 5, windowMs = 60 * 1000): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + windowMs });
+    return false;
+  }
+  if (record.count >= limit) {
+    return true;
+  }
+  record.count += 1;
+  return false;
+}
+
 export async function POST(req: NextRequest) {
   try {
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || req.headers.get("x-real-ip") || "127.0.0.1";
+    if (checkRateLimit(ip)) {
+      return NextResponse.json(
+        { success: false, error: "Too many requests. Please try again in a minute." },
+        { status: 429 }
+      );
+    }
+
     const data = await req.json();
+
+    // Silent honeypot check
+    if (data._honey || data.website || data.honeypot || data.fax) {
+      return NextResponse.json({ success: true, message: "Lead captured securely via Sovereign Hub." });
+    }
+
     const leadData = { ...data, timestamp: new Date().toISOString() };
 
     // 0. Cloudflare Turnstile Bot Protection

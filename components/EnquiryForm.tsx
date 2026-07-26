@@ -55,9 +55,14 @@ export default function EnquiryForm({
     const isMarathi = window.location.pathname.includes("/mr");
     const timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
-    // 2. VALIDATION
+    // 2. VALIDATION & PHONE NORMALIZATION
+    let cleanPhone = (phone || "").replace(/[^\d+]/g, "").trim();
+    if (cleanPhone.startsWith("+91")) cleanPhone = cleanPhone.slice(3);
+    else if (cleanPhone.startsWith("91") && cleanPhone.length === 12) cleanPhone = cleanPhone.slice(2);
+    else if (cleanPhone.startsWith("0") && cleanPhone.length === 11) cleanPhone = cleanPhone.slice(1);
+
     const phoneRegex = /^[6-9]\d{9}$/;
-    if (!phoneRegex.test(phone.replace(/\s+/g, ""))) {
+    if (!phoneRegex.test(cleanPhone)) {
       setStatus("error");
       setErrorMessage(isMarathi 
         ? "कृपया वैध १०-अंकी मोबाईल नंबर प्रविष्ट करा." 
@@ -69,7 +74,7 @@ export default function EnquiryForm({
     try {
       const isSuccess = await submitLead({
         name,
-        phone,
+        phone: cleanPhone,
         email,
         timing,
         intent,

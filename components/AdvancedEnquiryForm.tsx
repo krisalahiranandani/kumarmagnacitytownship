@@ -171,6 +171,7 @@ export default function AdvancedEnquiryForm({
 
           {status !== "success" && (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <input type="text" {...register("_honey")} style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
               <AnimatePresence mode="wait">
                 {step === 1 ? (
                   <motion.div

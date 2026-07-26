@@ -3,9 +3,38 @@ import { EnquirySchema } from "@/types/enquiry";
 
 export const runtime = "nodejs";
 
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+
+function checkRateLimit(ip: string, limit = 5, windowMs = 60 * 1000): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + windowMs });
+    return false;
+  }
+  if (record.count >= limit) {
+    return true;
+  }
+  record.count += 1;
+  return false;
+}
+
 export async function POST(request: NextRequest) {
   try {
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0] || request.headers.get("x-real-ip") || "127.0.0.1";
+    if (checkRateLimit(ip)) {
+      return NextResponse.json(
+        { success: false, error: "Too many requests. Please try again in a minute." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
+
+    // Honeypot check
+    if (body._honey || body.website || body.honeypot) {
+      return NextResponse.json({ success: true, vault: "secured" });
+    }
 
     // 0. Hardened Cross-Origin Spam Protection
     const origin = request.headers.get("origin") || "";
@@ -13,7 +42,7 @@ export async function POST(request: NextRequest) {
     const isLocalhost = origin.includes("localhost") || referer.includes("localhost");
     const isDomain = origin.includes("kumarmagnacitytownship.com") || referer.includes("kumarmagnacitytownship.com");
     
-    if (process.env.NODE_ENV === "production" && !isDomain) {
+    if (process.env.NODE_ENV === "production" && !isDomain && !isLocalhost) {
       console.warn("Blocked potential spam bot from origin:", origin);
       return NextResponse.json(
         { success: false, error: "Unauthorized cross-origin request" },

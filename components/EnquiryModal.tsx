@@ -25,10 +25,29 @@ export default function EnquiryModal() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+    };
+    if (isOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen, closeModal]);
+
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[10001] flex items-center justify-center p-0 md:p-6 overflow-hidden">
+        <div 
+          className="fixed inset-0 z-[10001] flex items-center justify-center p-3 md:p-6 overflow-hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Enquiry Form Modal"
+        >
           {/* Minimalist Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -41,21 +60,22 @@ export default function EnquiryModal() {
           {/* Modal Container */}
           <motion.div
             initial={isMobile ? { y: "100%" } : { opacity: 0, scale: 0.95, y: 30 }}
-            animate={isMobile ? { y: "10%" } : { opacity: 1, scale: 1, y: 0 }}
+            animate={isMobile ? { y: 0 } : { opacity: 1, scale: 1, y: 0 }}
             exit={isMobile ? { y: "100%" } : { opacity: 0, scale: 0.95, y: 30 }}
             transition={{ type: "spring", damping: 30, stiffness: 250 }}
-            className="relative w-full max-w-2xl bg-[#0A0A0A] border border-white/10 rounded-t-[3rem] md:rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] h-full md:h-auto"
+            className="relative w-full max-w-2xl bg-[#0A0A0A] border border-white/10 rounded-t-[2.5rem] md:rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] max-h-[90vh] md:max-h-[92vh] overflow-y-auto z-10 scrollbar-thin scrollbar-thumb-white/10"
           >
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-6 right-8 z-[100] text-white/30 hover:text-white transition-all p-2 bg-white/5 rounded-full"
+              aria-label="Close Enquiry Modal"
+              className="absolute top-5 right-6 z-[100] text-white/40 hover:text-white transition-all p-2.5 bg-white/5 hover:bg-white/10 rounded-full border border-white/10"
             >
-              <X size={20} />
+              <X size={18} />
             </button>
 
             {/* Content Section */}
-            <div className="p-4 md:p-6">
+            <div className="p-4 md:p-6 pt-8">
               <AdvancedEnquiryForm 
                 title={modalData.title || "The Sovereign Brief"}
                 subtitle={modalData.subtitle || "Access the exclusive inventory suite and pre-launch pricing."}
@@ -64,15 +84,15 @@ export default function EnquiryModal() {
               />
 
               {/* Swift WhatsApp Option */}
-              <div className="mt-8 pt-6 border-t border-white/5 text-center px-8 pb-8">
-                 <p className="text-[10px] text-white/20 uppercase tracking-[0.3em] mb-4">Swift Connect</p>
+              <div className="mt-6 pt-6 border-t border-white/5 text-center px-4 pb-6">
+                 <p className="text-[10px] text-white/30 uppercase tracking-[0.3em] mb-3">Swift Connect</p>
                  <a 
                    href={`https://wa.me/917744009295?text=${encodeURIComponent("Hi! I am interested in " + (modalData.title || "Kumar Magnacity") + ". Please share brochure and pricing.")}`}
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="flex items-center justify-center gap-2 text-accent hover:text-white transition-all text-sm font-bold uppercase tracking-widest"
+                   className="inline-flex items-center justify-center gap-2 text-accent hover:text-white transition-all text-xs font-bold uppercase tracking-widest bg-white/5 hover:bg-white/10 py-3 px-6 rounded-xl border border-accent/20 hover:border-accent/40"
                  >
-                    <MessageSquare size={16} />
+                    <MessageSquare size={15} />
                     WhatsApp Intelligence Direct
                  </a>
               </div>
