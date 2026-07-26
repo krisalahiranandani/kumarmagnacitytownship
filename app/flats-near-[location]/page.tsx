@@ -76,7 +76,7 @@ export default async function LocationLandingPage({ params }: { params: Promise<
   const locationData = LOCATIONS.find(l => l.slug === resolvedParams.location) || LOCATIONS[0];
 
   return (
-    <main className="min-h-screen bg-dark text-white selection:bg-accent selection:text-dark">
+    <main className="min-h-screen bg-warm-bg text-primary selection:bg-accent selection:text-white">
       <Header />
       
       {/* Dynamic Hero Section */}
@@ -86,7 +86,7 @@ export default async function LocationLandingPage({ params }: { params: Promise<
       />
 
       {/* Trust Badges */}
-      <section className="py-12 bg-dark/50 border-y border-white/5 relative z-10">
+      <section className="py-12 bg-primary/5 border-y border-primary/5 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
@@ -95,7 +95,7 @@ export default async function LocationLandingPage({ params }: { params: Promise<
               { icon: ShieldCheck, text: "RERA Registered" },
               { icon: Gem, text: "Premium Amenities" }
             ].map((badge, i) => (
-              <div key={i} className="flex flex-col items-center justify-center text-center p-4 rounded-2xl bg-white/5 border border-white/10">
+              <div key={i} className="flex flex-col items-center justify-center text-center p-4 rounded-2xl bg-primary/5 border border-primary/10">
                 <badge.icon className="w-8 h-8 text-accent mb-3" />
                 <span className="text-sm md:text-base font-medium">{badge.text}</span>
               </div>
@@ -105,7 +105,7 @@ export default async function LocationLandingPage({ params }: { params: Promise<
       </section>
 
       {/* Dynamic SEO Content Section */}
-      <section className="py-24 bg-dark relative z-10">
+      <section className="py-24 bg-warm-bg relative z-10">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-playfair mb-8">
             Why Choose Kumar Magnacity if you work in {locationData.name}?
@@ -120,11 +120,11 @@ export default async function LocationLandingPage({ params }: { params: Promise<
       </section>
 
       {/* Lead Capture */}
-      <section className="py-24 bg-dark relative z-10 border-t border-white/10">
+      <section className="py-24 bg-warm-bg relative z-10 border-t border-primary/10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-playfair mb-4">Request Pricing & Floor Plans</h2>
-            <p className="text-white/60">Unlock priority inventory for buyers targeting {locationData.name}.</p>
+            <p className="text-primary/60">Unlock priority inventory for buyers targeting {locationData.name}.</p>
           </div>
           <AdvancedEnquiryForm formId={`pSEO_${locationData.slug}`} />
         </div>

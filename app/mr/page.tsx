@@ -93,7 +93,7 @@ export default function Home() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="group space-y-6 text-center md:text-left">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-primary transition-all">
                 <ShieldCheck size={32} />
               </div>
               <h3 className="text-2xl font-heading font-bold">१००% लीगल टायटल</h3>
@@ -102,7 +102,7 @@ export default function Home() {
               </p>
             </div>
             <div className="group space-y-6 text-center md:text-left">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-primary transition-all">
                 <LandPlot size={32} />
               </div>
               <h3 className="text-2xl font-heading font-bold">टाउनशिप मास्टर</h3>
@@ -111,7 +111,7 @@ export default function Home() {
               </p>
             </div>
             <div className="group space-y-6 text-center md:text-left">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-primary transition-all">
                 <TrendingUp size={32} />
               </div>
               <h3 className="text-2xl font-heading font-bold">गुंतवणूक हब</h3>

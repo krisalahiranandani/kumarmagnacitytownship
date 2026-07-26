@@ -23,20 +23,20 @@ export default function LocationHub() {
             <MapPin size={32} className="text-accent" />
           </div>
           <div>
-             <h1 className="text-4xl md:text-5xl font-heading font-black text-white uppercase tracking-tighter">Location Hub: Pune East</h1>
+             <h1 className="text-4xl md:text-5xl font-heading font-black text-primary uppercase tracking-tighter">Location Hub: Pune East</h1>
              <p className="text-accent uppercase font-bold tracking-widest text-xs mt-2">Topic Cluster Master Index</p>
           </div>
         </div>
         
-        <p className="text-white/60 text-lg mb-12">
+        <p className="text-primary/60 text-lg mb-12">
           Discover why the Hadapsar-Manjari corridor is the fastest-growing residential hotspot in Pune, with unmatched connectivity to major IT parks.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {LINKS.map((link, idx) => (
-            <Link key={idx} href={link.url} className="group flex items-center justify-between p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-accent transition-colors">
-              <span className="font-heading font-bold text-white group-hover:text-accent transition-colors">{link.title}</span>
-              <ArrowRight size={20} className="text-white/20 group-hover:text-accent group-hover:translate-x-2 transition-transform" />
+            <Link key={idx} href={link.url} className="group flex items-center justify-between p-6 rounded-3xl bg-primary/5 border border-primary/10 hover:border-accent transition-colors">
+              <span className="font-heading font-bold text-primary group-hover:text-accent transition-colors">{link.title}</span>
+              <ArrowRight size={20} className="text-primary/20 group-hover:text-accent group-hover:translate-x-2 transition-transform" />
             </Link>
           ))}
         </div>

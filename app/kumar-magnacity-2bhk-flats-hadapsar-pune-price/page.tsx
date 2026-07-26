@@ -89,7 +89,7 @@ export default function TwoBHKPage() {
           <ApartmentPriceMatrix />
           <InteractiveLayoutViewer />
           
-          <section className="glass-obsidian rounded-[2.5rem] p-8 md:p-12 border border-white/10">
+          <section className="glass-obsidian rounded-[2.5rem] p-8 md:p-12 border border-primary/10">
             <h3 className="text-3xl font-bold mb-6 font-heading text-accent">Expand Your Horizons</h3>
             <ul className="list-disc pl-6 space-y-4 text-white/70">
               <li><Link href="/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" className="hover:text-accent transition-colors">Return to Main Apartments Showcase</Link></li>
@@ -100,7 +100,7 @@ export default function TwoBHKPage() {
         </div>
       </div>
 
-      <div className="relative z-20 bg-dark py-24">
+      <div className="relative z-20 bg-warm-bg py-24">
          <AdvancedEnquiryForm />
       </div>
 

@@ -393,19 +393,19 @@ const KEYWORD_CLUSTERS = [
 
 export default function SemanticKeywordsCloud() {
   return (
-    <section className="py-20 bg-[#020202] border-t border-white/5 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#C9A227]/5 rounded-full blur-[150px] pointer-events-none" />
+    <section className="py-20 bg-light-soft border-t border-primary/10 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
       
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="flex items-center gap-3 mb-12 opacity-70">
-          <Search size={20} className="text-[#C9A227]" />
-          <h3 className="text-sm font-bold uppercase tracking-widest text-white">Pune Real Estate Market Directory</h3>
+          <Search size={20} className="text-accent" />
+          <h3 className="text-sm font-bold uppercase tracking-widest text-primary">Pune Real Estate Market Directory</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
           {KEYWORD_CLUSTERS.map((cluster, idx) => (
             <div key={idx} className="space-y-6">
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C9A227]/90 pb-2 border-b border-white/10">
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-accent pb-2 border-b border-primary/10">
                 {cluster.category}
               </h4>
               <ul className="space-y-3">
@@ -413,7 +413,7 @@ export default function SemanticKeywordsCloud() {
                   <li key={kIdx}>
                     <Link 
                       href="/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune"
-                      className="text-[11px] text-white/40 hover:text-white transition-colors duration-300 block leading-snug hover:translate-x-1 transform"
+                      className="text-[11px] text-primary/60 hover:text-primary transition-colors duration-300 block leading-snug hover:translate-x-1 transform"
                     >
                       {keyword}
                     </Link>

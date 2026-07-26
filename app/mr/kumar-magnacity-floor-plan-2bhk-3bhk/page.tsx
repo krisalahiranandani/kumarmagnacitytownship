@@ -26,7 +26,7 @@ export default function FloorPlanMarathi() {
       badge="७५७ चौ.फू. व १०५३ चौ.फू."
       isMarathi={true}
     >
-      <section className="py-16 md:py-24 bg-dark">
+      <section className="py-16 md:py-24 bg-warm-bg">
         <div className="container mx-auto px-4">
           <SectionHeader 
             title="विस्तृत फ्लोर प्लॅन्स"
@@ -54,16 +54,16 @@ export default function FloorPlanMarathi() {
         </div>
       </section>
       
-      <section className="py-12 bg-dark border-t border-white/10">
+      <section className="py-12 bg-warm-bg border-t border-primary/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-6 justify-center">
-            <Link href="/mr/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" className="text-accent hover:text-white transition-colors">
+            <Link href="/mr/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" className="text-accent hover:text-primary transition-colors">
               मुख्य पृष्ठ
             </Link>
-            <Link href="/mr/kumar-magnacity-2bhk-flats-hadapsar-pune-price" className="text-accent hover:text-white transition-colors">
+            <Link href="/mr/kumar-magnacity-2bhk-flats-hadapsar-pune-price" className="text-accent hover:text-primary transition-colors">
               २ बीएचके फ्लॅट्स
             </Link>
-            <Link href="/mr/kumar-magnacity-3bhk-apartments-manjari-pune-price" className="text-accent hover:text-white transition-colors">
+            <Link href="/mr/kumar-magnacity-3bhk-apartments-manjari-pune-price" className="text-accent hover:text-primary transition-colors">
               ३ बीएचके अपार्टमेंट्स
             </Link>
           </div>

@@ -31,9 +31,9 @@ export default function NRICurrencySuite() {
   };
 
   return (
-    <section className="py-24 bg-dark text-white relative overflow-hidden" id="nri-suite">
+    <section className="py-24 bg-warm-bg text-primary relative overflow-hidden" id="nri-suite">
       <div className="container mx-auto max-w-7xl px-6 relative z-10">
-        <div className="bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/10 rounded-[3.5rem] p-10 md:p-16 relative overflow-hidden shadow-2xl backdrop-blur-3xl">
+        <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/10 rounded-[3.5rem] p-10 md:p-16 relative overflow-hidden shadow-2xl backdrop-blur-3xl">
           
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Info Column */}
@@ -44,18 +44,18 @@ export default function NRICurrencySuite() {
               </div>
 
               <div className="space-y-4">
-                <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-tight text-white">
+                <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-tight text-primary">
                   Invest in Pune East <br />
                   <span className="text-accent italic">From Anywhere in the World</span>
                 </h2>
-                <p className="text-white/60 text-sm md:text-base font-light leading-relaxed">
+                <p className="text-primary/60 text-sm md:text-base font-light leading-relaxed">
                   Kumar Magnacity offers streamlined NRI property acquisition, full RBI compliance guidance, NRE/NRO account transfer support, and virtual 3D site walkthroughs.
                 </p>
               </div>
 
               {/* Currency Converter Controls */}
               <div className="space-y-4 pt-4">
-                <span className="text-xs text-white/40 uppercase font-bold tracking-widest">Select Your Home Currency:</span>
+                <span className="text-xs text-primary/40 uppercase font-bold tracking-widest">Select Your Home Currency:</span>
                 <div className="flex flex-wrap gap-3">
                   {CURRENCIES.map((curr) => (
                     <button
@@ -63,8 +63,8 @@ export default function NRICurrencySuite() {
                       onClick={() => setSelectedCurrency(curr)}
                       className={`px-5 py-2.5 rounded-2xl text-xs font-bold transition-all border ${
                         selectedCurrency.code === curr.code
-                          ? "bg-accent text-dark border-accent shadow-[0_0_20px_rgba(201,162,39,0.5)]"
-                          : "bg-white/5 text-white/70 border-white/10 hover:border-accent/40 hover:text-white"
+                          ? "bg-accent text-white border-accent shadow-[0_0_20px_rgba(201,162,39,0.5)]"
+                          : "bg-primary/5 text-primary/70 border-primary/10 hover:border-accent/40 hover:text-primary"
                       }`}
                     >
                       {curr.code} ({curr.symbol})
@@ -75,38 +75,38 @@ export default function NRICurrencySuite() {
 
               {/* Converted Pricing Cards */}
               <div className="grid sm:grid-cols-2 gap-4 pt-4">
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-2">
+                <div className="bg-primary/5 border border-primary/10 rounded-2xl p-6 space-y-2">
                   <span className="text-[10px] text-accent uppercase font-bold tracking-widest">2 BHK Residence</span>
-                  <div className="text-2xl font-bold text-white">{calculateConverted(72.99)}</div>
-                  <span className="text-[10px] text-white/40">Approx. ₹72.99 Lacs*</span>
+                  <div className="text-2xl font-bold text-primary">{calculateConverted(72.99)}</div>
+                  <span className="text-[10px] text-primary/40">Approx. ₹72.99 Lacs*</span>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-2">
+                <div className="bg-primary/5 border border-primary/10 rounded-2xl p-6 space-y-2">
                   <span className="text-[10px] text-accent uppercase font-bold tracking-widest">3 BHK Residence</span>
-                  <div className="text-2xl font-bold text-white">{calculateConverted(105.00)}</div>
-                  <span className="text-[10px] text-white/40">Approx. ₹1.05 Crore*</span>
+                  <div className="text-2xl font-bold text-primary">{calculateConverted(105.00)}</div>
+                  <span className="text-[10px] text-primary/40">Approx. ₹1.05 Crore*</span>
                 </div>
               </div>
             </div>
 
             {/* Right Action & Consultation Hub */}
-            <div className="lg:col-span-5 bg-dark/80 border border-white/10 rounded-[3rem] p-8 md:p-10 space-y-8 shadow-2xl relative">
+            <div className="lg:col-span-5 bg-light border border-primary/10 rounded-[3rem] p-8 md:p-10 space-y-8 shadow-2xl relative">
               <div className="space-y-3">
-                <h3 className="text-2xl font-heading font-bold text-white">Schedule NRI Video Tour</h3>
-                <p className="text-xs text-white/50 leading-relaxed">
+                <h3 className="text-2xl font-heading font-bold text-primary">Schedule NRI Video Tour</h3>
+                <p className="text-xs text-primary/60 leading-relaxed">
                   Book a private Zoom/Google Meet video walkthrough with an NRI investment specialist.
                 </p>
               </div>
 
               <div className="space-y-3 text-xs">
-                <div className="flex items-center gap-3 text-white/70">
+                <div className="flex items-center gap-3 text-primary/70">
                   <ShieldCheck size={16} className="text-accent" />
                   <span>100% RBI Repatriation Legal Assistance</span>
                 </div>
-                <div className="flex items-center gap-3 text-white/70">
+                <div className="flex items-center gap-3 text-primary/70">
                   <FileText size={16} className="text-accent" />
                   <span>Rental Management & Tenant Services</span>
                 </div>
-                <div className="flex items-center gap-3 text-white/70">
+                <div className="flex items-center gap-3 text-primary/70">
                   <Video size={16} className="text-accent" />
                   <span>Live HD Drone Walkthrough & Site Feeds</span>
                 </div>
@@ -118,7 +118,7 @@ export default function NRICurrencySuite() {
                   subtitle: "Select your preferred timezone and currency details.",
                   source: "NRI Currency Suite"
                 })}
-                className="w-full bg-accent text-dark font-black uppercase tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 hover:bg-accent-hover text-xs shadow-xl"
+                className="w-full bg-accent text-white font-black uppercase tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 hover:bg-accent-hover text-xs shadow-xl"
               >
                 BOOK VIRTUAL CONSULTATION
                 <ArrowRight size={14} />

@@ -19,28 +19,28 @@ export default function MarathiConceptPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div className="space-y-8 text-right md:text-left">
            <div className="space-y-4">
-             <h2 className="text-3xl font-heading font-bold text-dark italic">प्लॉटेड इस्टेटमधील प्रभुत्व</h2>
-             <p className="text-dark/60 leading-relaxed">
+             <h2 className="text-3xl font-heading font-bold text-primary italic">प्लॉटेड इस्टेटमधील प्रभुत्व</h2>
+             <p className="text-primary/60 leading-relaxed">
                कुमार मॅग्नासिटी ही केवळ एक लेआउट नाही; ती एक नियोजित परिसंस्था आहे. आमच्या संकल्पनेच्या केंद्रस्थानी 'सोव्हेरीन' जीवनशैली आहे—जी जमीनमालकांना पूर्ण स्वातंत्र्य, गोपनीयता आणि जागतिक दर्जाच्या पायाभूत सुविधा प्रदान करते.
              </p>
            </div>
            
            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-             <div className="p-6 bg-white rounded-2xl border border-dark/5 shadow-sm text-right md:text-left">
+             <div className="p-6 bg-white rounded-2xl border border-primary/5 shadow-sm text-right md:text-left">
                 <Shield className="text-accent mb-4 mx-auto md:mx-0" size={24} />
                 <h4 className="font-bold mb-2">पूर्ण सुरक्षा</h4>
-                <p className="text-xs text-dark/40">३-स्तरीय गेटेड एन्ट्री आणि २४/७ पाळत.</p>
+                <p className="text-xs text-primary/40">३-स्तरीय गेटेड एन्ट्री आणि २४/७ पाळत.</p>
              </div>
-             <div className="p-6 bg-white rounded-2xl border border-dark/5 shadow-sm text-right md:text-left">
+             <div className="p-6 bg-white rounded-2xl border border-primary/5 shadow-sm text-right md:text-left">
                 <LandPlot className="text-accent mb-4 mx-auto md:mx-0" size={24} />
                 <h4 className="font-bold mb-2">नियोजित भव्यता</h4>
-                <p className="text-xs text-dark/40">रुंद रस्ते आणि भूमिगत युटिलिटी ग्रीड्स.</p>
+                <p className="text-xs text-primary/40">रुंद रस्ते आणि भूमिगत युटिलिटी ग्रीड्स.</p>
              </div>
            </div>
         </div>
         
         <div className="relative">
-           <div className="aspect-[4/5] bg-dark/5 rounded-[3rem] overflow-hidden">
+           <div className="aspect-[4/5] bg-primary/5 rounded-[3rem] overflow-hidden">
               <div className="absolute inset-0 bg-[url('/assets/amenities.jpg')] bg-cover bg-center" />
            </div>
         </div>

@@ -33,7 +33,7 @@ export default function ThankYou() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-white/5 backdrop-blur-3xl rounded-[3.5rem] p-12 md:p-20 shadow-2xl border border-white/10 space-y-12 relative overflow-hidden group"
+            className="bg-white/5 backdrop-blur-3xl rounded-[3.5rem] p-12 md:p-20 shadow-2xl border border-primary/10 space-y-12 relative overflow-hidden group"
           >
             {/* Subtle light leak */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/5 blur-[80px] rounded-full group-hover:bg-white/10 transition-all duration-700" />
@@ -74,7 +74,7 @@ export default function ThankYou() {
                     </Link>
                 </div>
                 
-                <div className="pt-6 border-t border-white/5">
+                <div className="pt-6 border-t border-primary/5">
                    <p className="text-[10px] uppercase font-bold text-white/10 tracking-[0.8em]">Sovereign Elite Network</p>
                 </div>
             </div>

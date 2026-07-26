@@ -93,7 +93,7 @@ export default function SovereignVault() {
   );
 
   return (
-    <main className="min-h-screen bg-dark text-white overflow-hidden">
+    <main className="min-h-screen bg-warm-bg text-primary overflow-hidden">
       <Header />
       
       {!isAuthenticated ? (
@@ -101,7 +101,7 @@ export default function SovereignVault() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-full max-w-lg p-12 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[3.5rem] shadow-2xl relative overflow-hidden text-center space-y-8"
+            className="w-full max-w-lg p-12 bg-white/5 backdrop-blur-3xl border border-primary/10 rounded-[3.5rem] shadow-2xl relative overflow-hidden text-center space-y-8"
           >
             {/* Security Glow */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 blur-[80px] rounded-full" />
@@ -124,7 +124,7 @@ export default function SovereignVault() {
                   onChange={(e) => setPasskey(e.target.value)}
                   placeholder="Enter Clearance Passkey"
                   className={cn(
-                    "w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-center text-white tracking-widest focus:outline-none focus:ring-2 transition-all placeholder:text-[10px] placeholder:tracking-widest",
+                    "w-full bg-white/5 border border-primary/10 rounded-2xl px-6 py-5 text-center text-white tracking-widest focus:outline-none focus:ring-2 transition-all placeholder:text-[10px] placeholder:tracking-widest",
                     authError ? "border-red-500/50 focus:ring-red-500/20" : "focus:ring-accent/40"
                   )}
                   autoFocus
@@ -144,7 +144,7 @@ export default function SovereignVault() {
               <button 
                 type="submit"
                 disabled={isVerifying}
-                className="w-full bg-accent text-dark hover:bg-white hover:text-dark font-black uppercase tracking-[0.3em] py-5 rounded-2xl transition-all shadow-[0_20px_50px_rgba(197,160,89,0.3)] disabled:opacity-50 flex items-center justify-center gap-3 active:scale-95"
+                className="w-full bg-accent text-white hover:bg-white hover:text-primary font-black uppercase tracking-[0.3em] py-5 rounded-2xl transition-all shadow-[0_20px_50px_rgba(197,160,89,0.3)] disabled:opacity-50 flex items-center justify-center gap-3 active:scale-95"
               >
                 {isVerifying ? (
                   <>
@@ -166,7 +166,7 @@ export default function SovereignVault() {
         <div className="container mx-auto max-w-6xl space-y-12">
           
           {/* Dashboard Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-primary/10 pb-12">
             <div className="space-y-4">
                <div className="flex items-center gap-3 text-accent mb-2">
                   <Lock size={16} />
@@ -188,12 +188,12 @@ export default function SovereignVault() {
                     placeholder="Search leads..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="bg-white/5 border border-white/10 rounded-2xl pl-12 pr-6 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 w-full md:w-[300px] transition-all"
+                    className="bg-white/5 border border-primary/10 rounded-2xl pl-12 pr-6 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 w-full md:w-[300px] transition-all"
                   />
                </div>
                <button 
                  onClick={fetchLeads}
-                 className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all text-accent"
+                 className="p-4 bg-white/5 border border-primary/10 rounded-2xl hover:bg-white/10 transition-all text-accent"
                >
                  {loading ? <Loader2 size={20} className="animate-spin" /> : <RefreshCcw size={20} />}
                </button>
@@ -213,7 +213,7 @@ export default function SovereignVault() {
                  <button onClick={fetchLeads} className="text-accent underline text-sm">Retry Protocol</button>
               </div>
             ) : filteredLeads.length === 0 ? (
-              <div className="p-20 bg-white/5 border border-dashed border-white/10 rounded-[3.5rem] text-center space-y-6">
+              <div className="p-20 bg-white/5 border border-dashed border-primary/10 rounded-[3.5rem] text-center space-y-6">
                  <Database className="mx-auto text-white/10" size={60} />
                  <p className="text-white/30 italic font-light">The vault is currently awaiting its first resident.</p>
               </div>
@@ -227,7 +227,7 @@ export default function SovereignVault() {
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ delay: i * 0.05 }}
-                      className="group bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:bg-white/10 hover:border-accent/30 transition-all relative overflow-hidden"
+                      className="group bg-white/5 border border-primary/10 p-8 rounded-[2.5rem] hover:bg-white/10 hover:border-accent/30 transition-all relative overflow-hidden"
                     >
                       {/* Plot Badge */}
                       <div className="absolute top-6 right-6 px-3 py-1 bg-accent/20 border border-accent/30 rounded-full">
@@ -245,7 +245,7 @@ export default function SovereignVault() {
                            </div>
                         </div>
 
-                        <div className="space-y-4 pt-4 border-t border-white/5">
+                        <div className="space-y-4 pt-4 border-t border-primary/5">
                            <a href={`tel:${lead.phone}`} className="flex items-center gap-3 text-white/60 hover:text-white transition-colors group">
                               <Phone size={14} className="text-accent/50 group-hover:text-accent" />
                               <span className="text-sm font-medium">{lead.phone}</span>
@@ -273,7 +273,7 @@ export default function SovereignVault() {
             )}
           </div>
           
-          <div className="pt-12 border-t border-white/5 flex flex-col items-center gap-4">
+          <div className="pt-12 border-t border-primary/5 flex flex-col items-center gap-4">
              <div className="flex items-center gap-2 text-[10px] text-white/20 uppercase tracking-[0.5em]">
                 <Database size={12} />
                 Sovereign Ledger Node-01

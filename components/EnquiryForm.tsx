@@ -144,7 +144,7 @@ export default function EnquiryForm({
   return (
     <div className={cn(
       "w-full transition-all duration-700 relative",
-      isModal ? "p-0" : "bg-dark backdrop-blur-3xl border border-white/10 p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden"
+      isModal ? "p-0" : "bg-white backdrop-blur-3xl border border-primary/5 p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(44,36,24,0.05)] overflow-hidden"
     )}>
       {/* Success Overlay */}
       {status === "success" && (
@@ -161,8 +161,8 @@ export default function EnquiryForm({
         <>
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 blur-[80px] rounded-full" />
           <div className="relative mb-8 space-y-2">
-            <h3 className="text-3xl font-heading font-bold text-white tracking-tight">{title}</h3>
-            <p className="text-white/40 text-sm font-light leading-relaxed">{subtitle}</p>
+            <h3 className="text-3xl font-heading font-bold text-primary tracking-tight">{title}</h3>
+            <p className="text-primary/60 text-sm font-light leading-relaxed">{subtitle}</p>
           </div>
         </>
       )}
@@ -176,7 +176,7 @@ export default function EnquiryForm({
               name="name"
               required
               placeholder={isMarathi ? "पूर्ण नाव" : "Full Name"}
-              className="w-full bg-[#1A1A1A] border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-white/40 text-sm shadow-inner"
+              className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm shadow-sm"
             />
           </div>
           <div className="group relative">
@@ -185,7 +185,7 @@ export default function EnquiryForm({
               name="phone"
               required
               placeholder={isMarathi ? "मोबाईल नंबर" : "Mobile Number"}
-              className="w-full bg-[#1A1A1A] border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-white/40 text-sm shadow-inner"
+              className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm shadow-sm"
             />
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function EnquiryForm({
             name="email"
             required
             placeholder={isMarathi ? "ईमेल पत्ता" : "Email Address"}
-            className="w-full bg-[#1A1A1A] border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-white/40 text-sm shadow-inner"
+            className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm shadow-sm"
           />
         </div>
 
@@ -205,7 +205,7 @@ export default function EnquiryForm({
             <select
               name="timing"
               required
-              className="w-full bg-[#1A1A1A] border border-white/10 rounded-2xl px-5 py-4 text-white/50 focus:text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm shadow-inner appearance-none"
+              className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary/70 focus:text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm shadow-sm appearance-none"
             >
               <option value="" disabled selected>{isMarathi ? "भेट देण्याची वेळ" : "Expected Visit"}</option>
               <option value="Next 48 Hours">{isMarathi ? "पुढील ४८ तासात" : "Next 48 Hours"}</option>
@@ -218,7 +218,7 @@ export default function EnquiryForm({
             <select
               name="intent"
               required
-              className="w-full bg-[#1A1A1A] border border-white/10 rounded-2xl px-5 py-4 text-white/50 focus:text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm shadow-inner appearance-none"
+              className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary/70 focus:text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm shadow-sm appearance-none"
             >
               <option value="" disabled selected>{isMarathi ? "उद्देश निवडा" : "Investment Goal"}</option>
               <option value="Self Use Bungalow">{isMarathi ? "स्वतःचे घर" : "Self Use Bungalow"}</option>
@@ -238,7 +238,7 @@ export default function EnquiryForm({
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-full bg-gradient-to-r from-accent to-accent-hover text-dark font-bold uppercase tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_-10px_rgba(201,162,39,0.5)] disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98] group relative overflow-hidden"
+          className="w-full bg-gradient-to-r from-accent to-accent-hover text-white font-bold uppercase tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_-10px_rgba(201,162,39,0.5)] disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98] group relative overflow-hidden"
         >
           {/* Inner Shine Effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -253,25 +253,25 @@ export default function EnquiryForm({
           )}
         </button>
         
-        <div className="flex flex-col items-center gap-4 pt-4 mt-2 border-t border-white/5">
-          <div className="flex items-center gap-6 opacity-30 group-hover:opacity-50 transition-opacity">
+        <div className="flex flex-col items-center gap-4 pt-4 mt-2 border-t border-primary/10">
+          <div className="flex items-center gap-6 opacity-60 transition-opacity">
             <div className="flex flex-col items-center">
-               <span className="text-[10px] font-bold text-white uppercase tracking-tighter">59 Years</span>
-               <span className="text-[8px] text-white/50 uppercase">{isMarathi ? "वारसा" : "Legacy"}</span>
+               <span className="text-[10px] font-bold text-primary uppercase tracking-tighter">59 Years</span>
+               <span className="text-[8px] text-primary/70 uppercase">{isMarathi ? "वारसा" : "Legacy"}</span>
             </div>
-            <div className="w-[1px] h-6 bg-white/20" />
+            <div className="w-[1px] h-6 bg-primary/20" />
             <div className="flex flex-col items-center">
-               <span className="text-[10px] font-bold text-white uppercase tracking-tighter">RERA</span>
-               <span className="text-[8px] text-white/50 uppercase">{isMarathi ? "प्रमाणित" : "Verified"}</span>
+               <span className="text-[10px] font-bold text-primary uppercase tracking-tighter">RERA</span>
+               <span className="text-[8px] text-primary/70 uppercase">{isMarathi ? "प्रमाणित" : "Verified"}</span>
             </div>
-            <div className="w-[1px] h-6 bg-white/20" />
+            <div className="w-[1px] h-6 bg-primary/20" />
             <div className="flex flex-col items-center">
-               <span className="text-[10px] font-bold text-white uppercase tracking-tighter">SECURE</span>
-               <span className="text-[8px] text-white/50 uppercase">AES-256</span>
+               <span className="text-[10px] font-bold text-primary uppercase tracking-tighter">SECURE</span>
+               <span className="text-[8px] text-primary/70 uppercase">AES-256</span>
             </div>
           </div>
           
-          <div className="flex items-center gap-2 text-[8px] text-white/20 uppercase tracking-[0.2em] font-medium">
+          <div className="flex items-center gap-2 text-[8px] text-primary/50 uppercase tracking-[0.2em] font-medium">
              <div className="w-1 h-1 bg-accent rounded-full animate-pulse" />
              {isMarathi ? "तुमची माहिती सुरक्षित आहे" : "Your data is encrypted & secure"}
           </div>

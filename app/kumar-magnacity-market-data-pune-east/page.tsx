@@ -24,7 +24,7 @@ export default function MarketInsightsPage() {
             { label: "Market Potential", value: "High", sub: "Ring Road Boost", icon: MapPin },
             { label: "Legal Status", value: "100%", sub: "RERA Registered", icon: ShieldCheck },
           ].map((metric, i) => (
-            <div key={i} className="glass-obsidian p-10 rounded-[2.5rem] border border-white/5 space-y-4 hover:border-accent/30 transition-all group">
+            <div key={i} className="glass-obsidian p-10 rounded-[2.5rem] border border-primary/5 space-y-4 hover:border-accent/30 transition-all group">
               <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                  <metric.icon size={24} />
               </div>
@@ -48,7 +48,7 @@ export default function MarketInsightsPage() {
 
           <div className="grid grid-cols-1 gap-12">
             {marketAnalysis.insights.map((insight, idx) => (
-              <div key={idx} className="group relative glass-obsidian rounded-[3rem] p-12 overflow-hidden border border-white/5 hover:border-accent/20 transition-all">
+              <div key={idx} className="group relative glass-obsidian rounded-[3rem] p-12 overflow-hidden border border-primary/5 hover:border-accent/20 transition-all">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-accent/10 transition-colors" />
                 
                 <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -73,7 +73,7 @@ export default function MarketInsightsPage() {
                      </div>
                   </div>
 
-                  <div className="glass-panel p-10 rounded-[2.5rem] border border-white/5 space-y-6">
+                  <div className="glass-panel p-10 rounded-[2.5rem] border border-primary/5 space-y-6">
                      <h4 className="font-bold text-white uppercase tracking-widest text-[11px] mb-4">Investor Benefits Matrix</h4>
                      <ul className="space-y-4">
                         {insight.investor_benefits.map((benefit, bIdx) => (
@@ -132,11 +132,11 @@ export default function MarketInsightsPage() {
              
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {marketAnalysis.personas.map((persona, i) => (
-                   <div key={i} className="glass-obsidian border border-white/10 p-8 rounded-[2rem] hover:border-accent/40 transition-all group flex flex-col">
+                   <div key={i} className="glass-obsidian border border-primary/10 p-8 rounded-[2rem] hover:border-accent/40 transition-all group flex flex-col">
                       <div className="text-accent text-[10px] uppercase tracking-widest font-bold mb-4 h-8 flex-shrink-0">{persona.type}</div>
                       <h4 className="text-lg font-bold text-white mb-4 group-hover:text-accent transition-colors flex-shrink-0">{persona.goal}</h4>
                       <p className="text-white/50 text-sm font-light mb-6 flex-grow">{persona.strategy}</p>
-                      <div className="pt-4 border-t border-white/5 flex-shrink-0">
+                      <div className="pt-4 border-t border-primary/5 flex-shrink-0">
                          <span className="text-[9px] uppercase tracking-widest text-white/30 block mb-1">Target Plot</span>
                          <span className="text-white/80 font-medium text-sm">{persona.target_plots}</span>
                       </div>
@@ -147,7 +147,7 @@ export default function MarketInsightsPage() {
         </section>
 
         {/* Strategic Wealth Section */}
-        <section className="py-24 px-12 rounded-[4rem] bg-gradient-to-br from-primary/20 to-dark border border-white/5 relative overflow-hidden">
+        <section className="py-24 px-12 rounded-[4rem] bg-gradient-to-br from-primary/20 to-dark border border-primary/5 relative overflow-hidden">
            <div className="absolute top-0 left-0 w-full h-full bg-[url('/assets/hero-bg.jpg')] opacity-5 bg-cover bg-center" />
            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="space-y-10">
@@ -157,11 +157,11 @@ export default function MarketInsightsPage() {
                  </p>
                  <div className="flex flex-wrap gap-6 pt-6">
                     <div className="flex items-center gap-3">
-                       <div className="w-10 h-10 rounded-full bg-accent text-dark flex items-center justify-center font-bold">59</div>
+                       <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold">59</div>
                        <span className="text-white font-medium uppercase tracking-widest text-[10px]">Years of Legacy</span>
                     </div>
                     <div className="flex items-center gap-3">
-                       <div className="w-10 h-10 rounded-full bg-accent text-dark flex items-center justify-center font-bold">7/12</div>
+                       <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold">7/12</div>
                        <span className="text-white font-medium uppercase tracking-widest text-[10px]">Individual Extract</span>
                     </div>
                  </div>

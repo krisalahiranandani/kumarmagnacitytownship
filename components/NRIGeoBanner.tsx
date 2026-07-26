@@ -30,7 +30,7 @@ export default async function NRIGeoBanner() {
         </div>
         <Link 
           href="/nri-investment" 
-          className="inline-flex items-center gap-1 text-[11px] font-bold bg-dark text-white px-3 py-1 rounded-full hover:bg-dark/80 transition-colors"
+          className="inline-flex items-center gap-1 text-[11px] font-bold bg-light text-primary px-3 py-1 rounded-full hover:bg-white transition-colors"
         >
           VIEW NRI OFFERS <ArrowRight size={12} />
         </Link>

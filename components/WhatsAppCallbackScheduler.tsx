@@ -25,7 +25,7 @@ export default function WhatsAppCallbackScheduler() {
   };
 
   return (
-    <section className="py-24 bg-[#020202] border-t border-white/10 relative overflow-hidden" id="whatsapp-video-scheduler">
+    <section className="py-24 bg-warm-bg border-t border-primary/10 relative overflow-hidden" id="whatsapp-video-scheduler">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="bg-gradient-to-r from-emerald-950/40 via-emerald-900/20 to-emerald-950/40 border border-emerald-500/30 rounded-3xl p-8 md:p-12 backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left info */}
@@ -33,21 +33,21 @@ export default function WhatsAppCallbackScheduler() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] uppercase tracking-widest">
               <Video size={14} /> Live HD Video Consultation
             </div>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary tracking-tight">
               Schedule 5-Min <span className="text-gradient-gold">WhatsApp Video Tour</span>
             </h2>
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+            <p className="text-sm md:text-base text-primary/60 leading-relaxed">
               Cannot visit the site in person today? Book a live 1-on-1 WhatsApp video walkthrough with our property executive directly from your mobile.
             </p>
           </div>
 
           {/* Form right */}
-          <div className="lg:col-span-6 bg-black/60 border border-white/10 rounded-2xl p-6 shadow-2xl">
+          <div className="lg:col-span-6 bg-white border border-primary/10 rounded-2xl p-6 shadow-2xl">
             {isScheduled ? (
               <div className="text-center py-8 space-y-3">
                 <CheckCircle2 size={40} className="text-emerald-400 mx-auto" />
-                <h3 className="text-xl font-serif font-bold text-white">WhatsApp Video Tour Scheduled</h3>
-                <p className="text-xs text-gray-300">Our advisor will video call you at {form.phone} on {form.date || "your requested date"} at {form.time}.</p>
+                <h3 className="text-xl font-serif font-bold text-primary">WhatsApp Video Tour Scheduled</h3>
+                <p className="text-xs text-primary/60">Our advisor will video call you at {form.phone} on {form.date || "your requested date"} at {form.time}.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -60,7 +60,7 @@ export default function WhatsAppCallbackScheduler() {
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="Your Name"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-emerald-400"
+                      className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-emerald-400"
                     />
                   </div>
                   <div>
@@ -71,7 +71,7 @@ export default function WhatsAppCallbackScheduler() {
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       placeholder="+91 98765 43210"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-emerald-400"
+                      className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-emerald-400"
                     />
                   </div>
                 </div>
@@ -83,7 +83,7 @@ export default function WhatsAppCallbackScheduler() {
                       type="date"
                       value={form.date}
                       onChange={(e) => setForm({ ...form, date: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-emerald-400"
+                      className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-emerald-400"
                     />
                   </div>
                   <div>
@@ -91,12 +91,12 @@ export default function WhatsAppCallbackScheduler() {
                     <select
                       value={form.time}
                       onChange={(e) => setForm({ ...form, time: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-emerald-400"
+                      className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-emerald-400"
                     >
-                      <option value="10:00 AM" className="bg-dark text-white">10:00 AM</option>
-                      <option value="12:00 PM" className="bg-dark text-white">12:00 PM</option>
-                      <option value="03:00 PM" className="bg-dark text-white">03:00 PM</option>
-                      <option value="06:00 PM" className="bg-dark text-white">06:00 PM</option>
+                      <option value="10:00 AM" className="bg-white text-primary">10:00 AM</option>
+                      <option value="12:00 PM" className="bg-white text-primary">12:00 PM</option>
+                      <option value="03:00 PM" className="bg-white text-primary">03:00 PM</option>
+                      <option value="06:00 PM" className="bg-white text-primary">06:00 PM</option>
                     </select>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ export default function WhatsAppCallbackScheduler() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 rounded-xl bg-emerald-500 text-dark font-bold text-xs uppercase tracking-widest hover:bg-emerald-400 transition-all flex items-center justify-center gap-2 shadow-xl"
+                  className="w-full py-4 rounded-xl bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest hover:bg-emerald-600 transition-all flex items-center justify-center gap-2 shadow-xl"
                 >
                   {loading ? "Scheduling..." : "Book WhatsApp Video Tour"} <ArrowRight size={16} />
                 </button>

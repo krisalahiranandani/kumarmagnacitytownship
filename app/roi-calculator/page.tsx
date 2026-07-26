@@ -40,11 +40,11 @@ export default function ROICalculatorPage() {
   };
 
   return (
-    <main className="min-h-screen bg-light text-dark selection:bg-accent selection:text-dark">
+    <main className="min-h-screen bg-light text-primary selection:bg-accent selection:text-white">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-40 pb-20 bg-dark text-white rounded-b-[4rem]">
+      <section className="pt-40 pb-20 bg-warm-bg text-primary rounded-b-[4rem]">
         <div className="container mx-auto px-6 max-w-5xl text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent font-bold text-[10px] uppercase tracking-[0.3em]">
             <Calculator size={14} /> Financial Intelligence
@@ -52,7 +52,7 @@ export default function ROICalculatorPage() {
           <h1 className="text-4xl md:text-7xl font-heading font-bold leading-tight">
             Wealth Generation <br /> <span className="text-accent italic">Engine.</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-primary/60 font-light leading-relaxed max-w-2xl mx-auto">
             Interactive 10-Year ROI projection for Pune East real estate vs traditional fixed-income assets.
           </p>
         </div>
@@ -64,11 +64,11 @@ export default function ROICalculatorPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
             {/* Controls (Sidebar) */}
-            <div className="space-y-8 bg-white p-8 rounded-[2.5rem] border border-dark/5 shadow-2xl">
+            <div className="space-y-8 bg-white p-8 rounded-[2.5rem] border border-primary/5 shadow-2xl">
               <h3 className="text-2xl font-heading font-bold mb-6">Simulation Parameters</h3>
               
               <div className="space-y-4">
-                <label className="block text-sm font-bold uppercase tracking-widest text-dark/70">
+                <label className="block text-sm font-bold uppercase tracking-widest text-primary/70">
                   Initial Property Value
                 </label>
                 <div className="flex items-center gap-4">
@@ -86,8 +86,8 @@ export default function ROICalculatorPage() {
                 <div className="text-right text-lg font-bold text-accent">{formatCurrency(propertyValue)}</div>
               </div>
 
-              <div className="space-y-4 pt-4 border-t border-dark/10">
-                <label className="block text-sm font-bold uppercase tracking-widest text-dark/70">
+              <div className="space-y-4 pt-4 border-t border-primary/10">
+                <label className="block text-sm font-bold uppercase tracking-widest text-primary/70">
                   Expected Appreciation (YoY)
                 </label>
                 <input 
@@ -102,8 +102,8 @@ export default function ROICalculatorPage() {
                 <div className="text-right text-lg font-bold text-accent">{appreciationRate}%</div>
               </div>
 
-              <div className="space-y-4 pt-4 border-t border-dark/10">
-                <label className="block text-sm font-bold uppercase tracking-widest text-dark/70">
+              <div className="space-y-4 pt-4 border-t border-primary/10">
+                <label className="block text-sm font-bold uppercase tracking-widest text-primary/70">
                   Standard FD Rate (YoY)
                 </label>
                 <input 
@@ -115,11 +115,11 @@ export default function ROICalculatorPage() {
                   onChange={(e) => setFdRate(Number(e.target.value))}
                   className="w-full accent-dark"
                 />
-                <div className="text-right text-lg font-bold text-dark">{fdRate}%</div>
+                <div className="text-right text-lg font-bold text-primary">{fdRate}%</div>
               </div>
 
               <div className="pt-8 space-y-4">
-                 <div className="flex items-center gap-3 text-sm font-bold text-dark/60">
+                 <div className="flex items-center gap-3 text-sm font-bold text-primary/60">
                    <ShieldCheck className="text-accent" size={20} /> Data backed by historical Manjari trends
                  </div>
               </div>
@@ -127,7 +127,7 @@ export default function ROICalculatorPage() {
 
             {/* Chart Area */}
             <div className="lg:col-span-2 space-y-8">
-               <div className="bg-dark p-8 rounded-[2.5rem] shadow-2xl h-[500px]">
+               <div className="bg-warm-bg p-8 rounded-[2.5rem] shadow-2xl h-[500px]">
                  <ResponsiveContainer width="100%" height="100%">
                    <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                      <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
@@ -145,13 +145,13 @@ export default function ROICalculatorPage() {
                </div>
                
                <div className="grid grid-cols-2 gap-6">
-                 <div className="bg-white p-6 rounded-[2rem] border border-dark/5 shadow-lg">
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-dark/40 mb-2">10-Year Real Estate Value</div>
+                 <div className="bg-white p-6 rounded-[2rem] border border-primary/5 shadow-lg">
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">10-Year Real Estate Value</div>
                     <div className="text-3xl font-heading font-bold text-accent">{formatCurrency(data[10]["Real Estate (Manjari)"])}</div>
                  </div>
-                 <div className="bg-white p-6 rounded-[2rem] border border-dark/5 shadow-lg">
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-dark/40 mb-2">10-Year FD Value</div>
-                    <div className="text-3xl font-heading font-bold text-dark/70">{formatCurrency(data[10]["Fixed Deposit"])}</div>
+                 <div className="bg-white p-6 rounded-[2rem] border border-primary/5 shadow-lg">
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2">10-Year FD Value</div>
+                    <div className="text-3xl font-heading font-bold text-primary/70">{formatCurrency(data[10]["Fixed Deposit"])}</div>
                  </div>
                </div>
             </div>
@@ -161,16 +161,16 @@ export default function ROICalculatorPage() {
       </section>
 
       {/* Lead Capture Wall */}
-      <section className="py-24 bg-dark relative overflow-hidden">
+      <section className="py-24 bg-warm-bg relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(201,162,39,0.1),transparent_50%)]" />
         <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
             Download the Complete 10-Year Micro-Market Report
           </h2>
-          <p className="text-white/60 mb-12 text-lg">
+          <p className="text-primary/60 mb-12 text-lg">
             Get the full, data-backed PDF report covering Pune East appreciation trends, rental yields, and upcoming Ring Road infrastructure impacts.
           </p>
-          <div className="bg-white/[0.03] border border-white/10 rounded-[3rem] p-8 md:p-12">
+          <div className="bg-white/[0.03] border border-primary/10 rounded-[3rem] p-8 md:p-12">
             <AdvancedEnquiryForm formId="ROI_Report_Download" buttonText="GENERATE MY PDF REPORT" />
           </div>
         </div>

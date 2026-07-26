@@ -58,7 +58,7 @@ export default function InteractiveLayoutViewer() {
   };
 
   return (
-    <section className="py-24 bg-dark text-white relative overflow-hidden" id="floor-plans">
+    <section className="py-24 bg-warm-bg text-primary relative overflow-hidden" id="floor-plans">
       <div className="container mx-auto px-6 max-w-7xl">
         
         {/* Header & Tabs */}
@@ -84,14 +84,14 @@ export default function InteractiveLayoutViewer() {
             </motion.h2>
           </div>
           
-          <div className="p-1.5 rounded-2xl md:rounded-full border border-white/10 bg-white/5 backdrop-blur-md inline-flex flex-wrap gap-1">
+          <div className="p-1.5 rounded-2xl md:rounded-full border border-primary/10 bg-primary/5 backdrop-blur-md inline-flex flex-wrap gap-1">
             {LAYOUT_TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
                 className={cn(
                   "px-6 py-3 rounded-xl md:rounded-full text-[11px] md:text-sm font-bold uppercase tracking-wider transition-all duration-300",
-                  activeTab === tab.id ? "bg-accent text-dark shadow-lg" : "text-white/60 hover:text-white hover:bg-white/5"
+                  activeTab === tab.id ? "bg-accent text-white shadow-lg" : "text-primary/60 hover:text-primary hover:bg-primary/5"
                 )}
               >
                 {tab.title}
@@ -101,7 +101,7 @@ export default function InteractiveLayoutViewer() {
         </div>
 
         {/* Visual Display */}
-        <div className="glass-obsidian rounded-[3rem] p-6 md:p-12 border border-white/10 relative">
+        <div className="glass-obsidian rounded-[3rem] p-6 md:p-12 border border-primary/10 relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -113,8 +113,8 @@ export default function InteractiveLayoutViewer() {
             >
               {/* Context Text */}
               <div className="max-w-3xl">
-                <h3 className="text-2xl font-bold text-white">{activeData.title}</h3>
-                <p className="text-white/50 mt-2">{activeData.description}</p>
+                <h3 className="text-2xl font-bold text-primary">{activeData.title}</h3>
+                <p className="text-primary/50 mt-2">{activeData.description}</p>
               </div>
 
               {/* Image / Grid Container */}
@@ -122,7 +122,7 @@ export default function InteractiveLayoutViewer() {
                 <InteractivePlotGrid imagePath={activeData.imagePath} fallbackPath={activeData.fallbackPath} />
               ) : (
                 <div 
-                  className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden cursor-zoom-in group border border-white/5 bg-black/50"
+                  className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden cursor-zoom-in group border border-primary/5 bg-black/50"
                   onClick={() => setLightboxImage(activeData.imagePath)}
                 >
                   <Image 
@@ -137,7 +137,7 @@ export default function InteractiveLayoutViewer() {
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
                     <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 rounded-full bg-accent text-dark flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-accent text-white flex items-center justify-center">
                         <Maximize2 size={24} />
                       </div>
                       <span className="text-xs font-bold uppercase tracking-widest text-white drop-shadow-md">Click to Enlarge</span>
@@ -175,7 +175,7 @@ export default function InteractiveLayoutViewer() {
             <a 
               href={lightboxImage}
               download
-              className="absolute top-6 right-24 w-12 h-12 bg-accent hover:bg-white rounded-full flex items-center justify-center text-dark transition-colors z-50 shadow-xl"
+              className="absolute top-6 right-24 w-12 h-12 bg-accent hover:bg-white rounded-full flex items-center justify-center text-white transition-colors z-50 shadow-xl"
               onClick={(e) => e.stopPropagation()}
             >
               <Download size={20} />

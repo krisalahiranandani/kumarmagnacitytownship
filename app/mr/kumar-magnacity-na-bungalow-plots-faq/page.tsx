@@ -74,20 +74,20 @@ export default function FAQVaultPageMR() {
         
         {/* Rapid Intelligence Grid */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-           <div className="p-10 rounded-[2.5rem] bg-white border border-dark/5 shadow-xl space-y-4">
+           <div className="p-10 rounded-[2.5rem] bg-white border border-primary/5 shadow-xl space-y-4">
               <ShieldCheck className="text-primary" size={32} />
-              <h4 className="text-xl font-bold text-dark italic">कायदेशीर सुरक्षितता</h4>
-              <p className="text-sm text-dark/50 leading-relaxed font-light">प्रत्येक प्लॉटसाठी स्वतंत्र ७/१२ उतारा आणि रेरा नोंदणी, जी गुंतवणूकदारांना १००% सुरक्षिततेची हमी देते.</p>
+              <h4 className="text-xl font-bold text-primary italic">कायदेशीर सुरक्षितता</h4>
+              <p className="text-sm text-primary/50 leading-relaxed font-light">प्रत्येक प्लॉटसाठी स्वतंत्र ७/१२ उतारा आणि रेरा नोंदणी, जी गुंतवणूकदारांना १००% सुरक्षिततेची हमी देते.</p>
            </div>
-           <div className="p-10 rounded-[2.5rem] bg-white border border-dark/5 shadow-xl space-y-4">
+           <div className="p-10 rounded-[2.5rem] bg-white border border-primary/5 shadow-xl space-y-4">
               <TrendingUp className="text-primary" size={32} />
-              <h4 className="text-xl font-bold text-dark italic">गुंतवणूक परतावा</h4>
-              <p className="text-sm text-dark/50 leading-relaxed font-light">पुणे-सोलापूर हायवे आणि आगामी रिंग रोड जंक्शनवर धोरणात्मकरीत्या स्थित.</p>
+              <h4 className="text-xl font-bold text-primary italic">गुंतवणूक परतावा</h4>
+              <p className="text-sm text-primary/50 leading-relaxed font-light">पुणे-सोलापूर हायवे आणि आगामी रिंग रोड जंक्शनवर धोरणात्मकरीत्या स्थित.</p>
            </div>
-           <div className="p-10 rounded-[2.5rem] bg-white border border-dark/5 shadow-xl space-y-4">
+           <div className="p-10 rounded-[2.5rem] bg-white border border-primary/5 shadow-xl space-y-4">
               <Info className="text-primary" size={32} />
-              <h4 className="text-xl font-bold text-dark italic">पायाभूत सुविधा</h4>
-              <p className="text-sm text-dark/50 leading-relaxed font-light">भूमिगत वीज, पाणीपुरवठा आणि फायबर ऑप्टिक्स प्रत्येक प्लॉट स्तरावर आधीच उपलब्ध आहेत.</p>
+              <h4 className="text-xl font-bold text-primary italic">पायाभूत सुविधा</h4>
+              <p className="text-sm text-primary/50 leading-relaxed font-light">भूमिगत वीज, पाणीपुरवठा आणि फायबर ऑप्टिक्स प्रत्येक प्लॉट स्तरावर आधीच उपलब्ध आहेत.</p>
            </div>
         </section>
 
@@ -95,12 +95,12 @@ export default function FAQVaultPageMR() {
         <FAQSection faqJson={FAQ_DATA_MR} />
 
         {/* Global Conversion Engine */}
-        <section className="bg-dark rounded-[4rem] p-12 md:p-24 relative overflow-hidden group">
+        <section className="bg-warm-bg rounded-[4rem] p-12 md:p-24 relative overflow-hidden group">
            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/10 translate-y-1/2 group-hover:translate-y-0 transition-transform duration-1000" />
            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                 <h2 className="text-4xl md:text-6xl font-heading font-bold text-white leading-tight">तुमचे काही <br /><span className="text-accent underline decoration-accent/20 underline-offset-8 italic">विशिष्ट प्रश्न आहेत?</span></h2>
-                 <p className="text-white/50 text-xl font-light leading-relaxed max-w-xl">
+                 <h2 className="text-4xl md:text-6xl font-heading font-bold text-primary leading-tight">तुमचे काही <br /><span className="text-accent underline decoration-accent/20 underline-offset-8 italic">विशिष्ट प्रश्न आहेत?</span></h2>
+                 <p className="text-primary/50 text-xl font-light leading-relaxed max-w-xl">
                    कुमार मॅग्नॅसिटी मास्टर-प्लॅन आणि विशिष्ट प्लॉट ROI अंदाजाबद्दल सखोल माहितीसाठी आमच्या वरिष्ठ गुंतवणूक विश्लेषकांशी संपर्क साधा.
                  </p>
                  <div className="flex items-center gap-4 text-white/20 uppercase tracking-[0.25em] text-[10px] font-bold">

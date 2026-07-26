@@ -17,15 +17,15 @@ export default function MarathiAmenitiesPage() {
       badge="सुविधा"
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-         <div className="p-10 bg-white rounded-3xl border border-dark/5 shadow-sm text-center">
+         <div className="p-10 bg-white rounded-3xl border border-primary/5 shadow-sm text-center">
             <Waves className="text-accent mb-4 mx-auto" size={32} />
             <p className="font-bold text-xl">स्विमिंग पूल</p>
          </div>
-         <div className="p-10 bg-white rounded-3xl border border-dark/5 shadow-sm text-center">
+         <div className="p-10 bg-white rounded-3xl border border-primary/5 shadow-sm text-center">
             <Dumbbell className="text-accent mb-4 mx-auto" size={32} />
             <p className="font-bold text-xl">हाय-टेक जिम</p>
          </div>
-         <div className="p-10 bg-white rounded-3xl border border-dark/5 shadow-sm text-center">
+         <div className="p-10 bg-white rounded-3xl border border-primary/5 shadow-sm text-center">
             <ShieldCheck className="text-accent mb-4 mx-auto" size={32} />
             <p className="font-bold text-xl">२४/७ सुरक्षा</p>
          </div>

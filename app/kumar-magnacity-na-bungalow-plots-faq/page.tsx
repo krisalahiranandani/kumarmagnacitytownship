@@ -74,20 +74,20 @@ export default function FAQVaultPage() {
         
         {/* Rapid Intelligence Grid */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-           <div className="p-10 rounded-[2.5rem] bg-white border border-dark/5 shadow-xl space-y-4">
+           <div className="p-10 rounded-[2.5rem] bg-white border border-primary/5 shadow-xl space-y-4">
               <ShieldCheck className="text-primary" size={32} />
-              <h4 className="text-xl font-bold text-dark italic">Legal Fortress</h4>
-              <p className="text-sm text-dark/50 leading-relaxed font-light">Individual 7/12 extracts and RERA registration ensuring 100% security for HNI and NRI investors.</p>
+              <h4 className="text-xl font-bold text-primary italic">Legal Fortress</h4>
+              <p className="text-sm text-primary/50 leading-relaxed font-light">Individual 7/12 extracts and RERA registration ensuring 100% security for HNI and NRI investors.</p>
            </div>
-           <div className="p-10 rounded-[2.5rem] bg-white border border-dark/5 shadow-xl space-y-4">
+           <div className="p-10 rounded-[2.5rem] bg-white border border-primary/5 shadow-xl space-y-4">
               <TrendingUp className="text-primary" size={32} />
-              <h4 className="text-xl font-bold text-dark italic">ROI Hub</h4>
-              <p className="text-sm text-dark/50 leading-relaxed font-light">Strategically positioned on the Pune-Solapur Highway & upcoming Outer Ring Road junction.</p>
+              <h4 className="text-xl font-bold text-primary italic">ROI Hub</h4>
+              <p className="text-sm text-primary/50 leading-relaxed font-light">Strategically positioned on the Pune-Solapur Highway & upcoming Outer Ring Road junction.</p>
            </div>
-           <div className="p-10 rounded-[2.5rem] bg-white border border-dark/5 shadow-xl space-y-4">
+           <div className="p-10 rounded-[2.5rem] bg-white border border-primary/5 shadow-xl space-y-4">
               <Info className="text-primary" size={32} />
-              <h4 className="text-xl font-bold text-dark italic">Ready Grids</h4>
-              <p className="text-sm text-dark/50 leading-relaxed font-light">Underground electricity, water supply, and fiber optics are already integrated at the plot level.</p>
+              <h4 className="text-xl font-bold text-primary italic">Ready Grids</h4>
+              <p className="text-sm text-primary/50 leading-relaxed font-light">Underground electricity, water supply, and fiber optics are already integrated at the plot level.</p>
            </div>
         </section>
 
@@ -95,12 +95,12 @@ export default function FAQVaultPage() {
         <FAQSection faqJson={FAQ_DATA} />
 
         {/* Global Conversion Engine */}
-        <section className="bg-dark rounded-[4rem] p-12 md:p-24 relative overflow-hidden group">
+        <section className="bg-warm-bg rounded-[4rem] p-12 md:p-24 relative overflow-hidden group">
            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/10 translate-y-1/2 group-hover:translate-y-0 transition-transform duration-1000" />
            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                 <h2 className="text-4xl md:text-6xl font-heading font-bold text-white leading-tight">Need More <br /><span className="text-accent underline decoration-accent/20 underline-offset-8 italic">Specific Answers?</span></h2>
-                 <p className="text-white/50 text-xl font-light leading-relaxed max-w-xl">
+                 <h2 className="text-4xl md:text-6xl font-heading font-bold text-primary leading-tight">Need More <br /><span className="text-accent underline decoration-accent/20 underline-offset-8 italic">Specific Answers?</span></h2>
+                 <p className="text-primary/50 text-xl font-light leading-relaxed max-w-xl">
                    Connect with our Senior Investment Analyst for a deep-dive session on the Kumar Magnacity master-plan and specific plot ROI forecasts.
                  </p>
                  <div className="flex items-center gap-4 text-white/20 uppercase tracking-[0.25em] text-[10px] font-bold">

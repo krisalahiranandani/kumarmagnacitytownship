@@ -61,11 +61,11 @@ export default function AmenityGrid() {
           transition={{ delay: i * 0.1 }}
           className="group relative h-full"
         >
-          <div className="h-full p-8 md:p-10 rounded-[3rem] bg-white/[0.03] border border-white/5 hover:border-accent/40 transition-all duration-500 flex flex-col space-y-8 relative overflow-hidden backdrop-blur-3xl shadow-2xl">
+          <div className="h-full p-8 md:p-10 rounded-[3rem] bg-primary/[0.03] border border-primary/5 hover:border-accent/40 transition-all duration-500 flex flex-col space-y-8 relative overflow-hidden backdrop-blur-3xl shadow-2xl">
             {/* Hover Shine */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             
-            <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-dark transition-all duration-500 shadow-xl group-hover:scale-110">
+            <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-110">
                {item.icon}
             </div>
 
@@ -74,11 +74,11 @@ export default function AmenityGrid() {
                   <span className="text-[10px] text-accent font-bold uppercase tracking-[0.3em] font-mono">
                      {item.category} / {item.subtitle}
                   </span>
-                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-primary group-hover:text-accent transition-colors">
                      {item.title}
                   </h3>
                </div>
-               <p className="text-white/40 font-light text-sm md:text-base leading-relaxed">
+               <p className="text-primary/40 font-light text-sm md:text-base leading-relaxed">
                   {item.desc}
                </p>
             </div>

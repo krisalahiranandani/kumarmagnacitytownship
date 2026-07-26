@@ -17,25 +17,25 @@ export default function MarathiLocationPage() {
       badge="स्थान"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-         <div className="p-8 bg-white rounded-3xl border border-dark/5 shadow-sm text-center">
+         <div className="p-8 bg-white rounded-3xl border border-primary/5 shadow-sm text-center">
             <Building2 className="text-accent mb-4 mx-auto" size={24} />
             <p className="font-bold">मगरपट्टा सिटी</p>
-            <p className="text-xs text-dark/40">१० मिनिटे</p>
+            <p className="text-xs text-primary/40">१० मिनिटे</p>
          </div>
-         <div className="p-8 bg-white rounded-3xl border border-dark/5 shadow-sm text-center">
+         <div className="p-8 bg-white rounded-3xl border border-primary/5 shadow-sm text-center">
             <Train className="text-accent mb-4 mx-auto" size={24} />
             <p className="font-bold">मेट्रो लाइन ३</p>
-            <p className="text-xs text-dark/40">५ मिनिटे</p>
+            <p className="text-xs text-primary/40">५ मिनिटे</p>
          </div>
-         <div className="p-8 bg-white rounded-3xl border border-dark/5 shadow-sm text-center">
+         <div className="p-8 bg-white rounded-3xl border border-primary/5 shadow-sm text-center">
             <Plane className="text-accent mb-4 mx-auto" size={24} />
             <p className="font-bold">पुणे विमानतळ</p>
-            <p className="text-xs text-dark/40">३० मिनिटे</p>
+            <p className="text-xs text-primary/40">३० मिनिटे</p>
          </div>
-         <div className="p-8 bg-white rounded-3xl border border-dark/5 shadow-sm text-center">
+         <div className="p-8 bg-white rounded-3xl border border-primary/5 shadow-sm text-center">
             <MapPin className="text-accent mb-4 mx-auto" size={24} />
             <p className="font-bold">रिंग रोड</p>
-            <p className="text-xs text-dark/40">अत्यंत जवळ</p>
+            <p className="text-xs text-primary/40">अत्यंत जवळ</p>
          </div>
       </div>
       

@@ -17,12 +17,12 @@ export default function MarathiMasterPlanPage() {
     >
       <div className="space-y-12">
         <div className="bg-white border rounded-[3rem] overflow-hidden shadow-2xl">
-           <div className="aspect-[21/9] bg-dark/5 relative group">
+           <div className="aspect-[21/9] bg-primary/5 relative group">
               <div className="absolute inset-0 bg-[url('/assets/plot-layout.jpg')] bg-cover bg-center" />
            </div>
            <div className="p-12 md:p-20">
-              <h3 className="text-3xl font-heading font-bold text-dark italic mb-6">नियोजित पायाभूत सुविधा</h3>
-              <p className="text-dark/60 leading-relaxed font-light text-lg mb-8">
+              <h3 className="text-3xl font-heading font-bold text-primary italic mb-6">नियोजित पायाभूत सुविधा</h3>
+              <p className="text-primary/60 leading-relaxed font-light text-lg mb-8">
                 रुंद रस्ते, भूमिगत वीज वाहिन्या, सांडपाणी प्रक्रिया प्रकल्प (STP) आणि भव्य उद्याने यांसह ही टाउनशिप पुण्याचे एक आयकॉनिक ठिकाण ठरेल.
               </p>
            </div>

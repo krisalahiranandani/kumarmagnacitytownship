@@ -24,7 +24,7 @@ export default function MarketInsightsPageMR() {
             { label: "मार्केट पोटेन्शियल", value: "उच्च", sub: "रिंग रोड बूस्ट", icon: MapPin },
             { label: "कायदेशीर स्थिती", value: "१००%", sub: "रेरा नोंदणीकृत", icon: ShieldCheck },
           ].map((metric, i) => (
-            <div key={i} className="glass-obsidian p-10 rounded-[2.5rem] border border-white/5 space-y-4 hover:border-accent/30 transition-all group">
+            <div key={i} className="glass-obsidian p-10 rounded-[2.5rem] border border-primary/5 space-y-4 hover:border-accent/30 transition-all group">
               <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                  <metric.icon size={24} />
               </div>
@@ -48,15 +48,15 @@ export default function MarketInsightsPageMR() {
 
           <div className="grid grid-cols-1 gap-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-               <div className="glass-panel p-10 rounded-[2.5rem] border border-white/5 space-y-6">
+               <div className="glass-panel p-10 rounded-[2.5rem] border border-primary/5 space-y-6">
                   <h3 className="text-2xl font-heading font-bold text-white tracking-tight">खराडी आयटी हब</h3>
                   <p className="text-white/50 text-sm font-light leading-relaxed">EON IT पार्क आणि WTC च्या वाढत्या विस्तारामुळे मांजरी क्षेत्रातील भूखंडांच्या किंमतीत मोठी वाढ अपेक्षित आहे.</p>
                </div>
-               <div className="glass-panel p-10 rounded-[2.5rem] border border-white/5 space-y-6">
+               <div className="glass-panel p-10 rounded-[2.5rem] border border-primary/5 space-y-6">
                   <h3 className="text-2xl font-heading font-bold text-white tracking-tight">मगरपट्टा अपग्रेड</h3>
                   <p className="text-white/50 text-sm font-light leading-relaxed">मगरपट्टा सिटीमधील रहिवासी आता गर्दीच्या फ्लॅट संस्कृतीतून बाहेर पडून मांजरीमधील एनए बंगला प्लॉट्सना पसंती देत आहेत.</p>
                </div>
-               <div className="glass-panel p-10 rounded-[2.5rem] border border-white/5 space-y-6">
+               <div className="glass-panel p-10 rounded-[2.5rem] border border-primary/5 space-y-6">
                   <h3 className="text-2xl font-heading font-bold text-white tracking-tight">हडपसर अॅनेक्स</h3>
                   <p className="text-white/50 text-sm font-light leading-relaxed">पुणे आऊटर रिंग रोड आणि मेट्रो फेज २ मुळे हडपसर अॅनेक्स (मांजरी) हे गुंतवणुकीचे महत्त्वाचे केंद्र बनले आहे.</p>
                </div>
@@ -65,7 +65,7 @@ export default function MarketInsightsPageMR() {
         </section>
 
         {/* Strategic Wealth Section */}
-        <section className="py-24 px-12 rounded-[4rem] bg-gradient-to-br from-primary/20 to-dark border border-white/5 relative overflow-hidden">
+        <section className="py-24 px-12 rounded-[4rem] bg-gradient-to-br from-primary/20 to-dark border border-primary/5 relative overflow-hidden">
            <div className="absolute top-0 left-0 w-full h-full bg-[url('/assets/hero-bg.jpg')] opacity-5 bg-cover bg-center" />
            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="space-y-10">

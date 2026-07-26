@@ -36,23 +36,23 @@ export default function VirtualVRHub() {
   const { openModal } = useModal();
 
   return (
-    <section className="py-24 bg-[#020202] border-t border-white/10 relative overflow-hidden" id="vr-tour-hub">
+    <section className="py-24 bg-warm-bg border-t border-primary/10 relative overflow-hidden" id="vr-tour-hub">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 font-mono text-[11px] uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-600 font-mono text-[11px] uppercase tracking-widest">
             <Eye size={14} /> Virtual Reality Tour Hub
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary tracking-tight">
             Immersive <span className="text-gradient-gold">360° VR Walkthrough</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-400">
+          <p className="text-sm md:text-base text-primary/60">
             Experience realistic 3D virtual walkthroughs of 2BHK, 3BHK residences, and NA Villa Plots from anywhere in the world.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Main Virtual Tour Screen Preview */}
-          <div className="lg:col-span-8 relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+          <div className="lg:col-span-8 relative rounded-3xl overflow-hidden border border-primary/10 shadow-sm group">
             <div className="aspect-video relative bg-black flex items-center justify-center">
               <img
                 src={activeScene.image}
@@ -64,9 +64,9 @@ export default function VirtualVRHub() {
               {/* Play / Launch VR Button */}
               <button
                 onClick={() => openModal(`360 VR Tour - ${activeScene.title}`)}
-                className="absolute z-20 flex flex-col items-center gap-3 p-6 rounded-full bg-accent/90 text-dark hover:bg-white hover:scale-110 transition-all shadow-2xl group/btn"
+                className="absolute z-20 flex flex-col items-center gap-3 p-6 rounded-full bg-accent/90 text-white hover:bg-dark hover:scale-110 transition-all shadow-2xl group/btn"
               >
-                <Play size={28} className="fill-dark ml-1 group-hover/btn:scale-110 transition-transform" />
+                <Play size={28} className="fill-white ml-1 group-hover/btn:scale-110 transition-transform" />
               </button>
 
               {/* Scene Overlay Info */}
@@ -93,22 +93,22 @@ export default function VirtualVRHub() {
                   className={`w-full text-left p-6 rounded-2xl border transition-all ${
                     isSelected
                       ? "border-accent bg-accent/10 ring-1 ring-accent/40 shadow-xl"
-                      : "border-white/10 bg-white/5 hover:border-white/20"
+                      : "border-primary/10 bg-white hover:border-primary/20"
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-mono uppercase font-bold text-accent">{scene.badge}</span>
                     {isSelected && <CheckCircle2 size={16} className="text-accent" />}
                   </div>
-                  <h4 className="text-sm font-bold text-white mb-1">{scene.title}</h4>
-                  <p className="text-xs text-gray-400 font-mono">{scene.subtitle}</p>
+                  <h4 className="text-sm font-bold text-primary mb-1">{scene.title}</h4>
+                  <p className="text-xs text-primary/60 font-mono">{scene.subtitle}</p>
                 </button>
               );
             })}
 
             <button
               onClick={() => openModal("Schedule Live VR Walkthrough Call")}
-              className="w-full py-4 rounded-xl bg-accent text-dark font-bold text-xs uppercase tracking-widest hover:bg-white transition-all flex items-center justify-center gap-2 shadow-xl mt-4"
+              className="w-full py-4 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-dark transition-all flex items-center justify-center gap-2 shadow-xl mt-4"
             >
               Book 1-on-1 Guided VR Consultation <ChevronRight size={16} />
             </button>

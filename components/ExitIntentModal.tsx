@@ -27,13 +27,13 @@ export default function ExitIntentModal() {
         }}
       />
       
-      <div className="relative z-10 w-full max-w-4xl bg-dark border border-accent/30 rounded-[3rem] overflow-hidden shadow-[0_0_100px_rgba(201,162,39,0.2)] animate-in fade-in zoom-in duration-300">
+      <div className="relative z-10 w-full max-w-4xl bg-white border border-accent/20 rounded-[3rem] overflow-hidden shadow-[0_0_100px_rgba(201,162,39,0.15)] animate-in fade-in zoom-in duration-300">
         <button 
           onClick={() => {
             setIsVisible(false);
             closeExitIntent();
           }}
-          className="absolute top-6 right-6 p-2 bg-white/5 hover:bg-accent hover:text-dark text-white rounded-full transition-colors z-20"
+          className="absolute top-6 right-6 p-2 bg-primary/5 hover:bg-accent hover:text-white text-primary rounded-full transition-colors z-20"
         >
           <X size={24} />
         </button>
@@ -43,17 +43,17 @@ export default function ExitIntentModal() {
             <div className="inline-flex items-center gap-2 text-accent font-bold text-[11px] uppercase tracking-widest mb-6">
               <AlertTriangle size={16} /> Wait Before You Leave
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary leading-tight mb-6">
               Unlock Priority Pricing.
             </h2>
-            <p className="text-white/70 text-lg leading-relaxed mb-8">
+            <p className="text-primary/70 text-lg leading-relaxed mb-8">
               You are about to miss out on the complete 150-Acre Masterplan, Phase 1 pricing, and the exclusive layout brochure.
             </p>
-            <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest">
+            <div className="text-[10px] font-bold text-primary/50 uppercase tracking-widest">
               Secure your spot instantly. No commitment required.
             </div>
           </div>
-          <div className="p-8 md:p-12 bg-white/[0.02]">
+          <div className="p-8 md:p-12 bg-light">
             <AdvancedEnquiryForm formId="Exit_Intent_Capture" />
           </div>
         </div>

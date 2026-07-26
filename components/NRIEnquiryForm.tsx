@@ -120,14 +120,14 @@ export default function NRIEnquiryForm({
   };
 
   return (
-    <div className="w-full bg-[#050505] backdrop-blur-3xl border border-accent/20 p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(201,162,39,0.1)] relative overflow-hidden">
+    <div className="w-full bg-white backdrop-blur-3xl border border-accent/20 p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(44,36,24,0.05)] relative overflow-hidden">
       
       {status === "success" && (
-        <div className="absolute inset-0 z-50 bg-[#050505]/95 backdrop-blur-xl flex flex-col items-center justify-center p-8 text-center space-y-6 animate-fade-in text-white">
+        <div className="absolute inset-0 z-50 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center p-8 text-center space-y-6 animate-fade-in text-primary">
           <CheckCircle2 size={60} className="text-accent animate-pulse" />
           <div className="space-y-2">
               <h3 className="text-3xl font-heading font-bold tracking-widest text-accent uppercase">Session Confirmed</h3>
-              <p className="text-white/60 text-sm">Your international relationship manager will contact you shortly.</p>
+              <p className="text-primary/60 text-sm">Your international relationship manager will contact you shortly.</p>
           </div>
         </div>
       )}
@@ -138,8 +138,8 @@ export default function NRIEnquiryForm({
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[10px] text-accent font-bold uppercase tracking-widest">
             <Globe size={12} /> Global NRI Support
         </div>
-        <h3 className="text-3xl font-heading font-bold text-white tracking-tight">{title}</h3>
-        <p className="text-white/50 text-sm font-light leading-relaxed max-w-md">{subtitle}</p>
+        <h3 className="text-3xl font-heading font-bold text-primary tracking-tight">{title}</h3>
+        <p className="text-primary/60 text-sm font-light leading-relaxed max-w-md">{subtitle}</p>
       </div>
 
       <form id={formId} onSubmit={handleSubmit} className="relative space-y-5 z-10">
@@ -152,14 +152,14 @@ export default function NRIEnquiryForm({
             name="name"
             required
             placeholder="Full Name"
-            className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-white/30 text-sm"
+            className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm"
           />
         </div>
 
         <div className="flex gap-3">
           <select
             name="countryCode"
-            className="w-[110px] bg-white/5 border border-white/10 rounded-2xl px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm appearance-none text-center"
+            className="w-[110px] bg-light border border-primary/10 rounded-2xl px-3 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm appearance-none text-center"
             defaultValue="+971"
           >
             <option value="+971">🇦🇪 +971</option>
@@ -175,7 +175,7 @@ export default function NRIEnquiryForm({
             name="phone"
             required
             placeholder="Mobile Number"
-            className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-white/30 text-sm"
+            className="flex-1 bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm"
           />
         </div>
 
@@ -186,14 +186,14 @@ export default function NRIEnquiryForm({
                 name="email"
                 required
                 placeholder="Email Address"
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-white/30 text-sm"
+                className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm"
             />
             </div>
             <div className="group relative">
             <select
                 name="timezone"
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white/50 focus:text-white focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm appearance-none"
+                className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary/70 focus:text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm appearance-none"
             >
                 <option value="" disabled selected>Preferred Timezone</option>
                 <option value="GST (Dubai)">GST (Dubai)</option>
@@ -216,7 +216,7 @@ export default function NRIEnquiryForm({
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-full bg-accent hover:bg-accent-hover text-dark font-black uppercase tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98] mt-4"
+          className="w-full bg-accent hover:bg-accent-hover text-white font-black uppercase tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98] mt-4"
         >
           {status === "submitting" ? (
             <Loader2 className="animate-spin" size={20} />

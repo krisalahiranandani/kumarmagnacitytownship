@@ -154,7 +154,7 @@ export default async function SEONodePage({ params }: PageProps) {
 
               <div className="flex flex-wrap gap-6 pt-4">
                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                    <div className="w-10 h-10 rounded-full bg-white/5 border border-primary/10 flex items-center justify-center text-accent">
                        <ShieldCheck size={20} />
                     </div>
                     <div className="flex flex-col">
@@ -163,7 +163,7 @@ export default async function SEONodePage({ params }: PageProps) {
                     </div>
                  </div>
                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                    <div className="w-10 h-10 rounded-full bg-white/5 border border-primary/10 flex items-center justify-center text-accent">
                        <TrendingUp size={20} />
                     </div>
                     <div className="flex flex-col">
@@ -174,7 +174,7 @@ export default async function SEONodePage({ params }: PageProps) {
               </div>
 
               <div className="hidden lg:block pt-8">
-                 <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl space-y-4">
+                 <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-primary/10 backdrop-blur-xl space-y-4">
                     <h4 className="text-white font-heading font-bold text-xl italic text-accent">Investment Insight</h4>
                     <p className="text-white/50 leading-relaxed text-sm">
                        Pune East is the epicenter of the next real estate boom. With the upcoming <span className="text-white font-bold">Ring Road</span> and <span className="text-white font-bold">Metro expansion</span>, land values in Manjari-Hadapsar are projected to grow by 22% by 2028.
@@ -219,21 +219,21 @@ export default async function SEONodePage({ params }: PageProps) {
              <div className="space-y-16">
                {data.blog_content.map((item, i) => (
                  <div key={i} className="space-y-6">
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark">{item.heading}</h2>
-                    <p className="text-lg text-dark/70 leading-relaxed font-light">{item.paragraph}</p>
+                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary">{item.heading}</h2>
+                    <p className="text-lg text-primary/70 leading-relaxed font-light">{item.paragraph}</p>
                  </div>
                ))}
                
                {/* Fixed Trust Pillar in Blog */}
-               <div className="pt-12 border-t border-dark/5">
+               <div className="pt-12 border-t border-primary/5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                      <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-dark uppercase tracking-widest">Legal Status</h3>
-                        <p className="text-dark/50 text-sm italic">Every plot at Kumar Magnacity comes with a clear title, RERA registration, and an individual 7/12 extract ensuring absolute security for your generational asset.</p>
+                        <h3 className="text-xl font-bold text-primary uppercase tracking-widest">Legal Status</h3>
+                        <p className="text-primary/50 text-sm italic">Every plot at Kumar Magnacity comes with a clear title, RERA registration, and an individual 7/12 extract ensuring absolute security for your generational asset.</p>
                      </div>
                      <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-dark uppercase tracking-widest">Connectivity</h3>
-                        <p className="text-dark/50 text-sm italic">Strategically located near the Pune-Solapur Highway and current/upcoming Ring Road junctions, offering swift access to Magarpatta, Kharadi, and Swargate.</p>
+                        <h3 className="text-xl font-bold text-primary uppercase tracking-widest">Connectivity</h3>
+                        <p className="text-primary/50 text-sm italic">Strategically located near the Pune-Solapur Highway and current/upcoming Ring Road junctions, offering swift access to Magarpatta, Kharadi, and Swargate.</p>
                      </div>
                   </div>
                </div>
@@ -248,10 +248,10 @@ export default async function SEONodePage({ params }: PageProps) {
           <div className="container mx-auto max-w-7xl px-4 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="space-y-8">
-                <h2 className="text-4xl md:text-5xl font-heading font-bold text-dark leading-tight">
+                <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary leading-tight">
                   Why Pune Smart Investors <br /> Choose <span className="text-accent underline decoration-accent/30 underline-offset-8 italic">Kumar Magnacity</span>
                 </h2>
-                <p className="text-lg text-dark/60 leading-relaxed font-light">
+                <p className="text-lg text-primary/60 leading-relaxed font-light">
                   Unlike disorganized local layouts, Kumar Magnacity offers the security of a Tier-1 developer combined with the freedom of owning your own NA bungalow land. It&apos;s a legacy you build, on a foundation of trust.
                 </p>
                 <div className="space-y-4">
@@ -265,7 +265,7 @@ export default async function SEONodePage({ params }: PageProps) {
                         <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                             <CheckIcon size={12} />
                         </div>
-                        <span className="text-dark/80 font-medium">{item}</span>
+                        <span className="text-primary/80 font-medium">{item}</span>
                       </div>
                     ))}
                 </div>
@@ -273,28 +273,28 @@ export default async function SEONodePage({ params }: PageProps) {
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-6">
-                  <div className="p-8 rounded-[2.5rem] bg-light border border-dark/5 space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2">
+                  <div className="p-8 rounded-[2.5rem] bg-light border border-primary/5 space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2">
                     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-lg text-primary">
                       <Download size={24} />
                     </div>
                     <h4 className="font-heading font-bold text-xl">Legal Kit</h4>
-                    <p className="text-xs text-dark/50 leading-relaxed italic">Download the 7/12 Extract samples and RERA compliance docs.</p>
+                    <p className="text-xs text-primary/50 leading-relaxed italic">Download the 7/12 Extract samples and RERA compliance docs.</p>
                   </div>
-                  <div className="p-8 rounded-[2.5rem] bg-dark text-white space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2">
+                  <div className="p-8 rounded-[2.5rem] bg-warm-bg text-primary space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2">
                     <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-accent">
                       <TrendingUp size={24} />
                     </div>
                     <h4 className="font-heading font-bold text-xl">ROI Guide</h4>
-                    <p className="text-xs text-white/40 leading-relaxed italic">Detailed analysis of Manjari-Hadapsar land appreciation 2026.</p>
+                    <p className="text-xs text-primary/40 leading-relaxed italic">Detailed analysis of Manjari-Hadapsar land appreciation 2026.</p>
                   </div>
                 </div>
                 <div className="space-y-6 pt-12">
-                  <div className="p-8 rounded-[2.5rem] bg-accent text-dark space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2 font-bold">
-                    <div className="w-12 h-12 bg-dark rounded-2xl flex items-center justify-center text-accent shadow-xl">
+                  <div className="p-8 rounded-[2.5rem] bg-accent text-white space-y-4 hover:shadow-2xl transition-all hover:-translate-y-2 font-bold">
+                    <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-accent shadow-xl">
                       <ArrowRight size={24} />
                     </div>
                     <h4 className="font-heading text-xl">Site Visit</h4>
-                    <p className="text-xs text-dark/70 leading-relaxed italic">Experience the master-planned grandeur in person today.</p>
+                    <p className="text-xs text-primary/70 leading-relaxed italic">Experience the master-planned grandeur in person today.</p>
                   </div>
                 </div>
               </div>

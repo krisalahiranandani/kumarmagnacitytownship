@@ -29,13 +29,13 @@ export default function SovereignBar() {
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[10001] md:hidden w-[92%] max-w-[400px]"
         >
-          <div className="bg-dark/80 backdrop-blur-2xl border border-white/10 p-2 rounded-[2rem] flex items-center justify-between gap-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] ring-1 ring-white/5">
+          <div className="bg-light/95 backdrop-blur-2xl border border-primary/10 p-2 rounded-[2rem] flex items-center justify-between gap-2 shadow-[0_20px_50px_rgba(44,36,24,0.2)] ring-1 ring-primary/5">
             <a 
               href="tel:+917744009295"
-              className="flex-1 flex flex-col items-center justify-center gap-1 bg-white/5 text-white py-3 rounded-[1.5rem] active:scale-95 transition-all"
+              className="flex-1 flex flex-col items-center justify-center gap-1 bg-primary/5 text-primary py-3 rounded-[1.5rem] active:scale-95 transition-all hover:bg-primary/10"
             >
               <Phone size={14} className="text-accent" />
-              <span className="text-[8px] font-bold uppercase tracking-widest">Call</span>
+              <span className="text-[8px] font-bold uppercase tracking-widest text-primary">Call</span>
             </a>
             
             <button 
@@ -50,10 +50,10 @@ export default function SovereignBar() {
               href="https://wa.me/917744009295?text=Hi!%20I%20want%20the%20brochure%20and%20price%20list%20for%20Kumar%20Magnacity."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#25D366]/20 text-[#25D366] py-3 rounded-[1.5rem] active:scale-95 transition-all border border-[#25D366]/10"
+              className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#25D366]/15 text-[#1e9e4d] py-3 rounded-[1.5rem] active:scale-95 transition-all border border-[#25D366]/20"
             >
               <MessageSquare size={14} />
-              <span className="text-[8px] font-bold uppercase tracking-widest">Chat</span>
+              <span className="text-[8px] font-bold uppercase tracking-widest font-bold">Chat</span>
             </a>
           </div>
         </motion.div>

@@ -16,8 +16,8 @@ export default function MasterPlanPage() {
       badge="Master Plan"
     >
       <div className="space-y-32">
-        <div className="relative rounded-[4rem] overflow-hidden shadow-3xl border border-dark/5 bg-white">
-           <div className="aspect-[21/9] bg-dark/5 relative group cursor-zoom-in">
+        <div className="relative rounded-[4rem] overflow-hidden shadow-3xl border border-primary/5 bg-white">
+           <div className="aspect-[21/9] bg-primary/5 relative group cursor-zoom-in">
               <div className="absolute inset-0 bg-[url('/assets/plot-layout.jpg')] bg-cover bg-center" />
               <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                  <div className="bg-white px-8 py-3 rounded-full text-primary font-bold shadow-xl">Click to Zoom Master Plan</div>
@@ -25,8 +25,8 @@ export default function MasterPlanPage() {
            </div>
            <div className="p-12 md:p-20 grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
-                 <h3 className="text-3xl font-heading font-bold text-dark">Infrastructure Anatomy</h3>
-                 <p className="text-dark/60 leading-relaxed font-light text-lg">
+                 <h3 className="text-3xl font-heading font-bold text-primary">Infrastructure Anatomy</h3>
+                 <p className="text-primary/60 leading-relaxed font-light text-lg">
                     The master plan features wide internal boulevards (12m - 18m), a centralized utility grid, and a series of interconnected green belts ('Botanic Trails') that act as the lungs of the township.
                  </p>
               </div>
@@ -34,22 +34,22 @@ export default function MasterPlanPage() {
                  <div className="space-y-2">
                     <Zap className="text-accent" size={20} />
                     <p className="font-bold text-sm">Underground Grid</p>
-                    <p className="text-dark/40 text-xs">No overhead wires for an unobstructed skyline.</p>
+                    <p className="text-primary/40 text-xs">No overhead wires for an unobstructed skyline.</p>
                  </div>
                  <div className="space-y-2">
                     <Droplets className="text-accent" size={20} />
                     <p className="font-bold text-sm">Water Autonomy</p>
-                    <p className="text-dark/40 text-xs">Integrated STPs and rainwater harvesting.</p>
+                    <p className="text-primary/40 text-xs">Integrated STPs and rainwater harvesting.</p>
                  </div>
                  <div className="space-y-2">
                     <Shield className="text-accent" size={20} />
                     <p className="font-bold text-sm">Gated Enclave</p>
-                    <p className="text-dark/40 text-xs">Controlled access for absolute resident privacy.</p>
+                    <p className="text-primary/40 text-xs">Controlled access for absolute resident privacy.</p>
                  </div>
                  <div className="space-y-2">
                     <Compass className="text-accent" size={20} />
                     <p className="font-bold text-sm">Vastu Compliant</p>
-                    <p className="text-dark/40 text-xs">A master plan aligned with rhythmic energy.</p>
+                    <p className="text-primary/40 text-xs">A master plan aligned with rhythmic energy.</p>
                  </div>
               </div>
            </div>

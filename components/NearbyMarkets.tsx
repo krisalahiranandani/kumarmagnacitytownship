@@ -26,13 +26,13 @@ const MARKETS = [
 
 export default function NearbyMarkets() {
   return (
-    <section className="py-16 bg-white border-t border-dark/5" aria-label="Explore Nearby Pune Markets">
+    <section className="py-16 bg-warm-bg border-t border-primary/5" aria-label="Explore Nearby Pune Markets">
       <div className="container mx-auto max-w-7xl px-6">
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark mb-4">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-4">
             Explore Pune East Markets
           </h2>
-          <p className="text-dark/60">Discover premium real estate opportunities across key IT corridors.</p>
+          <p className="text-primary/60">Discover premium real estate opportunities across key IT corridors.</p>
         </div>
         
         <div className="flex flex-wrap justify-center gap-4">
@@ -40,12 +40,12 @@ export default function NearbyMarkets() {
             <Link 
               key={idx} 
               href={market.href}
-              className="group flex items-center gap-3 px-6 py-4 rounded-full bg-light border border-dark/5 hover:border-accent hover:bg-accent/5 transition-all shadow-sm hover:shadow-md"
+              className="group flex items-center gap-3 px-6 py-4 rounded-full bg-light border border-primary/10 hover:border-accent hover:bg-accent/5 transition-all shadow-sm hover:shadow-md"
             >
-              <span className="text-sm font-bold text-dark/80 group-hover:text-dark transition-colors">
+              <span className="text-sm font-bold text-primary/80 group-hover:text-primary transition-colors">
                 {market.name}
               </span>
-              <ArrowRight size={14} className="text-dark/40 group-hover:text-accent group-hover:translate-x-1 transition-all" />
+              <ArrowRight size={14} className="text-primary/40 group-hover:text-accent group-hover:translate-x-1 transition-all" />
             </Link>
           ))}
         </div>

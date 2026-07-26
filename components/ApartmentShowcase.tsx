@@ -65,7 +65,7 @@ export default function ApartmentShowcase() {
   const monthlyEmi = calculateEMI(loanAmount, 8.5, emiTenure);
 
   return (
-    <section className="py-24 bg-dark text-white overflow-hidden relative" id="apartments">
+    <section className="py-24 bg-warm-bg text-primary overflow-hidden relative" id="apartments">
       {/* Background Ambient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(201,162,39,0.05),transparent_50%)]" />
       
@@ -97,10 +97,10 @@ export default function ApartmentShowcase() {
         {/* Tabs */}
         <nav className="flex justify-center mb-12" aria-label="Apartment Configuration Tabs">
           <div 
-            className="p-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl inline-flex shadow-2xl relative overflow-hidden"
+            className="p-1 rounded-full border border-primary/10 bg-primary/5 backdrop-blur-xl inline-flex shadow-2xl relative overflow-hidden"
             role="tablist"
           >
-             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] animate-[shimmer_2s_infinite]" aria-hidden="true" />
+             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent translate-x-[-100%] animate-[shimmer_2s_infinite]" aria-hidden="true" />
             {apartmentTypes.map((apt, idx) => (
               <button
                 key={apt.type}
@@ -111,7 +111,7 @@ export default function ApartmentShowcase() {
                 onClick={() => setActiveTab(idx as 0 | 1)}
                 className={cn(
                   "px-8 py-3 rounded-full text-sm font-medium transition-all duration-500 relative z-10",
-                  activeTab === idx ? "bg-[#C9A227] text-dark shadow-[0_0_30px_rgba(201,162,39,0.5)] scale-105" : "text-white/70 hover:text-white hover:bg-white/5"
+                  activeTab === idx ? "bg-[#C9A227] text-white shadow-[0_0_30px_rgba(201,162,39,0.5)] scale-105" : "text-primary/70 hover:text-primary hover:bg-primary/5"
                 )}
               >
                 {apt.type}
@@ -139,36 +139,36 @@ export default function ApartmentShowcase() {
                 
                 {/* Main Stat Card with 3D Tilt */}
                 <TiltCard>
-                  <section aria-label="Apartment Details" className="glass-obsidian rounded-[2.5rem] p-8 border border-white/10 h-full overflow-hidden relative shadow-2xl transform-gpu" style={{ transform: "translateZ(30px)" }}>
+                  <section aria-label="Apartment Details" className="glass-obsidian rounded-[2.5rem] p-8 border border-primary/10 h-full overflow-hidden relative shadow-2xl transform-gpu" style={{ transform: "translateZ(30px)" }}>
                     <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none text-[#C9A227]" aria-hidden="true">
                       <Ruler size={140} />
                     </div>
-                    <p className="text-white/50 text-xs uppercase tracking-widest mb-2 font-bold flex items-center gap-2" id="carpet-area-label">
+                    <p className="text-primary/50 text-xs uppercase tracking-widest mb-2 font-bold flex items-center gap-2" id="carpet-area-label">
                        <Sparkles size={12} className="text-[#C9A227]" aria-hidden="true" />
                        Carpet Area
                     </p>
                     <div className="flex items-baseline gap-2 mb-8" aria-labelledby="carpet-area-label">
                       <span className="text-7xl font-heading font-bold text-[#C9A227] drop-shadow-[0_0_15px_rgba(201,162,39,0.3)]">{currentApt.carpetArea}</span>
-                      <span className="text-white/60 text-lg">{currentApt.carpetAreaUnit}</span>
+                      <span className="text-primary/60 text-lg">{currentApt.carpetAreaUnit}</span>
                     </div>
                     <ul className="space-y-5" aria-label="Quick Stats">
-                      <li className="flex items-center gap-4 text-sm group/item hover:bg-white/5 p-2 -ml-2 rounded-xl transition-colors">
+                      <li className="flex items-center gap-4 text-sm group/item hover:bg-primary/5 p-2 -ml-2 rounded-xl transition-colors">
                         <div className="w-8 h-8 rounded-full bg-[#C9A227]/10 flex items-center justify-center shrink-0 border border-[#C9A227]/20" aria-hidden="true">
                            <IndianRupee className="text-[#C9A227]" size={14} />
                         </div>
                         <span className="font-bold text-lg" aria-label={`Price ranging from ${currentApt.priceFrom} to ${currentApt.priceTo}`}>₹{(currentApt.priceFrom / 100000).toFixed(2)}L - ₹{(currentApt.priceTo / 100000).toFixed(2)}L</span>
                       </li>
-                      <li className="flex items-center gap-4 text-sm group/item hover:bg-white/5 p-2 -ml-2 rounded-xl transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10" aria-hidden="true">
-                           <ShieldCheck className="text-white/60" size={14} />
+                      <li className="flex items-center gap-4 text-sm group/item hover:bg-primary/5 p-2 -ml-2 rounded-xl transition-colors">
+                        <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10" aria-hidden="true">
+                           <ShieldCheck className="text-primary/60" size={14} />
                         </div>
-                        <span className="text-white/80">RERA: {currentApt.rera}</span>
+                        <span className="text-primary/80">RERA: {currentApt.rera}</span>
                       </li>
-                      <li className="flex items-center gap-4 text-sm group/item hover:bg-white/5 p-2 -ml-2 rounded-xl transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10" aria-hidden="true">
-                           <Calendar className="text-white/60" size={14} />
+                      <li className="flex items-center gap-4 text-sm group/item hover:bg-primary/5 p-2 -ml-2 rounded-xl transition-colors">
+                        <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10" aria-hidden="true">
+                           <Calendar className="text-primary/60" size={14} />
                         </div>
-                        <span className="text-white/80">Possession: {currentApt.possession}</span>
+                        <span className="text-primary/80">Possession: {currentApt.possession}</span>
                       </li>
                     </ul>
                   </section>
@@ -176,20 +176,20 @@ export default function ApartmentShowcase() {
 
                 {/* EMI Calculator */}
                 <TiltCard>
-                  <section aria-label="EMI Calculator" className="glass-obsidian rounded-[2.5rem] p-8 border border-white/10 h-full shadow-2xl relative" style={{ transform: "translateZ(20px)" }}>
-                    <p className="text-white/50 text-xs uppercase tracking-widest mb-6 font-bold flex items-center gap-2">
+                  <section aria-label="EMI Calculator" className="glass-obsidian rounded-[2.5rem] p-8 border border-primary/10 h-full shadow-2xl relative" style={{ transform: "translateZ(20px)" }}>
+                    <p className="text-primary/50 text-xs uppercase tracking-widest mb-6 font-bold flex items-center gap-2">
                       EMI Calculator
                     </p>
-                    <div className="mb-8 p-6 rounded-2xl bg-gradient-to-br from-black/40 to-black/10 border border-white/5 relative overflow-hidden">
+                    <div className="mb-8 p-6 rounded-2xl bg-gradient-to-br from-black/40 to-black/10 border border-primary/5 relative overflow-hidden">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A227]/5 blur-2xl rounded-full" />
-                      <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2 relative z-10">
+                      <div className="text-4xl md:text-5xl font-heading font-bold text-primary mb-2 relative z-10">
                         <span className="text-[#C9A227]">₹</span>{monthlyEmi.toLocaleString('en-IN')}
                       </div>
-                      <p className="text-xs text-white/40 uppercase tracking-wider relative z-10">Monthly at 8.5% (80% LTV)</p>
+                      <p className="text-xs text-primary/40 uppercase tracking-wider relative z-10">Monthly at 8.5% (80% LTV)</p>
                     </div>
                     
                     <div className="space-y-4">
-                      <p className="text-[10px] text-white/50 uppercase tracking-widest font-bold">Select Tenure</p>
+                      <p className="text-[10px] text-primary/50 uppercase tracking-widest font-bold">Select Tenure</p>
                       <div className="grid grid-cols-4 gap-2">
                         {[10, 15, 20, 25].map(year => (
                           <button
@@ -198,8 +198,8 @@ export default function ApartmentShowcase() {
                             className={cn(
                               "py-3 text-xs rounded-xl border transition-all duration-300 font-bold font-sans",
                               emiTenure === year 
-                                ? "border-[#C9A227] bg-[#C9A227] text-dark shadow-[0_10px_20px_rgba(201,162,39,0.3)] scale-105" 
-                                : "border-white/10 hover:border-white/30 text-white/60 bg-white/5 hover:bg-white/10"
+                                ? "border-[#C9A227] bg-[#C9A227] text-white shadow-[0_10px_20px_rgba(201,162,39,0.3)] scale-105" 
+                                : "border-primary/10 hover:border-primary/30 text-primary/60 bg-primary/5 hover:bg-primary/10"
                             )}
                           >
                             {year}Y
@@ -213,10 +213,10 @@ export default function ApartmentShowcase() {
 
               {/* Highlights */}
               <motion.div 
-                className="glass-obsidian rounded-[2.5rem] p-8 border border-white/10 relative overflow-hidden"
+                className="glass-obsidian rounded-[2.5rem] p-8 border border-primary/10 relative overflow-hidden"
               >
                 <div className="absolute right-0 bottom-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
-                <p className="text-white/50 text-xs uppercase tracking-widest mb-6 font-bold">Key Highlights</p>
+                <p className="text-primary/50 text-xs uppercase tracking-widest mb-6 font-bold">Key Highlights</p>
                 <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 relative z-10">
                   {currentApt.highlights.map((highlight, idx) => (
                     <motion.div 
@@ -227,7 +227,7 @@ export default function ApartmentShowcase() {
                       className="flex items-start gap-3 group/hi"
                     >
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#C9A227] shrink-0 group-hover/hi:scale-150 transition-transform shadow-[0_0_8px_rgba(201,162,39,0.8)]" />
-                      <p className="text-sm text-white/70 group-hover/hi:text-white transition-colors">{highlight}</p>
+                      <p className="text-sm text-primary/70 group-hover/hi:text-primary transition-colors">{highlight}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -243,7 +243,7 @@ export default function ApartmentShowcase() {
                     <div className="w-10 h-10 rounded-full bg-[#C9A227]/20 flex items-center justify-center border border-[#C9A227]/30" aria-hidden="true">
                        <Target className="text-[#C9A227]" size={20} />
                     </div>
-                    <h3 className="text-white text-xs uppercase tracking-widest font-bold m-0">Ideal For</h3>
+                    <h3 className="text-primary text-xs uppercase tracking-widest font-bold m-0">Ideal For</h3>
                   </div>
                   <ul className="space-y-3 mb-auto relative z-10">
                     {currentApt.idealFor.map((persona, idx) => (
@@ -252,7 +252,7 @@ export default function ApartmentShowcase() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.1 + 0.4 }}
-                        className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 text-sm text-white/80 hover:bg-white/5 transition-colors flex items-center gap-3"
+                        className="p-4 rounded-2xl bg-primary/[0.02] border border-primary/5 text-sm text-primary/80 hover:bg-primary/5 transition-colors flex items-center gap-3"
                       >
                         <div className="w-1 h-1 rounded-full bg-white/30" aria-hidden="true" />
                         {persona}
@@ -262,7 +262,7 @@ export default function ApartmentShowcase() {
                   
                   <button 
                     onClick={() => openModal({ title: `Explore ${currentApt.type} Availability`, source: 'ApartmentShowcase' })}
-                    className="w-full mt-8 py-5 rounded-2xl bg-[#C9A227] text-dark font-black tracking-widest uppercase hover:bg-white transition-all duration-500 flex items-center justify-center gap-3 group relative overflow-hidden z-10 shadow-[0_15px_40px_rgba(201,162,39,0.4)] hover:shadow-[0_20px_50px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95"
+                    className="w-full mt-8 py-5 rounded-2xl bg-[#C9A227] text-white font-black tracking-widest uppercase hover:bg-white transition-all duration-500 flex items-center justify-center gap-3 group relative overflow-hidden z-10 shadow-[0_15px_40px_rgba(201,162,39,0.4)] hover:shadow-[0_20px_50px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95"
                     aria-label={`Enquire about ${currentApt.type} apartments`}
                   >
                     <span className="relative z-10">Enquire Now</span>

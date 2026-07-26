@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function NRIInvestmentPage() {
   return (
-    <main className="min-h-screen bg-dark text-white selection:bg-accent selection:text-dark">
+    <main className="min-h-screen bg-warm-bg text-primary selection:bg-accent selection:text-white">
       <Header />
       
       {/* 1. GLOBAL HERO SECTION */}
@@ -51,14 +51,14 @@ export default function NRIInvestmentPage() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center gap-2 bg-white/5 px-4 py-3 rounded-2xl border border-white/10">
+              <div className="flex items-center gap-2 bg-white/5 px-4 py-3 rounded-2xl border border-primary/10">
                 <TrendingUp className="text-accent" size={20} />
                 <div className="text-left">
                     <p className="text-[10px] text-white/50 uppercase">Capital Appreciation</p>
                     <p className="font-bold">12-15% Est. YoY</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 bg-white/5 px-4 py-3 rounded-2xl border border-white/10">
+              <div className="flex items-center gap-2 bg-white/5 px-4 py-3 rounded-2xl border border-primary/10">
                 <ShieldCheck className="text-accent" size={20} />
                 <div className="text-left">
                     <p className="text-[10px] text-white/50 uppercase">Legal Compliance</p>
@@ -75,41 +75,41 @@ export default function NRIInvestmentPage() {
       </section>
 
       {/* 2. THE NRI ADVANTAGE (CURRENCY & ROI) */}
-      <section className="py-24 border-t border-white/5 relative overflow-hidden bg-white/[0.02]">
+      <section className="py-24 border-t border-primary/5 relative overflow-hidden bg-white/[0.02]">
         <div className="container-custom relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                 <h2 className="text-3xl md:text-5xl font-heading font-bold">The Strategic Multiplier</h2>
-                <p className="text-white/50">Why Non-Resident Indians are aggressively pivoting capital into East Pune real estate right now.</p>
+                <p className="text-primary/50">Why Non-Resident Indians are aggressively pivoting capital into East Pune real estate right now.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Advantage 1 */}
-                <div className="bg-[#0A0A0A] p-8 rounded-3xl border border-white/10 group hover:border-accent/50 transition-colors">
+                <div className="bg-light p-8 rounded-3xl border border-primary/10 group hover:border-accent/50 transition-colors">
                     <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                         <TrendingUp size={28} />
                     </div>
                     <h3 className="text-xl font-bold mb-3">Currency Arbitrage</h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-primary/50 text-sm leading-relaxed">
                         With the USD & AED at historic highs against the INR, your foreign capital buys up to 20% more square footage than it did 3 years ago. Real estate is the ultimate hedge.
                     </p>
                 </div>
                 {/* Advantage 2 */}
-                <div className="bg-[#0A0A0A] p-8 rounded-3xl border border-white/10 group hover:border-accent/50 transition-colors">
+                <div className="bg-light p-8 rounded-3xl border border-primary/10 group hover:border-accent/50 transition-colors">
                     <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                         <Building2 size={28} />
                     </div>
                     <h3 className="text-xl font-bold mb-3">East Pune Boom</h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-primary/50 text-sm leading-relaxed">
                         Manjari and Hadapsar are witnessing massive infrastructure injections (Ring Road, Metro Expansion). Property rates are projected to appreciate aggressively over the next 5 years.
                     </p>
                 </div>
                 {/* Advantage 3 */}
-                <div className="bg-[#0A0A0A] p-8 rounded-3xl border border-white/10 group hover:border-accent/50 transition-colors">
+                <div className="bg-light p-8 rounded-3xl border border-primary/10 group hover:border-accent/50 transition-colors">
                     <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                         <Plane size={28} />
                     </div>
                     <h3 className="text-xl font-bold mb-3">Zero Travel Required</h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-primary/50 text-sm leading-relaxed">
                         From 4K drone layouts to digital execution of Agreements and Power of Attorney (POA), our NRI desk handles the entire acquisition process virtually.
                     </p>
                 </div>
@@ -118,18 +118,18 @@ export default function NRIInvestmentPage() {
       </section>
 
       {/* 2.5 FINANCIAL INTELLIGENCE */}
-      <section className="py-24 bg-dark">
+      <section className="py-24 bg-warm-bg">
         <div className="container-custom">
             <div className="mb-12 text-center">
                 <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">Capital Allocation Calculator</h2>
-                <p className="text-white/50 max-w-2xl mx-auto">Model your EMI, down payment, and projected appreciation from overseas before making a commitment.</p>
+                <p className="text-primary/50 max-w-2xl mx-auto">Model your EMI, down payment, and projected appreciation from overseas before making a commitment.</p>
             </div>
             <InvestmentCalculator />
         </div>
       </section>
 
       {/* 3. FEMA & COMPLIANCE */}
-      <section className="py-24 border-t border-white/5">
+      <section className="py-24 border-t border-primary/5">
         <div className="container-custom">
             <div className="bg-gradient-to-r from-accent/5 to-transparent border border-accent/20 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center gap-12">
                 <div className="flex-1 space-y-6">
@@ -163,7 +163,7 @@ export default function NRIInvestmentPage() {
                 </div>
                 
                 {/* Visual / Branding */}
-                <div className="w-full md:w-[400px] aspect-square relative rounded-[2.5rem] overflow-hidden border border-white/10 group">
+                <div className="w-full md:w-[400px] aspect-square relative rounded-[2.5rem] overflow-hidden border border-primary/10 group">
                     <Image 
                         src="/assets/plot-layout.jpg"
                         alt="Virtual Tours for NRIs"

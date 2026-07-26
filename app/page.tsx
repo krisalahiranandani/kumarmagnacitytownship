@@ -17,11 +17,11 @@ const AmenityGrid = dynamic(() => import("@/components/AmenityGrid"), {
 });
 const InvestmentMatrix = dynamic(() => import("@/components/InvestmentMatrix"), { 
   ssr: false,
-  loading: () => <div className="w-full h-[400px] bg-dark/5 animate-pulse rounded-[3rem]" />
+  loading: () => <div className="w-full h-[400px] bg-primary/5 animate-pulse rounded-[3rem]" />
 });
 const InvestmentCalculator = dynamic(() => import("@/components/InvestmentCalculator"), { 
   ssr: false,
-  loading: () => <div className="w-full h-[500px] bg-dark/5 animate-pulse rounded-[3rem]" />
+  loading: () => <div className="w-full h-[500px] bg-primary/5 animate-pulse rounded-[3rem]" />
 });
 const AdvancedEnquiryForm = dynamic(() => import("@/components/AdvancedEnquiryForm"), { 
   ssr: false,
@@ -30,7 +30,7 @@ const AdvancedEnquiryForm = dynamic(() => import("@/components/AdvancedEnquiryFo
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 const SovereignBar = dynamic(() => import("@/components/SovereignBar"), { 
   ssr: false,
-  loading: () => <div className="w-full h-[80px] bg-dark/5 animate-pulse" />
+  loading: () => <div className="w-full h-[80px] bg-primary/5 animate-pulse" />
 });
 const InteractiveLayoutViewer = dynamic(() => import("@/components/InteractiveLayoutViewer"), { 
   ssr: false,
@@ -346,11 +346,11 @@ export default function Home() {
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   className="space-y-4 p-8 rounded-[2.5rem] bg-light-soft border border-dark/5 transition-all group cursor-pointer"
                 >
-                   <div className="w-12 h-12 bg-dark rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                       <Building2 size={24} />
                    </div>
-                   <h4 className="text-xl font-bold text-white">Established Heritage</h4>
-                   <p className="text-sm text-white/60 leading-relaxed">Built on Kumar Props&apos; 59-year legacy of delivering high-appreciation assets.</p>
+                   <h4 className="text-xl font-bold text-primary">Established Heritage</h4>
+                   <p className="text-sm text-primary/60 leading-relaxed">Built on Kumar Props&apos; 59-year legacy of delivering high-appreciation assets.</p>
                 </motion.div>
                 <motion.div 
                   initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
@@ -360,11 +360,11 @@ export default function Home() {
                   transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="space-y-4 p-8 rounded-[2.5rem] bg-light-soft border border-dark/5 transition-all group cursor-pointer"
                 >
-                   <div className="w-12 h-12 bg-dark rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                       <ShieldCheck size={24} />
                    </div>
-                   <h4 className="text-xl font-bold text-white">Complete NA Title</h4>
-                   <p className="text-sm text-white/60 leading-relaxed">Individual 7/12 extracts and full RERA compliance for 100% legal security.</p>
+                   <h4 className="text-xl font-bold text-primary">Complete NA Title</h4>
+                   <p className="text-sm text-primary/60 leading-relaxed">Individual 7/12 extracts and full RERA compliance for 100% legal security.</p>
                 </motion.div>
               </div>
 
@@ -375,7 +375,7 @@ export default function Home() {
               >
                  <button 
                   onClick={() => openModal({ title: "Sector Wise Detailing", source: "Vision Section" })}
-                  className="inline-flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.3em] text-white/60 hover:text-accent transition-colors group"
+                  className="inline-flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.3em] text-primary/60 hover:text-accent transition-colors group"
                  >
                     INTERNAL INFRASTRUCTURE SPECS
                     <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
@@ -393,7 +393,7 @@ export default function Home() {
                 className="relative z-10 rounded-[4rem] overflow-hidden shadow-[0_50px_100px_rgba(212,175,55,0.15)] group"
               >
                 <Image src="/assets/plot-layout.jpg" alt="Kumar Magnacity 150 Acre Master Plan Layout Hadapsar Annexe Manjari Pune" width={1200} height={800} className="w-full h-auto transition-transform duration-[3s] group-hover:scale-110" />
-                <div className="absolute inset-0 bg-dark/20 group-hover:bg-dark/40 transition-colors" />
+                <div className="absolute inset-0 bg-primary/5 group-hover:bg-dark/40 transition-colors" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                    <div className="bg-white px-8 py-4 rounded-full text-[10px] font-bold tracking-widest uppercase text-dark flex items-center gap-2">
                       VIEW FULL RESOLUTION <Sparkles size={14} className="text-accent" />
@@ -404,7 +404,7 @@ export default function Home() {
               <motion.div 
                 animate={{ y: [0, -15, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute -bottom-10 -right-10 z-20 bg-dark text-white p-10 rounded-[3rem] shadow-[0_30px_60px_rgba(255,215,0,0.15)] space-y-2 hidden md:block border border-accent/20"
+                className="absolute -bottom-10 -right-10 z-20 bg-warm-bg text-primary p-10 rounded-[3rem] shadow-[0_30px_60px_rgba(255,215,0,0.15)] space-y-2 hidden md:block border border-accent/20"
               >
                  <div className="text-4xl font-heading font-bold text-accent">1700+</div>
                  <div className="text-[10px] font-bold uppercase tracking-widest opacity-60">SQ.FT PLOTTING STARTING</div>
@@ -419,7 +419,7 @@ export default function Home() {
 
       {/* 2.3 SIDE-BY-SIDE PROPERTY COMPARISON */}
       <PropertyComparison />
-      <section className="py-24 md:py-40 bg-dark relative overflow-hidden">
+      <section className="py-24 md:py-40 bg-warm-bg relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(201,162,39,0.08),transparent_60%)]" />
         <div className="container mx-auto max-w-7xl px-6 relative z-10">
           <SectionHeader 
@@ -438,7 +438,7 @@ export default function Home() {
               whileHover={{ y: -15, scale: 1.02, rotateX: 2, rotateY: -2, boxShadow: "0px 40px 120px rgba(212,175,55,0.25)" }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative bg-light border border-white/10 rounded-[3rem] p-10 md:p-14 space-y-8 hover:border-accent/50 transition-all duration-700 overflow-hidden cursor-pointer"
+              className="group relative bg-light border border-primary/10 rounded-[3rem] p-10 md:p-14 space-y-8 hover:border-accent/50 transition-all duration-700 overflow-hidden cursor-pointer"
             >
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-accent/10 blur-[80px] rounded-full group-hover:bg-accent/20 transition-all duration-700" />
               <div className="relative z-10 space-y-8">
@@ -450,8 +450,8 @@ export default function Home() {
                   <div className="text-[10px] text-white/30 font-bold uppercase tracking-widest">RERA: P52100052096</div>
                 </div>
                 <div className="space-y-3">
-                  <div className="text-5xl md:text-6xl font-heading font-bold text-white">757 <span className="text-lg text-white/30">sq.ft</span></div>
-                  <div className="text-sm text-white/40 leading-relaxed">Compact yet spacious carpet area — perfect for young IT professionals and first-time homebuyers.</div>
+                  <div className="text-5xl md:text-6xl font-heading font-bold text-primary">757 <span className="text-lg text-white/30">sq.ft</span></div>
+                  <div className="text-sm text-primary/40 leading-relaxed">Compact yet spacious carpet area — perfect for young IT professionals and first-time homebuyers.</div>
                 </div>
                 <div className="flex items-end gap-2">
                   <div className="text-3xl font-heading font-bold text-accent">₹72.99L</div>
@@ -459,7 +459,7 @@ export default function Home() {
                 </div>
                 <Link 
                   href="/kumar-magnacity-2bhk-flats-hadapsar-pune-price"
-                  className="inline-flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.25em] text-accent hover:text-white transition-colors group/link"
+                  className="inline-flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.25em] text-accent hover:text-primary transition-colors group/link"
                 >
                   EXPLORE 2BHK
                   <ArrowRight size={16} className="group-hover/link:translate-x-2 transition-transform" />
@@ -474,20 +474,20 @@ export default function Home() {
               whileHover={{ y: -15, scale: 1.02, rotateX: 2, rotateY: 2, boxShadow: "0px 40px 120px rgba(212,175,55,0.25)" }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative bg-light border border-white/10 rounded-[3rem] p-10 md:p-14 space-y-8 hover:border-accent/50 transition-all duration-700 overflow-hidden cursor-pointer"
+              className="group relative bg-light border border-primary/10 rounded-[3rem] p-10 md:p-14 space-y-8 hover:border-accent/50 transition-all duration-700 overflow-hidden cursor-pointer"
             >
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 blur-[80px] rounded-full group-hover:bg-primary/20 transition-all duration-700" />
               <div className="relative z-10 space-y-8">
                 <div className="flex items-center justify-between">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 text-white font-bold text-[10px] uppercase tracking-[0.3em]">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 text-primary font-bold text-[10px] uppercase tracking-[0.3em]">
                     <Building2 size={14} />
                     3 BHK
                   </div>
                   <div className="text-[10px] text-white/30 font-bold uppercase tracking-widest">RERA: P52100054476</div>
                 </div>
                 <div className="space-y-3">
-                  <div className="text-5xl md:text-6xl font-heading font-bold text-white">1,053 <span className="text-lg text-white/30">sq.ft</span></div>
-                  <div className="text-sm text-white/40 leading-relaxed">Expansive 3-bedroom layout with premium finishes — designed for growing families and space-seekers.</div>
+                  <div className="text-5xl md:text-6xl font-heading font-bold text-primary">1,053 <span className="text-lg text-white/30">sq.ft</span></div>
+                  <div className="text-sm text-primary/40 leading-relaxed">Expansive 3-bedroom layout with premium finishes — designed for growing families and space-seekers.</div>
                 </div>
                 <div className="flex items-end gap-2">
                   <div className="text-3xl font-heading font-bold text-accent">₹1.05Cr</div>
@@ -495,7 +495,7 @@ export default function Home() {
                 </div>
                 <Link 
                   href="/kumar-magnacity-3bhk-apartments-manjari-pune-price"
-                  className="inline-flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.25em] text-accent hover:text-white transition-colors group/link"
+                  className="inline-flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.25em] text-accent hover:text-primary transition-colors group/link"
                 >
                   EXPLORE 3BHK
                   <ArrowRight size={16} className="group-hover/link:translate-x-2 transition-transform" />
@@ -519,7 +519,7 @@ export default function Home() {
       </section>
 
       {/* 3. AMENITY ECOSYSTEM (Advanced Visuals) */}
-      <section className="py-24 md:py-40 bg-dark">
+      <section className="py-24 md:py-40 bg-warm-bg">
         <div className="container mx-auto max-w-7xl px-6">
           <SectionHeader 
             dark
@@ -603,12 +603,12 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="p-10 rounded-[3rem] bg-light border border-white/5 transition-all hover:border-accent/60 space-y-4 cursor-pointer"
                 >
-                   <div className="w-12 h-12 mx-auto bg-dark rounded-2xl flex items-center justify-center shadow-lg border border-white/10">
+                   <div className="w-12 h-12 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center shadow-lg border border-primary/10">
                       {loc.icon}
                    </div>
                    <div className="space-y-1">
-                      <div className="text-2xl font-heading font-bold text-white">{loc.time}</div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-white/50">{loc.label}</div>
+                      <div className="text-2xl font-heading font-bold text-primary">{loc.time}</div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest text-primary/50">{loc.label}</div>
                    </div>
                 </motion.div>
               ))}
@@ -637,7 +637,7 @@ export default function Home() {
       </section>
 
       {/* 6. ADVANCED ENQUIRY ENGINE (Final Conversion) */}
-      <section id="contact" className="py-24 md:py-48 bg-dark relative">
+      <section id="contact" className="py-24 md:py-48 bg-warm-bg relative">
         <div className="absolute inset-0 bg-[url('/assets/amenities.jpg')] bg-cover bg-center opacity-10" />
         <div className="container mx-auto max-w-5xl px-6 relative z-10">
            <AdvancedEnquiryForm 

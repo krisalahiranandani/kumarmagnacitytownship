@@ -15,18 +15,18 @@ export default function PrivacyPolicy() {
       
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="bg-white rounded-[2.5rem] p-8 md:p-16 shadow-xl border border-dark/5">
+          <div className="bg-white rounded-[2.5rem] p-8 md:p-16 shadow-xl border border-primary/5">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
                 <Shield size={24} />
               </div>
               <div>
-                <h1 className="text-4xl font-heading font-bold text-dark">Privacy Policy</h1>
-                <p className="text-dark/40 text-sm">Last Updated: March 11, 2026</p>
+                <h1 className="text-4xl font-heading font-bold text-primary">Privacy Policy</h1>
+                <p className="text-primary/40 text-sm">Last Updated: March 11, 2026</p>
               </div>
             </div>
 
-            <div className="prose prose-lg prose-primary max-w-none text-dark/70 leading-relaxed space-y-8 font-light">
+            <div className="prose prose-lg prose-primary max-w-none text-primary/70 leading-relaxed space-y-8 font-light">
               <p>
                 Welcome to <strong>Kumar Magnacity</strong>. Your privacy is critically important to us. 
                 This Privacy Policy document contains types of information that is collected and recorded 
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
               </p>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-dark mb-4">1. Information We Collect</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-4">1. Information We Collect</h2>
                 <p>
                   We collect personal information that you voluntarily provide to us when you express an interest 
                   in obtaining information about us or our products and services, such as:
@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-dark mb-4">2. How We Use Your Information</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-4">2. How We Use Your Information</h2>
                 <p>We use the information we collect in various ways, including to:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Provide, operate, and maintain our website</li>
@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-dark mb-4">3. Log Files</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-4">3. Log Files</h2>
                 <p>
                   Kumar Magnacity follows a standard procedure of using log files. These files log visitors 
                   when they visit websites. The information collected by log files include internet protocol (IP) 
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-dark mb-4">4. Data Security</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-4">4. Data Security</h2>
                 <p>
                   We use commercially acceptable means to protect your personal information, but remember 
                   that no method of transmission over the internet, or method of electronic storage is 100% secure.
@@ -76,7 +76,7 @@ export default function PrivacyPolicy() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-dark mb-4">5. Cookies and Web Beacons</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-4">5. Cookies and Web Beacons</h2>
                 <p>
                   Like any other website, Kumar Magnacity uses &apos;cookies&apos;. These cookies are used to store 
                   information including visitors&apos; preferences, and the pages on the website that the visitor 
@@ -85,7 +85,7 @@ export default function PrivacyPolicy() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-dark mb-4">6. Your Consent</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-4">6. Your Consent</h2>
                 <p>
                   By using our website, you hereby consent to our Privacy Policy and agree to its terms.
                 </p>

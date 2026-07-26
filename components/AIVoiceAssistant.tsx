@@ -28,26 +28,26 @@ export default function AIVoiceAssistant() {
   };
 
   return (
-    <section className="py-24 bg-[#040404] border-t border-white/10 relative overflow-hidden" id="ai-voice-assistant">
+    <section className="py-24 bg-warm-bg border-t border-primary/10 relative overflow-hidden" id="ai-voice-assistant">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-mono text-[11px] uppercase tracking-widest">
             <Bot size={14} /> Multilingual AI Voice Concierge
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary tracking-tight">
             Ask AI in <span className="text-gradient-gold">English, Marathi & Hindi</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-400">
+          <p className="text-sm md:text-base text-primary/60">
             Get instant voice or text answers regarding launch pricing, floor plans, RERA approvals, and location advantages.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left: Interactive Voice & Query Box */}
-          <div className="lg:col-span-7 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl space-y-6">
+          <div className="lg:col-span-7 bg-white border border-primary/10 rounded-3xl p-8 backdrop-blur-xl space-y-6">
             {/* Language Selector Tabs */}
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="text-xs font-mono text-gray-400 uppercase font-bold">Select Language</span>
+            <div className="flex items-center justify-between border-b border-primary/10 pb-4">
+              <span className="text-xs font-mono text-primary/60 uppercase font-bold">Select Language</span>
               <div className="flex gap-2">
                 {["English", "मराठी (Marathi)", "हिंदी (Hindi)"].map((lang, idx) => (
                   <button
@@ -55,8 +55,8 @@ export default function AIVoiceAssistant() {
                     onClick={() => setLanguage(lang.split(" ")[0])}
                     className={`px-3 py-1 rounded-full text-xs font-mono transition-all ${
                       language.includes(lang.split(" ")[0])
-                        ? "bg-accent text-dark font-bold"
-                        : "bg-white/5 text-gray-400 hover:text-white"
+                        ? "bg-accent text-white font-bold"
+                        : "bg-primary/5 text-primary/60 hover:text-primary"
                     }`}
                   >
                     {lang}
@@ -67,13 +67,13 @@ export default function AIVoiceAssistant() {
 
             {/* Quick Questions Buttons */}
             <div>
-              <label className="text-xs font-mono text-gray-400 uppercase font-bold mb-3 block">Frequent Buyer Questions</label>
+              <label className="text-xs font-mono text-primary/60 uppercase font-bold mb-3 block">Frequent Buyer Questions</label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {QUICK_QUESTIONS.map((q, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveAnswer(q.answer)}
-                    className="p-3.5 rounded-xl border border-white/10 bg-white/5 text-left text-xs text-gray-300 hover:border-accent/50 hover:text-white transition-all flex items-center justify-between"
+                    className="p-3.5 rounded-xl border border-primary/10 bg-primary/5 text-left text-xs text-primary/80 hover:border-accent/50 hover:text-primary transition-all flex items-center justify-between"
                   >
                     <span>{q.text}</span>
                     <Sparkles size={14} className="text-accent shrink-0 ml-2" />
@@ -98,7 +98,7 @@ export default function AIVoiceAssistant() {
                 className={`flex-1 py-4 rounded-xl border font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all ${
                   isListening
                     ? "bg-red-500 text-white border-red-400 animate-pulse"
-                    : "bg-white/10 text-white border-white/20 hover:bg-white hover:text-dark"
+                    : "bg-primary/5 text-primary border-primary/20 hover:bg-primary/10 hover:text-primary"
                 }`}
               >
                 <Mic size={18} className={isListening ? "animate-bounce text-white" : "text-accent"} />
@@ -108,18 +108,18 @@ export default function AIVoiceAssistant() {
           </div>
 
           {/* Right: Instant Callback Card */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-white/10 to-white/5 border border-accent/30 rounded-3xl p-8 backdrop-blur-2xl shadow-2xl space-y-6">
+          <div className="lg:col-span-5 bg-gradient-to-b from-primary/5 to-transparent border border-accent/30 rounded-3xl p-8 backdrop-blur-2xl shadow-2xl space-y-6">
             <div>
               <div className="inline-flex items-center gap-1.5 text-xs font-mono text-accent mb-2">
                 <CheckCircle2 size={16} /> 24x7 AI Assistance
               </div>
-              <h3 className="text-2xl font-serif font-bold text-white">Need Customized Advice?</h3>
-              <p className="text-xs text-gray-400 mt-1">Get an instant audio consultation call from our township property advisor.</p>
+              <h3 className="text-2xl font-serif font-bold text-primary">Need Customized Advice?</h3>
+              <p className="text-xs text-primary/60 mt-1">Get an instant audio consultation call from our township property advisor.</p>
             </div>
 
             <button
               onClick={() => openModal("Request Instant AI Consultation Call")}
-              className="w-full py-4 rounded-xl bg-accent text-dark font-bold text-xs uppercase tracking-widest hover:bg-white transition-all flex items-center justify-center gap-2 shadow-xl"
+              className="w-full py-4 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-accent/90 transition-all flex items-center justify-center gap-2 shadow-xl"
             >
               Request 1-on-1 Advisor Call <Send size={16} />
             </button>

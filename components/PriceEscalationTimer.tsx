@@ -37,7 +37,7 @@ export default function PriceEscalationTimer() {
 
           <button
             onClick={() => openModal("Lock Launch Price Before Revision")}
-            className="px-4 py-1.5 rounded-full bg-dark text-white font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-dark transition-all flex items-center gap-1 shadow-md whitespace-nowrap"
+            className="px-4 py-1.5 rounded-full bg-primary text-white font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-primary transition-all flex items-center gap-1 shadow-md whitespace-nowrap"
           >
             Lock Price Now <ArrowRight size={14} />
           </button>

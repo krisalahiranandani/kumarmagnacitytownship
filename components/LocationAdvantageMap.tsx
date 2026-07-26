@@ -38,7 +38,7 @@ export default function LocationAdvantageMap() {
   };
 
   return (
-    <section className="py-24 bg-white text-dark relative" id="location">
+    <section className="py-24 bg-white text-primary relative" id="location">
       <div className="container mx-auto px-4">
         
         <div className="text-center mb-16">
@@ -46,7 +46,7 @@ export default function LocationAdvantageMap() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-dark/10 bg-dark/5 text-dark text-[10px] uppercase tracking-[0.3em] mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-primary/5 text-primary text-[10px] uppercase tracking-[0.3em] mb-6"
           >
             <MapPin size={12} />
             Strategic Location
@@ -65,7 +65,7 @@ export default function LocationAdvantageMap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-dark/60 max-w-2xl mx-auto"
+            className="text-primary/60 max-w-2xl mx-auto"
           >
             Connected to major IT hubs, premium educational institutions, and world-class healthcare, while retaining the tranquility of a 150-acre ecosystem.
           </motion.p>
@@ -84,7 +84,7 @@ export default function LocationAdvantageMap() {
                   "flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border",
                   isActive 
                     ? "bg-[#0A4D3C] text-white border-[#0A4D3C] shadow-lg shadow-[#0A4D3C]/20" 
-                    : "bg-white text-dark/70 border-dark/10 hover:border-dark/30 hover:text-dark"
+                    : "bg-white text-primary/70 border-primary/10 hover:border-primary/30 hover:text-primary"
                 )}
               >
                 <Icon size={16} />
@@ -113,21 +113,21 @@ export default function LocationAdvantageMap() {
                   initial="hidden"
                   animate="show"
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="glass-white rounded-3xl p-6 border border-dark/5 hover:border-[#0A4D3C]/30 hover:shadow-xl transition-all duration-300 group"
+                  className="glass-white rounded-3xl p-6 border border-primary/5 hover:border-[#0A4D3C]/30 hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-2xl bg-[#0A4D3C]/5 flex items-center justify-center text-[#0A4D3C] mb-6 group-hover:scale-110 transition-transform">
                     <Icon size={24} />
                   </div>
-                  <h4 className="font-heading text-xl mb-4 text-dark/90">{landmark.name}</h4>
+                  <h4 className="font-heading text-xl mb-4 text-primary/90">{landmark.name}</h4>
                   
                   <div className="flex items-center gap-4 text-sm">
                     <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-widest text-dark/40 font-bold mb-1">Distance</span>
-                      <span className="font-mono text-dark/80">{landmark.distance}</span>
+                      <span className="text-[10px] uppercase tracking-widest text-primary/40 font-bold mb-1">Distance</span>
+                      <span className="font-mono text-primary/80">{landmark.distance}</span>
                     </div>
-                    <div className="w-px h-8 bg-dark/10"></div>
+                    <div className="w-px h-8 bg-primary/10"></div>
                     <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-widest text-dark/40 font-bold mb-1">Drive Time</span>
+                      <span className="text-[10px] uppercase tracking-widest text-primary/40 font-bold mb-1">Drive Time</span>
                       <span className="font-mono text-[#0A4D3C] font-medium">{landmark.travelTime}</span>
                     </div>
                   </div>
@@ -145,7 +145,7 @@ export default function LocationAdvantageMap() {
           className="mt-16 text-center"
         >
           <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-[#C9A227] to-transparent">
-            <div className="px-8 py-4 rounded-full bg-white text-sm font-medium text-dark/80">
+            <div className="px-8 py-4 rounded-full bg-white text-sm font-medium text-primary/80">
               <span className="text-[#0A4D3C] font-bold text-lg mr-2">{nearbyLandmarks.length}</span> 
               Premium destinations within a 30-minute radius
             </div>

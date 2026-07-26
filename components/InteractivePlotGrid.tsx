@@ -51,7 +51,7 @@ export default function InteractivePlotGrid({ imagePath, fallbackPath }: { image
     switch (status) {
       case "available": return "bg-green-500 border-green-300 text-green-950";
       case "sold": return "bg-red-500 border-red-300 text-red-950";
-      case "hold": return "bg-accent border-accent-hover text-dark";
+      case "hold": return "bg-accent border-accent-hover text-white";
     }
   };
 

@@ -17,7 +17,7 @@ export default function LocationPage() {
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
          <div className="md:col-span-2 space-y-12">
-            <div className="bg-dark text-white p-12 rounded-[3.5rem] relative overflow-hidden group">
+            <div className="bg-warm-bg text-primary p-12 rounded-[3.5rem] relative overflow-hidden group">
                <div className="absolute inset-0 bg-[url('/assets/plot-layout.jpg')] bg-cover bg-center opacity-20 group-hover:scale-110 transition-transform duration-[5s]" />
                <div className="relative z-10">
                   <h3 className="text-3xl font-heading font-bold mb-6">Proximity Matrix</h3>
@@ -59,8 +59,8 @@ export default function LocationPage() {
             </div>
 
             <div className="space-y-8 px-4">
-               <h3 className="text-2xl font-heading font-bold text-dark italic">Why Manjari BK - Hadapsar Annexe?</h3>
-               <p className="text-dark/60 leading-relaxed font-light text-lg">
+               <h3 className="text-2xl font-heading font-bold text-primary italic">Why Manjari BK - Hadapsar Annexe?</h3>
+               <p className="text-primary/60 leading-relaxed font-light text-lg">
                   Manjari is Pune's fastest growing residential and investment corridor. With the upcoming **Pune Ring Road** passing nearby and the expansion of the **Metro Line 3**, Kumar Magnacity sits at the absolute center of Pune's future growth map.
                </p>
                <div className="flex flex-wrap gap-4">
@@ -82,7 +82,7 @@ export default function LocationPage() {
             </div>
             <div className="bg-primary/5 p-8 rounded-[2rem] border border-primary/10">
                <p className="text-[10px] uppercase font-bold text-primary/40 tracking-[0.2em] mb-4">Location Marker</p>
-               <p className="text-dark/80 text-sm font-medium">Kumar Magnacity, Manjari BK-Hadapsar Annexe, Pune - 412307</p>
+               <p className="text-primary/80 text-sm font-medium">Kumar Magnacity, Manjari BK-Hadapsar Annexe, Pune - 412307</p>
             </div>
          </div>
       </div>

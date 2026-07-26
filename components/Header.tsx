@@ -88,15 +88,15 @@ export default function Header() {
                     subtitle: isMarathi ? "अचूक किंमत आणि इन्व्हेंटरी डेटा अनलॉक करा." : "Unlock exact pricing and inventory master-plan data instantly.",
                     source: "Header Desktop"
                   })}
-                  className="bg-gradient-to-r from-primary/80 to-primary text-white text-[10px] font-bold uppercase tracking-widest px-7 py-3 rounded-full hover:shadow-[0_10px_30px_rgba(10,77,60,0.6)] transition-all hover:scale-105 active:scale-95 border border-primary/20 whitespace-nowrap"
+                  className="bg-gradient-to-r from-primary/80 to-primary text-white text-[10px] font-bold uppercase tracking-widest px-7 py-3 rounded-full hover:shadow-[0_10px_30px_rgba(44,36,24,0.4)] transition-all hover:scale-105 active:scale-95 border border-primary/20 whitespace-nowrap"
                 >
                   {isMarathi ? "आता चौकशी करा" : "ENQUIRE NOW"}
                 </button>
 
                 {/* Language Switcher */}
                 <div className="flex items-center gap-4 shrink-0">
-                   <Link href="/" className={cn("text-[11px] font-black tracking-tighter transition-all px-3 py-2 rounded-lg", !isMarathi ? "bg-accent text-dark shadow-lg shadow-accent/20" : "text-white/40 hover:text-white hover:bg-white/5")}>EN</Link>
-                   <Link href="/mr" className={cn("text-[11px] font-black tracking-tighter transition-all px-3 py-2 rounded-lg", isMarathi ? "bg-accent text-dark shadow-lg shadow-accent/20" : "text-white/40 hover:text-white hover:bg-white/5")}>MR</Link>
+                   <Link href="/" className={cn("text-[11px] font-black tracking-tighter transition-all px-3 py-2 rounded-lg", !isMarathi ? "bg-accent text-white shadow-lg shadow-accent/20" : "text-white/40 hover:text-white hover:bg-white/5")}>EN</Link>
+                   <Link href="/mr" className={cn("text-[11px] font-black tracking-tighter transition-all px-3 py-2 rounded-lg", isMarathi ? "bg-accent text-white shadow-lg shadow-accent/20" : "text-white/40 hover:text-white hover:bg-white/5")}>MR</Link>
                 </div>
             </div>
           </div>

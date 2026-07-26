@@ -18,7 +18,7 @@ export default function MarathiInvestmentPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
          <div className="bg-white p-12 rounded-[3rem] border shadow-sm">
             <h3 className="text-3xl font-heading font-bold mb-6 italic">का गुंतवणूक करावी?</h3>
-            <ul className="space-y-4 text-dark/60">
+            <ul className="space-y-4 text-primary/60">
                <li>• १००% कायदेशीर टायटल आणि रेरा नोंदणीकृत.</li>
                <li>• मांजरी-हडपसर परिसरातील उत्तम कनेक्टिव्हिटी.</li>
                <li>• कुमार प्रॉपर्टीजचा ५९ वर्षांचा विश्वास.</li>
