@@ -109,15 +109,15 @@ export default function SiloInterlinkMatrix() {
     return (
       <div className="w-full py-12 border-t border-primary/10 bg-light-soft" aria-label="Explore Topic Clusters">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex items-center gap-3 mb-6 opacity-50">
+          <div className="flex items-center gap-3 mb-6 opacity-70">
              <Network size={16} className="text-accent" />
-             <span className="text-[10px] uppercase font-bold tracking-widest text-primary">Explore Real Estate Hubs</span>
+             <span className="text-[10px] uppercase font-bold tracking-widest text-white">Explore Real Estate Hubs</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
              {Object.values(SILO_MAP).map((silo, idx) => (
-               <Link key={idx} href={silo.hub.url} className="group flex items-center justify-between p-4 rounded-2xl bg-white border border-primary/10 hover:border-accent/50 transition-colors">
-                 <span className="text-xs font-bold text-primary group-hover:text-accent transition-colors">{silo.hub.title}</span>
-                 <ArrowRight size={14} className="text-primary/20 group-hover:text-accent group-hover:translate-x-1 transition-all" />
+               <Link key={idx} href={silo.hub.url} className="group flex items-center justify-between p-4 rounded-2xl bg-primary border border-white/10 hover:border-accent/50 hover:bg-primary-hover transition-colors">
+                 <span className="text-xs font-bold text-white/90 group-hover:text-accent transition-colors">{silo.hub.title}</span>
+                 <ArrowRight size={14} className="text-white/30 group-hover:text-accent group-hover:translate-x-1 transition-all" />
                </Link>
              ))}
           </div>
@@ -131,11 +131,11 @@ export default function SiloInterlinkMatrix() {
     <div className="w-full py-12 border-t border-primary/10 bg-light-soft" aria-label="Related Topics in this Cluster">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-           <div className="flex items-center gap-3 opacity-50">
+           <div className="flex items-center gap-3 opacity-70">
               <Network size={16} className="text-accent" />
-              <span className="text-[10px] uppercase font-bold tracking-widest text-primary">Related in: {activeSilo.hub.title}</span>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-white">Related in: {activeSilo.hub.title}</span>
            </div>
-           <Link href={activeSilo.hub.url} className="text-[10px] uppercase font-bold tracking-widest text-accent hover:text-primary transition-colors">
+           <Link href={activeSilo.hub.url} className="text-[10px] uppercase font-bold tracking-widest text-accent hover:text-white transition-colors">
               View Master Hub &rarr;
            </Link>
         </div>
@@ -147,9 +147,9 @@ export default function SiloInterlinkMatrix() {
                <Link 
                  key={idx} 
                  href={spoke.url} 
-                 className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 hover:border-accent/50 transition-colors"
+                 className="group flex items-center gap-2 px-4 py-2 rounded-full bg-primary border border-white/10 hover:border-accent/50 hover:bg-primary-hover transition-colors"
                >
-                 <span className="text-[11px] font-medium text-primary/70 group-hover:text-primary transition-colors">{spoke.title}</span>
+                 <span className="text-[11px] font-medium text-white/70 group-hover:text-white transition-colors">{spoke.title}</span>
                </Link>
              );
            })}
