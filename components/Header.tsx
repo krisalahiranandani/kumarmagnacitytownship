@@ -55,9 +55,17 @@ export default function Header() {
         <div className="container mx-auto px-6 lg:px-10 flex items-center justify-between gap-4">
           
           {/* LOGO AREA - Official Brand Logo */}
-          <Link href={isMarathi ? "/mr" : "/"} className="flex items-center group shrink-0">
-            <BrandLogo height={44} />
-          </Link>
+          <div className="flex items-center gap-4 lg:gap-8 shrink-0">
+            <Link href={isMarathi ? "/mr" : "/"} className="flex items-center group">
+              <BrandLogo height={44} />
+            </Link>
+            
+            {/* 60 Years Trust Badge */}
+            <div className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-accent/20 to-transparent border border-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              <span className="text-[9px] lg:text-[10px] uppercase font-black tracking-[0.2em] text-accent">60 Years of Trust</span>
+            </div>
+          </div>
 
 
           {/* DESKTOP NAVIGATION & ACTIONS - Fluid Spacing */}

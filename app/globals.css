@@ -11,6 +11,7 @@
   --color-dark: #0F0E0C; /* Rich Slate Black */
   --color-light: #1F1C18; /* Surface Dark Gold-Tinted */
   --color-light-soft: #2D2924; /* Elevated Dark */
+  --color-warm-bg: #FDFBF7; /* Ultra-Modern Luxury Ivory */
 }
 
 @layer base {

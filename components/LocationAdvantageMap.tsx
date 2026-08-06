@@ -137,6 +137,34 @@ export default function LocationAdvantageMap() {
           </AnimatePresence>
         </motion.div>
 
+        {/* Interactive Google Map Embed */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="w-full h-[500px] mt-16 rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative group"
+        >
+          <iframe 
+            src="https://maps.google.com/maps?q=kumar+magnacity+pune&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen={true} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full grayscale-[10%] contrast-100 hover:grayscale-0 transition-all duration-700"
+          ></iframe>
+          
+          {/* SEO Overlay Backlink */}
+          <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-primary/10 max-w-[280px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h4 className="font-heading font-bold text-primary text-xl leading-tight mb-2">Kumar Magnacity Township</h4>
+            <p className="text-xs text-primary/70 mb-4 font-sans leading-relaxed">Strategic 150-Acre Township in Manjari, Hadapsar Annexe, Pune East.</p>
+            <a href="https://kumarmagnacitytownship.com" className="inline-block text-[10px] uppercase font-bold tracking-[0.2em] text-[#0A4D3C] hover:text-[#C9A227] transition-colors border-b border-[#0A4D3C]/30 hover:border-[#C9A227]">
+              Visit Official Website &rarr;
+            </a>
+          </div>
+        </motion.div>
+
         {/* Summary Stat */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

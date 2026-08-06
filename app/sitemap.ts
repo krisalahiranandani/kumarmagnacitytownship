@@ -26,36 +26,35 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
   // ---------------------------------------------------------
   if (id === 0) {
     const corePages = [
-      "",
-      "/kumar-magnacity-na-bungalow-plots-concept",
-      "/kumar-magnacity-manjari-location-map",
-      "/kumar-magnacity-na-bungalow-plots-availability",
-      "/kumar-magnacity-na-bungalow-plots-amenities",
-      "/kumar-magnacity-investment-plan-pune-east",
-      "/kumar-magnacity-na-bungalow-plots-master-plan",
-      "/kumar-magnacity-market-data-pune-east",
-      "/kumar-magnacity-na-bungalow-plots-faq",
-      "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune",
-      "/kumar-magnacity-2bhk-flats-hadapsar-pune-price",
-      "/kumar-magnacity-3bhk-apartments-manjari-pune-price",
-      "/kumar-magnacity-floor-plan-2bhk-3bhk",
-      "/kumar-magnacity-specifications-apartments",
-      "/kumar-magnacity-location-advantages-hadapsar-manjari",
-      "/roi-calculator",
+      { route: "", priority: 1.0, freq: 'always' as const },
+      { route: "/kumar-magnacity-na-bungalow-plots-concept", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-manjari-location-map", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-na-bungalow-plots-availability", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-na-bungalow-plots-amenities", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-investment-plan-pune-east", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-na-bungalow-plots-master-plan", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-market-data-pune-east", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-na-bungalow-plots-faq", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune", priority: 1.0, freq: 'daily' as const },
+      { route: "/kumar-magnacity-2bhk-flats-hadapsar-pune-price", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-3bhk-apartments-manjari-pune-price", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-floor-plan-2bhk-3bhk", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-specifications-apartments", priority: 0.8, freq: 'daily' as const },
+      { route: "/kumar-magnacity-location-advantages-hadapsar-manjari", priority: 0.9, freq: 'daily' as const },
+      { route: "/roi-calculator", priority: 0.9, freq: 'monthly' as const },
     ];
 
-    corePages.forEach((route) => {
+    corePages.forEach(({ route, priority, freq }) => {
       sitemapEntries.push({
         url: `${baseUrl}${route}`,
         lastModified,
-        changeFrequency: route === "" ? 'always' : 'daily',
-        priority: route === "" ? 1.0 : 0.9,
-      });
-      sitemapEntries.push({
-        url: `${baseUrl}/mr${route}`,
-        lastModified,
-        changeFrequency: route === "" ? 'always' : 'daily',
-        priority: 0.8,
+        changeFrequency: freq,
+        priority: priority,
+        alternates: {
+          languages: {
+            'mr-IN': `${baseUrl}/mr${route}`,
+          },
+        },
       });
     });
 
@@ -73,17 +72,28 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
         url: `${baseUrl}/flats-near-${slug}`,
         lastModified,
         changeFrequency: "weekly",
-        priority: 0.7,
+        priority: 0.8,
+        alternates: {
+          languages: {
+            'mr-IN': `${baseUrl}/mr/flats-near-${slug}`,
+          },
+        },
       });
     });
 
     const insightSlugs = getInsightSlugs();
     insightSlugs.forEach((slug) => {
+      const cleanSlug = slug.replace(/\.md$/, '');
       sitemapEntries.push({
-        url: `${baseUrl}/insights/${slug.replace(/\.md$/, '')}`,
+        url: `${baseUrl}/insights/${cleanSlug}`,
         lastModified,
         changeFrequency: "monthly",
         priority: 0.7,
+        alternates: {
+          languages: {
+            'mr-IN': `${baseUrl}/mr/insights/${cleanSlug}`,
+          },
+        },
       });
     });
     
@@ -92,6 +102,11 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "daily",
       priority: 0.8,
+      alternates: {
+        languages: {
+          'mr-IN': `${baseUrl}/mr/insights`,
+        },
+      },
     });
   }
 
@@ -108,13 +123,12 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       url: `${baseUrl}/${key}`,
       lastModified,
       changeFrequency: 'weekly',
-      priority: 0.6,
-    });
-    sitemapEntries.push({
-      url: `${baseUrl}/mr/${key}`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.5,
+      priority: 0.8,
+      alternates: {
+        languages: {
+          'mr-IN': `${baseUrl}/mr/${key}`,
+        },
+      },
     });
   });
 
