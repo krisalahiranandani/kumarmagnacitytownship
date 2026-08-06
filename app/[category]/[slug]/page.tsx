@@ -36,9 +36,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: data.title,
     description: data.description,
     alternates: {
-       canonical: `https://kumarmagnacitytownship.com/${category}/${slug}/`,
+       canonical: `https://kumarmagnacitytownship.com/${category}/${slug}`,
        languages: {
-          'mr-IN': `https://kumarmagnacitytownship.com/mr/${category}/${slug}/`,
+          'mr-IN': `https://kumarmagnacitytownship.com/mr/${category}/${slug}`,
        }
     },
     openGraph: {

@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const xlsx = require('xlsx');
 const fs = require('fs');
 const path = require('path');
 
 const outputPath = path.join(__dirname, '../data/seo-master-database.xlsx');
+const registryPath = path.join(__dirname, '../data/seo-registry.json');
 
 const createWorkbook = () => {
     const wb = xlsx.utils.book_new();
@@ -141,7 +143,7 @@ const createWorkbook = () => {
     });
 
     // ---------------------------------------------------------
-    // MASTER CLUSTER 4: East Pune Micro-Markets (Aiming for 20,000+)
+    // MASTER CLUSTER 4: East Pune Micro-Markets (Aiming for 20,000+) & JSON INJECTION
     // ---------------------------------------------------------
     const microMarkets = [];
     const eastPuneLocalities = [
@@ -161,7 +163,45 @@ const createWorkbook = () => {
     const intentPrefixes = ["buy ", "best ", "upcoming ", "new ", "affordable ", "premium ", "luxury ", "RERA approved ", "ready to move ", "under construction ", "top 10 "];
     const intentSuffixes = [" for sale", " price", " near me", " reviews", " investment", " ROI", " builders", " floor plan", " brochure", " possession"];
 
+    // Initialize Programmatic SEO Registry Nodes Object
+    const generatedRegistryNodes = {};
+
     eastPuneLocalities.forEach(loc => {
+        // Generate high-intent programmatic URLs based on localities
+        const slugBase = `flats-near-${loc.toLowerCase().replace(/\s+/g, '-')}`;
+        const key = `${slugBase}/kumar-magnacity`;
+        
+        generatedRegistryNodes[key] = {
+            "title": `2BHK & 3BHK Flats near ${loc} Pune | Kumar Magnacity Township`,
+            "description": `Looking for premium flats near ${loc}? Kumar Magnacity offers luxury 2BHK and 3BHK apartments with 50+ amenities inside a 150-acre gated township in Pune East.`,
+            "hero_title": `Luxury Flats Near ${loc}`,
+            "hero_subtitle": `Perfect for families seeking a premium township lifestyle with rapid connectivity to ${loc} and surrounding IT hubs.`,
+            "hero_badge": `Strategic Connectivity to ${loc}`,
+            "faq_json": {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": `Why should I buy a flat near ${loc} in Pune?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `${loc} is rapidly expanding with massive infrastructure growth. Buying a flat at Kumar Magnacity near ${loc} ensures high rental yields and excellent capital appreciation.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": `What is the price of 2BHK and 3BHK flats near ${loc}?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `Premium 2BHK and 3BHK flats near ${loc} at Kumar Magnacity start from ₹72.99 Lakhs onwards.`
+                        }
+                    }
+                ]
+            }
+        };
+
+        // Standard spreadsheet generation
         locModifiers.forEach(mod => {
             microMarkets.push({ Keyword: `${loc} ${mod}`, Locality: loc });
             intentPrefixes.forEach(pre => {
@@ -190,6 +230,18 @@ const createWorkbook = () => {
     const extraIntents = ["buy ", "best ", "affordable ", "premium ", "new projects ", "under construction ", "ready possession "];
     
     landmarks.forEach(lm => {
+        // Generate Landmark SEO Registry Nodes
+        const slugBase = `apartments-near-${lm.toLowerCase().replace(/\s+/g, '-')}`;
+        const key = `${slugBase}/kumar-magnacity`;
+
+        generatedRegistryNodes[key] = {
+            "title": `Apartments near ${lm} Pune | Kumar Magnacity Township`,
+            "description": `Premium 2BHK and 3BHK apartments near ${lm}. Explore Kumar Magnacity, a 150-acre township offering zero-commute luxury lifestyle.`,
+            "hero_title": `Apartments Near ${lm}`,
+            "hero_subtitle": `Live closer to work and leisure. Enjoy seamless connectivity to ${lm} while living in Pune's finest mega-township.`,
+            "hero_badge": `Seamless Access to ${lm}`,
+        };
+
         itemToBuy.forEach(item => {
             intentKeywords.push({ Keyword: `${item} near ${lm}`, Type: 'Landmark Intent' });
             extraIntents.forEach(ei => {
@@ -227,8 +279,17 @@ const createWorkbook = () => {
         fs.mkdirSync(dataDir, { recursive: true });
     }
 
+    // Write Excel Sheet
     xlsx.writeFile(wb, outputPath);
     console.log(`Successfully generated master database at: ${outputPath}`);
+    
+    // Inject Registry Nodes
+    if (fs.existsSync(registryPath)) {
+        const currentRegistry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+        Object.assign(currentRegistry, generatedRegistryNodes);
+        fs.writeFileSync(registryPath, JSON.stringify(currentRegistry, null, 2));
+        console.log(`Successfully injected ${Object.keys(generatedRegistryNodes).length} dynamic programmatic nodes into seo-registry.json.`);
+    }
     
     let total = 0;
     wb.SheetNames.forEach(name => {
