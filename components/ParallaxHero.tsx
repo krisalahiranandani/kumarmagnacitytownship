@@ -65,6 +65,8 @@ export default function ParallaxHero({
             alt="Kumar Magnacity G+30 High-Rise Luxury Towers Manjari Pune East"
             fill
             priority
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
             className="w-full h-full object-cover"
           />
         ) : (

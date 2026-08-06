@@ -77,7 +77,6 @@ export const metadata: Metadata = {
     images: ["/assets/hero-bg.jpg"],
   },
   alternates: {
-    canonical: "https://kumarmagnacitytownship.com",
     languages: {
       "en-IN": "https://kumarmagnacitytownship.com",
       "mr-IN": "https://kumarmagnacitytownship.com/mr",
@@ -112,6 +111,24 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/assets/hero-bg.jpg" fetchPriority="high" />
         <StructuredData />
         <FeaturedSnippetsSchema />
+        
+        {/* Google Sitelinks Search Box Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Kumar Magnacity Township",
+              "url": "https://kumarmagnacitytownship.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://kumarmagnacitytownship.com/?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${playfair.variable} font-sans antialiased bg-warm-bg text-primary`}>
         <NRIGeoBanner />
