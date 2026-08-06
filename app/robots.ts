@@ -1,6 +1,10 @@
 import { MetadataRoute } from 'next';
+import { generateSitemaps } from './sitemap';
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const sitemaps = await generateSitemaps();
+  const sitemapUrls = sitemaps.map((s) => `https://kumarmagnacitytownship.com/sitemap/${s.id}.xml`);
+  
   return {
     rules: [
       {
@@ -26,7 +30,7 @@ export default function robots(): MetadataRoute.Robots {
       }
     ],
     sitemap: [
-      'https://kumarmagnacitytownship.com/sitemap.xml',
+      ...sitemapUrls,
       'https://kumarmagnacitytownship.com/image-sitemap.xml'
     ],
     host: 'https://kumarmagnacitytownship.com',
