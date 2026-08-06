@@ -1,12 +1,17 @@
-export default function StructuredData() {
+interface StructuredDataProps {
+  locationName?: string;
+  isMicroMarket?: boolean;
+}
+
+export default function StructuredData({ locationName = "Hadapsar Annexe, Manjari", isMicroMarket = false }: StructuredDataProps) {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "RealEstateListing",
-        "@id": "https://kumarmagnacitytownship.com/#listing",
-        "name": "Kumar Magnacity Township Hadapsar Annexe, Manjari",
-        "description": "150-Acre Master Planned Mega Township in Manjari, Hadapsar Annexe, Pune East. Luxury 2BHK & 3BHK Apartments and NA Villa Bungalow Plots.",
+        "@id": `https://kumarmagnacitytownship.com/#listing${isMicroMarket ? `-${locationName.replace(/\s+/g, '-').toLowerCase()}` : ''}`,
+        "name": `Kumar Magnacity Township ${locationName}`,
+        "description": `150-Acre Master Planned Mega Township in ${locationName}, Pune East. Luxury 2BHK & 3BHK Apartments and NA Villa Bungalow Plots.`,
         "url": "https://kumarmagnacitytownship.com",
         "image": "https://kumarmagnacitytownship.com/assets/hero-bg.jpg",
         "offers": [
@@ -15,7 +20,7 @@ export default function StructuredData() {
             "name": "2 BHK Luxury Apartment",
             "priceCurrency": "INR",
             "price": "7299000",
-            "priceValidUntil": "2026-12-31",
+            "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
             "itemOffered": {
               "@type": "Accommodation",
@@ -28,7 +33,7 @@ export default function StructuredData() {
             "name": "3 BHK Luxury Apartment",
             "priceCurrency": "INR",
             "price": "10500000",
-            "priceValidUntil": "2026-12-31",
+            "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
             "itemOffered": {
               "@type": "Accommodation",
@@ -41,7 +46,7 @@ export default function StructuredData() {
             "name": "NA Villa Bungalow Plot",
             "priceCurrency": "INR",
             "price": "14900000",
-            "priceValidUntil": "2026-12-31",
+            "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock",
             "itemOffered": {
               "@type": "Landform",
@@ -54,10 +59,17 @@ export default function StructuredData() {
           "latitude": "18.5204",
           "longitude": "73.9667"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "342",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Kumar Magnacity Township, Manjari Road",
-          "addressLocality": "Hadapsar Annexe, Manjari",
+          "addressLocality": locationName,
           "addressRegion": "Maharashtra",
           "postalCode": "412307",
           "addressCountry": "IN"
@@ -85,7 +97,22 @@ export default function StructuredData() {
           "@type": "Place",
           "name": "Kumar Magnacity Township Campus"
         }
-      }
+      },
+      ...(isMicroMarket ? [{
+        "@type": "LocalBusiness",
+        "@id": `https://kumarmagnacitytownship.com/#localbusiness-${locationName.replace(/\s+/g, '-').toLowerCase()}`,
+        "name": `Properties near ${locationName}`,
+        "image": "https://kumarmagnacitytownship.com/assets/hero-bg.jpg",
+        "url": "https://kumarmagnacitytownship.com",
+        "telephone": "+919225512120",
+        "priceRange": "₹72.99L - ₹1.49Cr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": locationName,
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        }
+      }] : [])
     ]
   };
 

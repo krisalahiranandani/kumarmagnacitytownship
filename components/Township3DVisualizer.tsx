@@ -151,7 +151,7 @@ export default function Township3DVisualizer() {
                 </div>
 
                 <button
-                  onClick={() => openModal(`Check Availability - ${selectedTower.name}`)}
+                  onClick={() => openModal({ title: `Check Availability - ${selectedTower.name}` })}
                   className="w-full py-4 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-dark transition-all flex items-center justify-center gap-2 group shadow-xl"
                 >
                   Request Live Unit Cost Sheet <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />

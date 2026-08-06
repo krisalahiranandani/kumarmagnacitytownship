@@ -1,6 +1,6 @@
 export const GAS_URL = "https://script.google.com/macros/s/AKfycbzQF_zr_Sv_arp6GMfwQbM5IinDCNIrLmnvMMnNuiKtPXAa0ZF4Q3iY_pEx5egL69PU/exec";
 
-export async function submitLead(data: any) {
+export async function submitLead(data: any, turnstileToken?: string) {
   // Anti-bot & honeypot check
   if (data?.website || data?.honeypot || data?.fax || data?._honey) {
     console.warn("Bot lead submission blocked.");
@@ -40,9 +40,13 @@ export async function submitLead(data: any) {
 
   // 2. Secondary: Send to Vercel API (for Google Sheets/Ledger logging)
   try {
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    if (turnstileToken) {
+      headers["cf-turnstile-response"] = turnstileToken;
+    }
     const res = await fetch("/api/leads", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers,
       body: JSON.stringify(sanitizedData)
     });
     return res.ok;

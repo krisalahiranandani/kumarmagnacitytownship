@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sql } from "@vercel/postgres";
 import { EnquirySchema } from "@/types/enquiry";
 
 export const runtime = "nodejs";
@@ -67,6 +68,21 @@ export async function POST(request: NextRequest) {
       timestamp,
       source_url: data.source_url || request.headers.get("referer") || "Direct Portal",
     };
+
+    // 2. Database Fallback (Vercel Postgres)
+    let dbSuccess = false;
+    if (process.env.POSTGRES_URL) {
+      try {
+        await sql`
+          INSERT INTO leads (name, phone, email, timing, intent, source_url, created_at)
+          VALUES (${leadEntry.name}, ${leadEntry.phone}, ${leadEntry.email || ''}, ${leadEntry.timing}, ${leadEntry.intent}, ${leadEntry.source_url}, NOW())
+        `;
+        dbSuccess = true;
+      } catch (dbError) {
+        console.error("Database fallback failed:", dbError);
+        // Continue to FormSubmit even if DB fails
+      }
+    }
 
     // FormSubmit AJAX relay to propsmartrealty@gmail.com
     const relayResponse = await fetch(

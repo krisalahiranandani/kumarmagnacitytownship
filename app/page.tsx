@@ -89,42 +89,42 @@ export default function Home() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the price of 2BHK flats in Kumar Magnacity Hadapsar Pune?",
+        "name": "What is the price of 2BHK and 3BHK flats in Kumar Magnacity Pune East?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The price for premium 2BHK flats in Kumar Magnacity (Manjari, near Hadapsar, Pune) starts from ₹72.99 Lakhs onwards for a spacious 757 sq.ft carpet area."
+          "text": "The price for premium 2BHK flats in Kumar Magnacity (Manjari, Pune East) starts from ₹72.99 Lakhs onwards for a spacious 757 sq.ft carpet area. Luxury 3BHK flats (1053 sq.ft) start at ₹1.05 Crore."
         }
       },
       {
         "@type": "Question",
-        "name": "Are there luxury 3BHK apartments available near EON IT Park or Kharadi?",
+        "name": "Which is the best 150-acre integrated township near EON IT Park and Kharadi?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Kumar Magnacity offers expansive 1053 sq.ft 3BHK apartments starting at ₹1.05 Crore, strategically located near major IT hubs like EON IT Park, Kharadi, and Magarpatta City."
+          "text": "Kumar Magnacity is widely considered the best 150-acre mega township near EON IT Park, Kharadi, and Magarpatta City, offering 2BHK & 3BHK high-rise apartments and NA bungalow plots with a 1 Lakh sq.ft clubhouse and Podar International School."
         }
       },
       {
         "@type": "Question",
-        "name": "Is Kumar Magnacity Township MahaRERA approved?",
+        "name": "Is Kumar Magnacity Township MahaRERA approved and what is the possession date?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. Kumar Magnacity is fully MahaRERA approved with registration numbers P52100052096 and P52100054476, ensuring complete legal transparency for real estate investment in Pune East."
+          "text": "Yes, Kumar Magnacity is fully MahaRERA approved (P52100052096 & P52100054476). The targeted possession date for the G+30 high-rise towers is December 2027."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the possession date for the G+30 high-rise towers in Manjari?",
+        "name": "Are there NA Bungalow plots available in Pune East or Hadapsar Annexe?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The targeted possession date for the new G+30 high-rise luxury apartments at Kumar Magnacity is December 2027."
+          "text": "Yes, Kumar Magnacity offers premium NA Villa Bungalow plots in Hadapsar Annexe (Manjari) starting from 1700 sq.ft at ₹1.49 Crore onwards with complete legal titles."
         }
       },
       {
         "@type": "Question",
-        "name": "Why is Manjari considered the best ROI location in Pune East real estate?",
+        "name": "Why is Manjari the best ROI location for real estate investment in Pune East?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Due to its proximity to the upcoming Pune Ring Road, Solapur Highway, and saturated IT hubs like Magarpatta and SP Infocity, Manjari offers excellent capital appreciation and high rental yields for 2BHK and 3BHK homes."
+          "text": "Manjari offers superior ROI in Pune East due to its strategic proximity to the upcoming Pune Ring Road, Solapur Highway, and saturated IT hubs like Magarpatta and SP Infocity, driving massive capital appreciation and rental demand."
         }
       }
     ]
@@ -645,6 +645,39 @@ export default function Home() {
              subtitle="Capture the exhaustive inventory list, plot dimensions, and pre-launch pricing advantages before Phase 1 completion."
              buttonText="SECURE MY PLOT"
            />
+        </div>
+      </section>
+
+      {/* 7. SEMANTIC SEO AUTHORITY BLOCK (Rank #1 Hardening) */}
+      <section className="py-12 bg-white/5 border-t border-primary/10">
+        <div className="container mx-auto max-w-7xl px-6">
+           <h2 className="sr-only">Comprehensive Pune East Real Estate Directory & Micro-Market Data</h2>
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="space-y-3">
+                 <h3 className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Premium Corridors</h3>
+                 <p className="text-xs text-primary/30 leading-relaxed text-justify">
+                   Explore our ultra-luxury 2 BHK and 3 BHK apartments located strategically near the bustling Kharadi IT Park, EON IT Park Phase 2, and Magarpatta City. Ideal for IT professionals seeking zero-commute premium residences near SP Infocity and the World Trade Center Pune.
+                 </p>
+              </div>
+              <div className="space-y-3">
+                 <h3 className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Infrastructure Impact</h3>
+                 <p className="text-xs text-primary/30 leading-relaxed text-justify">
+                   Positioned adjacent to the proposed Pune Ring Road and Solapur Highway, Kumar Magnacity offers unparalleled connectivity to Pune Airport, Pune Railway Station, and the upcoming Hadapsar Gadital metro extensions.
+                 </p>
+              </div>
+              <div className="space-y-3">
+                 <h3 className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Property Typology</h3>
+                 <p className="text-xs text-primary/30 leading-relaxed text-justify">
+                   From expansive NA Villa Bungalow plots in Manjari to high-rise luxury towers in Hadapsar Annexe, our 150-acre township integrates Podar International School, healthcare, and retail into a cohesive urban ecosystem.
+                 </p>
+              </div>
+              <div className="space-y-3">
+                 <h3 className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Surrounding Micro-Markets</h3>
+                 <p className="text-xs text-primary/30 leading-relaxed text-justify">
+                   Serving the elite communities of Viman Nagar, Koregaon Park, Keshav Nagar, Mundhwa, Fatima Nagar, Shewalewadi, Loni Kalbhor, Uruli Kanchan, and the greater Saswad Road industrial corridor with generational wealth assets.
+                 </p>
+              </div>
+           </div>
         </div>
       </section>
 

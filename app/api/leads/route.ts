@@ -49,6 +49,8 @@ function checkRateLimit(ip: string, limit = 5, windowMs = 60 * 1000): boolean {
     return false;
   }
   if (record.count >= limit) {
+    // Security Hardening: Apply a 5x penalty window for IPs that hit the limit (Basic DDoS/Spam mitigation without Redis)
+    record.resetTime = now + (windowMs * 5);
     return true;
   }
   record.count += 1;

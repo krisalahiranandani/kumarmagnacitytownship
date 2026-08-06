@@ -41,16 +41,7 @@ export const metadata: Metadata = {
     template: "%s | Kumar Magnacity Township Hadapsar Annexe"
   },
   description: "Kumar Magnacity Township Hadapsar Annexe, Manjari — Pune's premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.49Cr*. Podar International School inside campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
-  keywords: [
-    "Kumar Magnacity Township", "Kumar Magnacity Hadapsar Annexe", "Kumar Magnacity Manjari", 
-    "Kumar Magnacity Township Pune", "Kumar Magnacity Hadapsar Annexe Manjari", "Kumar Magnacity 2 BHK", 
-    "Kumar Magnacity 3 BHK", "Kumar Magnacity NA Plots", "Kumar Magnacity property price", 
-    "Kumar Magnacity floor plans", "Hadapsar Annexe Real Estate", "Flats in Hadapsar Annexe", 
-    "Flats in Manjari Pune", "Township in Manjari East Pune", "Kumar Properties Manjari", 
-    "Podar International School Kumar Magnacity", "Luxury Flats Hadapsar Annexe", 
-    "Buy 2 BHK Hadapsar Annexe", "Buy 3 BHK Manjari", "Invest in Hadapsar Annexe", 
-    "Best Township Hadapsar Annexe", "Kumar Magnacity RERA P52100052096"
-  ],
+  // Keywords removed to comply with Google Helpful Content Update guidelines
   robots: {
     index: true,
     follow: true,
@@ -88,11 +79,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://kumarmagnacitytownship.com",
     languages: {
-      'en-IN': "https://kumarmagnacitytownship.com",
-      'mr-IN': "https://kumarmagnacitytownship.com/mr"
-    }
+      "en-IN": "https://kumarmagnacitytownship.com",
+      "mr-IN": "https://kumarmagnacitytownship.com/mr",
+    },
   },
-  manifest: "/manifest.json",
   icons: {
     icon: [
       { url: "/assets/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -119,12 +109,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="preload" as="image" href="/assets/hero-bg.jpg" fetchPriority="high" />
+        <StructuredData />
+        <FeaturedSnippetsSchema />
       </head>
       <body className={`${playfair.variable} font-sans antialiased bg-warm-bg text-primary`}>
         <NRIGeoBanner />
-        <GoogleConsent />
-        <StructuredData />
-        <FeaturedSnippetsSchema />
         {/* Google Consent Mode V2 (Must be loaded FIRST) */}
         <GoogleConsent />
         {/* Google Tag Manager (Loads asynchronously without blocking rendering) */}

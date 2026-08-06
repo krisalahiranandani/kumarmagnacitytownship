@@ -63,7 +63,7 @@ export default function VirtualVRHub() {
 
               {/* Play / Launch VR Button */}
               <button
-                onClick={() => openModal(`360 VR Tour - ${activeScene.title}`)}
+                onClick={() => openModal({ title: `360 VR Tour - ${activeScene.title}` })}
                 className="absolute z-20 flex flex-col items-center gap-3 p-6 rounded-full bg-accent/90 text-white hover:bg-dark hover:scale-110 transition-all shadow-2xl group/btn"
               >
                 <Play size={28} className="fill-white ml-1 group-hover/btn:scale-110 transition-transform" />
@@ -107,7 +107,7 @@ export default function VirtualVRHub() {
             })}
 
             <button
-              onClick={() => openModal("Schedule Live VR Walkthrough Call")}
+              onClick={() => openModal({ title: "Schedule Live VR Walkthrough Call", source: "Virtual VR Hub" })}
               className="w-full py-4 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-dark transition-all flex items-center justify-center gap-2 shadow-xl mt-4"
             >
               Book 1-on-1 Guided VR Consultation <ChevronRight size={16} />

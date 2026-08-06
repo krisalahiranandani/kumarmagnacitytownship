@@ -26,9 +26,9 @@ async function notifyGoogle(url: string, type: string) {
     }
   ];
 
-  let lastError = null;
+  let lastError = "No valid Google Service Account keys found in environment variables.";
   for (const account of accounts) {
-    if (!account.key) continue;
+    if (!account.key || account.key.includes("placeholder")) continue;
     try {
       const jwtClient = new google.auth.JWT({
         email: account.email,
@@ -45,7 +45,7 @@ async function notifyGoogle(url: string, type: string) {
       if (error.code !== 429) break; // If not a quota error, stop trying this URL
     }
   }
-  return { success: false, error: lastError };
+  return { success: false, error: lastError, isConfigError: lastError.includes("No valid Google") };
 }
 
 export async function GET(req: NextRequest) {

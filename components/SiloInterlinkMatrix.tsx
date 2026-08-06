@@ -22,13 +22,33 @@ const SILO_MAP = {
     hub: { title: "Hadapsar Annexe & Location Hub", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" },
     spokes: [
       { title: "Manjari Location Map", url: "/kumar-magnacity-manjari-location-map" },
-      { title: "Magarpatta City Connectivity", url: "/flats-near-magarpatta-city" },
-      { title: "Kharadi IT Park Corridor", url: "/flats-near-kharadi-it-park" },
+      { title: "Magarpatta City", url: "/flats-near-magarpatta-city" },
+      { title: "Kharadi IT Park", url: "/flats-near-kharadi-it-park" },
       { title: "EON IT Park Phase 2", url: "/flats-near-eon-it-park-phase-2" },
       { title: "World Trade Center Pune", url: "/flats-near-world-trade-center-pune" },
-      { title: "Flats in Pune East", url: "/flats-in-pune-east" }
+      { title: "SP Infocity", url: "/flats-near-sp-infocity" },
+      { title: "Hadapsar Industrial Estate", url: "/flats-near-hadapsar-industrial-estate" },
+      { title: "Amanora Town Centre", url: "/flats-near-amanora-town-centre" },
+      { title: "Viman Nagar", url: "/flats-near-viman-nagar" },
+      { title: "Koregaon Park", url: "/flats-near-koregaon-park" },
+      { title: "Keshav Nagar", url: "/flats-near-keshav-nagar" },
+      { title: "Solapur Highway", url: "/flats-near-solapur-highway" },
+      { title: "Hadapsar Railway Station", url: "/flats-near-hadapsar-railway-station" },
+      { title: "Pune Airport", url: "/flats-near-pune-airport" },
+      { title: "Pune Station", url: "/flats-near-pune-station" },
+      { title: "Loni Kalbhor", url: "/flats-near-loni-kalbhor" },
+      { title: "Hadapsar Gadital", url: "/flats-near-hadapsar-gadital" },
+      { title: "Phursungi IT Park", url: "/flats-near-phursungi-it-park" },
+      { title: "Shewalewadi", url: "/flats-near-shewalewadi" },
+      { title: "Uruli Kanchan", url: "/flats-near-uruli-kanchan" },
+      { title: "Saswad Road", url: "/flats-near-saswad-road" },
+      { title: "Mundhwa", url: "/flats-near-mundhwa" },
+      { title: "Fatima Nagar", url: "/flats-near-fatima-nagar" },
+      { title: "Ramtekdi Industrial Area", url: "/flats-near-ramtekdi-industrial-area" },
+      { title: "Solapur Toll Plaza", url: "/flats-near-solapur-toll-plaza" },
+      { title: "Manjari Railway Station", url: "/flats-near-manjari-railway-station" }
     ],
-    triggers: ["near", "location", "map", "hadapsar", "annexe", "manjari", "kharadi", "magarpatta", "eon", "wtc", "corridor"]
+    triggers: ["near", "location", "map", "hadapsar", "annexe", "manjari", "kharadi", "magarpatta", "eon", "wtc", "corridor", "amanora", "infocity", "viman-nagar", "koregaon", "keshav", "solapur", "airport", "loni", "phursungi", "shewalewadi", "uruli", "saswad", "mundhwa", "fatima", "ramtekdi"]
   },
   residences_floorplan: {
     hub: { title: "High-Rise Residences & Floor Plans", url: "/kumar-magnacity-floor-plan-2bhk-3bhk" },

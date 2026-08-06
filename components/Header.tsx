@@ -109,6 +109,7 @@ export default function Header() {
                 <Link href="/mr" className={cn("text-[11px] font-bold px-2 py-1 rounded transition-colors", isMarathi ? "text-accent bg-white/5" : "text-white/20")}>MR</Link>
              </div>
              <button
+               aria-label="Open Mobile Menu"
                onClick={() => setMobileMenuOpen(true)}
                className="text-white p-2.5 border border-white/10 rounded-2xl bg-white/5 active:scale-90 transition-all shadow-xl"
              >
@@ -133,7 +134,11 @@ export default function Header() {
                 <Link href={isMarathi ? "/mr" : "/"} onClick={() => setMobileMenuOpen(false)}>
                   <BrandLogo height={40} />
                 </Link>
-               <button onClick={() => setMobileMenuOpen(false)} className="text-white p-2 bg-white/5 rounded-full">
+               <button 
+                 aria-label="Close Mobile Menu"
+                 onClick={() => setMobileMenuOpen(false)} 
+                 className="text-white p-2 bg-white/5 rounded-full"
+               >
                   <X size={28} />
                </button>
             </div>

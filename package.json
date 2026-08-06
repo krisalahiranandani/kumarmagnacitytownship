@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--max_old_space_size=8192 next build && node scripts/google-indexing.js",
     "start": "next start",
     "lint": "NODE_OPTIONS=--max_old_space_size=4096 eslint"
   },
@@ -12,16 +12,19 @@
     "@ai-sdk/openai": "^4.0.16",
     "@ai-sdk/react": "^4.0.34",
     "@hookform/resolvers": "^5.2.2",
+    "@marsidev/react-turnstile": "^1.5.5",
     "@next/third-parties": "^16.2.10",
     "@react-pdf/renderer": "^4.5.1",
+    "@vercel/postgres": "^0.10.0",
     "ai": "^7.0.31",
     "clsx": "^2.1.1",
+    "dotenv": "^17.4.2",
     "framer-motion": "^12.38.0",
     "googleapis": "^171.4.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.8.0",
-    "next": "15.5.9",
-    "nodemailer": "^6.9.13",
+    "next": "^15.5.22",
+    "nodemailer": "^9.0.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-hook-form": "^7.72.1",
@@ -32,6 +35,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.14",

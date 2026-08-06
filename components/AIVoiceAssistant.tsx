@@ -23,7 +23,7 @@ export default function AIVoiceAssistant() {
     setTimeout(() => {
       setIsListening(false);
       setActiveAnswer("Voice query recognized! Connecting you with our AI concierge for personalized floor plan consultation...");
-      openModal("AI Voice Inquiry - Consultation Callback");
+      openModal({ title: "AI Voice Inquiry - Consultation Callback", source: "Voice Assistant" });
     }, 2000);
   };
 
@@ -118,7 +118,7 @@ export default function AIVoiceAssistant() {
             </div>
 
             <button
-              onClick={() => openModal("Request Instant AI Consultation Call")}
+              onClick={() => openModal({ title: "Request Instant AI Consultation Call", source: "Voice Assistant UI" })}
               className="w-full py-4 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-accent/90 transition-all flex items-center justify-center gap-2 shadow-xl"
             >
               Request 1-on-1 Advisor Call <Send size={16} />

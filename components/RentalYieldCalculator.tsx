@@ -111,7 +111,7 @@ export default function RentalYieldCalculator() {
             </div>
 
             <button
-              onClick={() => openModal(`Request Investor ROI Dossier - ${unitType.toUpperCase()}`)}
+              onClick={() => openModal({ title: `Request Investor ROI Dossier - ${unitType.toUpperCase()}` })}
               className="w-full py-4 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-dark transition-all flex items-center justify-center gap-2 shadow-xl"
             >
               Download Comprehensive ROI Report <ArrowRight size={16} />

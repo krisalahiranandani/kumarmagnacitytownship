@@ -103,7 +103,7 @@ export default function LiveConstructionTracker() {
           </div>
 
           <button
-            onClick={() => openModal("Request Monthly Construction Drone Report")}
+            onClick={() => openModal({ title: "Request Monthly Construction Drone Report", source: "Construction Tracker" })}
             className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-dark transition-all flex items-center justify-center gap-2 shadow-xl whitespace-nowrap"
           >
             Download HD Drone Report <ChevronRight size={16} />

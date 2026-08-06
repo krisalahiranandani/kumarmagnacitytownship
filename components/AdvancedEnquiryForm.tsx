@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { useDataLayer } from "@/hooks/useDataLayer";
 import { submitLead } from "@/lib/submitLead";
 import { sendGAEvent } from "@next/third-parties/google";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 interface AdvancedEnquiryFormProps {
   formId?: string;
@@ -34,13 +35,14 @@ export default function AdvancedEnquiryForm({
   const [step, setStep] = useState(1);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const {
     register,
     handleSubmit,
     trigger,
     formState: { errors },
-  } = useForm<EnquiryData>({
+  } = useForm({
     resolver: zodResolver(EnquirySchema),
     defaultValues: {
       source_url: sourceUrl,
@@ -74,7 +76,7 @@ export default function AdvancedEnquiryForm({
         form_id: data.form_id || formId,
         timestamp: timestamp,
         _subject: `🚨 NEW LEAD: ${data.name} | ${data.phone} | Plot: ${plotId || "N/A"}`,
-      });
+      }, turnstileToken);
 
       if (isSuccess) {
         setStatus("success");
@@ -266,9 +268,18 @@ export default function AdvancedEnquiryForm({
                     </div>
 
                     <div className="flex flex-col gap-3">
+                      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+                        <div className="flex justify-center mb-2">
+                          <Turnstile
+                            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                            onSuccess={(token) => setTurnstileToken(token)}
+                            options={{ theme: "light" }}
+                          />
+                        </div>
+                      )}
                       <button
                         type="submit"
-                        disabled={status === "submitting"}
+                        disabled={status === "submitting" || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
                         className="w-full bg-gradient-to-r from-accent to-accent-hover text-white font-black uppercase tracking-[0.2em] py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-[0_20px_40px_-10px_rgba(201,162,39,0.3)] disabled:opacity-50"
                       >
                         {status === "submitting" ? (

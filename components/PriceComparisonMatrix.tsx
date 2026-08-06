@@ -110,7 +110,7 @@ export default function PriceComparisonMatrix() {
               </div>
 
               <button
-                onClick={() => openModal(`Request Complete Cost Sheet - ${item.type}`)}
+                onClick={() => openModal({ title: `Request Complete Cost Sheet - ${item.type}` })}
                 className={`w-full py-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 mt-8 shadow-xl ${
                   item.recommended
                     ? "bg-accent text-white hover:bg-dark"

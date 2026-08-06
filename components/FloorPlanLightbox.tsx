@@ -82,7 +82,7 @@ export default function FloorPlanLightbox({
           <button
             onClick={() => {
               onClose();
-              openModal(`Download PDF Floor Plan - ${title}`);
+              openModal({ title: `Download PDF Floor Plan - ${title}` });
             }}
             className="w-full sm:w-auto px-6 py-3 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-accent-hover transition-all flex items-center justify-center gap-2 shadow-md"
           >

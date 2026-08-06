@@ -69,7 +69,7 @@ export default function LegalTransparencyVault() {
               </div>
 
               <button
-                onClick={() => openModal(`Download ${doc.title}`)}
+                onClick={() => openModal({ title: `Download ${doc.title}` })}
                 className="mt-6 w-full py-3 rounded-xl bg-primary/5 text-primary font-bold text-xs uppercase tracking-widest hover:bg-accent hover:text-white transition-all flex items-center justify-center gap-2 border border-primary/10"
               >
                 <Download size={14} /> Download PDF
