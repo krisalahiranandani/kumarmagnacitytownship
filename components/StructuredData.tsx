@@ -8,7 +8,7 @@ export default function StructuredData({ locationName = "Hadapsar Annexe, Manjar
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "RealEstateListing",
+        "@type": ["RealEstateListing", "Product"],
         "@id": `https://kumarmagnacitytownship.com/#listing${isMicroMarket ? `-${locationName.replace(/\s+/g, '-').toLowerCase()}` : ''}`,
         "name": `Kumar Magnacity Township ${locationName}`,
         "description": `150-Acre Master Planned Mega Township in ${locationName}, Pune East. Luxury 2BHK & 3BHK Apartments and NA Villa Bungalow Plots.`,
