@@ -87,7 +87,13 @@ const nextConfig: NextConfig = {
       { old: '/faq', new: '/kumar-magnacity-na-bungalow-plots-faq' },
     ];
 
-    let redirectsList: any[] = [];
+    let redirectsList: any[] = [
+      {
+        source: '/sitemap.xml',
+        destination: '/sitemap/0.xml',
+        permanent: true,
+      }
+    ];
 
     // English Redirects
     seoMappings.forEach(mapping => {
