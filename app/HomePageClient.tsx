@@ -466,15 +466,15 @@ export default function Home() {
              className="mt-20 w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden border border-accent/20 shadow-[0_30px_100px_rgba(255,215,0,0.1)] relative z-20 group"
            >
              <iframe 
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1m2!1s0x3bc2c14041d86d63%3A0x67bb484d2da6b0d9!2sKumar%20Magnacity!5e0!3m2!1sen!2sin!4v1714902123456!5m2!1sen!2sin" 
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15134.165399551024!2d73.9828496!3d18.4948931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3aeb2585a9d%3A0xf198bb1c684e72e1!2sMagnacity%20by%20Kumar%20Realty!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
                width="100%" 
                height="100%" 
                style={{ border: 0 }} 
                allowFullScreen={true} 
                loading="lazy" 
                referrerPolicy="no-referrer-when-downgrade"
-               title="Kumar Magnacity Master Location Map"
-               className="grayscale group-hover:grayscale-0 transition-all duration-[2s]"
+               title="Magnacity by Kumar Realty - Official Google Maps Location"
+               className="w-full h-full grayscale-[5%] contrast-105 group-hover:grayscale-0 transition-all duration-700"
              />
            </motion.div>
         </div>

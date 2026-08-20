@@ -60,6 +60,8 @@ export interface RealEstateListingSchema {
   image: string | string[];
   offers: OfferSchema[];
   geo: GeoCoordinatesSchema;
+  hasMap?: string;
+  sameAs?: string[];
   aggregateRating?: AggregateRatingSchema;
   address: PostalAddressSchema;
 }

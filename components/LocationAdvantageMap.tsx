@@ -145,22 +145,28 @@ export default function LocationAdvantageMap() {
           className="w-full h-[500px] mt-16 rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative group"
         >
           <iframe 
-            src="https://maps.google.com/maps?q=kumar+magnacity+pune&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15134.165399551024!2d73.9828496!3d18.4948931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3aeb2585a9d%3A0xf198bb1c684e72e1!2sMagnacity%20by%20Kumar%20Realty!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
             allowFullScreen={true} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full grayscale-[10%] contrast-100 hover:grayscale-0 transition-all duration-700"
+            title="Magnacity by Kumar Realty - Official Google Maps Location"
+            className="w-full h-full grayscale-[5%] contrast-105 hover:grayscale-0 transition-all duration-700"
           ></iframe>
           
-          {/* SEO Overlay Backlink */}
-          <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-primary/10 max-w-[280px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <h4 className="font-heading font-bold text-primary text-xl leading-tight mb-2">Kumar Magnacity Township</h4>
-            <p className="text-xs text-primary/70 mb-4 font-sans leading-relaxed">Strategic 150-Acre Township in Manjari, Hadapsar Annexe, Pune East.</p>
-            <a href="https://kumarmagnacitytownship.com" className="inline-block text-[10px] uppercase font-bold tracking-[0.2em] text-[#0A4D3C] hover:text-[#C9A227] transition-colors border-b border-[#0A4D3C]/30 hover:border-[#C9A227]">
-              Visit Official Website &rarr;
+          {/* SEO Overlay Backlink & Official Google Business Link */}
+          <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-primary/10 max-w-[300px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h4 className="font-heading font-bold text-primary text-lg leading-tight mb-1">Magnacity by Kumar Realty</h4>
+            <p className="text-xs text-stone-600 mb-3 font-sans leading-relaxed">Official 150-Acre Master Township at Manjari, Hadapsar Annexe, Pune East 412307.</p>
+            <a 
+              href="https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-[10px] uppercase font-bold tracking-wider text-accent-dark hover:text-accent transition-colors"
+            >
+              Open in Google Maps &rarr;
             </a>
           </div>
         </motion.div>
