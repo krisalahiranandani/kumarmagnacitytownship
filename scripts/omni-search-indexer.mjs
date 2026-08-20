@@ -63,6 +63,21 @@ function buildUrlList() {
     urls.add(`${BASE_URL}/mr${route}`);
   });
 
+  // Load insight articles dynamically
+  const insightsDir = path.join(rootDir, 'content', 'insights');
+  if (fs.existsSync(insightsDir)) {
+    try {
+      const files = fs.readdirSync(insightsDir);
+      files.filter(f => f.endsWith('.md')).forEach(file => {
+        const slug = file.replace(/\.md$/, '');
+        urls.add(`${BASE_URL}/insights/${slug}`);
+        urls.add(`${BASE_URL}/mr/insights/${slug}`);
+      });
+    } catch (e) {
+      console.warn("Could not read insights dir:", e.message);
+    }
+  }
+
   // Load priority URLs from SEO registry if available
   const registryPath = path.join(rootDir, 'data', 'seo-registry.json');
   if (fs.existsSync(registryPath)) {

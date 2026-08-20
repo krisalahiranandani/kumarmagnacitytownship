@@ -73,13 +73,17 @@ const SILO_MAP = {
   investment_roi: {
     hub: { title: "Investment, Price & Market Data", url: "/kumar-magnacity-market-data-pune-east" },
     spokes: [
-      { title: "Investment Strategy & ROI", url: "/kumar-magnacity-investment-plan-pune-east" },
-      { title: "Pune East Investment Hub", url: "/investment-pune-east" },
-      { title: "Interactive ROI Calculator", url: "/roi-calculator" },
+      { title: "Kumar Magnacity Hadapsar Master Guide", url: "/insights/kumar-magnacity-hadapsar-township-complete-buyer-guide" },
+      { title: "Hadapsar vs Kharadi Comparison", url: "/insights/2bhk-3bhk-4bhk-flats-hadapsar-vs-kharadi-comparison" },
+      { title: "NA Villa Bungalow Plots Guide 2027", url: "/insights/na-villa-bungalow-plots-pune-investment-guide-2027" },
+      { title: "Podar School Township Living", url: "/insights/podar-school-township-hadapsar-family-living" },
+      { title: "Sky Duplex & 4 BHK Luxury Suites", url: "/insights/sky-duplex-penthouses-luxury-residences-pune" },
+      { title: "Hinjewadi to Hadapsar Migration Guide", url: "/insights/hinjewadi-to-hadapsar-pune-real-estate-corridor-guide" },
       { title: "Ring Road Growth Impact", url: "/insights/pune-ring-road-impact" },
-      { title: "NRI Investment Guide", url: "/insights/nri-investment-manjari" }
+      { title: "NRI Investment Guide", url: "/insights/nri-investment-manjari" },
+      { title: "Interactive ROI Calculator", url: "/roi-calculator" }
     ],
-    triggers: ["investment", "market-data", "roi", "calculator", "cost", "appreciation", "rental", "ring-road", "insights"]
+    triggers: ["investment", "market-data", "roi", "calculator", "cost", "appreciation", "rental", "ring-road", "insights", "guide", "comparison", "duplex", "hinjewadi"]
   },
   lifestyle_amenities: {
     hub: { title: "Township Lifestyle & Podar School", url: "/kumar-magnacity-na-bungalow-plots-amenities" },
