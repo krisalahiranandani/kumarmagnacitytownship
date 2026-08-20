@@ -18,8 +18,23 @@ export default function StructuredData({
     "@id": `https://kumarmagnacitytownship.com/#listing${
       isMicroMarket ? `-${locationName.replace(/\s+/g, "-").toLowerCase()}` : ""
     }`,
-    name: `Kumar Magnacity Township ${locationName}`,
-    description: `150-Acre Master Planned Mega Township in ${locationName}, Pune East. Luxury 2BHK & 3BHK Apartments and NA Villa Bungalow Plots by Kumar Properties.`,
+    name: `Kumar Magnacity Hadapsar - ${locationName}`,
+    alternateName: [
+      "Kumar Magnacity Hadapsar",
+      "Kumar Magnacity Hadapsar Pune",
+      "Kumar Magnacity Hadapsar Annexe",
+      "Kumar Magnacity Manjari Hadapsar",
+      "Kumar Magnacity Township Hadapsar"
+    ],
+    keywords: [
+      "Kumar Magnacity Hadapsar",
+      "Kumar Magnacity Hadapsar Pune",
+      "2 BHK Kumar Magnacity Hadapsar",
+      "3 BHK Kumar Magnacity Hadapsar",
+      "Kumar Magnacity Hadapsar price",
+      "Kumar Magnacity Manjari Hadapsar"
+    ],
+    description: `150-Acre Master Planned Mega Township in Hadapsar Annexe, Manjari, Pune East. Luxury 2BHK & 3BHK Apartments and NA Villa Bungalow Plots by Kumar Properties.`,
     url: "https://kumarmagnacitytownship.com",
     image: "https://kumarmagnacitytownship.com/assets/hero-bg.jpg",
     offers: [

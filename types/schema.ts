@@ -53,6 +53,8 @@ export interface RealEstateListingSchema {
   "@type": ("RealEstateListing" | "Product")[];
   "@id": string;
   name: string;
+  alternateName?: string[];
+  keywords?: string[];
   description: string;
   url: string;
   image: string | string[];

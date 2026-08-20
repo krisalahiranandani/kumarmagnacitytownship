@@ -27,6 +27,7 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
   if (id === 0) {
     const corePages = [
       { route: "", priority: 1.0, freq: 'always' as const },
+      { route: "/kumar-magnacity-hadapsar", priority: 1.0, freq: 'daily' as const },
       { route: "/kumar-magnacity-na-bungalow-plots-concept", priority: 0.9, freq: 'daily' as const },
       { route: "/kumar-magnacity-manjari-location-map", priority: 0.9, freq: 'daily' as const },
       { route: "/kumar-magnacity-na-bungalow-plots-availability", priority: 0.9, freq: 'daily' as const },

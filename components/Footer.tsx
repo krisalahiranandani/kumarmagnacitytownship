@@ -38,7 +38,8 @@ export default function Footer() {
           <div>
             <h4 className="text-accent uppercase tracking-[0.3em] text-[11px] font-bold mb-10">THE TOWNSHIP</h4>
             <ul className="space-y-5">
-              <li><Link href="/kumar-magnacity-na-bungalow-plots-concept" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">100-Acre Master Plan</Link></li>
+              <li><Link href="/kumar-magnacity-hadapsar" className="text-white font-medium hover:text-accent transition-all hover:pl-2 text-sm">Kumar Magnacity Hadapsar</Link></li>
+              <li><Link href="/kumar-magnacity-na-bungalow-plots-concept" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">150-Acre Master Plan</Link></li>
               <li><Link href="/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">2 & 3 BHK Luxury Residences</Link></li>
               <li><Link href="/kumar-magnacity-na-bungalow-plots-availability" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">NA Villa Plots Suite</Link></li>
               <li><Link href="/kumar-magnacity-location-advantages-hadapsar-manjari" className="text-white/50 hover:text-white transition-all hover:pl-2 text-sm font-light">Location & Podar School</Link></li>

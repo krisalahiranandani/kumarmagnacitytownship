@@ -42,10 +42,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kumarmagnacitytownship.com"),
   manifest: "/manifest.json",
   title: {
-    default: "Kumar Magnacity Township Hadapsar Annexe, Manjari | 2BHK & 3BHK Flats + NA Plots",
-    template: "%s | Kumar Magnacity Township Hadapsar Annexe"
+    default: "Kumar Magnacity Hadapsar | 2BHK & 3BHK Flats + NA Plots, Manjari Pune",
+    template: "%s | Kumar Magnacity Hadapsar"
   },
-  description: "Kumar Magnacity Township Hadapsar Annexe, Manjari — Pune's premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.49Cr*. Podar International School inside campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
+  description: "Kumar Magnacity Hadapsar (Hadapsar Annexe, Manjari) — Pune's premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.49Cr*. Podar International School on campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
   robots: {
     index: true,
     follow: true,
@@ -62,22 +62,22 @@ export const metadata: Metadata = {
     locale: "en_IN",
     alternateLocale: "mr_IN",
     url: "https://kumarmagnacitytownship.com",
-    siteName: "Kumar Magnacity Township",
-    title: "Kumar Magnacity Township | 2BHK & 3BHK Apartments",
-    description: "Pune's premier 150-acre township at Manjari near Hadapsar. Premium 2BHK & 3BHK flats by Kumar Properties.",
+    siteName: "Kumar Magnacity Hadapsar",
+    title: "Kumar Magnacity Hadapsar | 2BHK & 3BHK Luxury Apartments & Plots",
+    description: "Pune's premier 150-acre township at Hadapsar Annexe, Manjari. Premium 2BHK & 3BHK flats and NA plots by Kumar Properties.",
     images: [
       {
         url: "/assets/hero-bg.jpg",
         width: 1200,
         height: 630,
-        alt: "Kumar Magnacity Township Masterplan",
+        alt: "Kumar Magnacity Hadapsar Masterplan",
       }
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kumar Magnacity Township | Pune East",
-    description: "Premium 2BHK & 3BHK flats at Manjari near Hadapsar.",
+    title: "Kumar Magnacity Hadapsar | Official Portal",
+    description: "Premium 2BHK & 3BHK flats and NA plots at Hadapsar Annexe, Manjari Pune.",
     images: ["/assets/hero-bg.jpg"],
   },
   alternates: {

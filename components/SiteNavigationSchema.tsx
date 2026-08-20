@@ -8,6 +8,13 @@ export default function SiteNavigationSchema() {
       {
         "@type": "SiteNavigationElement",
         "position": 1,
+        "name": "Kumar Magnacity Hadapsar",
+        "description": "150-Acre Master Planned Township in Hadapsar Annexe, Manjari, Pune East.",
+        "url": "https://kumarmagnacitytownship.com/kumar-magnacity-hadapsar"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 2,
         "name": "2 BHK & 3 BHK Apartments",
         "description": "Floor plans, pricing, and configurations for luxury apartments in Kumar Magnacity.",
         "url": "https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune"

@@ -11,6 +11,22 @@ export default function FeaturedSnippetsSchema() {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Where is Kumar Magnacity Hadapsar located in Pune?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kumar Magnacity Hadapsar is located in Hadapsar Annexe, Manjari, Pune East. It is situated just 10 minutes from Magarpatta City, 5 minutes from Solapur Highway (NH-65), and 12-15 minutes from Kharadi EON IT Park."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the price of 2 BHK and 3 BHK in Kumar Magnacity Hadapsar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At Kumar Magnacity Hadapsar, luxury 2 BHK apartments (757 sq.ft carpet) start at ₹72.99 Lakhs*, 3 BHK residences (1,053 sq.ft carpet) start at ₹1.05 Cr.*, and NA Villa Bungalow plots start from ₹1.49 Cr.*."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "What is the price of 2 BHK in Kumar Magnacity Township Hadapsar Annexe?",
         "acceptedAnswer": {
           "@type": "Answer",
