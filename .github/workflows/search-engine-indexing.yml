@@ -1,0 +1,44 @@
+name: Multi Search Engine Indexing Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/**'
+      - 'components/**'
+      - 'data/**'
+      - 'public/**'
+      - 'scripts/**'
+  schedule:
+    # Daily at 03:00 AM UTC (8:30 AM IST)
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  index-search-engines:
+    name: Notify Google, Bing & Search Engines
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Execute Omni-Search Indexing Pipeline
+        env:
+          NEXT_PUBLIC_SITE_URL: https://kumarmagnacitytownship.com
+          INDEXNOW_KEY: 9c1a5f6e8b4d2a1c7e9f3b5d
+          GOOGLE_CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
+          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+        run: node scripts/omni-search-indexer.mjs
