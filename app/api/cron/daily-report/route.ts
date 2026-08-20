@@ -83,7 +83,7 @@ export async function GET(req: NextRequest) {
       `;
 
       await resend.emails.send({
-        from: 'Kumar Magnacity Reports <onboarding@resend.dev>', // Update on production
+        from: 'Kumar Magnacity Reports <' + (process.env.RESEND_FROM_EMAIL || 'info@kumarmagnacitytownship.com') + '>',
         to: SALES_EMAIL,
         subject: `Daily Lead Summary: ${todaysLeads.length} Leads Generated`,
         html: htmlContent,

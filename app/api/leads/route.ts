@@ -158,7 +158,7 @@ export async function POST(req: NextRequest) {
 
         // Note: For this to work in production, you must verify your domain in Resend and change the 'from' address.
         await resend.emails.send({
-          from: 'Kumar Magnacity <onboarding@resend.dev>', // Change to 'info@kumarmagnacitytownship.com' after domain verification
+          from: 'Kumar Magnacity <' + (process.env.RESEND_FROM_EMAIL || 'info@kumarmagnacitytownship.com') + '>',
           to: data.email,
           subject: 'Your Official Brochure - Kumar Magnacity',
           html: buyerHtmlContent,
