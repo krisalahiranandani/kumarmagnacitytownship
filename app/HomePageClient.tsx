@@ -37,6 +37,9 @@ const InteractiveLayoutViewer = dynamic(() => import("@/components/InteractiveLa
   loading: () => <div className="w-full aspect-video md:aspect-[21/9] bg-white/5 animate-pulse rounded-[2rem]" />
 });
 const InteractiveTownshipMap = dynamic(() => import("@/components/InteractiveTownshipMap"), { ssr: false });
+const MasterplanSectorInspector = dynamic(() => import("@/components/MasterplanSectorInspector"), { ssr: false });
+const WhatsAppCostSheetGenerator = dynamic(() => import("@/components/WhatsAppCostSheetGenerator"), { ssr: false });
+const UnitComparisonMatrix = dynamic(() => import("@/components/UnitComparisonMatrix"), { ssr: false });
 const PropertyComparison = dynamic(() => import("@/components/PropertyComparison"), { ssr: false });
 const NRICurrencySuite = dynamic(() => import("@/components/NRICurrencySuite"), { ssr: false });
 const SiteVisitScheduler = dynamic(() => import("@/components/SiteVisitScheduler"), { ssr: false });
@@ -255,11 +258,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2.2 INTERACTIVE 100-ACRE TOWNSHIP MAP */}
-      <InteractiveTownshipMap />
+      {/* 2.2 INTERACTIVE 150-ACRE TOWNSHIP MASTERPLAN INSPECTOR */}
+      <MasterplanSectorInspector />
 
-      {/* 2.3 SIDE-BY-SIDE PROPERTY COMPARISON */}
-      <PropertyComparison />
+      {/* 2.3 SIDE-BY-SIDE UNIT COMPARISON MATRIX */}
+      <UnitComparisonMatrix />
+
+      {/* 2.4 1-CLICK WHATSAPP COST SHEET GENERATOR */}
+      <WhatsAppCostSheetGenerator />
       <section className="py-24 md:py-40 bg-warm-bg relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(201,162,39,0.08),transparent_60%)]" />
         <div className="container mx-auto max-w-7xl px-6 relative z-10">
