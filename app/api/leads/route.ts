@@ -169,6 +169,14 @@ export async function POST(req: NextRequest) {
             }
           ]
         }).catch(e => console.error("Buyer Email Dispatch Failed:", e));
+      // 3c. Instant Admin Notification
+      await resend.emails.send({
+        from: 'Kumar Magnacity Leads <' + (process.env.RESEND_FROM_EMAIL || 'info@kumarmagnacitytownship.com') + '>',
+        to: 'propsmartrealty@gmail.com',
+        subject: '🚨 NEW LEAD: ' + data.name + ' | ' + data.phone,
+        html: '<h2>New Lead Captured</h2><p><strong>Name:</strong> ' + data.name + '</p><p><strong>Phone:</strong> ' + data.phone + '</p><p><strong>Email:</strong> ' + (data.email || 'N/A') + '</p><p><strong>Timing:</strong> ' + (data.timing || 'N/A') + '</p><p><strong>Intent:</strong> ' + (data.intent || 'N/A') + '</p><p><strong>Source:</strong> ' + (data.source_url || 'N/A') + '</p>'
+      }).catch(e => console.error('Admin Email Dispatch Failed:', e));
+
       }
 
     // 4. CRM Webhook Integration (Enterprise Scaling)
