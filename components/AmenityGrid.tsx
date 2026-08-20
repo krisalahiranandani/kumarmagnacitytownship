@@ -1,50 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trees, Warehouse, Droplets, Trophy, ShieldCheck, HeartPulse, Sparkles } from "lucide-react";
+import { Trees, Warehouse, Droplets, Trophy, ShieldCheck, HeartPulse, Sparkles, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const amenities = [
   {
-    icon: <Warehouse />,
+    icon: <Warehouse size={28} />,
     title: "1 Lakh Sq.ft Clubhouse",
     subtitle: "The Magnum Opus",
-    desc: "A massive central social hub featuring banquet halls, luxury lounges, and fine dining.",
+    desc: "A massive central social hub featuring banquet halls, luxury lounges, private screening theatre, and fine dining.",
     category: "Social"
   },
   {
-    icon: <Trophy />,
+    icon: <Trophy size={28} />,
     title: "Olympic Sports Arena",
     subtitle: "Podium Performance",
-    desc: "Professional courts for badminton, tennis, and squash within a gated ecosystem.",
+    desc: "Professional indoor badminton, squash, basketball, and tennis courts within a secure gated ecosystem.",
     category: "Sports"
   },
   {
-    icon: <Droplets />,
+    icon: <Droplets size={28} />,
     title: "Eco-Filtration Lakes",
     subtitle: "Sustainable Serenity",
-    desc: "Natural water bodies integrated into the 150-acre masterplan for thermal comfort.",
+    desc: "Natural water bodies integrated into the 150-acre masterplan providing pleasant micro-climates and natural cooling.",
     category: "Nature"
   },
   {
-    icon: <HeartPulse />,
+    icon: <HeartPulse size={28} />,
     title: "Wellness Sanctuary",
     subtitle: "Mind & Body",
-    desc: "State-of-the-art gymnasium, open-air yoga decks, and meditation zones.",
+    desc: "State-of-the-art TechnoGym cardio studio, open-air sunrise yoga decks, and dedicated zen meditation zones.",
     category: "Wellness"
   },
   {
-    icon: <Trees />,
+    icon: <Trees size={28} />,
     title: "25-Acre Greens",
     subtitle: "Infinite Oxygen",
-    desc: "Vast landscaped gardens, peripheral Miyawaki forests, and jogging trails.",
+    desc: "Vast landscaped gardens, peripheral Miyawaki forests, and a continuous 1.5 km jogging and cycling track.",
     category: "Nature"
   },
   {
-    icon: <ShieldCheck />,
-    title: "Tier-IV Security",
-    subtitle: "Cerebro Logic",
-    desc: "AI-monitored surveillance, biometric access, and 24/7 rapid response teams.",
+    icon: <ShieldCheck size={28} />,
+    title: "Tier-IV 360° Security",
+    subtitle: "Gated Sanctuary",
+    desc: "AI-monitored perimeter surveillance, RFID vehicle boom barriers, and 24/7 on-ground security patrols.",
     category: "Safety"
   }
 ];
@@ -55,37 +55,40 @@ export default function AmenityGrid() {
       {amenities.map((item, i) => (
         <motion.div
           key={i}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: i * 0.1 }}
+          transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="group relative h-full"
         >
-          <div className="h-full p-8 md:p-10 rounded-[3rem] bg-primary/[0.03] border border-primary/5 hover:border-accent/40 transition-all duration-500 flex flex-col space-y-8 relative overflow-hidden backdrop-blur-3xl shadow-2xl">
-            {/* Hover Shine */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="h-full p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-200/90 hover:border-accent/60 transition-all duration-500 flex flex-col justify-between space-y-8 relative overflow-hidden shadow-xl hover:shadow-2xl cursor-pointer">
             
-            <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-110">
-               {item.icon}
-            </div>
+            {/* Ambient Corner Accent */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full group-hover:bg-accent/15 transition-all duration-500 pointer-events-none" />
 
-            <div className="space-y-4 flex-1">
-               <div className="space-y-1">
-                  <span className="text-[10px] text-accent font-bold uppercase tracking-[0.3em] font-mono">
-                     {item.category} / {item.subtitle}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-primary group-hover:text-accent transition-colors">
-                     {item.title}
-                  </h3>
-               </div>
-               <p className="text-primary/40 font-light text-sm md:text-base leading-relaxed">
+            <div className="space-y-6 relative z-10">
+              <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-primary transition-all duration-300 shadow-sm border border-accent/25">
+                {item.icon}
+              </div>
+
+              <div className="space-y-2">
+                <div className="badge-gold">
+                  <span>{item.category} • {item.subtitle}</span>
+                </div>
+                <h3 className="text-2xl font-heading font-bold text-primary group-hover:text-accent transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-stone-600 font-sans font-medium text-xs md:text-sm leading-relaxed pt-1">
                   {item.desc}
-               </p>
+                </p>
+              </div>
             </div>
 
-            <div className="pt-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 text-[10px] font-bold text-accent uppercase tracking-widest">
-               EXPLORE DETAILS <Sparkles size={12} />
+            <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-accent uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+              <span>EXPLORE AMENITY</span>
+              <ArrowRight size={14} />
             </div>
+
           </div>
         </motion.div>
       ))}
