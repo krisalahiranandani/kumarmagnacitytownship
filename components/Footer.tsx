@@ -14,8 +14,8 @@ export default function Footer() {
       <SiloInterlinkMatrix />
       <SemanticKeywordsCloud />
       <footer className="bg-dark text-white pt-24 md:pt-32 pb-12 relative overflow-hidden">
-      {/* Cinematic Branding Layer */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+      {/* Animated Traveling Light Borderline */}
+      <div className="absolute top-0 left-0 w-full animated-divider" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto max-w-7xl px-4 relative z-10">

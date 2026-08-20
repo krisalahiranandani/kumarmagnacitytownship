@@ -139,36 +139,36 @@ export default function ApartmentShowcase() {
                 
                 {/* Main Stat Card with 3D Tilt */}
                 <TiltCard>
-                  <section aria-label="Apartment Details" className="glass-obsidian rounded-[2.5rem] p-8 border border-primary/10 h-full overflow-hidden relative shadow-2xl transform-gpu" style={{ transform: "translateZ(30px)" }}>
-                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none text-[#C9A227]" aria-hidden="true">
+                  <section aria-label="Apartment Details" className="glass-surface p-8 border border-stone-200/80 hover:border-accent/50 transition-all duration-300 h-full overflow-hidden relative shadow-xl hover:shadow-2xl" style={{ transform: "translateZ(30px)" }}>
+                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none text-accent" aria-hidden="true">
                       <Ruler size={140} />
                     </div>
-                    <p className="text-primary/50 text-xs uppercase tracking-widest mb-2 font-bold flex items-center gap-2" id="carpet-area-label">
-                       <Sparkles size={12} className="text-[#C9A227]" aria-hidden="true" />
+                    <p className="text-stone-500 text-xs uppercase tracking-widest mb-2 font-bold flex items-center gap-2" id="carpet-area-label">
+                       <Sparkles size={12} className="text-accent" aria-hidden="true" />
                        Carpet Area
                     </p>
                     <div className="flex items-baseline gap-2 mb-8" aria-labelledby="carpet-area-label">
-                      <span className="text-7xl font-heading font-bold text-[#C9A227] drop-shadow-[0_0_15px_rgba(201,162,39,0.3)]">{currentApt.carpetArea}</span>
-                      <span className="text-primary/60 text-lg">{currentApt.carpetAreaUnit}</span>
+                      <span className="text-6xl md:text-7xl font-heading font-bold text-accent drop-shadow-sm">{currentApt.carpetArea}</span>
+                      <span className="text-stone-600 text-lg font-medium">{currentApt.carpetAreaUnit}</span>
                     </div>
-                    <ul className="space-y-5" aria-label="Quick Stats">
-                      <li className="flex items-center gap-4 text-sm group/item hover:bg-primary/5 p-2 -ml-2 rounded-xl transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-[#C9A227]/10 flex items-center justify-center shrink-0 border border-[#C9A227]/20" aria-hidden="true">
-                           <IndianRupee className="text-[#C9A227]" size={14} />
+                    <ul className="space-y-4" aria-label="Quick Stats">
+                      <li className="flex items-center gap-4 text-sm group/item hover:bg-stone-50 p-2.5 -ml-2.5 rounded-xl transition-colors">
+                        <div className="w-9 h-9 rounded-full bg-accent/15 flex items-center justify-center shrink-0 border border-accent/30" aria-hidden="true">
+                           <IndianRupee className="text-accent" size={15} />
                         </div>
-                        <span className="font-bold text-lg" aria-label={`Price ranging from ${currentApt.priceFrom} to ${currentApt.priceTo}`}>₹{(currentApt.priceFrom / 100000).toFixed(2)}L - ₹{(currentApt.priceTo / 100000).toFixed(2)}L</span>
+                        <span className="font-bold text-lg text-primary" aria-label={`Price ranging from ${currentApt.priceFrom} to ${currentApt.priceTo}`}>₹{(currentApt.priceFrom / 100000).toFixed(2)}L - ₹{(currentApt.priceTo / 100000).toFixed(2)}L</span>
                       </li>
-                      <li className="flex items-center gap-4 text-sm group/item hover:bg-primary/5 p-2 -ml-2 rounded-xl transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10" aria-hidden="true">
-                           <ShieldCheck className="text-primary/60" size={14} />
+                      <li className="flex items-center gap-4 text-sm group/item hover:bg-stone-50 p-2.5 -ml-2.5 rounded-xl transition-colors">
+                        <div className="w-9 h-9 rounded-full bg-stone-100 flex items-center justify-center shrink-0 border border-stone-200" aria-hidden="true">
+                           <ShieldCheck className="text-stone-600" size={15} />
                         </div>
-                        <span className="text-primary/80">RERA: {currentApt.rera}</span>
+                        <span className="text-stone-700 font-medium">RERA: {currentApt.rera}</span>
                       </li>
-                      <li className="flex items-center gap-4 text-sm group/item hover:bg-primary/5 p-2 -ml-2 rounded-xl transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center shrink-0 border border-primary/10" aria-hidden="true">
-                           <Calendar className="text-primary/60" size={14} />
+                      <li className="flex items-center gap-4 text-sm group/item hover:bg-stone-50 p-2.5 -ml-2.5 rounded-xl transition-colors">
+                        <div className="w-9 h-9 rounded-full bg-stone-100 flex items-center justify-center shrink-0 border border-stone-200" aria-hidden="true">
+                           <Calendar className="text-stone-600" size={15} />
                         </div>
-                        <span className="text-primary/80">Possession: {currentApt.possession}</span>
+                        <span className="text-stone-700 font-medium">Possession: {currentApt.possession}</span>
                       </li>
                     </ul>
                   </section>
@@ -176,16 +176,17 @@ export default function ApartmentShowcase() {
 
                 {/* EMI Calculator */}
                 <TiltCard>
-                  <section aria-label="EMI Calculator" className="glass-obsidian rounded-[2.5rem] p-8 border border-primary/10 h-full shadow-2xl relative" style={{ transform: "translateZ(20px)" }}>
-                    <p className="text-primary/50 text-xs uppercase tracking-widest mb-6 font-bold flex items-center gap-2">
+                  <section aria-label="EMI Calculator" className="glass-surface p-8 border border-stone-200/80 hover:border-accent/50 transition-all duration-300 h-full shadow-xl hover:shadow-2xl relative" style={{ transform: "translateZ(20px)" }}>
+                    <p className="text-stone-500 text-xs uppercase tracking-widest mb-6 font-bold flex items-center gap-2">
+                      <Sparkles size={12} className="text-accent" />
                       EMI Calculator
                     </p>
-                    <div className="mb-8 p-6 rounded-2xl bg-gradient-to-br from-black/40 to-black/10 border border-primary/5 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A227]/5 blur-2xl rounded-full" />
-                      <div className="text-4xl md:text-5xl font-heading font-bold text-primary mb-2 relative z-10">
-                        <span className="text-[#C9A227]">₹</span>{monthlyEmi.toLocaleString('en-IN')}
+                    <div className="mb-8 p-6 rounded-2xl bg-gradient-to-br from-[#12100D] to-[#1F1B15] text-white border border-white/10 relative overflow-hidden shadow-inner">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-accent/15 blur-2xl rounded-full" />
+                      <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-1.5 relative z-10">
+                        <span className="text-accent">₹</span>{monthlyEmi.toLocaleString('en-IN')}
                       </div>
-                      <p className="text-xs text-primary/40 uppercase tracking-wider relative z-10">Monthly at 8.5% (80% LTV)</p>
+                      <p className="text-xs text-stone-300 uppercase tracking-wider relative z-10">Monthly EMI @ 8.5% (80% LTV)</p>
                     </div>
                     
                     <div className="space-y-4">
