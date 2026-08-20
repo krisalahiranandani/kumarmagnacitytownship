@@ -8,13 +8,13 @@ interface BrandLogoProps {
   showBg?: boolean;
 }
 
-export default function BrandLogo({ className, height = 48, showBg = true }: BrandLogoProps) {
+export default function BrandLogo({ className, height = 36, showBg = true }: BrandLogoProps) {
   return (
-    <div className={cn("inline-flex items-center select-none group", className)}>
+    <div className={cn("inline-flex items-center select-none group shrink-0", className)}>
       <div
         className={cn(
           "relative transition-all duration-300 flex items-center justify-center",
-          showBg ? "bg-white rounded-xl px-3 py-1.5 shadow-xl border border-accent/40 hover:scale-105" : ""
+          showBg ? "bg-white/95 backdrop-blur-md rounded-full px-3 py-1 shadow-sm border border-white/60 group-hover:border-accent/50 group-hover:shadow-md" : ""
         )}
       >
         <img
