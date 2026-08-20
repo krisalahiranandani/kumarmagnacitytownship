@@ -9,7 +9,6 @@ const ITEMS_PER_SITEMAP = 5000;
 export async function generateSitemaps() {
   const dynamicKeys = Object.keys(registry as SEORegistry);
   const numSitemaps = Math.ceil(dynamicKeys.length / ITEMS_PER_SITEMAP);
-  // We return at least one sitemap ID (0) which will handle static routes + first batch
   const sitemaps = [{ id: 0 }];
   for (let i = 1; i < numSitemaps; i++) {
     sitemaps.push({ id: i });
@@ -19,30 +18,30 @@ export async function generateSitemaps() {
 
 export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  let sitemapEntries: MetadataRoute.Sitemap = [];
+  const sitemapEntries: MetadataRoute.Sitemap = [];
 
   // ---------------------------------------------------------
-  // STATIC ROUTES (Only injected into sitemap ID 0)
+  // CORE AUTHORITY ROUTES (Injected into sitemap ID 0)
   // ---------------------------------------------------------
   if (id === 0) {
     const corePages = [
       { route: "", priority: 1.0, freq: 'always' as const },
       { route: "/kumar-magnacity-hadapsar", priority: 1.0, freq: 'daily' as const },
-      { route: "/kumar-magnacity-na-bungalow-plots-concept", priority: 0.9, freq: 'daily' as const },
+      { route: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune", priority: 1.0, freq: 'daily' as const },
+      { route: "/kumar-magnacity-2bhk-flats-hadapsar-pune-price", priority: 0.95, freq: 'daily' as const },
+      { route: "/kumar-magnacity-3bhk-apartments-manjari-pune-price", priority: 0.95, freq: 'daily' as const },
+      { route: "/kumar-magnacity-na-bungalow-plots-concept", priority: 0.95, freq: 'daily' as const },
+      { route: "/kumar-magnacity-na-bungalow-plots-availability", priority: 0.95, freq: 'daily' as const },
+      { route: "/kumar-magnacity-floor-plan-2bhk-3bhk", priority: 0.95, freq: 'daily' as const },
       { route: "/kumar-magnacity-manjari-location-map", priority: 0.9, freq: 'daily' as const },
-      { route: "/kumar-magnacity-na-bungalow-plots-availability", priority: 0.9, freq: 'daily' as const },
       { route: "/kumar-magnacity-na-bungalow-plots-amenities", priority: 0.9, freq: 'daily' as const },
       { route: "/kumar-magnacity-investment-plan-pune-east", priority: 0.9, freq: 'daily' as const },
       { route: "/kumar-magnacity-na-bungalow-plots-master-plan", priority: 0.9, freq: 'daily' as const },
       { route: "/kumar-magnacity-market-data-pune-east", priority: 0.9, freq: 'daily' as const },
       { route: "/kumar-magnacity-na-bungalow-plots-faq", priority: 0.9, freq: 'daily' as const },
-      { route: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune", priority: 1.0, freq: 'daily' as const },
-      { route: "/kumar-magnacity-2bhk-flats-hadapsar-pune-price", priority: 0.9, freq: 'daily' as const },
-      { route: "/kumar-magnacity-3bhk-apartments-manjari-pune-price", priority: 0.9, freq: 'daily' as const },
-      { route: "/kumar-magnacity-floor-plan-2bhk-3bhk", priority: 0.9, freq: 'daily' as const },
-      { route: "/kumar-magnacity-specifications-apartments", priority: 0.8, freq: 'daily' as const },
+      { route: "/kumar-magnacity-specifications-apartments", priority: 0.85, freq: 'daily' as const },
       { route: "/kumar-magnacity-location-advantages-hadapsar-manjari", priority: 0.9, freq: 'daily' as const },
-      { route: "/roi-calculator", priority: 0.9, freq: 'monthly' as const },
+      { route: "/roi-calculator", priority: 0.85, freq: 'monthly' as const },
     ];
 
     corePages.forEach(({ route, priority, freq }) => {
@@ -59,13 +58,16 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       });
     });
 
+    // Programmatic Local SEO Keywords Cluster
     const pSEOLocations = [
       'magarpatta-city', 'kharadi-it-park', 'eon-it-park-phase-2', 'world-trade-center-pune',
       'sp-infocity', 'hadapsar-industrial-estate', 'amanora-town-centre', 'viman-nagar',
       'koregaon-park', 'keshav-nagar', 'solapur-highway', 'hadapsar-railway-station',
       'pune-airport', 'pune-station', 'loni-kalbhor', 'hadapsar-gadital', 'phursungi-it-park',
       'shewalewadi', 'uruli-kanchan', 'saswad-road', 'mundhwa', 'fatima-nagar',
-      'ramtekdi-industrial-area', 'solapur-toll-plaza', 'manjari-railway-station'
+      'ramtekdi-industrial-area', 'solapur-toll-plaza', 'manjari-railway-station',
+      'kumar-park-infinia-phursungi', 'amanora-park-town', 'magarpatta-road',
+      'hadapsar-annexe-manjari', 'pune-solapur-expressway'
     ];
     
     pSEOLocations.forEach((slug) => {
@@ -82,6 +84,7 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       });
     });
 
+    // Insights & Articles
     const insightSlugs = getInsightSlugs();
     insightSlugs.forEach((slug) => {
       const cleanSlug = slug.replace(/\.md$/, '');
@@ -89,7 +92,7 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
         url: `${baseUrl}/insights/${cleanSlug}`,
         lastModified,
         changeFrequency: "monthly",
-        priority: 0.7,
+        priority: 0.75,
         alternates: {
           languages: {
             'mr-IN': `${baseUrl}/mr/insights/${cleanSlug}`,
@@ -102,7 +105,7 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       url: `${baseUrl}/insights`,
       lastModified,
       changeFrequency: "daily",
-      priority: 0.8,
+      priority: 0.85,
       alternates: {
         languages: {
           'mr-IN': `${baseUrl}/mr/insights`,
@@ -112,7 +115,7 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
   }
 
   // ---------------------------------------------------------
-  // DYNAMIC ROUTES (Chunked by ID)
+  // DYNAMIC SEO REGISTRY ROUTES (Chunked by ID)
   // ---------------------------------------------------------
   const dynamicKeys = Object.keys(registry as SEORegistry);
   const start = id * ITEMS_PER_SITEMAP;

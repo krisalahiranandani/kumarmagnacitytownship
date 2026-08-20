@@ -97,8 +97,8 @@ export default function StructuredData({
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "342",
+      ratingValue: "4.9",
+      reviewCount: "386",
       bestRating: "5",
       worstRating: "1",
     },

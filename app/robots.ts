@@ -9,12 +9,17 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     rules: [
       {
         userAgent: 'Googlebot',
-        allow: ['/', '/*.js', '/*.css', '/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif', '/*.svg'],
-        disallow: ['/api/', '/admin/'],
+        allow: ['/', '/*.js', '/*.css', '/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif', '/*.svg', '/assets/'],
+        disallow: ['/api/', '/admin/', '/_next/'],
       },
       {
         userAgent: 'Googlebot-Image',
         allow: ['/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif', '/*.svg', '/assets/'],
+      },
+      {
+        userAgent: 'Googlebot-Mobile',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
       },
       {
         userAgent: 'Google-Extended',
@@ -25,7 +30,22 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
         userAgent: 'bingbot',
         allow: '/',
         disallow: ['/api/', '/admin/'],
-        crawlDelay: 2,
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'YandexBot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'Applebot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'DuckDuckBot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
       },
       {
         userAgent: '*',
@@ -34,6 +54,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       }
     ],
     sitemap: [
+      'https://kumarmagnacitytownship.com/sitemap.xml',
       ...sitemapUrls,
       'https://kumarmagnacitytownship.com/image-sitemap.xml'
     ],
