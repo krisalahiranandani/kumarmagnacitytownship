@@ -153,14 +153,14 @@ export default function NRIEnquiryForm({
             name="name"
             required
             placeholder="Full Name"
-            className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm"
+            className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all placeholder:text-stone-400 text-sm font-medium shadow-sm"
           />
         </div>
 
         <div className="flex gap-3">
           <select
             name="countryCode"
-            className="w-[110px] bg-light border border-primary/10 rounded-2xl px-3 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm appearance-none text-center"
+            className="w-[110px] bg-[#FAF8F5] border border-stone-300 rounded-xl px-3 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all text-sm appearance-none text-center font-medium shadow-sm"
             defaultValue="+971"
           >
             <option value="+971">🇦🇪 +971</option>
@@ -176,7 +176,7 @@ export default function NRIEnquiryForm({
             name="phone"
             required
             placeholder="Mobile Number"
-            className="flex-1 bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm"
+            className="flex-1 bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all placeholder:text-stone-400 text-sm font-medium shadow-sm"
           />
         </div>
 
@@ -187,16 +187,17 @@ export default function NRIEnquiryForm({
                 name="email"
                 required
                 placeholder="Email Address"
-                className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm"
+                className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all placeholder:text-stone-400 text-sm font-medium shadow-sm"
             />
             </div>
             <div className="group relative">
             <select
                 name="timezone"
                 required
-                className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary/70 focus:text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm appearance-none"
+                defaultValue=""
+                className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all text-sm font-medium shadow-sm appearance-none"
             >
-                <option value="" disabled selected>Preferred Timezone</option>
+                <option value="" disabled>Preferred Timezone</option>
                 <option value="GST (Dubai)">GST (Dubai)</option>
                 <option value="EST (US East)">EST (US East)</option>
                 <option value="PST (US West)">PST (US West)</option>

@@ -53,50 +53,50 @@ export default function WhatsAppCallbackScheduler() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[10px] uppercase font-mono text-gray-400 block mb-1">Full Name*</label>
+                    <label className="text-[10px] uppercase font-bold text-stone-600 block mb-1">Full Name*</label>
                     <input
                       type="text"
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="Your Name"
-                      className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-emerald-400"
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:bg-white focus:border-emerald-500 shadow-sm"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] uppercase font-mono text-gray-400 block mb-1">WhatsApp Number*</label>
+                    <label className="text-[10px] uppercase font-bold text-stone-600 block mb-1">WhatsApp Number*</label>
                     <input
                       type="tel"
                       required
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       placeholder="+91 98765 43210"
-                      className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-emerald-400"
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:bg-white focus:border-emerald-500 shadow-sm"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[10px] uppercase font-mono text-gray-400 block mb-1">Preferred Date</label>
+                    <label className="text-[10px] uppercase font-bold text-stone-600 block mb-1">Preferred Date</label>
                     <input
                       type="date"
                       value={form.date}
                       onChange={(e) => setForm({ ...form, date: e.target.value })}
-                      className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-emerald-400"
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:bg-white focus:border-emerald-500 shadow-sm"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] uppercase font-mono text-gray-400 block mb-1">Preferred Time Slot</label>
+                    <label className="text-[10px] uppercase font-bold text-stone-600 block mb-1">Preferred Time Slot</label>
                     <select
                       value={form.time}
                       onChange={(e) => setForm({ ...form, time: e.target.value })}
-                      className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-emerald-400"
+                      className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:bg-white focus:border-emerald-500 shadow-sm appearance-none"
                     >
-                      <option value="10:00 AM" className="bg-white text-primary">10:00 AM</option>
-                      <option value="12:00 PM" className="bg-white text-primary">12:00 PM</option>
-                      <option value="03:00 PM" className="bg-white text-primary">03:00 PM</option>
-                      <option value="06:00 PM" className="bg-white text-primary">06:00 PM</option>
+                      <option value="10:00 AM">10:00 AM</option>
+                      <option value="12:00 PM">12:00 PM</option>
+                      <option value="03:00 PM">03:00 PM</option>
+                      <option value="06:00 PM">06:00 PM</option>
                     </select>
                   </div>
                 </div>

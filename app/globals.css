@@ -6,11 +6,11 @@
   
   --color-primary: #1A1814; /* Deep Bronze Obsidian */
   --color-primary-hover: #2A2620;
-  --color-accent: #D4AF37; /* Metallic Dark Gold */
-  --color-accent-hover: #F9E596; /* Luminous Gold Highlight */
+  --color-accent: #C9A227; /* Metallic Dark Gold */
+  --color-accent-hover: #E2BC38; /* Luminous Gold Highlight */
   --color-dark: #0F0E0C; /* Rich Slate Black */
-  --color-light: #1F1C18; /* Surface Dark Gold-Tinted */
-  --color-light-soft: #2D2924; /* Elevated Dark */
+  --color-light: #F7F5F0; /* Clean Luxury Cream Surface */
+  --color-light-soft: #EDEAE1; /* Slightly Elevated Light Neutral */
   --color-warm-bg: #FDFBF7; /* Ultra-Modern Luxury Ivory */
 }
 
@@ -21,18 +21,18 @@
   
   body {
     @apply font-sans;
-    background-color: var(--color-dark);
-    color: #FFFFFF;
+    background-color: var(--color-warm-bg);
+    color: var(--color-primary);
   }
 }
 
 @layer components {
   .glass-obsidian {
-    @apply bg-dark/70 backdrop-blur-3xl border border-accent/10 shadow-[0_8px_32px_rgba(212,175,55,0.05)];
+    @apply bg-dark/80 backdrop-blur-3xl border border-accent/15 shadow-[0_8px_32px_rgba(212,175,55,0.08)];
   }
   
   .glass-white {
-    @apply bg-white/60 backdrop-blur-3xl shadow-[0_8px_32px_rgba(255,255,255,0.1)];
+    @apply bg-white/80 backdrop-blur-3xl shadow-[0_8px_32px_rgba(44,36,24,0.06)];
   }
   
   .shine-effect {
@@ -87,11 +87,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-dark;
+  background: #F7F5F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-accent/20 rounded-full hover:bg-accent/40 transition-colors;
+  @apply bg-accent/30 rounded-full hover:bg-accent/60 transition-colors;
 }
 
 /* Luxury Typography Utilities */

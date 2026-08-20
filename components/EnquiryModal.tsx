@@ -81,6 +81,7 @@ export default function EnquiryModal() {
                 subtitle={modalData.subtitle || "Access the exclusive inventory suite and pre-launch pricing."}
                 formId={`modal-${modalData.source || 'general'}`}
                 plotId={modalData.plotId}
+                compact={true}
               />
 
               {/* Swift WhatsApp Option */}

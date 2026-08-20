@@ -177,7 +177,7 @@ export default function EnquiryForm({
               name="name"
               required
               placeholder={isMarathi ? "पूर्ण नाव" : "Full Name"}
-              className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm shadow-sm"
+              className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all placeholder:text-stone-400 text-sm font-medium shadow-sm"
             />
           </div>
           <div className="group relative">
@@ -186,7 +186,7 @@ export default function EnquiryForm({
               name="phone"
               required
               placeholder={isMarathi ? "मोबाईल नंबर" : "Mobile Number"}
-              className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm shadow-sm"
+              className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all placeholder:text-stone-400 text-sm font-medium shadow-sm"
             />
           </div>
         </div>
@@ -195,9 +195,8 @@ export default function EnquiryForm({
           <input
             type="email"
             name="email"
-            required
-            placeholder={isMarathi ? "ईमेल पत्ता" : "Email Address"}
-            className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all placeholder:text-primary/40 text-sm shadow-sm"
+            placeholder={isMarathi ? "ईमेल पत्ता (ऐच्छिक)" : "Email Address (Optional)"}
+            className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all placeholder:text-stone-400 text-sm font-medium shadow-sm"
           />
         </div>
 
@@ -206,9 +205,10 @@ export default function EnquiryForm({
             <select
               name="timing"
               required
-              className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary/70 focus:text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm shadow-sm appearance-none"
+              defaultValue=""
+              className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all text-sm font-medium shadow-sm appearance-none"
             >
-              <option value="" disabled selected>{isMarathi ? "भेट देण्याची वेळ" : "Expected Visit"}</option>
+              <option value="" disabled>{isMarathi ? "भेट देण्याची वेळ" : "Select Expected Visit"}</option>
               <option value="Next 48 Hours">{isMarathi ? "पुढील ४८ तासात" : "Next 48 Hours"}</option>
               <option value="This Weekend">{isMarathi ? "या शनिवार-रविवारी" : "This Weekend"}</option>
               <option value="Next Week">{isMarathi ? "पुढील आठवड्यात" : "Next Week"}</option>
@@ -219,12 +219,14 @@ export default function EnquiryForm({
             <select
               name="intent"
               required
-              className="w-full bg-light border border-primary/10 rounded-2xl px-5 py-4 text-primary/70 focus:text-primary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 transition-all text-sm shadow-sm appearance-none"
+              defaultValue=""
+              className="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl px-5 py-4 text-primary focus:outline-none focus:bg-white focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all text-sm font-medium shadow-sm appearance-none"
             >
-              <option value="" disabled selected>{isMarathi ? "उद्देश निवडा" : "Investment Goal"}</option>
-              <option value="Self Use Bungalow">{isMarathi ? "स्वतःचे घर" : "Self Use Bungalow"}</option>
+              <option value="" disabled>{isMarathi ? "उद्देश निवडा" : "Select Investment Goal"}</option>
+              <option value="2 BHK Luxury Apartment">{isMarathi ? "२ बीएचके फ्लॅट" : "2 BHK Luxury Apartment"}</option>
+              <option value="3 BHK Luxury Apartment">{isMarathi ? "३ बीएचके फ्लॅट" : "3 BHK Luxury Apartment"}</option>
+              <option value="NA Villa Bungalow Plot">{isMarathi ? "एनए व्हिला प्लॉट" : "NA Villa Bungalow Plot"}</option>
               <option value="ROI / Investment">{isMarathi ? "गुंतवणूक / परतावा" : "ROI / Investment"}</option>
-              <option value="Portfolio Extension">{isMarathi ? "पोर्टफोलिओ वाढ" : "Portfolio Extension"}</option>
             </select>
           </div>
         </div>
