@@ -12,6 +12,7 @@ import { ModalProvider } from "@/lib/modal-context";
 import EnquiryModal from "@/components/EnquiryModal";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import GoogleConsent from "@/components/GoogleConsent";
+import GoogleSpeculationRules from "@/components/GoogleSpeculationRules";
 import StructuredData from "@/components/StructuredData";
 import ExitIntentModal from "@/components/ExitIntentModal";
 import AIChatWidget from "@/components/AIChatWidget";
@@ -108,6 +109,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Consent Mode V2 (Must execute FIRST before any analytics or trackers) */}
+        <GoogleConsent />
+        
+        {/* Google Chrome Enterprise Speculation Rules for sub-50ms instant loads */}
+        <GoogleSpeculationRules />
+
         {/* Core Web Vitals Resource Hints */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -129,7 +136,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Kumar Magnacity Township",
+              "name": "Kumar Magnacity Hadapsar",
               "url": "https://kumarmagnacitytownship.com",
               "potentialAction": {
                 "@type": "SearchAction",
@@ -142,8 +149,6 @@ export default function RootLayout({
       </head>
       <body className={`${playfair.variable} ${outfit.variable} font-sans antialiased bg-warm-bg text-primary`}>
         <NRIGeoBanner />
-        {/* Google Consent Mode V2 (Must be loaded FIRST) */}
-        <GoogleConsent />
         {/* Google Tag Manager (Loads asynchronously without blocking rendering) */}
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX'} />
         {/* Google Analytics 4 */}

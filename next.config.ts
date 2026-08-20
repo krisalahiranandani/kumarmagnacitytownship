@@ -87,7 +87,7 @@ const nextConfig: NextConfig = {
       { old: '/faq', new: '/kumar-magnacity-na-bungalow-plots-faq' },
     ];
 
-    let redirectsList: any[] = [
+    let redirectsList: Array<{ source: string; destination: string; permanent: boolean }> = [
       {
         source: '/sitemap.xml',
         destination: '/sitemap/0.xml',

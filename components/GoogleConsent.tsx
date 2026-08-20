@@ -1,20 +1,13 @@
-"use client";
-
-import Script from "next/script";
-
 export default function GoogleConsent() {
   return (
-    <Script
+    <script
       id="google-consent-v2"
-      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
-          // Define dataLayer and the gtag function.
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           
-          // Set default consent to 'denied' as a placeholder
-          // EU / EEA / UK: Strict Defaults (Denied until granted)
+          // Google Consent Mode V2 Defaults (Strict for EU/UK, Granted for IN/US/Global)
           gtag('consent', 'default', {
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
@@ -24,7 +17,6 @@ export default function GoogleConsent() {
             'wait_for_update': 500
           });
 
-          // US / UAE / India / ROW: Relaxed Defaults (Granted by default)
           gtag('consent', 'default', {
             'ad_storage': 'granted',
             'ad_user_data': 'granted',
@@ -33,8 +25,8 @@ export default function GoogleConsent() {
             'wait_for_update': 500
           });
 
-          // Enable conversion modeling if needed
           gtag('set', 'ads_data_redaction', true);
+          gtag('set', 'url_passthrough', true);
         `,
       }}
     />
