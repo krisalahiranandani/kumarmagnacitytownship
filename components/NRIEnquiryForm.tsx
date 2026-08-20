@@ -87,8 +87,9 @@ export default function NRIEnquiryForm({
       }
 
       throw new Error("Lead submission failed");
-    } catch (err: any) {
-      console.warn("FormSubmit AJAX failed, using WhatsApp backup:", err.message);
+    } catch (err: unknown) {
+      const errorObj = err as Error;
+      console.warn("FormSubmit AJAX failed, using WhatsApp backup:", errorObj.message);
 
       try {
         const waMessage = encodeURIComponent(

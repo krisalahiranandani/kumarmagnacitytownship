@@ -1,10 +1,12 @@
+import { FAQPageSchema } from "./schema";
+
 export interface HeaderProps {
-    isMarathi?: boolean;
-    transparent?: boolean;
+  isMarathi?: boolean;
+  transparent?: boolean;
 }
 
 export interface FooterProps {
-    isMarathi?: boolean;
+  isMarathi?: boolean;
 }
 
 export interface EnquiryFormProps {
@@ -17,9 +19,9 @@ export interface EnquiryFormProps {
 }
 
 export interface FAQSectionProps {
-  faqJson: any; // Using any for schema.org raw JSON to maintain flexibility
+  faqJson: FAQPageSchema | null;
 }
 
 export interface InventoryBadgeProps {
-    text?: string;
+  text?: string;
 }

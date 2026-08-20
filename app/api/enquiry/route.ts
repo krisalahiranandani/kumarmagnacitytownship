@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body = await request.json();
+    const body = (await request.json()) as Record<string, unknown>;
 
     // Honeypot check
     if (body._honey || body.website || body.honeypot) {
@@ -70,17 +70,14 @@ export async function POST(request: NextRequest) {
     };
 
     // 2. Database Fallback (Vercel Postgres)
-    let dbSuccess = false;
     if (process.env.POSTGRES_URL) {
       try {
         await sql`
           INSERT INTO leads (name, phone, email, timing, intent, source_url, created_at)
           VALUES (${leadEntry.name}, ${leadEntry.phone}, ${leadEntry.email || ''}, ${leadEntry.timing}, ${leadEntry.intent}, ${leadEntry.source_url}, NOW())
         `;
-        dbSuccess = true;
       } catch (dbError) {
         console.error("Database fallback failed:", dbError);
-        // Continue to FormSubmit even if DB fails
       }
     }
 
@@ -109,9 +106,9 @@ export async function POST(request: NextRequest) {
     );
 
     const responseText = await relayResponse.text();
-    let responseJson: any = {};
+    let responseJson: Record<string, unknown> = {};
     try {
-      responseJson = JSON.parse(responseText);
+      responseJson = JSON.parse(responseText) as Record<string, unknown>;
     } catch {
       responseJson = { raw: responseText };
     }
@@ -128,10 +125,11 @@ export async function POST(request: NextRequest) {
         { status: 502 }
       );
     }
-  } catch (error: any) {
-    console.error("Critical API error:", error);
+  } catch (error: unknown) {
+    const err = error as Error;
+    console.error("Critical API error:", err);
     return NextResponse.json(
-      { success: false, error: error.message || "Internal Server Error" },
+      { success: false, error: err.message || "Internal Server Error" },
       { status: 500 }
     );
   }

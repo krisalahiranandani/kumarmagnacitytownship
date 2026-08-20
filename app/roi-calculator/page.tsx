@@ -135,7 +135,7 @@ export default function ROICalculatorPage() {
                      <YAxis stroke="#ffffff50" tickFormatter={(value) => `₹${(value / 100000).toFixed(0)}L`} />
                      <Tooltip 
                        contentStyle={{ backgroundColor: '#111', border: '1px solid #c9a227', borderRadius: '1rem', color: '#fff' }}
-                       formatter={(value: any) => formatCurrency(value)}
+                       formatter={(value: unknown) => formatCurrency(Number(value) || 0)}
                      />
                      <Legend />
                      <Line type="monotone" dataKey="Real Estate (Manjari)" stroke="#c9a227" strokeWidth={4} dot={{ r: 6 }} activeDot={{ r: 8 }} />

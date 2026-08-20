@@ -102,8 +102,9 @@ export default function EnquiryForm({
 
       // FormSubmit returned "false" — needs activation. Fall through to WhatsApp backup.
       throw new Error("FormSubmit not activated or failed");
-    } catch (err: any) {
-      console.warn("FormSubmit AJAX failed, using WhatsApp backup:", err.message);
+    } catch (err: unknown) {
+      const errorObj = err as Error;
+      console.warn("FormSubmit AJAX failed, using WhatsApp backup:", errorObj.message);
 
       // BACKUP: Open WhatsApp with lead details (guaranteed delivery)
       try {

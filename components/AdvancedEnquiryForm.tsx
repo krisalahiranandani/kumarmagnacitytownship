@@ -51,8 +51,10 @@ export default function AdvancedEnquiryForm({
   });
 
   const nextStep = async () => {
-    const fieldsToValidate = step === 1 ? ["name", "phone", "email"] : ["timing", "intent"];
-    const isValid = await trigger(fieldsToValidate as any);
+    const fieldsToValidate = step === 1 
+      ? (["name", "phone", "email"] as const) 
+      : (["timing", "intent"] as const);
+    const isValid = await trigger(fieldsToValidate as unknown as (keyof EnquiryData)[]);
     if (isValid) setStep((s) => s + 1);
   };
 

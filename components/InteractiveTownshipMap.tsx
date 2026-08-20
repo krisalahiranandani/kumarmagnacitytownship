@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Building2, School, Landmark, ShoppingBag, ShieldCheck, ArrowRight, Sparkles } from "lucide-react";
+import { MapPin, Building2, School, Landmark, ShoppingBag, ShieldCheck, ArrowRight, Sparkles, type LucideIcon } from "lucide-react";
 import { useModal } from "@/lib/modal-context";
 
 interface Sector {
@@ -13,7 +13,7 @@ interface Sector {
   price: string;
   specs: string;
   description: string;
-  icon: any;
+  icon: LucideIcon;
   color: string;
   hotspotPos: { x: string; y: string };
 }

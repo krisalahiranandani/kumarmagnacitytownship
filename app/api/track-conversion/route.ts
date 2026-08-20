@@ -6,20 +6,33 @@ function hashData(data: string) {
   return crypto.createHash('sha256').update(data.trim().toLowerCase()).digest('hex');
 }
 
+interface TrackConversionBody {
+  event?: string;
+  lead_type?: string;
+  project?: string;
+  email?: string;
+  phone?: string;
+}
+
+interface UserDataPayload {
+  sha256_email_address?: string;
+  sha256_phone_number?: string;
+}
+
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { event, lead_type, project, email, phone } = body;
+    const body = (await req.json()) as TrackConversionBody;
+    const { event = "generate_lead", lead_type, project, email, phone } = body;
 
     // We prepare the hashed user data payload
-    const user_data: any = {};
+    const user_data: UserDataPayload = {};
     if (email) user_data.sha256_email_address = hashData(email);
     if (phone) {
-        // Strip non-digits and add country code if missing (assumes India +91 for basic logic if len == 10)
-        let cleanedPhone = phone.replace(/\D/g, '');
-        if (cleanedPhone.length === 10) cleanedPhone = `91${cleanedPhone}`;
-        else if (cleanedPhone.length > 10 && !cleanedPhone.startsWith('+')) cleanedPhone = `+${cleanedPhone}`;
-        user_data.sha256_phone_number = hashData(cleanedPhone);
+      // Strip non-digits and add country code if missing (assumes India +91 for basic logic if len == 10)
+      let cleanedPhone = phone.replace(/\D/g, '');
+      if (cleanedPhone.length === 10) cleanedPhone = `91${cleanedPhone}`;
+      else if (cleanedPhone.length > 10 && !cleanedPhone.startsWith('+')) cleanedPhone = `+${cleanedPhone}`;
+      user_data.sha256_phone_number = hashData(cleanedPhone);
     }
 
     const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -34,15 +47,12 @@ export async function POST(req: Request) {
     const gaEndpoint = `https://www.google-analytics.com/mp/collect?measurement_id=${measurementId}&api_secret=${apiSecret}`;
 
     const payload = {
-      // client_id should ideally come from the GA cookie (_ga), but for server-side
-      // postbacks a timestamp or UUID works if the exact client_id is unknown.
       client_id: crypto.randomUUID(),
       events: [{
         name: event,
         params: {
           lead_type: lead_type,
           project: project,
-          // Injecting Enhanced Conversions Data
           user_data: Object.keys(user_data).length > 0 ? user_data : undefined
         }
       }]
@@ -54,12 +64,13 @@ export async function POST(req: Request) {
     });
 
     if (!response.ok) {
-        console.error("GA4 MP Error:", await response.text());
+      console.error("GA4 MP Error:", await response.text());
     }
 
     return NextResponse.json({ success: true, hashed: Object.keys(user_data).length > 0 });
-  } catch (error: any) {
-    console.error("Server-Side Tracking Error:", error);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    const err = error as Error;
+    console.error("Server-Side Tracking Error:", err);
+    return NextResponse.json({ success: false, error: err.message || "Tracking failed" }, { status: 500 });
   }
 }

@@ -2,18 +2,15 @@
 
 import { useCallback } from "react";
 
-// Define the global window object to accept dataLayer and gtag
-declare global {
-  interface Window {
-    dataLayer?: any[];
-    gtag: (...args: any[]) => void;
-    fbq: (...args: any[]) => void;
-  }
-}
+export type EventName = 
+  | 'generate_lead' 
+  | 'view_item' 
+  | 'add_to_cart' 
+  | 'begin_checkout' 
+  | 'virtual_page_view' 
+  | 'conversion';
 
-type EventName = 'generate_lead' | 'view_item' | 'add_to_cart' | 'begin_checkout' | 'virtual_page_view' | 'conversion';
-
-interface LeadEventData {
+export interface LeadEventData {
   currency?: string;
   value?: number;
   lead_type?: string;
@@ -22,15 +19,25 @@ interface LeadEventData {
   phone?: string;
 }
 
-interface ConversionEventData {
-  send_to: string;
-  value?: number;
-  currency?: string;
+export interface AnalyticsItem {
+  item_id: string;
+  item_name: string;
+  item_category?: string;
+  price?: number;
+}
+
+export type DataLayerPayload = Record<string, string | number | boolean | AnalyticsItem[] | undefined>;
+
+declare global {
+  interface Window {
+    dataLayer?: Array<Record<string, unknown>>;
+    gtag?: (command: string, targetIdOrEvent: string, configOrParams?: Record<string, unknown>) => void;
+    fbq?: (command: string, eventName: string, params?: Record<string, unknown>) => void;
+  }
 }
 
 export function useDataLayer() {
-  
-  const pushToDataLayer = useCallback((event: EventName, data?: Record<string, any>) => {
+  const pushToDataLayer = useCallback((event: EventName, data?: DataLayerPayload) => {
     if (typeof window !== "undefined") {
       // 1. Push to GTM DataLayer
       window.dataLayer = window.dataLayer || [];
@@ -41,7 +48,7 @@ export function useDataLayer() {
 
       // 2. Direct GA4 / Google Ads gtag call (Fallback/Explicit)
       if (typeof window.gtag === 'function') {
-        window.gtag('event', event, data);
+        window.gtag('event', event, data as Record<string, unknown>);
       }
     }
   }, []);
@@ -59,12 +66,12 @@ export function useDataLayer() {
     const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
     const adsLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
     if (adsId && adsLabel && typeof window !== "undefined" && typeof window.gtag === 'function') {
-        window.gtag('event', 'conversion', {
-            'send_to': `${adsId}/${adsLabel}`
-        });
+      window.gtag('event', 'conversion', {
+        'send_to': `${adsId}/${adsLabel}`
+      });
     }
 
-    // Meta Pixel Fallback Tracker (Centralized logic)
+    // Meta Pixel Fallback Tracker
     if (typeof window !== "undefined" && window.fbq) {
       window.fbq('track', 'Lead', {
         currency: 'INR',
@@ -89,7 +96,6 @@ export function useDataLayer() {
     }
   }, [pushToDataLayer]);
 
-  // Micro-Conversion (E-commerce) Methods
   const trackViewItem = useCallback((itemId: string, itemName: string, category: string = 'Real Estate') => {
     pushToDataLayer('view_item', {
       items: [{ item_id: itemId, item_name: itemName, item_category: category }]

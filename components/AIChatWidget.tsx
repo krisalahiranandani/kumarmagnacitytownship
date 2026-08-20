@@ -1,22 +1,85 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { useChat } from '@ai-sdk/react';
+import { useState, useRef, useEffect, FormEvent } from 'react';
 import { MessageSquare, X, Send, Sparkles } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant' | 'system';
+  content: string;
+}
+
 export default function AIChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const chatData: any = useChat({
-    api: '/api/chat',
-  } as any);
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = chatData;
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to bottom
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const userMessage = input.trim();
+    if (!userMessage || isLoading) return;
+
+    const userMsgObj: ChatMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: userMessage,
+    };
+
+    setMessages((prev) => [...prev, userMsgObj]);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [...messages, userMsgObj].map(({ role, content }) => ({ role, content })),
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error('Chat API returned an error');
+      }
+
+      // Handle JSON response or text stream
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        const data = (await res.json()) as { mock?: boolean; text?: string; error?: string };
+        const assistantMsg: ChatMessage = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: data.text || data.error || 'Thank you for reaching out. Please connect with our team for priority bookings.',
+        };
+        setMessages((prev) => [...prev, assistantMsg]);
+      } else {
+        const text = await res.text();
+        const assistantMsg: ChatMessage = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: text || 'Thank you for reaching out to Kumar Magnacity.',
+        };
+        setMessages((prev) => [...prev, assistantMsg]);
+      }
+    } catch {
+      const errorMsg: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: 'I apologize, but I am momentarily experiencing network delays. Please request a callback via WhatsApp or our instant form.',
+      };
+      setMessages((prev) => [...prev, errorMsg]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
@@ -65,8 +128,7 @@ export default function AIChatWidget() {
                 Welcome to Kumar Magnacity. I am your personal AI concierge. Are you looking for 2BHK/3BHK apartments or NA Bungalow Plots?
               </div>
               
-              {/* @ts-ignore */}
-              {messages.map((m: any) => (
+              {messages.map((m) => (
                 <div 
                   key={m.id} 
                   className={`p-3 rounded-2xl text-sm max-w-[85%] ${
@@ -93,14 +155,14 @@ export default function AIChatWidget() {
             <div className="p-4 bg-primary/5 border-t border-primary/10">
               <form onSubmit={handleSubmit} className="flex items-center gap-2 relative">
                 <input
-                  value={input || ""}
-                  onChange={handleInputChange}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about pricing, location..."
                   className="w-full bg-white border border-primary/20 rounded-full py-3 pl-4 pr-12 text-sm text-primary focus:outline-none focus:border-accent"
                 />
                 <button 
                   type="submit" 
-                  disabled={isLoading || !(input || "").trim()}
+                  disabled={isLoading || !input.trim()}
                   className="absolute right-2 p-2 bg-accent text-white rounded-full disabled:opacity-50"
                 >
                   <Send size={16} />

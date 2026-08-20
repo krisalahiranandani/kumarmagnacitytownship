@@ -9,24 +9,28 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     rules: [
       {
         userAgent: 'Googlebot',
-        allow: ['/', '/*.js', '/*.css', '/*.jpg', '/*.png', '/*.webp'],
-        disallow: ['/api/'],
+        allow: ['/', '/*.js', '/*.css', '/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif', '/*.svg'],
+        disallow: ['/api/', '/admin/'],
       },
       {
         userAgent: 'Googlebot-Image',
-        allow: ['/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif'],
+        allow: ['/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif', '/*.svg', '/assets/'],
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
       },
       {
         userAgent: 'bingbot',
         allow: '/',
-        disallow: ['/api/'],
-        crawlDelay: 5,
+        disallow: ['/api/', '/admin/'],
+        crawlDelay: 2,
       },
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/'],
-        crawlDelay: 10,
+        disallow: ['/api/', '/admin/'],
       }
     ],
     sitemap: [

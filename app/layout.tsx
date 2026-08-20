@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {
   themeColor: "#c9a227",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 import { Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
@@ -19,18 +22,20 @@ import { Suspense } from "react";
 import ScrollProgress from "@/components/ScrollProgress";
 import MobileQuickBar from "@/components/MobileQuickBar";
 import FeaturedSnippetsSchema from "@/components/FeaturedSnippetsSchema";
+import SiteNavigationSchema from "@/components/SiteNavigationSchema";
 
 export const runtime = "nodejs";
-
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +46,6 @@ export const metadata: Metadata = {
     template: "%s | Kumar Magnacity Township Hadapsar Annexe"
   },
   description: "Kumar Magnacity Township Hadapsar Annexe, Manjari — Pune's premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.49Cr*. Podar International School inside campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
-  // Keywords removed to comply with Google Helpful Content Update guidelines
   robots: {
     index: true,
     follow: true,
@@ -60,7 +64,7 @@ export const metadata: Metadata = {
     url: "https://kumarmagnacitytownship.com",
     siteName: "Kumar Magnacity Township",
     title: "Kumar Magnacity Township | 2BHK & 3BHK Apartments",
-    description: "Pune&apos;s premier 150-acre township at Manjari near Hadapsar. Premium 2BHK & 3BHK flats by Kumar Properties.",
+    description: "Pune's premier 150-acre township at Manjari near Hadapsar. Premium 2BHK & 3BHK flats by Kumar Properties.",
     images: [
       {
         url: "/assets/hero-bg.jpg",
@@ -77,6 +81,7 @@ export const metadata: Metadata = {
     images: ["/assets/hero-bg.jpg"],
   },
   alternates: {
+    canonical: "https://kumarmagnacitytownship.com",
     languages: {
       "en-IN": "https://kumarmagnacitytownship.com",
       "mr-IN": "https://kumarmagnacitytownship.com/mr",
@@ -104,13 +109,18 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Core Web Vitals Resource Hints */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preload" as="image" href="/assets/hero-bg.jpg" fetchPriority="high" />
+        
+        {/* Server-Rendered Google Rich Results Schemas */}
         <StructuredData />
         <FeaturedSnippetsSchema />
+        <SiteNavigationSchema />
         
         {/* Google Sitelinks Search Box Schema */}
         <script
@@ -130,7 +140,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${playfair.variable} font-sans antialiased bg-warm-bg text-primary`}>
+      <body className={`${playfair.variable} ${outfit.variable} font-sans antialiased bg-warm-bg text-primary`}>
         <NRIGeoBanner />
         {/* Google Consent Mode V2 (Must be loaded FIRST) */}
         <GoogleConsent />
@@ -143,7 +153,7 @@ export default function RootLayout({
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID} />
         )}
         
-        {/* Deployment V2.3.1 - Restoration Fix */}
+        {/* Application Shell */}
         <ModalProvider>
           <ScrollProgress />
           {children}

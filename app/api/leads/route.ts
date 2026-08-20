@@ -7,6 +7,7 @@ import { sendWhatsAppBrochure } from "@/lib/whatsapp";
 import { renderToBuffer } from "@react-pdf/renderer";
 import { BrochurePDF } from "@/components/BrochurePDF";
 import { google } from "googleapis";
+import { EnquiryData } from "@/types/enquiry";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
@@ -16,21 +17,28 @@ export const runtime = "nodejs";
 
 const LEDGER_PATH = path.join(process.cwd(), "data", "leads-ledger.json");
 
-export async function GET(request: NextRequest) {
+interface StoredLead extends Partial<EnquiryData> {
+  name: string;
+  phone: string;
+  timestamp: string;
+  _subject?: string;
+}
+
+export async function GET() {
   try {
     // 1. PRIMARY SOURCE: Local Ledger (Secured Hub)
-    let allLeads = [];
+    let allLeads: StoredLead[] = [];
     if (fs.existsSync(LEDGER_PATH)) {
       try {
         const data = fs.readFileSync(LEDGER_PATH, "utf8");
-        allLeads = JSON.parse(data);
+        allLeads = JSON.parse(data) as StoredLead[];
       } catch (err) {
         console.error("Local ledger parsing failed:", err);
       }
     }
 
     // Filter out rows that don't have a name and return newest first
-    const filteredLeads = allLeads.filter((l: any) => l.name);
+    const filteredLeads = allLeads.filter((l) => l.name);
 
     return NextResponse.json(filteredLeads.reverse());
   } catch (error) {
@@ -67,14 +75,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const data = await req.json();
+    const data = (await req.json()) as StoredLead;
 
     // Silent honeypot check
-    if (data._honey || data.website || data.honeypot || data.fax) {
+    if (data._honey || data.website) {
       return NextResponse.json({ success: true, message: "Lead captured securely via Sovereign Hub." });
     }
 
-    const leadData = { ...data, timestamp: new Date().toISOString() };
+    const leadData: StoredLead = { ...data, timestamp: new Date().toISOString() };
 
     // 0. Cloudflare Turnstile Bot Protection
     const turnstileToken = req.headers.get('cf-turnstile-response');
@@ -89,7 +97,7 @@ export async function POST(req: NextRequest) {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: `secret=${turnstileSecret}&response=${turnstileToken}`,
       });
-      const verifyOutcome = await verifyRes.json();
+      const verifyOutcome = (await verifyRes.json()) as { success: boolean };
       if (!verifyOutcome.success) {
         return NextResponse.json({ success: false, error: "Bot verification failed: Invalid token." }, { status: 403 });
       }
@@ -99,7 +107,7 @@ export async function POST(req: NextRequest) {
     if (fs.existsSync(LEDGER_PATH)) {
       try {
         const fileData = fs.readFileSync(LEDGER_PATH, "utf8");
-        const allLeads = JSON.parse(fileData);
+        const allLeads = JSON.parse(fileData) as StoredLead[];
         allLeads.push(leadData);
         fs.writeFileSync(LEDGER_PATH, JSON.stringify(allLeads, null, 2));
       } catch (err) {
@@ -126,58 +134,57 @@ export async function POST(req: NextRequest) {
       console.warn("GOOGLE_APP_SCRIPT_URL is not set. Sales email not sent.");
     }
 
-
-      // 3. Automated Welcome Email to Buyer (Instant Autoresponder)
-      if (resend && data.email) {
-        const buyerHtmlContent = `
-          <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #FAFAFA;">
-            <div style="background-color: #111111; padding: 40px; text-align: center; border-radius: 12px 12px 0 0;">
-              <h1 style="color: #C9A227; margin: 0; font-size: 28px; letter-spacing: 4px; text-transform: uppercase; font-weight: 300;">Kumar Magnacity</h1>
-              <p style="color: #FFFFFF; margin-top: 10px; font-size: 14px; letter-spacing: 2px;">THE SOVEREIGN LIVING</p>
-            </div>
-            <div style="background-color: #FFFFFF; padding: 40px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-              <h2 style="color: #111111; font-size: 24px; margin-top: 0;">Welcome, ${data.name.split(' ')[0]}</h2>
-              <p style="color: #666666; line-height: 1.6; font-size: 16px;">
-                Thank you for your interest in Kumar Magnacity, Manjari's most prestigious 150-acre township. We have received your inquiry.
-              </p>
-              <p style="color: #666666; line-height: 1.6; font-size: 16px;">
-                Our official presentation, including detailed floor plans, master layouts, and investment models, is available for your review.
-              </p>
-              <div style="text-align: center; margin: 40px 0;">
-                <a href="https://kumarmagnacitytownship.com/nri-investment" style="background-color: #C9A227; color: #111111; padding: 16px 32px; text-decoration: none; font-weight: bold; border-radius: 4px; letter-spacing: 1px; display: inline-block;">DOWNLOAD BROCHURE</a>
-              </div>
-              <p style="color: #666666; line-height: 1.6; font-size: 16px; border-top: 1px solid #EEEEEE; padding-top: 24px;">
-                Your dedicated Relationship Manager will contact you shortly on <strong>${data.phone}</strong> to assist with priority allocation.
-              </p>
-            </div>
+    // 3. Automated Welcome Email to Buyer (Instant Autoresponder)
+    if (resend && data.email) {
+      const buyerHtmlContent = `
+        <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #FAFAFA;">
+          <div style="background-color: #111111; padding: 40px; text-align: center; border-radius: 12px 12px 0 0;">
+            <h1 style="color: #C9A227; margin: 0; font-size: 28px; letter-spacing: 4px; text-transform: uppercase; font-weight: 300;">Kumar Magnacity</h1>
+            <p style="color: #FFFFFF; margin-top: 10px; font-size: 14px; letter-spacing: 2px;">THE SOVEREIGN LIVING</p>
           </div>
-        `;
-        
-        // 3b. Generate Personalized PDF Brochure
-        const pdfBuffer = await renderToBuffer(React.createElement(BrochurePDF, { clientName: data.name || "Valued Client" }) as any);
+          <div style="background-color: #FFFFFF; padding: 40px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+            <h2 style="color: #111111; font-size: 24px; margin-top: 0;">Welcome, ${data.name.split(' ')[0]}</h2>
+            <p style="color: #666666; line-height: 1.6; font-size: 16px;">
+              Thank you for your interest in Kumar Magnacity, Manjari's most prestigious 150-acre township. We have received your inquiry.
+            </p>
+            <p style="color: #666666; line-height: 1.6; font-size: 16px;">
+              Our official presentation, including detailed floor plans, master layouts, and investment models, is available for your review.
+            </p>
+            <div style="text-align: center; margin: 40px 0;">
+              <a href="https://kumarmagnacitytownship.com/nri-investment" style="background-color: #C9A227; color: #111111; padding: 16px 32px; text-decoration: none; font-weight: bold; border-radius: 4px; letter-spacing: 1px; display: inline-block;">DOWNLOAD BROCHURE</a>
+            </div>
+            <p style="color: #666666; line-height: 1.6; font-size: 16px; border-top: 1px solid #EEEEEE; padding-top: 24px;">
+              Your dedicated Relationship Manager will contact you shortly on <strong>${data.phone}</strong> to assist with priority allocation.
+            </p>
+          </div>
+        </div>
+      `;
+      
+      // 3b. Generate Personalized PDF Brochure
+      const pdfElement = React.createElement(BrochurePDF, { clientName: data.name || "Valued Client" });
+      const pdfBuffer = await renderToBuffer(pdfElement as unknown as React.ReactElement<import("@react-pdf/renderer").DocumentProps>);
 
-        // Note: For this to work in production, you must verify your domain in Resend and change the 'from' address.
-        await resend.emails.send({
-          from: 'Kumar Magnacity <' + (process.env.RESEND_FROM_EMAIL || 'info@kumarmagnacitytownship.com') + '>',
-          to: data.email,
-          subject: 'Your Official Brochure - Kumar Magnacity',
-          html: buyerHtmlContent,
-          attachments: [
-            {
-              filename: `Kumar-Magnacity-Portfolio-${data.name.replace(/\s+/g, '-')}.pdf`,
-              content: pdfBuffer,
-            }
-          ]
-        }).catch(e => console.error("Buyer Email Dispatch Failed:", e));
+      await resend.emails.send({
+        from: 'Kumar Magnacity <' + (process.env.RESEND_FROM_EMAIL || 'info@kumarmagnacitytownship.com') + '>',
+        to: data.email,
+        subject: 'Your Official Brochure - Kumar Magnacity',
+        html: buyerHtmlContent,
+        attachments: [
+          {
+            filename: `Kumar-Magnacity-Portfolio-${data.name.replace(/\s+/g, '-')}.pdf`,
+            content: pdfBuffer,
+          }
+        ]
+      }).catch(e => console.error("Buyer Email Dispatch Failed:", e));
+
       // 3c. Instant Admin Notification
       await resend.emails.send({
         from: 'Kumar Magnacity Leads <' + (process.env.RESEND_FROM_EMAIL || 'info@kumarmagnacitytownship.com') + '>',
-        to: 'propsmartrealty@gmail.com',
+        to: SALES_EMAIL,
         subject: '🚨 NEW LEAD: ' + data.name + ' | ' + data.phone,
         html: '<h2>New Lead Captured</h2><p><strong>Name:</strong> ' + data.name + '</p><p><strong>Phone:</strong> ' + data.phone + '</p><p><strong>Email:</strong> ' + (data.email || 'N/A') + '</p><p><strong>Timing:</strong> ' + (data.timing || 'N/A') + '</p><p><strong>Intent:</strong> ' + (data.intent || 'N/A') + '</p><p><strong>Source:</strong> ' + (data.source_url || 'N/A') + '</p>'
       }).catch(e => console.error('Admin Email Dispatch Failed:', e));
-
-      }
+    }
 
     // 4. CRM Webhook Integration (Enterprise Scaling)
     const webhookUrl = process.env.CRM_WEBHOOK_URL;
@@ -190,7 +197,6 @@ export async function POST(req: NextRequest) {
         });
       } catch (webhookError) {
         console.error("CRM Webhook Dispatch Failed:", webhookError);
-        // Do not fail the request if webhook fails
       }
     }
     
@@ -230,15 +236,15 @@ export async function POST(req: NextRequest) {
     }
 
     // 5. WhatsApp Automated Brochure Delivery
-    // Fire-and-forget: we don't await this to ensure the API responds instantly to the frontend
     sendWhatsAppBrochure(data.phone, data.name).catch(console.error);
 
     return NextResponse.json({ 
       success: true, 
       message: 'Lead captured securely via Sovereign Hub.' 
     });
-  } catch (error: any) {
-    console.error("Lead API Error:", error);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    const err = error as Error;
+    console.error("Lead API Error:", err);
+    return NextResponse.json({ success: false, error: err.message || "Unknown error" }, { status: 500 });
   }
 }

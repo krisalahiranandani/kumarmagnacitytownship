@@ -1,6 +1,29 @@
+import { EnquiryData } from "@/types/enquiry";
+
 export const GAS_URL = "https://script.google.com/macros/s/AKfycbzQF_zr_Sv_arp6GMfwQbM5IinDCNIrLmnvMMnNuiKtPXAa0ZF4Q3iY_pEx5egL69PU/exec";
 
-export async function submitLead(data: any, turnstileToken?: string) {
+export interface LeadSubmissionPayload extends Partial<EnquiryData> {
+  name: string;
+  phone: string;
+  email?: string;
+  timing?: string;
+  intent?: string;
+  source?: string;
+  source_url?: string;
+  form_id?: string;
+  plot_id?: string;
+  source_meta?: string;
+  timezone?: string;
+  _subject?: string;
+  honeypot?: string;
+  fax?: string;
+  _honey?: string;
+  website?: string;
+  timestamp?: string;
+  [key: string]: unknown;
+}
+
+export async function submitLead(data: LeadSubmissionPayload, turnstileToken?: string): Promise<boolean> {
   // Anti-bot & honeypot check
   if (data?.website || data?.honeypot || data?.fax || data?._honey) {
     console.warn("Bot lead submission blocked.");
@@ -13,7 +36,7 @@ export async function submitLead(data: any, turnstileToken?: string) {
   else if (rawPhone.startsWith("91") && rawPhone.length === 12) rawPhone = rawPhone.slice(2);
   else if (rawPhone.startsWith("0") && rawPhone.length === 11) rawPhone = rawPhone.slice(1);
 
-  const sanitizedData = {
+  const sanitizedData: LeadSubmissionPayload = {
     ...data,
     name: data?.name ? String(data.name).trim() : "",
     phone: rawPhone,

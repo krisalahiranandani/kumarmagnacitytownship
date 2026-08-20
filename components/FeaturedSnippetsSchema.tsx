@@ -1,9 +1,13 @@
-"use client";
+import { FAQPageSchema } from "@/types/schema";
 
 export default function FeaturedSnippetsSchema() {
-  const faqSchema = {
+  const faqSchema: FAQPageSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".faq-question", ".faq-answer", "h1", "h2"]
+    },
     "mainEntity": [
       {
         "@type": "Question",

@@ -5,15 +5,23 @@ import { Resend } from "resend";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
-const SALES_EMAIL = 'propsmartrealty@gmail.com'; // Adjust as needed
+const SALES_EMAIL = 'propsmartrealty@gmail.com';
 const LEDGER_PATH = path.join(process.cwd(), "data", "leads-ledger.json");
 
-export const runtime = "nodejs"; // fs is used
+export const runtime = "nodejs";
+
+interface LedgerLead {
+  name?: string;
+  phone?: string;
+  email?: string;
+  formId?: string;
+  source_url?: string;
+  timestamp?: string;
+}
 
 export async function GET(req: NextRequest) {
   try {
     // 1. Verify Vercel Cron Secret for Authorization
-    // Vercel Cron automatically sends this header
     const authHeader = req.headers.get('authorization');
     if (process.env.CRON_SECRET) {
       if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
@@ -22,10 +30,10 @@ export async function GET(req: NextRequest) {
     }
 
     // 2. Read and parse ledger
-    let allLeads: any[] = [];
+    let allLeads: LedgerLead[] = [];
     if (fs.existsSync(LEDGER_PATH)) {
       const data = fs.readFileSync(LEDGER_PATH, "utf8");
-      allLeads = JSON.parse(data);
+      allLeads = JSON.parse(data) as LedgerLead[];
     }
 
     // 3. Filter for leads generated in the last 24 hours
@@ -65,7 +73,7 @@ export async function GET(req: NextRequest) {
                 </tr>
               </thead>
               <tbody>
-                ${todaysLeads.map((lead: any) => `
+                ${todaysLeads.map((lead) => `
                   <tr>
                     <td style="padding: 12px; font-size: 14px; color: #111; border-bottom: 1px solid #eee;">${lead.name || 'N/A'}</td>
                     <td style="padding: 12px; font-size: 14px; color: #666; border-bottom: 1px solid #eee;">${lead.phone || 'N/A'}</td>
@@ -91,8 +99,9 @@ export async function GET(req: NextRequest) {
     }
 
     return NextResponse.json({ success: true, count: todaysLeads.length });
-  } catch (error: any) {
-    console.error("Cron Error:", error);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    const err = error as Error;
+    console.error("Cron Error:", err);
+    return NextResponse.json({ success: false, error: err.message || "Cron job failed" }, { status: 500 });
   }
 }
