@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   description: "कुमार मॅग्नासिटी मधील २ बीएचके (७५७ चौ.फू.) आणि ३ बीएचके (१०५३ चौ.फू.) अपार्टमेंट्सचे फ्लोर प्लॅन्स. उत्तम डिझाइन आणि प्रशस्त जागा. आताच डाउनलोड करा.",
   keywords: ["Kumar Magnacity floor plan", "2 BHK floor plan", "3 BHK floor plan", "कुमार मॅग्नासिटी फ्लोर प्लॅन", "Pune"],
   alternates: {
-    canonical: "https://kumarmagnacity-pune.in/mr/kumar-magnacity-floor-plan-2bhk-3bhk",
+    canonical: "https://kumarmagnacitytownship.com/mr/kumar-magnacity-floor-plan-2bhk-3bhk",
     languages: {
-      "en-IN": "https://kumarmagnacity-pune.in/kumar-magnacity-floor-plan-2bhk-3bhk",
-      "mr-IN": "https://kumarmagnacity-pune.in/mr/kumar-magnacity-floor-plan-2bhk-3bhk"
+      "en-IN": "https://kumarmagnacitytownship.com/kumar-magnacity-floor-plan-2bhk-3bhk",
+      "mr-IN": "https://kumarmagnacitytownship.com/mr/kumar-magnacity-floor-plan-2bhk-3bhk"
     }
   }
 };

@@ -15,7 +15,7 @@ export default function LocationAdvantagesPage() {
     '@context': 'https://schema.org',
     '@type': 'Place',
     name: 'Kumar Magnacity',
-    hasMap: 'https://kumarmagnacity.com/kumar-magnacity-location-advantages-hadapsar-manjari',
+    hasMap: 'https://kumarmagnacitytownship.com/kumar-magnacity-location-advantages-hadapsar-manjari',
     geo: {
       '@type': 'GeoCoordinates',
       latitude: '18.5204',

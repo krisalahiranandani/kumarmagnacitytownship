@@ -19,7 +19,7 @@ export default function PrimaryApartmentLandingPage() {
     '@context': 'https://schema.org',
     '@type': 'ApartmentComplex',
     name: 'Kumar Magnacity',
-    url: 'https://kumarmagnacity.com/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune',
+    url: 'https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune',
     description: 'Premium 2BHK & 3BHK Apartments in Manjari, Pune by Kumar Properties.',
     address: {
       '@type': 'PostalAddress',

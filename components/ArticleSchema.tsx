@@ -4,21 +4,21 @@ export default function ArticleSchema({ post }: { post: any }) {
     "@type": "Article",
     "headline": post.title,
     "image": [
-      `https://kumarmagnacity.com${post.thumbnail}`
+      `https://kumarmagnacitytownship.com${post.thumbnail}`
     ],
     "datePublished": post.date,
     "dateModified": post.date,
     "author": [{
         "@type": "Organization",
         "name": "Kumar Properties",
-        "url": "https://kumarmagnacity.com"
+        "url": "https://kumarmagnacitytownship.com"
       }],
     "publisher": {
       "@type": "Organization",
       "name": "Kumar Properties",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://kumarmagnacity.com/assets/favicon.png"
+        "url": "https://kumarmagnacitytownship.com/assets/favicon.png"
       }
     },
     "description": post.excerpt

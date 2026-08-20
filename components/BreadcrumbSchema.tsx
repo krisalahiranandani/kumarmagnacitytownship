@@ -9,7 +9,7 @@ export default function BreadcrumbSchema() {
   const paths = pathname.split('/').filter(Boolean);
   
   const itemListElement = paths.map((path, index) => {
-    const url = `https://kumarmagnacity.com/${paths.slice(0, index + 1).join('/')}`;
+    const url = `https://kumarmagnacitytownship.com/${paths.slice(0, index + 1).join('/')}`;
     // Format name (e.g., "flats-near-magarpatta" -> "Flats Near Magarpatta")
     const name = path.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     
@@ -26,7 +26,7 @@ export default function BreadcrumbSchema() {
     "@type": "ListItem",
     "position": 1,
     "name": "Home",
-    "item": "https://kumarmagnacity.com/"
+    "item": "https://kumarmagnacitytownship.com/"
   });
 
   const schema = {

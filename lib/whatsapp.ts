@@ -36,7 +36,7 @@ export async function sendWhatsAppBrochure(phoneNumber: string, name: string) {
               {
                 type: "document",
                 document: {
-                  link: "https://kumarmagnacity.com/assets/brochure.pdf",
+                  link: "https://kumarmagnacitytownship.com/assets/brochure.pdf",
                   filename: "Kumar_Magnacity_Brochure.pdf"
                 }
               }

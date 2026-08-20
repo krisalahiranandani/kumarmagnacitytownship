@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   description: "कुमार मॅग्नासिटी मांजरी, पुणे लोकेशन फायदे. हडपसर, मगरपट्टा सिटी आणि ईऑन आयटी पार्क (खराडी) पासून अवघ्या काही मिनिटांच्या अंतरावर.",
   keywords: ["Kumar Magnacity location", "Manjari Pune properties", "near Hadapsar", "मगरपट्टा सिटी जवळ", "पुणे लोकेशन"],
   alternates: {
-    canonical: "https://kumarmagnacity-pune.in/mr/kumar-magnacity-location-advantages-hadapsar-manjari",
+    canonical: "https://kumarmagnacitytownship.com/mr/kumar-magnacity-location-advantages-hadapsar-manjari",
     languages: {
-      "en-IN": "https://kumarmagnacity-pune.in/kumar-magnacity-location-advantages-hadapsar-manjari",
-      "mr-IN": "https://kumarmagnacity-pune.in/mr/kumar-magnacity-location-advantages-hadapsar-manjari"
+      "en-IN": "https://kumarmagnacitytownship.com/kumar-magnacity-location-advantages-hadapsar-manjari",
+      "mr-IN": "https://kumarmagnacitytownship.com/mr/kumar-magnacity-location-advantages-hadapsar-manjari"
     }
   }
 };

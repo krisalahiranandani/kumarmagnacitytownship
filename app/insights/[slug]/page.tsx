@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.title} | Kumar Magnacity Insights`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://kumarmagnacity.com/insights/${post.slug}`,
+      canonical: `https://kumarmagnacitytownship.com/insights/${post.slug}`,
     }
   };
 }

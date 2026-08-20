@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   description: "कुमार मॅग्नासिटीमध्ये लक्झरी २ बीएचके आणि ३ बीएचके अपार्टमेंट्स. मांजरी आणि हडपसर जवळ प्रीमियम घरे. बुकिंगसाठी आताच संपर्क करा.",
   keywords: ["कुमार मॅग्नासिटी", "2 BHK flats in Pune", "3 BHK apartments Pune", "Kumar Magnacity Manjari", "apartments in hadapsar"],
   alternates: {
-    canonical: "https://kumarmagnacity-pune.in/mr/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune",
+    canonical: "https://kumarmagnacitytownship.com/mr/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune",
     languages: {
-      "en-IN": "https://kumarmagnacity-pune.in/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune",
-      "mr-IN": "https://kumarmagnacity-pune.in/mr/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune"
+      "en-IN": "https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune",
+      "mr-IN": "https://kumarmagnacitytownship.com/mr/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune"
     }
   }
 };

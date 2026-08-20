@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   description: "कुमार मॅग्नासिटी, पुणे मधील अपार्टमेंट्सची उच्च दर्जाची वैशिष्ट्ये. आधुनिक फिटिंग्स, प्रीमियम फ्लोरिंग आणि जागतिक दर्जाचे बांधकाम.",
   keywords: ["Kumar Magnacity specifications", "premium apartments Pune", "apartments features", "कुमार मॅग्नासिटी वैशिष्ट्ये", "बांधकाम गुणवत्ता"],
   alternates: {
-    canonical: "https://kumarmagnacity-pune.in/mr/kumar-magnacity-specifications-apartments",
+    canonical: "https://kumarmagnacitytownship.com/mr/kumar-magnacity-specifications-apartments",
     languages: {
-      "en-IN": "https://kumarmagnacity-pune.in/kumar-magnacity-specifications-apartments",
-      "mr-IN": "https://kumarmagnacity-pune.in/mr/kumar-magnacity-specifications-apartments"
+      "en-IN": "https://kumarmagnacitytownship.com/kumar-magnacity-specifications-apartments",
+      "mr-IN": "https://kumarmagnacitytownship.com/mr/kumar-magnacity-specifications-apartments"
     }
   }
 };
