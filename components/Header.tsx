@@ -78,33 +78,33 @@ export default function Header() {
                   key={link.name}
                   href={isMarathi ? `/mr${link.href}` : link.href}
                   className={cn(
-                    "px-4 py-2 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.25em] transition-all hover:text-accent relative group whitespace-nowrap",
-                    pathname === (isMarathi ? `/mr${link.href}` : link.href) ? "text-accent" : "text-white/60"
+                    "px-4 py-2 text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.25em] transition-all relative group whitespace-nowrap",
+                    pathname === (isMarathi ? `/mr${link.href}` : link.href) ? "text-accent font-extrabold" : "text-stone-300 hover:text-white"
                   )}
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1.5px] bg-accent transition-all duration-500 group-hover:w-1/2" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-3/4" />
                 </Link>
               ))}
             </nav>
             
             {/* Action Group */}
-            <div className="flex items-center gap-6 lg:gap-10 border-l border-white/10 pl-6 lg:pl-10">
+            <div className="flex items-center gap-6 lg:gap-8 border-l border-white/15 pl-6 lg:pl-8">
                 <button
                   onClick={() => openModal({
                     title: isMarathi ? "एलिट ॲक्सेस मिळवा" : "Sovereign Elite Access",
                     subtitle: isMarathi ? "अचूक किंमत आणि इन्व्हेंटरी डेटा अनलॉक करा." : "Unlock exact pricing and inventory master-plan data instantly.",
                     source: "Header Desktop"
                   })}
-                  className="bg-gradient-to-r from-primary/80 to-primary text-white text-[10px] font-bold uppercase tracking-widest px-7 py-3 rounded-full hover:shadow-[0_10px_30px_rgba(44,36,24,0.4)] transition-all hover:scale-105 active:scale-95 border border-primary/20 whitespace-nowrap"
+                  className="btn-gold text-[11px] font-bold px-7 py-3 rounded-full hover:scale-105 active:scale-95 transition-all whitespace-nowrap cursor-pointer"
                 >
                   {isMarathi ? "आता चौकशी करा" : "ENQUIRE NOW"}
                 </button>
 
                 {/* Language Switcher */}
-                <div className="flex items-center gap-4 shrink-0">
-                   <Link href="/" className={cn("text-[11px] font-black tracking-tighter transition-all px-3 py-2 rounded-lg", !isMarathi ? "bg-accent text-white shadow-lg shadow-accent/20" : "text-white/40 hover:text-white hover:bg-white/5")}>EN</Link>
-                   <Link href="/mr" className={cn("text-[11px] font-black tracking-tighter transition-all px-3 py-2 rounded-lg", isMarathi ? "bg-accent text-white shadow-lg shadow-accent/20" : "text-white/40 hover:text-white hover:bg-white/5")}>MR</Link>
+                <div className="flex items-center gap-2 shrink-0">
+                   <Link href="/" className={cn("text-[11px] font-black tracking-wider transition-all px-3 py-1.5 rounded-lg", !isMarathi ? "bg-accent text-[#0D0B08] shadow-md shadow-accent/30 font-extrabold" : "text-stone-400 hover:text-white hover:bg-white/10")}>EN</Link>
+                   <Link href="/mr" className={cn("text-[11px] font-black tracking-wider transition-all px-3 py-1.5 rounded-lg", isMarathi ? "bg-accent text-[#0D0B08] shadow-md shadow-accent/30 font-extrabold" : "text-stone-400 hover:text-white hover:bg-white/10")}>MR</Link>
                 </div>
             </div>
           </div>
