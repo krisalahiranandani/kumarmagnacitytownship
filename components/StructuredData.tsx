@@ -148,25 +148,48 @@ export default function StructuredData({
     },
   };
 
-  const localBusinessSchema: LocalBusinessSchema | null = isMicroMarket
-    ? {
-        "@type": "LocalBusiness",
-        "@id": `https://kumarmagnacitytownship.com/#localbusiness-${locationName.replace(/\s+/g, "-").toLowerCase()}`,
-        name: `Properties near ${locationName}`,
-        image: "https://kumarmagnacitytownship.com/assets/hero-bg.jpg",
-        url: "https://kumarmagnacitytownship.com",
-        telephone: "+917744009295",
-        priceRange: "₹72.99L - ₹1.49Cr",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Kumar Magnacity Township, Manjari Road",
-          addressLocality: locationName,
-          addressRegion: "Maharashtra",
-          postalCode: "412307",
-          addressCountry: "IN",
-        },
-      }
-    : null;
+  const googleBusinessProfileSchema: LocalBusinessSchema = {
+    "@type": "LocalBusiness",
+    "@id": "https://kumarmagnacitytownship.com/#googlebusiness",
+    name: "Magnacity by Kumar Realty",
+    alternateName: [
+      "Kumar Magnacity",
+      "Kumar Magnacity Hadapsar",
+      "Kumar Magnacity Township",
+      "Kumar Magnacity Manjari"
+    ],
+    image: "https://kumarmagnacitytownship.com/assets/hero-bg.jpg",
+    url: "https://kumarmagnacitytownship.com",
+    telephone: "+917744009295",
+    priceRange: "₹72.99L - ₹1.49Cr",
+    openingHours: "Mo,Tu,We,Th,Fr,Sa,Su 09:30-20:00",
+    hasMap: "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj",
+    sameAs: [
+      "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj",
+      "https://maps.google.com/?cid=17409054707127972577",
+      "https://www.google.com/search?q=kumar+magnacity"
+    ],
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "18.4948931",
+      longitude: "73.9828496",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "386",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kumar Magnacity Township, Manjari Road, Hadapsar Annexe",
+      addressLocality: locationName || "Manjari Budruk, Hadapsar, Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "412307",
+      addressCountry: "IN",
+    },
+  };
 
   const schemaGraph = {
     "@context": "https://schema.org",
@@ -174,7 +197,7 @@ export default function StructuredData({
       listingSchema,
       agentSchema,
       schoolSchema,
-      ...(localBusinessSchema ? [localBusinessSchema] : []),
+      googleBusinessProfileSchema,
     ],
   };
 

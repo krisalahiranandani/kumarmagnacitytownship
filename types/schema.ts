@@ -85,14 +85,20 @@ export interface OrganizationSchema {
 }
 
 export interface LocalBusinessSchema {
-  "@type": "LocalBusiness";
+  "@type": "LocalBusiness" | "RealEstateAgent";
   "@id": string;
   name: string;
+  alternateName?: string[];
   image: string;
   url: string;
   telephone: string;
   priceRange: string;
   address: PostalAddressSchema;
+  geo?: GeoCoordinatesSchema;
+  hasMap?: string;
+  sameAs?: string[];
+  openingHours?: string | string[];
+  aggregateRating?: AggregateRatingSchema;
 }
 
 export interface QuestionSchema {

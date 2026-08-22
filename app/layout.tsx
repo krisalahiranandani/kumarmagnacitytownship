@@ -99,6 +99,18 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_ID || "PLACEHOLDER_GOOGLE_VERIFICATION_ID",
   },
+  other: {
+    "geo.position": "18.4948931;73.9828496",
+    "geo.region": "IN-MH",
+    "geo.placename": "Hadapsar Annexe, Manjari, Pune",
+    "ICBM": "18.4948931, 73.9828496",
+    "business:contact_data:phone_number": "+917744009295",
+    "business:contact_data:website": "https://kumarmagnacitytownship.com",
+    "business:contact_data:locality": "Manjari Budruk, Hadapsar, Pune",
+    "business:contact_data:region": "Maharashtra",
+    "business:contact_data:postal_code": "412307",
+    "business:contact_data:country_name": "India",
+  },
 };
 
 export default function RootLayout({
