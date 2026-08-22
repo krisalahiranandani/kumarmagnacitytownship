@@ -11,11 +11,12 @@ import {
   Star, 
   ShieldCheck, 
   Clock, 
-  Sparkles, 
-  Share2, 
+  Globe, 
   Copy, 
   Check, 
-  Building2 
+  Building2,
+  Compass,
+  Smartphone
 } from "lucide-react";
 import { useModal } from "@/lib/modal-context";
 import { cn } from "@/lib/utils";
@@ -32,8 +33,16 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
   const GOOGLE_MAPS_PLACE_URL = "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj";
   const GOOGLE_SEARCH_PANEL_URL = "https://www.google.com/search?q=kumar+magnacity";
   const GOOGLE_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=18.4948931,73.9828496&destination_place_id=ChIJVVpYsq7DwrwR4XJOGBu7mPE";
-  const PHONE_NUMBER = "+919225512120";
-  const PHONE_DISPLAY = "+91 92255 12120";
+  
+  const PRIMARY_PHONE = "+919225512120";
+  const PRIMARY_PHONE_DISPLAY = "+91 92255 12120";
+  
+  const SECONDARY_PHONE = "+917744009295";
+  const SECONDARY_PHONE_DISPLAY = "+91 77440 09295";
+  
+  const OFFICIAL_WEBSITE_URL = "https://kumarmagnacitytownship.com";
+  const OFFICIAL_WEBSITE_DISPLAY = "kumarmagnacitytownship.com";
+  
   const ADDRESS = "Magnacity by Kumar Realty, Manjari Road, Hadapsar Annexe, Manjari Budruk, Pune, Maharashtra 412307";
 
   const handleCopyAddress = () => {
@@ -55,14 +64,93 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="badge-gold">
             <MapPin size={13} className="text-accent" />
-            <span>Official Google Maps & Business Profile</span>
+            <span>Official Google Maps & Verified Business Profile</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary tracking-tight">
             Locate & Visit <span className="text-gradient-gold">Kumar Magnacity</span>
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-sans max-w-2xl mx-auto">
-            Official Google Business Profile and live navigation destination for Magnacity by Kumar Realty in Hadapsar Annexe, Manjari, Pune East.
+            Official Google Business Profile, live GPS navigation, and direct priority sales desk for Magnacity by Kumar Realty in Hadapsar Annexe, Manjari, Pune East.
           </p>
+        </div>
+
+        {/* 4 Interactive Command Actions Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          
+          {/* Action 1: Live GPS Directions */}
+          <a
+            href={GOOGLE_DIRECTIONS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
+          >
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <Navigation size={22} />
+            </div>
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-700 block">Live Navigation</span>
+              <h4 className="font-heading font-bold text-base text-primary group-hover:text-accent-dark transition-colors">
+                Get Directions
+              </h4>
+              <p className="text-xs text-stone-500 font-sans mt-0.5 font-mono">18.4948931, 73.9828496</p>
+            </div>
+          </a>
+
+          {/* Action 2: 1-Click Call Sales Desk 1 */}
+          <a
+            href={`tel:${PRIMARY_PHONE}`}
+            className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
+          >
+            <div className="w-12 h-12 rounded-xl bg-amber-50 text-accent-dark flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <Phone size={22} />
+            </div>
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-accent-dark block">Priority Desk</span>
+              <h4 className="font-heading font-bold text-base text-primary group-hover:text-accent transition-colors font-mono">
+                {PRIMARY_PHONE_DISPLAY}
+              </h4>
+              <p className="text-xs text-emerald-600 font-sans mt-0.5 font-semibold">1-Click Instant Call</p>
+            </div>
+          </a>
+
+          {/* Action 3: Google Search Local Viewer */}
+          <a
+            href={GOOGLE_SEARCH_PANEL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
+          >
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#4285F4] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <Compass size={22} />
+            </div>
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600 block">Google Search</span>
+              <h4 className="font-heading font-bold text-base text-primary group-hover:text-[#4285F4] transition-colors">
+                Local Place Panel
+              </h4>
+              <p className="text-xs text-stone-500 font-sans mt-0.5">Google SERP Profile</p>
+            </div>
+          </a>
+
+          {/* Action 4: Google Maps App */}
+          <a
+            href={GOOGLE_MAPS_PLACE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
+          >
+            <div className="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <Smartphone size={22} />
+            </div>
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-rose-600 block">Google Maps App</span>
+              <h4 className="font-heading font-bold text-base text-primary group-hover:text-rose-600 transition-colors">
+                Open in Maps App
+              </h4>
+              <p className="text-xs text-stone-500 font-sans mt-0.5">4.9 ★ (386+ Reviews)</p>
+            </div>
+          </a>
+
         </div>
 
         {/* Google Command Grid */}
@@ -91,11 +179,16 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
                 </div>
 
                 {/* Rating Pill */}
-                <div className="flex items-center gap-1.5 bg-amber-50 border border-amber-200/80 px-3 py-1.5 rounded-full">
+                <a 
+                  href={GOOGLE_MAPS_PLACE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 px-3 py-1.5 rounded-full transition-colors cursor-pointer"
+                >
                   <Star size={14} className="fill-amber-400 text-amber-400" />
                   <span className="font-bold text-xs text-stone-900">4.9</span>
                   <span className="text-[10px] text-stone-500">(386+ Reviews)</span>
-                </div>
+                </a>
               </div>
 
               {/* Title & Category */}
@@ -111,6 +204,28 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
                   <span className="text-emerald-700 font-bold">Open Daily</span>
                   <span>• Experience Centre: 9:30 AM – 8:00 PM</span>
                 </div>
+              </div>
+
+              {/* Official Website URL Injection */}
+              <div className="p-3.5 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <Globe size={16} className="text-[#4285F4]" />
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-blue-700 block">Official Website</span>
+                    <a 
+                      href={OFFICIAL_WEBSITE_URL} 
+                      className="text-xs font-bold text-primary hover:text-[#4285F4] transition-colors"
+                    >
+                      {OFFICIAL_WEBSITE_DISPLAY}
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href={OFFICIAL_WEBSITE_URL}
+                  className="text-[11px] font-bold text-[#4285F4] hover:underline"
+                >
+                  Visit &rarr;
+                </a>
               </div>
 
               {/* Address with 1-Click Copy */}
@@ -144,26 +259,39 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
                 </div>
               </div>
 
-              {/* Official Contact Pill */}
-              <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center text-accent">
-                    <Phone size={16} />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-stone-500 block">Sales Desk Phone</span>
-                    <a href={`tel:${PHONE_NUMBER}`} className="text-sm font-bold text-primary hover:text-accent transition-colors font-mono">
-                      {PHONE_DISPLAY}
-                    </a>
+              {/* Dual Contact Phone Numbers */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* Primary Desk */}
+                <div className="p-3.5 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-full bg-accent/15 flex items-center justify-center text-accent">
+                      <Phone size={14} />
+                    </div>
+                    <div>
+                      <span className="text-[9px] uppercase font-bold text-stone-500 block">Sales Desk 1</span>
+                      <a href={`tel:${PRIMARY_PHONE}`} className="text-xs font-bold text-primary hover:text-accent transition-colors font-mono">
+                        {PRIMARY_PHONE_DISPLAY}
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <a
-                  href={`tel:${PHONE_NUMBER}`}
-                  className="px-3.5 py-1.5 rounded-full bg-[#0D0B08] text-white hover:bg-accent hover:text-[#0D0B08] text-xs font-bold transition-colors cursor-pointer"
-                >
-                  Call Now
-                </a>
+
+                {/* Secondary Desk (7744009295) */}
+                <div className="p-3.5 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-full bg-accent/15 flex items-center justify-center text-accent">
+                      <Phone size={14} />
+                    </div>
+                    <div>
+                      <span className="text-[9px] uppercase font-bold text-stone-500 block">Sales Desk 2</span>
+                      <a href={`tel:${SECONDARY_PHONE}`} className="text-xs font-bold text-primary hover:text-accent transition-colors font-mono">
+                        {SECONDARY_PHONE_DISPLAY}
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
+
             </div>
 
             {/* Quick Actions Footer */}
@@ -185,22 +313,22 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
                 className="py-3 px-4 rounded-full bg-white hover:bg-stone-100 text-stone-900 border border-stone-300 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all text-center cursor-pointer shadow-sm"
               >
                 <ExternalLink size={14} />
-                <span>Google Maps</span>
+                <span>Google Maps App</span>
               </a>
             </div>
 
           </div>
 
           {/* Right Column: High-Definition Live Google Map Viewport */}
-          <div className="lg:col-span-7 bg-white rounded-[2.5rem] border border-stone-200/90 p-2 shadow-2xl overflow-hidden relative flex flex-col min-h-[480px]">
+          <div className="lg:col-span-7 bg-white rounded-[2.5rem] border border-stone-200/90 p-2 shadow-2xl overflow-hidden relative flex flex-col min-h-[500px]">
             
             {/* Live Interactive Map Iframe */}
-            <div className="w-full h-full min-h-[440px] rounded-[2rem] overflow-hidden relative">
+            <div className="w-full h-full min-h-[460px] rounded-[2rem] overflow-hidden relative">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15134.165399551024!2d73.9828496!3d18.4948931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3aeb2585a9d%3A0xf198bb1c684e72e1!2sMagnacity%20by%20Kumar%20Realty!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "440px" }}
+                style={{ border: 0, minHeight: "460px" }}
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -209,13 +337,18 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
               />
 
               {/* Floating Google Place Link Badge */}
-              <div className="absolute top-4 left-4 z-10 bg-[#0D0B08]/90 backdrop-blur-xl border border-white/15 p-3 rounded-2xl shadow-xl max-w-[260px] hidden sm:block">
+              <div className="absolute top-4 left-4 z-10 bg-[#0D0B08]/90 backdrop-blur-xl border border-white/15 p-3.5 rounded-2xl shadow-xl max-w-[280px] hidden sm:block">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent">Live Google Place</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent">Verified Google Place</span>
                 </div>
                 <p className="text-xs font-bold text-white leading-tight">Magnacity by Kumar Realty</p>
                 <p className="text-[10px] text-stone-300 font-sans mt-0.5">Hadapsar Annexe, Manjari, Pune 412307</p>
+                <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10 text-[10px] text-accent font-mono">
+                  <span>+91 92255 12120</span>
+                  <span>•</span>
+                  <span>+91 77440 09295</span>
+                </div>
               </div>
 
               {/* Floating Bottom Control Bar */}
