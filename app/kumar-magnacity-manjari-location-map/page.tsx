@@ -1,5 +1,6 @@
 import PillarTemplate from "@/components/PillarTemplate";
 import EnquiryForm from "@/components/EnquiryForm";
+import GoogleMapsCommandHub from "@/components/GoogleMapsCommandHub";
 import { MapPin, Plane, Train, Building2, School } from "lucide-react";
 
 
@@ -15,7 +16,7 @@ export default function LocationPage() {
       subtitle="Perfectly positioned at the intersection of Pune's twin IT hubs and upcoming infrastructure corridors."
       badge="The Location"
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
          <div className="md:col-span-2 space-y-12">
             <div className="bg-warm-bg text-primary p-12 rounded-[3.5rem] relative overflow-hidden group">
                <div className="absolute inset-0 bg-[url('/assets/plot-layout.jpg')] bg-cover bg-center opacity-20 group-hover:scale-110 transition-transform duration-[5s]" />
@@ -86,6 +87,9 @@ export default function LocationPage() {
             </div>
          </div>
       </div>
+
+      {/* Programmatic Google Maps & Place Profile Command Hub */}
+      <GoogleMapsCommandHub />
     </PillarTemplate>
   );
 }

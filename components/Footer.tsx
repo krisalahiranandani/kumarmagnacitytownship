@@ -62,28 +62,37 @@ export default function Footer() {
           <div className="space-y-8">
             <h4 className="text-accent uppercase tracking-[0.3em] text-[11px] font-bold mb-10">EXPERIENCE CENTER</h4>
             <div className="space-y-6">
-                <button 
-                  onClick={() => openModal({ title: "Site Visit Scheduled", subtitle: "Book a private experience center tour and site walkthrough.", source: "Footer Address" })}
+                <a 
+                  href="https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex gap-4 group text-left"
                 >
-                  <MapPin size={20} className="text-accent shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm text-white/50 leading-relaxed font-light group-hover:text-white transition-colors">
-                    Kumar MagnaCity, Manjari near Hadapsar, <br />Pune - 412307, MH
+                  <MapPin size={20} className="text-accent shrink-0 group-hover:scale-110 transition-transform mt-0.5" />
+                  <span className="text-sm text-white/70 leading-relaxed font-light group-hover:text-white transition-colors">
+                    Magnacity by Kumar Realty, Manjari Road, Hadapsar Annexe, <br />Pune - 412307, Maharashtra
                   </span>
-                </button>
-              <a href="tel:+917744009295" className="flex gap-4 group items-center">
+                </a>
+              <a href="tel:+919225512120" className="flex gap-4 group items-center">
                 <Phone size={18} className="text-accent shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="text-sm text-white/50 font-light group-hover:text-white transition-colors tracking-widest">+91 77440 09295</span>
+                <span className="text-sm text-white/70 font-light group-hover:text-white transition-colors tracking-widest">+91 92255 12120 / +91 77440 09295</span>
               </a>
               <a href="mailto:sales@kumarmagnacitytownship.com" className="flex gap-4 group items-center">
                 <Mail size={18} className="text-accent shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="text-sm text-white/50 font-light group-hover:text-white transition-colors">Sovereign Desk</span>
+                <span className="text-sm text-white/70 font-light group-hover:text-white transition-colors">sales@kumarmagnacitytownship.com</span>
               </a>
             </div>
             
-            <div className="flex items-center gap-4 pt-4 border-t border-white/5">
-               <Globe size={14} className="text-accent" />
-               <span className="text-[10px] text-white/20 uppercase tracking-[0.2em]">Global Domain Presence</span>
+            <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+               <a 
+                 href="https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z"
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-[10px] text-accent font-bold uppercase tracking-wider transition-all"
+               >
+                 <Globe size={13} />
+                 <span>Google Maps Place (4.9 ★)</span>
+               </a>
             </div>
           </div>
         </div>

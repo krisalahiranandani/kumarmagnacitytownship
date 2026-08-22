@@ -11,6 +11,7 @@ import NearbyMarkets from '@/components/NearbyMarkets';
 import MasterplanSectorInspector from '@/components/MasterplanSectorInspector';
 import UnitComparisonMatrix from '@/components/UnitComparisonMatrix';
 import WhatsAppCostSheetGenerator from '@/components/WhatsAppCostSheetGenerator';
+import GoogleMapsCommandHub from '@/components/GoogleMapsCommandHub';
 
 export const metadata: Metadata = {
   title: 'Kumar Magnacity Hadapsar | 2 & 3 BHK Flats, Plots, Price & Location Pune',
@@ -199,6 +200,9 @@ export default function KumarMagnacityHadapsarPage() {
 
       {/* Location Advantage Map */}
       <LocationAdvantageMap />
+
+      {/* Programmatic Google Maps & Place Profile Command Hub */}
+      <GoogleMapsCommandHub />
 
       {/* Masterplan Sector Inspector */}
       <MasterplanSectorInspector />

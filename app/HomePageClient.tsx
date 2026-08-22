@@ -57,6 +57,7 @@ const PriceComparisonMatrix = dynamic(() => import("@/components/PriceComparison
 const CommuteTimeMatrix = dynamic(() => import("@/components/CommuteTimeMatrix"), { ssr: false });
 const RentalYieldCalculator = dynamic(() => import("@/components/RentalYieldCalculator"), { ssr: false });
 const WhatsAppCallbackScheduler = dynamic(() => import("@/components/WhatsAppCallbackScheduler"), { ssr: false });
+const GoogleMapsCommandHub = dynamic(() => import("@/components/GoogleMapsCommandHub"), { ssr: false });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -457,26 +458,10 @@ export default function Home() {
                 </motion.div>
               ))}
            </div>
-           
-           {/* Interactive Google Map Embed (Local SEO Hook) */}
-           <motion.div 
-             initial={{ opacity: 0, scale: 0.95, y: 40 }}
-             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-             transition={{ duration: 0.8, ease: "easeOut" }}
-             className="mt-20 w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden border border-accent/20 shadow-[0_30px_100px_rgba(255,215,0,0.1)] relative z-20 group"
-           >
-             <iframe 
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15134.165399551024!2d73.9828496!3d18.4948931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3aeb2585a9d%3A0xf198bb1c684e72e1!2sMagnacity%20by%20Kumar%20Realty!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-               width="100%" 
-               height="100%" 
-               style={{ border: 0 }} 
-               allowFullScreen={true} 
-               loading="lazy" 
-               referrerPolicy="no-referrer-when-downgrade"
-               title="Magnacity by Kumar Realty - Official Google Maps Location"
-               className="w-full h-full grayscale-[5%] contrast-105 group-hover:grayscale-0 transition-all duration-700"
-             />
-           </motion.div>
+            {/* Programmatic Google Maps & Business Profile Command Hub */}
+            <div className="mt-16 text-left">
+              <GoogleMapsCommandHub className="py-0" />
+            </div>
         </div>
       </section>
 
