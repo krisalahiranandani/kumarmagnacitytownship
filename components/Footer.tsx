@@ -73,9 +73,9 @@ export default function Footer() {
                     Magnacity by Kumar Realty, Manjari Road, Hadapsar Annexe, <br />Pune - 412307, Maharashtra
                   </span>
                 </a>
-              <a href="tel:+919225512120" className="flex gap-4 group items-center">
+              <a href="tel:+917744009295" className="flex gap-4 group items-center">
                 <Phone size={18} className="text-accent shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="text-sm text-white/70 font-light group-hover:text-white transition-colors tracking-widest">+91 92255 12120 / +91 77440 09295</span>
+                <span className="text-sm text-white/70 font-light group-hover:text-white transition-colors tracking-widest">+91 77440 09295</span>
               </a>
               <a href="mailto:sales@kumarmagnacitytownship.com" className="flex gap-4 group items-center">
                 <Mail size={18} className="text-accent shrink-0 group-hover:scale-110 transition-transform" />

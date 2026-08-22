@@ -34,11 +34,8 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
   const GOOGLE_SEARCH_PANEL_URL = "https://www.google.com/search?q=kumar+magnacity";
   const GOOGLE_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=18.4948931,73.9828496&destination_place_id=ChIJVVpYsq7DwrwR4XJOGBu7mPE";
   
-  const PRIMARY_PHONE = "+919225512120";
-  const PRIMARY_PHONE_DISPLAY = "+91 92255 12120";
-  
-  const SECONDARY_PHONE = "+917744009295";
-  const SECONDARY_PHONE_DISPLAY = "+91 77440 09295";
+  const PHONE_NUMBER = "+917744009295";
+  const PHONE_DISPLAY = "+91 77440 09295";
   
   const OFFICIAL_WEBSITE_URL = "https://kumarmagnacitytownship.com";
   const OFFICIAL_WEBSITE_DISPLAY = "kumarmagnacitytownship.com";
@@ -96,18 +93,18 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
             </div>
           </a>
 
-          {/* Action 2: 1-Click Call Sales Desk 1 */}
+          {/* Action 2: 1-Click Call Sales Desk */}
           <a
-            href={`tel:${PRIMARY_PHONE}`}
+            href={`tel:${PHONE_NUMBER}`}
             className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
           >
             <div className="w-12 h-12 rounded-xl bg-amber-50 text-accent-dark flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
               <Phone size={22} />
             </div>
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-accent-dark block">Priority Desk</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-accent-dark block">Priority Sales Desk</span>
               <h4 className="font-heading font-bold text-base text-primary group-hover:text-accent transition-colors font-mono">
-                {PRIMARY_PHONE_DISPLAY}
+                {PHONE_DISPLAY}
               </h4>
               <p className="text-xs text-emerald-600 font-sans mt-0.5 font-semibold">1-Click Instant Call</p>
             </div>
@@ -259,37 +256,25 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
                 </div>
               </div>
 
-              {/* Dual Contact Phone Numbers */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* Primary Desk */}
-                <div className="p-3.5 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-accent/15 flex items-center justify-center text-accent">
-                      <Phone size={14} />
-                    </div>
-                    <div>
-                      <span className="text-[9px] uppercase font-bold text-stone-500 block">Sales Desk 1</span>
-                      <a href={`tel:${PRIMARY_PHONE}`} className="text-xs font-bold text-primary hover:text-accent transition-colors font-mono">
-                        {PRIMARY_PHONE_DISPLAY}
-                      </a>
-                    </div>
+              {/* Official Sales Contact Phone */}
+              <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center text-accent">
+                    <Phone size={16} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-stone-500 block">Sales Desk Phone</span>
+                    <a href={`tel:${PHONE_NUMBER}`} className="text-sm font-bold text-primary hover:text-accent transition-colors font-mono">
+                      {PHONE_DISPLAY}
+                    </a>
                   </div>
                 </div>
-
-                {/* Secondary Desk (7744009295) */}
-                <div className="p-3.5 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-accent/15 flex items-center justify-center text-accent">
-                      <Phone size={14} />
-                    </div>
-                    <div>
-                      <span className="text-[9px] uppercase font-bold text-stone-500 block">Sales Desk 2</span>
-                      <a href={`tel:${SECONDARY_PHONE}`} className="text-xs font-bold text-primary hover:text-accent transition-colors font-mono">
-                        {SECONDARY_PHONE_DISPLAY}
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  className="px-4 py-2 rounded-full bg-[#0D0B08] text-white hover:bg-accent hover:text-[#0D0B08] text-xs font-bold transition-colors cursor-pointer shadow-sm"
+                >
+                  Call Now
+                </a>
               </div>
 
             </div>
@@ -345,8 +330,6 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
                 <p className="text-xs font-bold text-white leading-tight">Magnacity by Kumar Realty</p>
                 <p className="text-[10px] text-stone-300 font-sans mt-0.5">Hadapsar Annexe, Manjari, Pune 412307</p>
                 <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10 text-[10px] text-accent font-mono">
-                  <span>+91 92255 12120</span>
-                  <span>•</span>
                   <span>+91 77440 09295</span>
                 </div>
               </div>

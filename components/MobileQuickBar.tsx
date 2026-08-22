@@ -10,7 +10,7 @@ export default function MobileQuickBar() {
     <div className="md:hidden fixed bottom-3 left-4 right-4 z-[9999] bg-[#0D0B08]/85 backdrop-blur-2xl border border-white/15 rounded-full p-1 shadow-[0_12px_40px_rgba(0,0,0,0.45)] flex items-center justify-between gap-1.5">
       {/* 1-Tap Direct Phone Call */}
       <a
-        href="tel:+919225512120"
+        href="tel:+917744009295"
         className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-full bg-white/10 text-stone-200 font-sans font-medium text-xs hover:bg-white/15 transition-all"
       >
         <Phone size={13} className="text-accent" />
@@ -19,7 +19,7 @@ export default function MobileQuickBar() {
 
       {/* Instant WhatsApp Lead */}
       <a
-        href="https://wa.me/919225512120?text=Hi,%20I%20want%20to%20know%20more%20about%20Kumar%20Magnacity%20Township%20Hadapsar%20Annexe."
+        href="https://wa.me/917744009295?text=Hi,%20I%20want%20to%20know%20more%20about%20Kumar%20Magnacity%20Township%20Hadapsar%20Annexe."
         target="_blank"
         rel="noopener noreferrer"
         className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-full bg-emerald-500/20 text-emerald-400 font-sans font-semibold text-xs border border-emerald-500/30 hover:bg-emerald-500/30 transition-all"

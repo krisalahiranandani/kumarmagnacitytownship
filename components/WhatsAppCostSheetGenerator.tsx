@@ -111,7 +111,7 @@ export default function WhatsAppCostSheetGenerator() {
     setIsGenerated(true);
 
     // Open WhatsApp directly
-    window.open(`https://wa.me/919225512120?text=${whatsappMessage}`, "_blank");
+    window.open(`https://wa.me/917744009295?text=${whatsappMessage}`, "_blank");
   };
 
   return (

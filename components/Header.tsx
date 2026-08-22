@@ -227,11 +227,11 @@ export default function Header() {
               </button>
 
               <a
-                href="tel:+919225512120"
+                href="tel:+917744009295"
                 className="w-full py-3 rounded-full bg-white/10 hover:bg-white/15 text-white font-sans font-medium text-xs flex items-center justify-center gap-2 border border-white/15 transition-colors"
               >
                 <PhoneCall size={14} className="text-accent" />
-                <span>Call Sales Desk: +91 92255 12120</span>
+                <span>Call Sales Desk: +91 77440 09295</span>
               </a>
             </div>
           </motion.div>

@@ -29,7 +29,7 @@ export default function SovereignBar() {
         >
           <div className="bg-[#0D0B08]/85 backdrop-blur-2xl border border-white/15 p-1.5 rounded-full flex items-center justify-between gap-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
             <a 
-              href="tel:+919225512120"
+              href="tel:+917744009295"
               className="flex-1 flex items-center justify-center gap-1.5 bg-white/10 text-stone-200 py-2.5 rounded-full active:scale-95 transition-all text-xs font-sans font-medium"
             >
               <Phone size={13} className="text-accent" />
