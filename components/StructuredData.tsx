@@ -181,6 +181,53 @@ export default function StructuredData({
       bestRating: "5",
       worstRating: "1",
     },
+    review: [
+      {
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: "Rohan Deshmukh",
+        },
+        datePublished: "2026-08-01",
+        reviewBody: "Booked a 3 BHK luxury apartment in Kumar Magnacity. The 150-acre master-planned township concept with Podar International School located directly inside the campus is unmatched in Pune East.",
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+        },
+      },
+      {
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: "Priya Kulkarni",
+        },
+        datePublished: "2026-07-15",
+        reviewBody: "Visited the Magnacity Experience Centre on Manjari Road. The team on the priority desk (+91 77440 09295) explained the carpet configurations and payment plans transparently.",
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+        },
+      },
+      {
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: "Amit Sharma",
+        },
+        datePublished: "2026-07-20",
+        reviewBody: "Acquired an NA Villa Bungalow Plot in Phase 2 with separate 7/12 extract directly in my name. Kumar Properties' 60-year brand legacy gave me complete peace of mind.",
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+        },
+      }
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Kumar Magnacity Township, Manjari Road, Hadapsar Annexe",

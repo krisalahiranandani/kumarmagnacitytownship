@@ -84,6 +84,22 @@ export interface OrganizationSchema {
   sameAs?: string[];
 }
 
+export interface ReviewSchema {
+  "@type": "Review";
+  author: {
+    "@type": "Person";
+    name: string;
+  };
+  datePublished: string;
+  reviewBody: string;
+  reviewRating: {
+    "@type": "Rating";
+    ratingValue: string | number;
+    bestRating?: string | number;
+    worstRating?: string | number;
+  };
+}
+
 export interface LocalBusinessSchema {
   "@type": "LocalBusiness" | "RealEstateAgent";
   "@id": string;
@@ -99,6 +115,7 @@ export interface LocalBusinessSchema {
   sameAs?: string[];
   openingHours?: string | string[];
   aggregateRating?: AggregateRatingSchema;
+  review?: ReviewSchema[];
 }
 
 export interface QuestionSchema {

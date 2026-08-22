@@ -58,6 +58,7 @@ const CommuteTimeMatrix = dynamic(() => import("@/components/CommuteTimeMatrix")
 const RentalYieldCalculator = dynamic(() => import("@/components/RentalYieldCalculator"), { ssr: false });
 const WhatsAppCallbackScheduler = dynamic(() => import("@/components/WhatsAppCallbackScheduler"), { ssr: false });
 const GoogleMapsCommandHub = dynamic(() => import("@/components/GoogleMapsCommandHub"), { ssr: false });
+const GoogleReviewsShowcase = dynamic(() => import("@/components/GoogleReviewsShowcase"), { ssr: false });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -461,6 +462,11 @@ export default function Home() {
             {/* Programmatic Google Maps & Business Profile Command Hub */}
             <div className="mt-16 text-left">
               <GoogleMapsCommandHub className="py-0" />
+            </div>
+
+            {/* Google Business Reviews Showcase (4.9 ★ based on 386+ Google Reviews) */}
+            <div className="mt-12 text-left">
+              <GoogleReviewsShowcase className="py-0 bg-transparent border-0" />
             </div>
         </div>
       </section>
