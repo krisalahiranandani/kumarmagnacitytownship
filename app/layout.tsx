@@ -29,6 +29,7 @@ import HowToBookingSchema from "@/components/HowToBookingSchema";
 import VideoTourSchema from "@/components/VideoTourSchema";
 import OpenHouseEventSchema from "@/components/OpenHouseEventSchema";
 import UnitCarouselSchema from "@/components/UnitCarouselSchema";
+import GoogleProductSchema from "@/components/GoogleProductSchema";
 
 export const runtime = "nodejs";
 
@@ -159,6 +160,7 @@ export default function RootLayout({
         <VideoTourSchema />
         <OpenHouseEventSchema />
         <UnitCarouselSchema />
+        <GoogleProductSchema />
         
         {/* Google Sitelinks Search Box Schema */}
         <script

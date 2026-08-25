@@ -4,8 +4,10 @@
   "description": "Official portal for Kumar Magnacity Township, Hadapsar Annexe, Manjari, Pune. 2 BHK & 3 BHK Luxury Apartments & NA Bungalow Plots.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "background_color": "#0D0B08",
   "theme_color": "#c9a227",
+  "categories": ["real estate", "shopping", "lifestyle", "business"],
   "icons": [
     {
       "src": "/assets/icon-192.png",
@@ -18,6 +20,29 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "2 BHK & 3 BHK Price List",
+      "short_name": "Price List",
+      "description": "Instant floor plans and pricing for luxury residences",
+      "url": "/kumar-magnacity-2bhk-flats-hadapsar-pune-price",
+      "icons": [{ "src": "/assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "NA Villa Plots Availability",
+      "short_name": "NA Plots",
+      "description": "Clear title NA bungalow plots with 7/12 extract",
+      "url": "/kumar-magnacity-na-bungalow-plots-concept",
+      "icons": [{ "src": "/assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Live GPS Navigation",
+      "short_name": "Directions",
+      "description": "Navigate to Magnacity Experience Centre on Google Maps",
+      "url": "/kumar-magnacity-manjari-location-map",
+      "icons": [{ "src": "/assets/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
