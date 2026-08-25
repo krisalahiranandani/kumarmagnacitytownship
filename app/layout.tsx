@@ -30,6 +30,7 @@ import VideoTourSchema from "@/components/VideoTourSchema";
 import OpenHouseEventSchema from "@/components/OpenHouseEventSchema";
 import UnitCarouselSchema from "@/components/UnitCarouselSchema";
 import GoogleProductSchema from "@/components/GoogleProductSchema";
+import QuickSearchDialog from "@/components/QuickSearchDialog";
 
 export const runtime = "nodejs";
 
@@ -209,6 +210,7 @@ export default function RootLayout({
         <ModalProvider>
           <ScrollProgress />
           {children}
+          <QuickSearchDialog />
           <EnquiryModal />
           <ExitIntentModal />
           <AIChatWidget />
