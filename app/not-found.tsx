@@ -33,30 +33,33 @@ export default function NotFound() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                     <Link 
                         href="/" 
-                        className="group bg-primary text-primary px-10 py-5 rounded-full font-bold uppercase tracking-widest text-[11px] flex items-center gap-3 hover:bg-primary-light transition-all shadow-[0_20px_50px_rgba(10,77,60,0.4)] shine-effect"
+                        className="btn-gold px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs flex items-center gap-2 shadow-lg"
                     >
                         <House size={16} />
                         RETURN HOME
                     </Link>
                     <Link 
-                        href="/location" 
-                        className="group bg-primary/5 backdrop-blur-xl text-primary border border-primary/10 px-10 py-5 rounded-full font-bold uppercase tracking-widest text-[11px] flex items-center gap-3 hover:bg-primary/10 transition-all"
+                        href="/kumar-magnacity-manjari-location-map" 
+                        className="px-10 py-4 rounded-full bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 font-bold uppercase tracking-widest text-xs flex items-center gap-2 transition-all shadow-sm"
                     >
-                        EXPLORE DESTINATION
+                        EXPLORE LOCATION
                         <Search size={16} />
                     </Link>
                 </div>
                 
-                <div className="pt-12 border-t border-primary/5 grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {["Concept", "Amenities", "Investment", "Availability"].map((item) => (
-                        <Link 
-                            key={item}
-                            href={`/${item.toLowerCase().replace(' ', '-')}`}
-                            className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary/30 hover:text-accent transition-colors py-2"
-                        >
-                            {item}
-                        </Link>
-                    ))}
+                <div className="pt-12 border-t border-stone-200/60 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <Link href="/kumar-magnacity-2bhk-flats-hadapsar-pune-price" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
+                        2 BHK Flats
+                    </Link>
+                    <Link href="/kumar-magnacity-3bhk-apartments-manjari-pune-price" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
+                        3 BHK Residences
+                    </Link>
+                    <Link href="/kumar-magnacity-na-bungalow-plots-concept" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
+                        NA Villa Plots
+                    </Link>
+                    <Link href="/kumar-magnacity-floor-plan-2bhk-3bhk" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
+                        Floor Plans
+                    </Link>
                 </div>
              </div>
           </div>
