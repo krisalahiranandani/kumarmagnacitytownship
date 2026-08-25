@@ -139,6 +139,7 @@ export default function StructuredData({
     url: "https://kumarmagnacitytownship.com",
     telephone: "+917744009295",
     sameAs: [
+      "https://www.kumarmagnacitytownship.com",
       "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj",
       "https://maps.google.com/?cid=17409054707127972577",
       "https://www.google.com/search?q=kumar+magnacity"
@@ -179,6 +180,7 @@ export default function StructuredData({
     openingHours: "Mo,Tu,We,Th,Fr,Sa,Su 09:30-20:00",
     hasMap: "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj",
     sameAs: [
+      "https://www.kumarmagnacitytownship.com",
       "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj",
       "https://maps.google.com/?cid=17409054707127972577",
       "https://www.google.com/search?q=kumar+magnacity"
