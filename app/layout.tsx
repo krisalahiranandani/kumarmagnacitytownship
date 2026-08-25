@@ -108,7 +108,14 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_ID || "PLACEHOLDER_GOOGLE_VERIFICATION_ID",
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_ID || "google-site-verification",
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION_ID || "yandex-verification",
+    yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION_ID || "yahoo-verification",
+    other: {
+      "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION_ID || "msvalidate-bing-id",
+      "baidu-site-verification": process.env.NEXT_PUBLIC_BAIDU_VERIFICATION_ID || "baidu-site-verification",
+      "naver-site-verification": process.env.NEXT_PUBLIC_NAVER_VERIFICATION_ID || "naver-site-verification",
+    }
   },
   other: {
     "geo.position": "18.4948931;73.9828496",
@@ -121,6 +128,10 @@ export const metadata: Metadata = {
     "business:contact_data:region": "Maharashtra",
     "business:contact_data:postal_code": "412307",
     "business:contact_data:country_name": "India",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-title": "Kumar Magnacity",
+    "format-detection": "telephone=no",
   },
 };
 
