@@ -17,6 +17,14 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
         allow: ['/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif', '/*.svg', '/assets/'],
       },
       {
+        userAgent: 'Googlebot-Video',
+        allow: ['/', '/*.mp4', '/*.webm', '/*.jpg', '/*.png', '/assets/'],
+      },
+      {
+        userAgent: 'Googlebot-News',
+        allow: ['/insights/', '/insights/*'],
+      },
+      {
         userAgent: 'Googlebot-Mobile',
         allow: '/',
         disallow: ['/api/', '/admin/'],
@@ -68,6 +76,21 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
         disallow: ['/api/', '/admin/'],
       },
       {
+        userAgent: 'Baiduspider',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'NaverBot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'SeznamBot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
         userAgent: 'DuckDuckBot',
         allow: '/',
         disallow: ['/api/', '/admin/'],
@@ -82,6 +105,8 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       'https://kumarmagnacitytownship.com/sitemap.xml',
       ...sitemapUrls,
       'https://kumarmagnacitytownship.com/image-sitemap.xml',
+      'https://kumarmagnacitytownship.com/video-sitemap.xml',
+      'https://kumarmagnacitytownship.com/news-sitemap.xml',
       'https://kumarmagnacitytownship.com/google-product-feed.xml'
     ],
     host: 'https://kumarmagnacitytownship.com',
