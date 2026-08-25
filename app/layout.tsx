@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    alternateLocale: "mr_IN",
+    alternateLocale: ["mr_IN", "en_US", "en_GB", "en_AE"],
     url: "https://kumarmagnacitytownship.com",
     siteName: "Kumar Magnacity Hadapsar",
     title: "Kumar Magnacity Hadapsar | 2BHK & 3BHK Luxury Apartments & Plots",
@@ -154,6 +154,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://region1.google-analytics.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preload" as="image" href="/assets/hero-bg.jpg" fetchPriority="high" />
