@@ -24,6 +24,8 @@ import ScrollProgress from "@/components/ScrollProgress";
 import MobileQuickBar from "@/components/MobileQuickBar";
 import FeaturedSnippetsSchema from "@/components/FeaturedSnippetsSchema";
 import SiteNavigationSchema from "@/components/SiteNavigationSchema";
+import SpeakableSchema from "@/components/SpeakableSchema";
+import HowToBookingSchema from "@/components/HowToBookingSchema";
 
 export const runtime = "nodejs";
 
@@ -140,6 +142,8 @@ export default function RootLayout({
         <StructuredData />
         <FeaturedSnippetsSchema />
         <SiteNavigationSchema />
+        <SpeakableSchema />
+        <HowToBookingSchema />
         
         {/* Google Sitelinks Search Box Schema */}
         <script

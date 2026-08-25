@@ -27,6 +27,36 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
         disallow: ['/api/', '/admin/'],
       },
       {
+        userAgent: 'GPTBot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'OAI-SearchBot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'Applebot',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
+        userAgent: 'Applebot-Extended',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
+      },
+      {
         userAgent: 'bingbot',
         allow: '/',
         disallow: ['/api/', '/admin/'],
@@ -34,11 +64,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       },
       {
         userAgent: 'YandexBot',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
-      },
-      {
-        userAgent: 'Applebot',
         allow: '/',
         disallow: ['/api/', '/admin/'],
       },
@@ -56,7 +81,8 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     sitemap: [
       'https://kumarmagnacitytownship.com/sitemap.xml',
       ...sitemapUrls,
-      'https://kumarmagnacitytownship.com/image-sitemap.xml'
+      'https://kumarmagnacitytownship.com/image-sitemap.xml',
+      'https://kumarmagnacitytownship.com/google-product-feed.xml'
     ],
     host: 'https://kumarmagnacitytownship.com',
   };
