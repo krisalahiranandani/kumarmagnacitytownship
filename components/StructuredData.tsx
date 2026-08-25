@@ -103,6 +103,24 @@ export default function StructuredData({
           name: "NA Plot (1700+ Sq.Ft)",
         },
       },
+      {
+        "@type": "Offer",
+        name: "2 BHK Luxury Residence (USD Equivalent)",
+        priceCurrency: "USD",
+        price: "87000",
+        priceValidUntil: "2027-12-31",
+        availability: "https://schema.org/InStock",
+        url: "https://kumarmagnacitytownship.com/nri-investment",
+      },
+      {
+        "@type": "Offer",
+        name: "2 BHK Luxury Residence (AED Equivalent)",
+        priceCurrency: "AED",
+        price: "320000",
+        priceValidUntil: "2027-12-31",
+        availability: "https://schema.org/InStock",
+        url: "https://kumarmagnacitytownship.com/nri-investment",
+      }
     ],
     geo: {
       "@type": "GeoCoordinates",

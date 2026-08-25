@@ -52,6 +52,8 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
         priority: priority,
         alternates: {
           languages: {
+            'x-default': `${baseUrl}${route}`,
+            'en-IN': `${baseUrl}${route}`,
             'mr-IN': `${baseUrl}/mr${route}`,
           },
         },
@@ -78,6 +80,8 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
         priority: 0.8,
         alternates: {
           languages: {
+            'x-default': `${baseUrl}/flats-near-${slug}`,
+            'en-IN': `${baseUrl}/flats-near-${slug}`,
             'mr-IN': `${baseUrl}/mr/flats-near-${slug}`,
           },
         },
@@ -95,6 +99,8 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
         priority: 0.75,
         alternates: {
           languages: {
+            'x-default': `${baseUrl}/insights/${cleanSlug}`,
+            'en-IN': `${baseUrl}/insights/${cleanSlug}`,
             'mr-IN': `${baseUrl}/mr/insights/${cleanSlug}`,
           },
         },
@@ -108,6 +114,8 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       priority: 0.85,
       alternates: {
         languages: {
+          'x-default': `${baseUrl}/insights`,
+          'en-IN': `${baseUrl}/insights`,
           'mr-IN': `${baseUrl}/mr/insights`,
         },
       },
@@ -130,6 +138,8 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       priority: 0.8,
       alternates: {
         languages: {
+          'x-default': `${baseUrl}/${key}`,
+          'en-IN': `${baseUrl}/${key}`,
           'mr-IN': `${baseUrl}/mr/${key}`,
         },
       },

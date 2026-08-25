@@ -89,7 +89,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://kumarmagnacitytownship.com",
     languages: {
+      "x-default": "https://kumarmagnacitytownship.com",
       "en-IN": "https://kumarmagnacitytownship.com",
+      "en-US": "https://kumarmagnacitytownship.com",
+      "en-AE": "https://kumarmagnacitytownship.com",
+      "en-GB": "https://kumarmagnacitytownship.com",
+      "en-SG": "https://kumarmagnacitytownship.com",
       "mr-IN": "https://kumarmagnacitytownship.com/mr",
     },
   },
