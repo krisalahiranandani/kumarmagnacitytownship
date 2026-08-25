@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  compress: true,
   trailingSlash: false,
   experimental: {
     workerThreads: false,
@@ -9,7 +11,6 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
-  // Hardened: Build strictness enforced (no ignoring TS/ESLint errors)
 
   webpack: (config, { dev, isServer }) => {
     if (!dev) {
@@ -30,6 +31,14 @@ const nextConfig: NextConfig = {
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'X-Robots-Tag',
+            value: 'all, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
           },
           {
             key: 'Referrer-Policy',
