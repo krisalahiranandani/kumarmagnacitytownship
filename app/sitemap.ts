@@ -88,6 +88,30 @@ export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
       });
     });
 
+    // Programmatic Competitor Comparison Silos
+    const comparisonSlugs = [
+      'kumar-magnacity-vs-godrej-rivergreens-manjari',
+      'kumar-magnacity-vs-amanora-park-town-hadapsar',
+      'kumar-magnacity-vs-shapoorji-joyville-hadapsar',
+      'kumar-magnacity-vs-vtp-pegasus-kharadi'
+    ];
+
+    comparisonSlugs.forEach((slug) => {
+      sitemapEntries.push({
+        url: `${baseUrl}/compare/${slug}`,
+        lastModified,
+        changeFrequency: "weekly",
+        priority: 0.85,
+        alternates: {
+          languages: {
+            'x-default': `${baseUrl}/compare/${slug}`,
+            'en-IN': `${baseUrl}/compare/${slug}`,
+            'mr-IN': `${baseUrl}/mr/compare/${slug}`,
+          },
+        },
+      });
+    });
+
     // Insights & Articles
     const insightSlugs = getInsightSlugs();
     insightSlugs.forEach((slug) => {
