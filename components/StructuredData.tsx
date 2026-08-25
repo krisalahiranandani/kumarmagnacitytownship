@@ -252,6 +252,26 @@ export default function StructuredData({
     },
   };
 
+  const expertAuthorSchema = {
+    "@type": "Person",
+    "@id": "https://kumarmagnacitytownship.com/#author",
+    name: "Kumar Properties Technical Research & Advisory Board",
+    jobTitle: "Senior Real Estate Analyst & MahaRERA Specialist",
+    description: "60-Year Pune Real Estate Technical Advisory & Market Research Group specializing in Pune East Townships and Land Valuation.",
+    worksFor: {
+      "@type": "Organization",
+      name: "Kumar Properties",
+      url: "https://kumarmagnacitytownship.com",
+    },
+    knowsAbout: [
+      "Pune Real Estate Market",
+      "MahaRERA Compliance",
+      "Hadapsar Annexe Infrastructure",
+      "NA Villa Plot Land Valuation",
+      "Township Master Planning"
+    ]
+  };
+
   const schemaGraph = {
     "@context": "https://schema.org",
     "@graph": [
@@ -259,6 +279,7 @@ export default function StructuredData({
       agentSchema,
       schoolSchema,
       googleBusinessProfileSchema,
+      expertAuthorSchema,
     ],
   };
 

@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kumarmagnacitytownship.com"),
   manifest: "/manifest.json",
   title: {
-    default: "Kumar Magnacity Hadapsar | 2BHK & 3BHK Flats + NA Plots, Manjari Pune",
+    default: "Kumar Magnacity Hadapsar | ₹72.99L* (4.9★) 2 & 3 BHK Flats & Plots Pune",
     template: "%s | Kumar Magnacity Hadapsar"
   },
   description: "Kumar Magnacity Hadapsar (Hadapsar Annexe, Manjari) — Pune's premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.49Cr*. Podar International School on campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
@@ -137,6 +137,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preload" as="image" href="/assets/hero-bg.jpg" fetchPriority="high" />
+
+        {/* WebSub / PubSubHubbub Real-Time Googlebot Indexing Protocol */}
+        <link rel="hub" href="https://pubsubhubbub.appspot.com/" />
+        <link rel="self" href="https://kumarmagnacitytownship.com/google-product-feed.xml" />
         
         {/* Server-Rendered Google Rich Results Schemas */}
         <StructuredData />
