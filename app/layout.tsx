@@ -26,6 +26,9 @@ import FeaturedSnippetsSchema from "@/components/FeaturedSnippetsSchema";
 import SiteNavigationSchema from "@/components/SiteNavigationSchema";
 import SpeakableSchema from "@/components/SpeakableSchema";
 import HowToBookingSchema from "@/components/HowToBookingSchema";
+import VideoTourSchema from "@/components/VideoTourSchema";
+import OpenHouseEventSchema from "@/components/OpenHouseEventSchema";
+import UnitCarouselSchema from "@/components/UnitCarouselSchema";
 
 export const runtime = "nodejs";
 
@@ -148,6 +151,9 @@ export default function RootLayout({
         <SiteNavigationSchema />
         <SpeakableSchema />
         <HowToBookingSchema />
+        <VideoTourSchema />
+        <OpenHouseEventSchema />
+        <UnitCarouselSchema />
         
         {/* Google Sitelinks Search Box Schema */}
         <script
