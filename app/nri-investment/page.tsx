@@ -166,7 +166,7 @@ export default function NRIInvestmentPage() {
                 <div className="w-full md:w-[400px] aspect-square relative rounded-[2.5rem] overflow-hidden border border-primary/10 group">
                     <Image 
                         src="/assets/plot-layout.jpg"
-                        alt="Virtual Tours for NRIs"
+                        alt="Kumar Magnacity 3D Virtual Tour & Master Plan Layout for NRI Homebuyers in Pune East"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />

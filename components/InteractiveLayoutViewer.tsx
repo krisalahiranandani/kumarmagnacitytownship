@@ -191,7 +191,8 @@ export default function InteractiveLayoutViewer() {
               onError={(e) => { e.currentTarget.src = "/assets/plot-layout.jpg"; }}
               className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
-              alt="Enlarged Layout"
+              alt="Kumar Magnacity Floor Plan Layout 2 BHK and 3 BHK Luxury Residences Hadapsar Manjari Pune"
+              title="Kumar Magnacity Master Unit Layout"
             />
           </motion.div>
         )}

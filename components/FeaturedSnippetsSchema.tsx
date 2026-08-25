@@ -72,6 +72,46 @@ export default function FeaturedSnippetsSchema() {
           "@type": "Answer",
           "text": "Kumar Magnacity Township is located just 10 minutes from Magarpatta City and 12-15 minutes from Kharadi EON IT Park via the new Manjari bridge connectivity corridor."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the maintenance charges in Kumar Magnacity Hadapsar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Estimated maintenance charges at Kumar Magnacity are approximately ₹3.00 to ₹3.50 per sq.ft per month, optimized by centralized solar power substations and rainwater harvesting systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the flexible payment plans available in Kumar Magnacity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kumar Magnacity offers multiple flexible payment structures including standard 20:80 subvention schemes, 10:90 construction-linked milestones, and customized banking repayment plans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are NA Villa Bungalow plots in Kumar Magnacity Phase 2 sanctioned with individual 7/12 extracts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, every NA Villa Plot in Kumar Magnacity Phase 2 (1,700 to 3,500+ sq.ft) comes with a clear individual 7/12 extract (७/१२ उतारा), Town Planning sanction, and G+2 custom villa sanction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which nationalized and private banks have approved home loans for Kumar Magnacity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kumar Magnacity is pre-approved for home loans up to 80%-85% by State Bank of India (SBI), HDFC Bank, ICICI Bank, Axis Bank, and Bank of Baroda at competitive repo-linked interest rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to contact the official priority sales desk for Kumar Magnacity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can reach the official Kumar Magnacity sales desk directly via phone at +91 77440 09295 or through WhatsApp at +91 77440 09295, or visit https://kumarmagnacitytownship.com."
+        }
       }
     ]
   };
