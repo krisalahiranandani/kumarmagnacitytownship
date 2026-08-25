@@ -162,6 +162,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preload" as="image" href="/assets/hero-bg.jpg" fetchPriority="high" />
 
+        {/* Google Chrome & Browser OpenSearch Integration */}
+        <link rel="search" type="application/opensearchdescription+xml" title="Kumar Magnacity Search" href="/opensearch.xml" />
+
         {/* WebSub / PubSubHubbub Real-Time Googlebot Indexing Protocol */}
         <link rel="hub" href="https://pubsubhubbub.appspot.com/" />
         <link rel="self" href="https://kumarmagnacitytownship.com/google-product-feed.xml" />
