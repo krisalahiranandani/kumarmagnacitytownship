@@ -13,6 +13,7 @@ import UnitComparisonMatrix from '@/components/UnitComparisonMatrix';
 import WhatsAppCostSheetGenerator from '@/components/WhatsAppCostSheetGenerator';
 import GoogleMapsCommandHub from '@/components/GoogleMapsCommandHub';
 import GoogleReviewsShowcase from '@/components/GoogleReviewsShowcase';
+import PuneMarketIntelligenceHub from '@/components/PuneMarketIntelligenceHub';
 
 export const metadata: Metadata = {
   title: 'Kumar Magnacity Hadapsar | 2 & 3 BHK Flats, Plots, Price & Location Pune',
@@ -207,6 +208,9 @@ export default function KumarMagnacityHadapsarPage() {
 
       {/* Google Business Reviews Showcase (4.9 ★ based on 386+ Google Reviews) */}
       <GoogleReviewsShowcase />
+
+      {/* Pune Real Estate Market Intelligence Hub */}
+      <PuneMarketIntelligenceHub />
 
       {/* Masterplan Sector Inspector */}
       <MasterplanSectorInspector />

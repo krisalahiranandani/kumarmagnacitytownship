@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 const KEYWORD_CLUSTERS = [
@@ -15,14 +15,16 @@ const KEYWORD_CLUSTERS = [
       "Kumar Magnacity Pune",
       "Kumar Magnacity Hadapsar Annexe",
       "Kumar Magnacity Township Pune",
+      "Magnacity by Kumar Realty",
       "Kumar Magnacity Project",
       "Kumar Magnacity Residential Township",
       "Kumar Magnacity Integrated Township",
       "Kumar Magnacity Apartments",
       "Kumar Magnacity Flats",
       "Kumar Magnacity Homes",
-      "Kumar Magnacity Property",
-      "Kumar Magnacity Real Estate"
+      "Kumar Properties Hadapsar",
+      "Kumar Properties Manjari",
+      "Kumar Magnacity Official Website"
     ]
   },
   {
@@ -42,387 +44,152 @@ const KEYWORD_CLUSTERS = [
       "Hadapsar Manjari",
       "Manjari Hadapsar Road",
       "Pune Eastern Corridor",
-      "Pune IT Corridor"
+      "PMRDA Ring Road Manjari",
+      "Manjari Kharadi Bridge Corridor"
     ]
   },
   {
-    category: "3. Property Typology",
+    category: "3. Buyer Intent & Cost Sheets",
     keywords: [
-      "Luxury Apartments",
-      "Premium Apartments",
-      "Residential Township",
-      "Township Project",
-      "Integrated Township",
-      "Smart Township",
-      "Premium Homes",
-      "Luxury Homes",
-      "Modern Apartments",
-      "Gated Community",
-      "Residential Community",
-      "Township Living",
-      "Lifestyle Homes",
-      "Family Homes",
-      "Premium Residences"
+      "Kumar Magnacity Price List 2026",
+      "Kumar Magnacity Cost Sheet 2 BHK",
+      "Kumar Magnacity Cost Sheet 3 BHK",
+      "Kumar Magnacity Payment Plan 20:80",
+      "Kumar Magnacity Maintenance Charges",
+      "Kumar Magnacity Sample Flat Video",
+      "Kumar Magnacity Possession Date",
+      "Kumar Magnacity Floor Rise Charges",
+      "Kumar Magnacity SBI Home Loan Approval",
+      "Kumar Magnacity HDFC Bank Loan Rate",
+      "Kumar Magnacity Token Booking Amount",
+      "Kumar Magnacity Resale & Rent 2 BHK"
     ]
   },
   {
-    category: "4. Apartment Configurations",
+    category: "4. Competitor Comparisons",
     keywords: [
-      "2 BHK Flats",
-      "3 BHK Flats",
-      "Spacious Apartments",
-      "Luxury Flats",
-      "Premium Flats",
-      "Ready to Move Flats",
-      "Under Construction Flats",
-      "New Launch Apartments",
-      "Affordable Luxury Apartments",
-      "Modern Flats Pune",
-      "Smart Homes",
-      "Luxury Residences"
+      "Kumar Magnacity vs Godrej Rivergreens Manjari",
+      "Kumar Magnacity vs Amanora Park Town Hadapsar",
+      "Kumar Magnacity vs VTP Cygnus Kharadi",
+      "Kumar Magnacity vs VTP Beaumonde Kharadi",
+      "Kumar Magnacity vs Shapoorji Joyville Hadapsar",
+      "Kumar Magnacity vs Kolte Patil Life Republic",
+      "Best Township in East Pune Comparison",
+      "Hadapsar vs Kharadi Property Prices"
     ]
   },
   {
-    category: "5. Plot & Land Inventory",
+    category: "5. Luxury Typologies & Configurations",
     keywords: [
-      "NA Plots",
-      "Residential Plots",
-      "Villa Plots",
-      "Premium Villa Plots",
-      "Township Plots",
-      "Investment Plots",
-      "Bungalow Plots",
-      "NA Approved Plots",
-      "Residential Land",
-      "Plot Investment Pune"
+      "2 BHK Smart Luxury (757 Sq.Ft)",
+      "3 BHK Grand Family Suite (1053 Sq.Ft)",
+      "4 BHK Luxury Residences Pune",
+      "Kumar Magnacity Sky Duplex Penthouses",
+      "Simplex & Sky Villas East Pune",
+      "NA Villa Bungalow Plots (1700+ Sq.Ft)",
+      "G+2 Custom Villa Sanction Plots",
+      "Clear Title 7/12 Extract Land Pune",
+      "Vastu Compliant Flats Hadapsar",
+      "Double Height Living Rooms Pune"
     ]
   },
   {
-    category: "6. Investment & ROI",
+    category: "6. Landmark & IT Proximity",
     keywords: [
-      "Best Investment in Pune",
-      "Real Estate Investment Pune",
-      "Property Investment",
-      "High ROI Property",
-      "Future Growth Area",
-      "Appreciation Potential",
-      "Rental Income",
-      "Capital Appreciation",
-      "Long Term Investment",
-      "Best Township Investment",
-      "Pune Investment Property",
-      "Investment Flats Pune"
+      "Flats with Podar School on Campus Pune",
+      "Townships near Magarpatta Cybercity",
+      "Flats near Kharadi EON IT Park Phase 2",
+      "Flats near World Trade Center WTC Pune",
+      "Properties near SP Infocity Phursungi",
+      "Properties near Serum Institute Hadapsar",
+      "Flats near Amanora & Seasons Mall",
+      "Flats near Hadapsar Gadital Junction"
     ]
   },
   {
-    category: "7. Township Amenities",
+    category: "7. MahaRERA & Developer Legacy",
     keywords: [
-      "Swimming Pool",
-      "Clubhouse",
-      "Gymnasium",
-      "Fitness Centre",
-      "Kids Play Area",
-      "Jogging Track",
-      "Cycling Track",
-      "Indoor Games",
-      "Outdoor Sports",
-      "Basketball Court",
-      "Tennis Court",
-      "Badminton Court",
-      "Cricket Practice Net",
-      "Football Turf",
-      "Amphitheatre",
-      "Multipurpose Hall",
-      "Yoga Deck",
-      "Meditation Zone",
-      "Senior Citizen Area",
-      "Pet Park",
-      "Party Lawn",
-      "Landscaped Gardens",
-      "Green Spaces",
-      "Open Spaces",
-      "Community Hall",
-      "Banquet Hall",
-      "Library",
-      "Co-working Space",
-      "Business Lounge",
-      "Cafeteria",
-      "Spa",
-      "Sauna",
-      "Steam Room"
+      "Kumar Magnacity MahaRERA P52100052096",
+      "Kumar Magnacity Phase 2 RERA P52100054476",
+      "Kumar Properties Legacy Since 1966",
+      "60 Years of Building Trust Pune",
+      "Zero Litigation Land Pune East",
+      "MahaRERA Approved Townships Pune",
+      "Bank Approved NA Plots Pune"
     ]
   },
   {
-    category: "8. Lifestyle & Living",
+    category: "8. Regional & Marathi Searches (मराठी शोध)",
     keywords: [
-      "Luxury Lifestyle",
-      "Modern Living",
-      "Premium Lifestyle",
-      "Urban Lifestyle",
-      "Green Living",
-      "Smart Living",
-      "Family Lifestyle",
-      "Township Lifestyle",
-      "Comfortable Living",
-      "Peaceful Living",
-      "Nature Living",
-      "Community Living",
-      "Contemporary Living"
-    ]
-  },
-  {
-    category: "9. Connectivity Nodes",
-    keywords: [
-      "Near Magarpatta",
-      "Near Kharadi",
-      "Near EON IT Park",
-      "Near World Trade Center Pune",
-      "Near Amanora",
-      "Near SP Infocity",
-      "Near Pune Airport",
-      "Near Hadapsar Railway Station",
-      "Near Pune Solapur Highway",
-      "Easy Connectivity",
-      "Well Connected Location",
-      "IT Hub Nearby",
-      "Commercial Hub Nearby"
-    ]
-  },
-  {
-    category: "10. Schools & Academics",
-    keywords: [
-      "Near The Kalyani School",
-      "Near Lexicon School",
-      "Near Orbis School",
-      "Near City World School",
-      "Near Delhi Public School",
-      "Near Vibgyor School",
-      "International Schools Nearby",
-      "Podar International School On-Campus"
-    ]
-  },
-  {
-    category: "11. Hospitals & Healthcare",
-    keywords: [
-      "Near Noble Hospital",
-      "Near Sahyadri Hospital",
-      "Near Columbia Asia",
-      "Near Manipal Hospital",
-      "Near Lotus Hospital",
-      "Multi-speciality Hospital Nearby"
-    ]
-  },
-  {
-    category: "12. Shopping & Malls",
-    keywords: [
-      "Near Amanora Mall",
-      "Near Seasons Mall",
-      "Shopping Mall Nearby",
-      "Restaurants Nearby",
-      "Entertainment Nearby",
-      "Retail Shops Nearby",
-      "Grocery Stores Nearby",
-      "Supermarket Nearby"
-    ]
-  },
-  {
-    category: "13. Buyer Intent Queries",
-    keywords: [
-      "Buy Flat in Manjari",
-      "Buy Apartment in Hadapsar",
-      "Buy Home in Pune",
-      "Luxury Apartments Pune",
-      "Best Township Pune",
-      "New Residential Project Pune",
-      "Flats for Sale",
-      "Apartments for Sale",
-      "Premium Flats Pune",
-      "Homes for Sale Pune",
-      "Residential Property Pune"
-    ]
-  },
-  {
-    category: "14. Long-Tail Search Intent",
-    keywords: [
-      "Kumar Magnacity Township Manjari Pune",
-      "Kumar Magnacity Hadapsar Annexe Pune",
-      "Kumar Magnacity Apartments in Pune",
-      "Luxury Flats in Manjari Pune",
-      "Premium Apartments Near Hadapsar",
-      "Township Flats in East Pune",
-      "Best Residential Township in Pune",
-      "Apartments Near Magarpatta City",
-      "Apartments Near EON IT Park",
-      "Flats Near Kharadi Pune",
-      "Investment Property in Manjari",
-      "Family Homes in Hadapsar",
-      "Gated Community Apartments Pune",
-      "Township Property Near Pune Airport",
-      "Luxury Township Near Kharadi",
-      "Modern Apartments Near Amanora Mall",
-      "Premium Township Near IT Hub",
-      "New Launch Flats in Manjari",
-      "Best Property in Hadapsar Annexe",
-      "Residential Township Near Hadapsar"
-    ]
-  },
-  {
-    category: "15. Commercial Intent",
-    keywords: [
-      "Kumar Magnacity Price",
-      "Kumar Magnacity Cost",
-      "Kumar Magnacity Brochure",
-      "Kumar Magnacity Floor Plan",
-      "Kumar Magnacity Master Plan",
-      "Kumar Magnacity Location",
-      "Kumar Magnacity Amenities",
-      "Kumar Magnacity Reviews",
-      "Kumar Magnacity Possession",
-      "Kumar Magnacity Booking",
-      "Kumar Magnacity Payment Plan",
-      "Kumar Magnacity Offers",
-      "Kumar Magnacity RERA",
-      "Kumar Magnacity Contact",
-      "Kumar Magnacity Site Visit",
-      "Kumar Magnacity Launch Date"
-    ]
-  },
-  {
-    category: "16. Local SEO Micro-Markets",
-    keywords: [
-      "Property in Manjari",
-      "Flats in Manjari Pune",
-      "Apartments in Hadapsar",
-      "Flats Near Kharadi",
-      "Flats Near Magarpatta",
-      "Township in Hadapsar",
-      "New Projects in Manjari",
-      "Residential Projects in Hadapsar",
-      "East Pune Residential Projects",
-      "Pune Township Projects",
-      "Premium Projects Pune",
-      "Luxury Projects Manjari"
-    ]
-  },
-  {
-    category: "17. Semantic LSI Context",
-    keywords: [
-      "Real Estate Pune",
-      "Residential Development",
-      "Premium Housing",
-      "Sustainable Living",
-      "Smart Infrastructure",
-      "Green Township",
-      "Modern Architecture",
-      "Urban Development",
-      "Luxury Housing",
-      "Residential Complex",
-      "Smart Community",
-      "Open Green Spaces",
-      "Eco-Friendly Township",
-      "Secure Community",
-      "High Rise Apartments",
-      "Premium Residential Project",
-      "Lifestyle Destination",
-      "Future Ready Township",
-      "Residential Investment",
-      "Luxury Community"
-    ]
-  },
-  {
-    category: "18. Competitor Comparison",
-    keywords: [
-      "Kumar Magnacity vs Godrej Rivergreens",
-      "Kumar Magnacity vs VTP Township",
-      "Kumar Magnacity vs Kumar Pebble Park",
-      "Kumar Magnacity vs Duville Riverdale",
-      "Kumar Magnacity vs Amanora Park Town",
-      "Kumar Magnacity vs Nyati Evolve",
-      "Kumar Magnacity vs Kolte Patil Township",
-      "Best Township in Manjari",
-      "Best Township Near Hadapsar",
-      "Best Township in East Pune"
-    ]
-  },
-  {
-    category: "19. Question-Based (Snippet Intent)",
-    keywords: [
-      "What is Kumar Magnacity Township?",
-      "Is Kumar Magnacity a good investment?",
-      "Where is Kumar Magnacity located?",
-      "What amenities does Kumar Magnacity offer?",
-      "Is Manjari a good place to live?",
-      "Is Hadapsar Annexe developing?",
-      "What is the price of flats in Kumar Magnacity?",
-      "How far is Kumar Magnacity from Magarpatta?",
-      "Is Kumar Magnacity RERA approved?",
-      "Which schools are near Kumar Magnacity?",
-      "Which hospitals are near Kumar Magnacity?",
-      "Is Kumar Magnacity good for IT professionals?",
-      "Why invest in Manjari Pune?",
-      "Which is the best township in East Pune?",
-      "What are the advantages of living in Manjari?"
-    ]
-  },
-  {
-    category: "20. High-Volume Clusters",
-    keywords: [
-      "Kumar Magnacity",
-      "Kumar Magnacity Township",
-      "Kumar Magnacity Pune",
-      "Kumar Magnacity Manjari",
-      "Kumar Magnacity Hadapsar",
-      "Kumar Magnacity Price",
-      "Kumar Magnacity Floor Plan",
-      "Kumar Magnacity Amenities",
-      "Kumar Magnacity Brochure",
-      "Kumar Magnacity Reviews",
-      "Kumar Magnacity Location",
-      "Kumar Magnacity RERA",
-      "Flats in Manjari",
-      "Apartments in Hadapsar",
-      "Township in Pune",
-      "Luxury Apartments Pune",
-      "Premium Flats Pune",
-      "Property in East Pune",
-      "Residential Projects Pune",
-      "Investment Property Pune"
+      "कुमार मॅग्नासिटी हडपसर मांजरी",
+      "कुमार मॅग्नासिटी फ्लॅट किंमत",
+      "कुमार मॅग्नासिटी फ्लोअर प्लॅन",
+      "कुमार प्रॉपर्टीज मांजरी टाउनशिप",
+      "हडपसर मांजरी २ बीएचके ३ बीएचके फ्लॅट्स",
+      "मांजरी एनए प्लॉटिंग ७/१२ उतारा",
+      "पुणे पूर्व नवीन निवासी प्रकल्प",
+      "पोदार इंटरनॅशनल स्कूल टाउनशिप पुणे"
     ]
   }
 ];
 
 export default function SemanticKeywordsCloud() {
   return (
-    <section className="py-20 bg-light-soft border-t border-primary/10 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
-      
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="flex items-center gap-3 mb-12 opacity-70">
-          <Search size={20} className="text-accent" />
-          <h3 className="text-sm font-bold uppercase tracking-widest text-primary">Pune Real Estate Market Directory</h3>
+    <section className="py-16 bg-[#0D0B08] text-white relative overflow-hidden border-t border-white/10" id="seo-cloud">
+      {/* Background Accent */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-6 border-b border-white/10">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-accent uppercase tracking-widest mb-3">
+              <Search size={12} />
+              <span>Crawl Index & Semantic Topic Clusters</span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-white tracking-tight">
+              Kumar Magnacity <span className="text-gradient-gold">Pune Real Estate Search Directory</span>
+            </h2>
+          </div>
+
+          <p className="text-xs text-stone-400 font-sans max-w-md">
+            Programmatic search index covering high-intent search queries, competitor comparisons, MahaRERA registrations, and regional queries.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+        {/* Keyword Cluster Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {KEYWORD_CLUSTERS.map((cluster, idx) => (
-            <div key={idx} className="space-y-6">
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-accent pb-2 border-b border-primary/10">
-                {cluster.category}
-              </h4>
-              <ul className="space-y-3">
-                {cluster.keywords.map((keyword, kIdx) => (
-                  <li key={kIdx}>
-                    <Link 
-                      href="/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune"
-                      className="text-[11px] text-primary/60 hover:text-primary transition-colors duration-300 block leading-snug hover:translate-x-1 transform"
-                    >
-                      {keyword}
-                    </Link>
-                  </li>
+            <div 
+              key={idx}
+              className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-accent/40 transition-colors space-y-3"
+            >
+              <h3 className="text-xs font-bold uppercase tracking-wider text-accent flex items-center gap-1.5">
+                <Sparkles size={12} />
+                <span>{cluster.category}</span>
+              </h3>
+
+              <div className="flex flex-wrap gap-1.5">
+                {cluster.keywords.map((kw, kIdx) => (
+                  <span 
+                    key={kIdx}
+                    className="inline-block px-2.5 py-1 rounded-lg bg-white/5 hover:bg-accent/20 hover:text-accent text-[11px] text-stone-300 font-sans transition-colors cursor-default"
+                  >
+                    {kw}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
+
+        {/* Crawler Footnote */}
+        <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-stone-500 font-sans">
+          <span>Official Domain: https://kumarmagnacitytownship.com • Verified Contact: +91 77440 09295</span>
+          <span>MahaRERA Reg. No: P52100052096 | P52100054476</span>
+        </div>
+
       </div>
     </section>
   );
