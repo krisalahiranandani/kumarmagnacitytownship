@@ -20,11 +20,15 @@ export default function StructuredData({
     }`,
     name: `Kumar Magnacity Hadapsar - ${locationName}`,
     alternateName: [
+      "Kumar Magnacity",
+      "Magnacity by Kumar Realty",
       "Kumar Magnacity Hadapsar",
       "Kumar Magnacity Hadapsar Pune",
       "Kumar Magnacity Hadapsar Annexe",
       "Kumar Magnacity Manjari Hadapsar",
-      "Kumar Magnacity Township Hadapsar"
+      "Kumar Magnacity Township Hadapsar",
+      "कुमार मॅग्नासिटी हडपसर मांजरी",
+      "कुमार प्रॉपर्टीज मांजरी टाउनशिप"
     ],
     keywords: [
       "Kumar Magnacity Hadapsar",
@@ -32,7 +36,17 @@ export default function StructuredData({
       "2 BHK Kumar Magnacity Hadapsar",
       "3 BHK Kumar Magnacity Hadapsar",
       "Kumar Magnacity Hadapsar price",
-      "Kumar Magnacity Manjari Hadapsar"
+      "Kumar Magnacity Manjari Hadapsar",
+      "Kumar Magnacity Cost Sheet 2026",
+      "Kumar Magnacity NA Villa Plots",
+      "Kumar Magnacity vs Godrej Rivergreens",
+      "Kumar Magnacity vs Amanora Park Town",
+      "Podar International School Kumar Magnacity",
+      "Kumar Magnacity Sky Duplex Penthouses",
+      "MahaRERA P52100052096",
+      "MahaRERA P52100054476",
+      "कुमार मॅग्नासिटी हडपसर मांजरी",
+      "हडपसर मांजरी २ बीएचके ३ बीएचके फ्लॅट्स"
     ],
     description: `150-Acre Master Planned Mega Township in Hadapsar Annexe, Manjari, Pune East. Luxury 2BHK & 3BHK Apartments and NA Villa Bungalow Plots by Kumar Properties.`,
     url: "https://kumarmagnacitytownship.com",
