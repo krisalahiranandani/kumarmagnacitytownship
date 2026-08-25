@@ -6,7 +6,6 @@ import {
   MapPin, 
   Navigation, 
   Phone, 
-  MessageSquare, 
   ExternalLink, 
   Star, 
   ShieldCheck, 
@@ -16,7 +15,12 @@ import {
   Check, 
   Building2,
   Compass,
-  Smartphone
+  Smartphone,
+  Car,
+  Plane,
+  Train,
+  School,
+  Share2
 } from "lucide-react";
 import { useModal } from "@/lib/modal-context";
 import { cn } from "@/lib/utils";
@@ -26,13 +30,28 @@ interface GoogleMapsCommandHubProps {
   showCardOnly?: boolean;
 }
 
+const DISTANCE_MATRIX = [
+  { icon: Building2, label: "Magarpatta Cybercity", time: "10 Mins", dist: "6.2 km", tag: "IT Hub" },
+  { icon: Building2, label: "Kharadi EON & WTC", time: "14 Mins", dist: "7.4 km", tag: "IT Corridor" },
+  { icon: School, label: "Podar International School", time: "0 Mins", dist: "On Campus", tag: "In-Township" },
+  { icon: Car, label: "Amanora & Seasons Mall", time: "10 Mins", dist: "5.5 km", tag: "Lifestyle" },
+  { icon: Building2, label: "SP Infocity Phursungi", time: "12 Mins", dist: "6.5 km", tag: "IT SEZ" },
+  { icon: Plane, label: "Pune Airport (PNQ)", time: "26 Mins", dist: "14 km", tag: "Transit" },
+  { icon: Train, label: "Pune Railway Station", time: "24 Mins", dist: "12 km", tag: "Rail" },
+  { icon: Car, label: "Hadapsar Gadital Junction", time: "9 Mins", dist: "4.5 km", tag: "Expressway" },
+];
+
 export default function GoogleMapsCommandHub({ className, showCardOnly = false }: GoogleMapsCommandHubProps) {
   const { openModal } = useModal();
   const [copied, setCopied] = useState(false);
+  const [copiedPlusCode, setCopiedPlusCode] = useState(false);
 
-  const GOOGLE_MAPS_PLACE_URL = "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj";
+  const GOOGLE_MAPS_PLACE_URL = "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj?entry=ttu";
   const GOOGLE_SEARCH_PANEL_URL = "https://www.google.com/search?q=kumar+magnacity";
   const GOOGLE_DIRECTIONS_URL = "https://www.google.com/maps/dir/?api=1&destination=18.4948931,73.9828496&destination_place_id=ChIJVVpYsq7DwrwR4XJOGBu7mPE";
+  const GOOGLE_WRITE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=ChIJVVpYsq7DwrwR4XJOGBu7mPE";
+  const APPLE_MAPS_URL = "https://maps.apple.com/?q=Magnacity+by+Kumar+Realty&ll=18.4948931,73.9828496";
+  const GEO_URI = "geo:18.4948931,73.9828496?q=Magnacity+by+Kumar+Realty";
   
   const PHONE_NUMBER = "+917744009295";
   const PHONE_DISPLAY = "+91 77440 09295";
@@ -41,12 +60,21 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
   const OFFICIAL_WEBSITE_DISPLAY = "kumarmagnacitytownship.com";
   
   const ADDRESS = "Magnacity by Kumar Realty, Manjari Road, Hadapsar Annexe, Manjari Budruk, Pune, Maharashtra 412307";
+  const PLUS_CODE = "FRVG+W4 Manjari Budruk, Pune, Maharashtra";
 
   const handleCopyAddress = () => {
     if (typeof navigator !== "undefined" && navigator.clipboard) {
       navigator.clipboard.writeText(ADDRESS);
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
+    }
+  };
+
+  const handleCopyPlusCode = () => {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(PLUS_CODE);
+      setCopiedPlusCode(true);
+      setTimeout(() => setCopiedPlusCode(false), 2500);
     }
   };
 
@@ -67,7 +95,7 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
             Locate & Visit <span className="text-gradient-gold">Kumar Magnacity</span>
           </h2>
           <p className="text-sm md:text-base text-stone-600 font-sans max-w-2xl mx-auto">
-            Official Google Business Profile, live GPS navigation, and direct priority sales desk for Magnacity by Kumar Realty in Hadapsar Annexe, Manjari, Pune East.
+            Official Google Business Profile, live GPS navigation, Google Plus Code, and direct priority sales desk for Magnacity by Kumar Realty in Hadapsar Annexe, Manjari, Pune East.
           </p>
         </div>
 
@@ -79,6 +107,7 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
             href={GOOGLE_DIRECTIONS_URL}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Get Live GPS Directions to Kumar Magnacity on Google Maps"
             className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
           >
             <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -96,6 +125,7 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
           {/* Action 2: 1-Click Call Sales Desk */}
           <a
             href={`tel:${PHONE_NUMBER}`}
+            aria-label="Call Kumar Magnacity Priority Sales Desk at +91 77440 09295"
             className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
           >
             <div className="w-12 h-12 rounded-xl bg-amber-50 text-accent-dark flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -115,6 +145,7 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
             href={GOOGLE_SEARCH_PANEL_URL}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View Kumar Magnacity on Google Local Search Panel"
             className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
           >
             <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#4285F4] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -134,6 +165,7 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
             href={GOOGLE_MAPS_PLACE_URL}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open Magnacity by Kumar Realty in Google Maps App"
             className="group p-5 rounded-2xl bg-white border border-stone-200/90 shadow-md hover:shadow-xl hover:border-accent/40 transition-all flex items-start gap-4 cursor-pointer"
           >
             <div className="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -160,7 +192,7 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
             <div className="space-y-4">
               <div className="flex items-center justify-between pb-4 border-b border-stone-100">
                 <div className="flex items-center gap-2">
-                  {/* Google 4-Color G icon representation */}
+                  {/* Google 4-Color G icon */}
                   <div className="w-8 h-8 rounded-full bg-white shadow-md border border-stone-200 flex items-center justify-center font-bold text-xs">
                     <span className="text-[#4285F4]">G</span>
                     <span className="text-[#EA4335]">o</span>
@@ -256,6 +288,20 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
                 </div>
               </div>
 
+              {/* Google Plus Code Pill */}
+              <div className="p-3 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-500">Google Plus Code:</span>
+                  <span className="font-mono font-semibold text-stone-800 text-[11px]">FRVG+W4 Pune</span>
+                </div>
+                <button
+                  onClick={handleCopyPlusCode}
+                  className="text-[11px] font-bold text-accent-dark hover:text-accent cursor-pointer"
+                >
+                  {copiedPlusCode ? "Copied!" : "Copy Code"}
+                </button>
+              </div>
+
               {/* Official Sales Contact Phone */}
               <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -308,12 +354,12 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
           <div className="lg:col-span-7 bg-white rounded-[2.5rem] border border-stone-200/90 p-2 shadow-2xl overflow-hidden relative flex flex-col min-h-[500px]">
             
             {/* Live Interactive Map Iframe */}
-            <div className="w-full h-full min-h-[460px] rounded-[2rem] overflow-hidden relative">
+            <div className="w-full h-full min-h-[420px] rounded-[2rem] overflow-hidden relative">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15134.165399551024!2d73.9828496!3d18.4948931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3aeb2585a9d%3A0xf198bb1c684e72e1!2sMagnacity%20by%20Kumar%20Realty!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "460px" }}
+                style={{ border: 0, minHeight: "420px" }}
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -333,24 +379,26 @@ export default function GoogleMapsCommandHub({ className, showCardOnly = false }
                   <span>+91 77440 09295</span>
                 </div>
               </div>
+            </div>
 
-              {/* Floating Bottom Control Bar */}
-              <div className="absolute bottom-4 left-4 right-4 z-10 bg-white/95 backdrop-blur-xl border border-stone-200 p-3 rounded-2xl shadow-xl flex items-center justify-between gap-3">
-                <div className="flex items-center gap-2 text-xs font-sans font-medium text-stone-700">
-                  <Building2 size={15} className="text-accent shrink-0" />
-                  <span className="hidden sm:inline">10 Mins from Magarpatta Cybercity • 15 Mins from Kharadi EON</span>
-                  <span className="sm:hidden">Hadapsar Annexe, Pune</span>
-                </div>
-
-                <a
-                  href={GOOGLE_SEARCH_PANEL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 rounded-full bg-accent text-[#0D0B08] font-bold text-[11px] uppercase tracking-wider hover:bg-accent-hover transition-colors whitespace-nowrap shadow-sm"
-                >
-                  View Google Search Panel &rarr;
-                </a>
-              </div>
+            {/* Travel Time & Distance Matrix Grid below map */}
+            <div className="p-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5 bg-[#FAF9F5] rounded-3xl mt-2 border border-stone-200/80">
+              {DISTANCE_MATRIX.map((loc, idx) => {
+                const Icon = loc.icon;
+                return (
+                  <div key={idx} className="p-2.5 rounded-xl bg-white border border-stone-200/80 space-y-1">
+                    <div className="flex items-center justify-between text-[9px] font-bold uppercase tracking-wider text-stone-500">
+                      <span>{loc.tag}</span>
+                      <span className="text-accent-dark font-mono">{loc.dist}</span>
+                    </div>
+                    <h5 className="font-heading font-bold text-xs text-primary truncate">{loc.label}</h5>
+                    <div className="flex items-center gap-1 text-[11px] font-bold text-emerald-700 font-mono">
+                      <Icon size={11} className="text-accent" />
+                      <span>{loc.time}</span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
 
           </div>
