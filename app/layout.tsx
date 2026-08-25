@@ -30,6 +30,7 @@ import VideoTourSchema from "@/components/VideoTourSchema";
 import OpenHouseEventSchema from "@/components/OpenHouseEventSchema";
 import UnitCarouselSchema from "@/components/UnitCarouselSchema";
 import GoogleProductSchema from "@/components/GoogleProductSchema";
+import GoogleRealEstateComplexSchema from "@/components/GoogleRealEstateComplexSchema";
 import QuickSearchDialog from "@/components/QuickSearchDialog";
 
 export const runtime = "nodejs";
@@ -179,6 +180,7 @@ export default function RootLayout({
         <OpenHouseEventSchema />
         <UnitCarouselSchema />
         <GoogleProductSchema />
+        <GoogleRealEstateComplexSchema />
         
         {/* Google Sitelinks Search Box Schema */}
         <script
