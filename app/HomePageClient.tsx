@@ -96,6 +96,7 @@ export default function Home() {
       <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-dark">
         {/* Cinematic Media Layer */}
         <motion.div style={{ scale: heroScale, opacity: heroOpacity }} className="absolute inset-0 z-0 bg-dark">
+          <div className="absolute inset-0 bg-[url('/assets/hero-bg.jpg')] bg-cover bg-center opacity-70 scale-105" />
           <video
             autoPlay
             loop
@@ -103,11 +104,11 @@ export default function Home() {
             playsInline
             preload="metadata"
             poster="/assets/hero-bg.jpg"
-            className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
+            className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity"
           >
             <source src="/assets/hero-video.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/40 to-dark" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/85 via-dark/35 to-dark" />
           <div className="absolute -top-1/4 -right-1/4 w-full h-full bg-accent/10 blur-[150px] rounded-full opacity-30 animate-pulse-slow" />
         </motion.div>
         
