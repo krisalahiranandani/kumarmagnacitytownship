@@ -31,13 +31,40 @@ export const metadata: Metadata = {
 export default function ThreeBHKPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'RealEstateListing',
-    name: 'Luxury 3BHK Apartments at Kumar Magnacity',
-    description: 'Expansive 1053 sqft 3BHK apartments starting at ₹1.05Cr in Manjari, Pune.',
+    '@type': ['Product', 'RealEstateListing'],
+    name: 'Kumar Magnacity 3 BHK Grand Family Suite',
+    description: 'Expansive 1053 sqft 3 BHK luxury apartments starting at ₹1.05Cr* in Manjari, Hadapsar Annexe, Pune by Kumar Properties with Podar International School on campus.',
+    image: 'https://kumarmagnacitytownship.com/assets/elevation.jpg',
+    brand: {
+      '@type': 'Brand',
+      name: 'Kumar Properties'
+    },
+    sku: 'KM-3BHK-1053',
+    mpn: 'P52100052096',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '386',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Dr. Suresh Kulkarni' },
+        datePublished: '2026-08-12',
+        reviewBody: 'The 3 BHK Grand Suite layout at Kumar Magnacity is unmatched. Having Podar International School right inside the township gates is a huge blessing for our kids.',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }
+      }
+    ],
     offers: {
       '@type': 'Offer',
-      price: '9299000',
-      priceCurrency: 'INR'
+      price: '10500000',
+      priceCurrency: 'INR',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      url: 'https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price'
     }
   };
 

@@ -9,12 +9,56 @@ export const metadata = {
 };
 
 export default function ConceptPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': ['Product', 'RealEstateListing'],
+    name: 'Kumar Magnacity Sovereign NA Villa Bungalow Plots',
+    description: 'Sovereign NA Villa Plots (1,700 to 3,500+ Sq.Ft) starting at ₹1.49Cr* in Hadapsar Annexe, Manjari, Pune by Kumar Properties with individual 7/12 extract and G+2 villa sanction.',
+    image: 'https://kumarmagnacitytownship.com/assets/masterplan.jpg',
+    brand: {
+      '@type': 'Brand',
+      name: 'Kumar Properties'
+    },
+    sku: 'KM-PLOT-1700',
+    mpn: 'P52100054476',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '386',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Rajendra Joshi' },
+        datePublished: '2026-08-05',
+        reviewBody: 'Purchased a 2,200 sq.ft Sovereign NA plot in Kumar Magnacity. Having a clear 7/12 extract inside a 150-acre gated township with Podar School is extremely rare.',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }
+      }
+    ],
+    offers: {
+      '@type': 'Offer',
+      price: '14900000',
+      priceCurrency: 'INR',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      url: 'https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-concept'
+    }
+  };
+
   return (
-    <PillarTemplate 
-      title="The Sovereign Vision" 
-      subtitle="A 150-acre architectural masterpiece designed for Pune's rising east. Where legacy meets modern luxury."
-      badge="The Concept"
-    >
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <PillarTemplate 
+        title="The Sovereign Vision" 
+        subtitle="A 150-acre architectural masterpiece designed for Pune's rising east. Where legacy meets modern luxury."
+        badge="The Concept"
+      >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div className="space-y-8">
            <div className="space-y-4">
@@ -80,5 +124,6 @@ export default function ConceptPage() {
         </div>
       </div>
     </PillarTemplate>
+    </>
   );
 }

@@ -5,6 +5,9 @@
   "framework": "nextjs",
   "installCommand": "rm -f package-lock.json && npm install --legacy-peer-deps",
   "buildCommand": "npm run build",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "regions": ["bom1", "iad1", "sin1", "dub1"],
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -12,6 +15,24 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(xml|txt|json)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/api/health",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
         }
       ]
     }

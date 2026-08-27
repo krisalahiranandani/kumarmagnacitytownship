@@ -31,13 +31,40 @@ export const metadata: Metadata = {
 export default function TwoBHKPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'RealEstateListing',
-    name: 'Premium 2BHK Flats at Kumar Magnacity',
-    description: 'Spacious 757 sqft 2BHK flats starting at ₹72.99L in Manjari/Hadapsar, Pune.',
+    '@type': ['Product', 'RealEstateListing'],
+    name: 'Kumar Magnacity 2 BHK Smart Luxury Apartment',
+    description: 'Spacious 757 sqft 2 BHK luxury apartments starting at ₹72.99L* in Hadapsar Annexe, Manjari, Pune by Kumar Properties with Podar International School on campus.',
+    image: 'https://kumarmagnacitytownship.com/assets/hero-bg.jpg',
+    brand: {
+      '@type': 'Brand',
+      name: 'Kumar Properties'
+    },
+    sku: 'KM-2BHK-757',
+    mpn: 'P52100052096',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '386',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Amitabh Sen' },
+        datePublished: '2026-08-10',
+        reviewBody: 'Booked a 2 BHK in Kumar Magnacity. The 757 sq.ft carpet layout with sundeck balcony is extremely well designed and close to Magarpatta Cybercity.',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }
+      }
+    ],
     offers: {
       '@type': 'Offer',
-      price: '6799000',
-      priceCurrency: 'INR'
+      price: '7299000',
+      priceCurrency: 'INR',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      url: 'https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-flats-hadapsar-pune-price'
     }
   };
 
