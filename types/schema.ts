@@ -77,6 +77,7 @@ export interface OrganizationSchema {
   foundingDate?: string;
   parentOrganization?: OrganizationSchema;
   description?: string;
+  areaServed?: string | string[];
   location?: {
     "@type": "Place";
     name: string;
