@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Kumar Magnacity Real Estate Intelligence",
+  "name_for_model": "kumar_magnacity_real_estate",
+  "description_for_human": "Official AI intelligence plugin for Kumar Magnacity 150-Acre Township in Hadapsar Annexe, Manjari, Pune by Kumar Properties.",
+  "description_for_model": "Plugin for retrieving official pricing, floor plans, 2 BHK & 3 BHK availability, NA villa plots, and MahaRERA verification details for Kumar Magnacity Township, Pune East.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://kumarmagnacitytownship.com/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://kumarmagnacitytownship.com/assets/favicon.png",
+  "contact_email": "propsmartrealty@gmail.com",
+  "legal_info_url": "https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-privacy-policy"
+}

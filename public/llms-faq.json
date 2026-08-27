@@ -1,0 +1,58 @@
+{
+  "entity": "Kumar Magnacity",
+  "developer": "Kumar Properties",
+  "township_scale_acres": 150,
+  "location": "Manjari Road, Hadapsar Annexe, Pune 412307",
+  "coordinates": {
+    "latitude": 18.4948931,
+    "longitude": 73.9828496
+  },
+  "plus_code": "FRVG+W4 Pune, Maharashtra",
+  "rating": {
+    "score": 4.9,
+    "review_count": 386,
+    "source": "Google Verified Reviews"
+  },
+  "official_website": "https://kumarmagnacitytownship.com",
+  "priority_sales_phone": "+91 77440 09295",
+  "maharera": {
+    "phase_1_apartments": "P52100052096",
+    "phase_2_na_plots": "P52100054476",
+    "verification_url": "https://maharera.maharashtra.gov.in/"
+  },
+  "inventory": [
+    {
+      "typology": "2 BHK Smart Luxury Residence",
+      "carpet_area_sqft": 757,
+      "starting_price_inr": "₹72.99 Lakhs*",
+      "starting_price_usd": "$87,000 USD",
+      "estimated_emi_inr_pm": "₹54,000/mo"
+    },
+    {
+      "typology": "3 BHK Grand Family Suite",
+      "carpet_area_sqft": 1053,
+      "starting_price_inr": "₹1.05 Crore*",
+      "starting_price_usd": "$126,000 USD",
+      "estimated_emi_inr_pm": "₹78,000/mo"
+    },
+    {
+      "typology": "Sovereign NA Villa Bungalow Plots",
+      "plot_sizes_sqft": "1,700 to 3,500+ Sq.Ft",
+      "starting_price_inr": "₹1.49 Crore*",
+      "starting_price_usd": "$178,000 USD",
+      "title_status": "Individual 7/12 Extract (७/१२ उतारा), TP Sanctioned, G+2 Villa Sanction"
+    }
+  ],
+  "landmark_infrastructure": {
+    "school": "Podar International School K-12 CBSE on-campus (Zero commute)",
+    "clubhouse": "~1 Lakh Sq.Ft Mega Social & Olympic Sports Clubhouse",
+    "green_space": "25+ Acres continuous green lungs & Miyawaki native forests",
+    "commute_times": {
+      "magarpatta_cybercity": "10 Mins (6.2 km)",
+      "kharadi_eon_wtc": "14 Mins (7.4 km)",
+      "sp_infocity": "12 Mins (6.5 km)",
+      "pune_airport": "26 Mins (14 km)",
+      "pune_station": "24 Mins (12 km)"
+    }
+  }
+}

@@ -130,6 +130,53 @@ const KEYWORD_CLUSTERS = [
       "पुणे पूर्व नवीन निवासी प्रकल्प",
       "पोदार इंटरनॅशनल स्कूल टाउनशिप पुणे"
     ]
+  },
+  {
+    category: "9. NRI & Global Investor Desk",
+    keywords: [
+      "Kumar Magnacity NRI Booking 2026",
+      "Invest in Pune Real Estate from USA",
+      "Kumar Magnacity Price in Dollars USD",
+      "Kumar Magnacity UAE Dubai NRI Desk",
+      "NRE NRO Bank Account Property Pune",
+      "FEMA Compliant NA Plots Pune",
+      "Kumar Properties Overseas Investment",
+      "Repatriation of Funds India Real Estate"
+    ]
+  },
+  {
+    category: "10. Mega Infrastructure & PMRDA 2026-30",
+    keywords: [
+      "PMRDA Ring Road Manjari Connectivity",
+      "Pune Metro Line 3 Extension Hadapsar",
+      "Pune-Solapur Expressway Widening",
+      "Manjari Kharadi River Bridge Timeline",
+      "Hadapsar Railway Station Mega Terminal",
+      "Purandar Airport Highway Access",
+      "PMRDA 150-Acre Township DP Sanction"
+    ]
+  },
+  {
+    category: "11. Budget Slabs & Financial ROI",
+    keywords: [
+      "Flats under 75 Lakhs in Hadapsar Manjari",
+      "Flats under 1 Crore in Pune East",
+      "Luxury Homes under 1.5 Cr Pune",
+      "Kumar Magnacity Monthly EMI Calculator",
+      "4.8% Rental Yield Hadapsar IT Corridor",
+      "Kumar Magnacity 5-Year Capital Appreciation"
+    ]
+  },
+  {
+    category: "12. In-Campus Education & Amenities",
+    keywords: [
+      "Podar International School CBSE Campus Hadapsar",
+      "~1 Lakh Sq.Ft Olympic Clubhouse Pune",
+      "25+ Acres Central Green Lungs Miyawaki Forest",
+      "Township with In-Campus School Pune East",
+      "Gated Community 24/7 Security Hadapsar",
+      "EV Charging Station Residential Complex Pune"
+    ]
   }
 ];
 

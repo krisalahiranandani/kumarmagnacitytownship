@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Kumar Magnacity Real Estate API",
+    "description": "Official programmatic API for querying real estate inventory, pricing, and project data for Kumar Magnacity Township Hadapsar, Pune.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://kumarmagnacitytownship.com"
+    }
+  ],
+  "paths": {
+    "/api/search": {
+      "get": {
+        "operationId": "searchRealEstateInventory",
+        "summary": "Search Kumar Magnacity units, floor plans, and pricing",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Search keyword (e.g. 2bhk, 3bhk, plots, floor-plan, roi)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful inventory match results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "query": { "type": "string" },
+                    "count": { "type": "integer" },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": { "type": "string" },
+                          "url": { "type": "string" },
+                          "price": { "type": "string" },
+                          "tags": { "type": "array", "items": { "type": "string" } }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "getHealthStatus",
+        "summary": "Check API and server cluster health status",
+        "responses": {
+          "200": {
+            "description": "System health diagnostics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
