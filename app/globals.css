@@ -250,6 +250,78 @@
   transform: translateY(-4px);
 }
 
+/* Ultra-Advanced Glassmorphic & Animation Utilities */
+.glass-luxury-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(13, 11, 8, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-luxury-card:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(212, 154, 31, 0.5);
+  box-shadow: 0 30px 60px rgba(212, 154, 31, 0.12), 0 8px 24px rgba(13, 11, 8, 0.04);
+  transform: translateY(-4px);
+}
+
+.glass-interactive {
+  background: rgba(18, 16, 13, 0.85);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-interactive:hover {
+  background: rgba(18, 16, 13, 0.95);
+  border-color: rgba(212, 154, 31, 0.6);
+  box-shadow: 0 20px 50px rgba(212, 154, 31, 0.2);
+}
+
+.shimmer-gold-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-gold-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 154, 31, 0.25), rgba(255, 255, 255, 0.4), rgba(212, 154, 31, 0.25), transparent);
+  animation: gold-sweep 3.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes gold-sweep {
+  0% { left: -100%; }
+  40%, 100% { left: 200%; }
+}
+
+@keyframes float-levitate {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.levitate-slow {
+  animation: float-levitate 5s infinite ease-in-out;
+}
+
+@keyframes gold-glow-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(212, 154, 31, 0.2); }
+  50% { box-shadow: 0 0 35px rgba(212, 154, 31, 0.45); }
+}
+
+.gold-glow-pulsing {
+  animation: gold-glow-pulse 3s infinite ease-in-out;
+}
+
 /* Luxury Print Optimization */
 @media print {
   header,

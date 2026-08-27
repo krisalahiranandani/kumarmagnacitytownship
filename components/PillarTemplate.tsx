@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SovereignBar from "@/components/SovereignBar";
+import BreadcrumbsNavigation from "@/components/BreadcrumbsNavigation";
 import { cn } from "@/lib/utils";
 
 interface PillarTemplateProps {
@@ -63,7 +64,10 @@ export default function PillarTemplate({
       </section>
 
       {/* Modern Content Architecture - Stability Focus */}
-      <section className="py-20 bg-light relative z-20 -mt-12 overflow-hidden">
+      <section className="py-12 md:py-16 bg-light relative z-20 -mt-12 overflow-hidden">
+        <div className="container mx-auto max-w-7xl px-6 md:px-12 mb-6">
+          <BreadcrumbsNavigation />
+        </div>
         <div className="container mx-auto max-w-7xl px-6 md:px-12">
            <div className="bg-white rounded-[3rem] md:rounded-[4rem] p-8 md:p-20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.08)] border border-dark/5 reveal-luxury" style={{ animationDelay: '0.3s' }}>
               {children}

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AdvancedEnquiryForm from "@/components/AdvancedEnquiryForm";
 import SovereignBar from "@/components/SovereignBar";
+import BreadcrumbsNavigation from "@/components/BreadcrumbsNavigation";
 import { Check, X, Building2, MapPin, Award, ShieldCheck, ArrowRight, Star, Phone } from "lucide-react";
 
 export const runtime = "nodejs";
@@ -190,7 +191,12 @@ export default async function ComparisonPage({ params }: { params: Promise<{ com
       </section>
 
       {/* Comparison Scorecard Grid */}
-      <section className="py-16 md:py-20 container mx-auto px-4 md:px-8 max-w-5xl">
+      <section className="py-6 container mx-auto px-4 md:px-8 max-w-5xl">
+        <BreadcrumbsNavigation className="px-0 mb-6" />
+      </section>
+
+      {/* Comparison Scorecard Grid */}
+      <section className="py-8 md:py-12 container mx-auto px-4 md:px-8 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           
           {/* Kumar Magnacity Card */}

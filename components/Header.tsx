@@ -76,13 +76,18 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "px-3.5 py-1.5 text-[11px] font-sans font-bold uppercase tracking-[0.16em] rounded-full transition-all duration-200 whitespace-nowrap",
-                    isActive 
-                      ? "bg-white/15 text-accent shadow-sm border border-white/10" 
-                      : "text-stone-300 hover:text-white hover:bg-white/10"
+                    "relative px-3.5 py-1.5 text-[11px] font-sans font-bold uppercase tracking-[0.16em] rounded-full transition-all duration-200 whitespace-nowrap",
+                    isActive ? "text-accent" : "text-stone-300 hover:text-white hover:bg-white/10"
                   )}
                 >
-                  {link.name}
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeHeaderPill"
+                      className="absolute inset-0 bg-white/15 border border-white/15 rounded-full shadow-sm"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.name}</span>
                 </Link>
               );
             })}
