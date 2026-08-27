@@ -11,14 +11,14 @@ export default function MahaRERAQRCodeModal() {
     {
       phase: "Kumar Magnacity Phase 1 (Residential Towers)",
       number: "P52100052096",
-      qrUrl: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://maharera.mahaonline.gov.in/SearchList/Search?searchtext=P52100052096",
-      govUrl: "https://maharera.mahaonline.gov.in/SearchList/Search?searchtext=P52100052096"
+      qrUrl: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://maharera.maharashtra.gov.in/",
+      govUrl: "https://maharera.maharashtra.gov.in/"
     },
     {
       phase: "Kumar Magnacity Phase 2 (NA Villa Plots)",
       number: "P52100054476",
-      qrUrl: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://maharera.mahaonline.gov.in/SearchList/Search?searchtext=P52100054476",
-      govUrl: "https://maharera.mahaonline.gov.in/SearchList/Search?searchtext=P52100054476"
+      qrUrl: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://maharera.maharashtra.gov.in/",
+      govUrl: "https://maharera.maharashtra.gov.in/"
     }
   ];
 
@@ -109,7 +109,7 @@ export default function MahaRERAQRCodeModal() {
               </div>
 
               <div className="text-center pt-3 border-t border-stone-200 flex items-center justify-between text-xs text-stone-500">
-                <span>Portal: maharera.mahaonline.gov.in</span>
+                <span>Portal: maharera.maharashtra.gov.in</span>
                 <span className="flex items-center gap-1 font-semibold text-emerald-600">
                   <Sparkles size={12} /> 100% Clear Title
                 </span>

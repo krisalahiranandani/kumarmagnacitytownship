@@ -31,7 +31,7 @@
 ## MahaRERA Registrations
 - **Phase 1 (Apartment Towers)**: MahaRERA No. P52100052096
 - **Phase 2 (NA Villa Plots)**: MahaRERA No. P52100054476
-- Verification Portal: https://maharera.mahaonline.gov.in
+- Verification Portal: https://maharera.maharashtra.gov.in/
 
 ## Landmark Amenities & Infrastructure
 - **Podar International School**: Operational K-12 CBSE school located directly inside the township perimeter (zero-commute walk-to-school for children).

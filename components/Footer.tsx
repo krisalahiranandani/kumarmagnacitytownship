@@ -104,7 +104,7 @@ export default function Footer() {
                <ShieldCheck size={20} className="text-accent" />
                <p className="text-[10px] text-accent font-bold uppercase tracking-[0.3em]">MAHARERA REG. NO: P52100052096 | P52100054476</p>
              </div>
-             <p className="text-[9px] text-white/20 uppercase tracking-widest">Available at maharera.mahaonline.gov.in</p>
+             <p className="text-[9px] text-white/20 uppercase tracking-widest">Available at maharera.maharashtra.gov.in</p>
           </div>
           <div className="text-center md:text-right">
              <p className="text-[10px] text-white/30 uppercase tracking-[0.2em] font-light">© 2026 Sovereign Edition. Designed for Generational Wealth.</p>

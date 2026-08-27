@@ -135,7 +135,7 @@ export default function StructuredData({
       "https://www.wikidata.org/wiki/Q5637762",
       "https://www.wikidata.org/wiki/Q7301053",
       "https://en.wikipedia.org/wiki/Hadapsar",
-      "https://maharera.mahaonline.gov.in"
+      "https://maharera.maharashtra.gov.in/"
     ],
     aggregateRating: {
       "@type": "AggregateRating",
