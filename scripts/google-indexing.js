@@ -49,7 +49,14 @@ async function notifyGoogleIndexingApi() {
       'https://kumarmagnacitytownship.com/',
       'https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune',
       'https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-flats-hadapsar-pune-price',
-      'https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price'
+      'https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-concept',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-availability',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-location-advantages-hadapsar-manjari',
+      'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-godrej-rivergreens-manjari',
+      'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-amanora-park-town-hadapsar',
+      'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-shapoorji-joyville-hadapsar',
+      'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-vtp-pegasus-kharadi'
     ];
 
     for (const url of priorityUrls) {
