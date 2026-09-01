@@ -77,37 +77,11 @@ export async function GET() {
       <g:custom_label_2>Contact: +91 77440 09295</g:custom_label_2>
     </item>
 
-    <!-- Item 3: 4 BHK Sky Duplex Penthouse -->
-    <item>
-      <g:id>KM-4BHK-2200</g:id>
-      <g:title>Kumar Magnacity 4 BHK Sky Duplex Penthouse (2200 Sq.Ft)</g:title>
-      <g:description>Ultra-exclusive double-height ceiling sky villas with private terrace gardens and panoramic skyline views atop Kumar Magnacity Towers.</g:description>
-      <g:link>https://kumarmagnacitytownship.com/insights/sky-duplex-penthouses-luxury-residences-pune</g:link>
-      <g:image_link>https://kumarmagnacitytownship.com/assets/hero-bg.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>22500000 INR</g:price>
-      <g:brand>Kumar Properties</g:brand>
-      <g:condition>new</g:condition>
-      <g:google_product_category>Real Estate &gt; Residential Buildings &gt; Apartments</g:google_product_category>
-      <g:mpn>P52100052096</g:mpn>
-      <g:identifier_exists>false</g:identifier_exists>
-      <g:product_type>Apartments &gt; 4 BHK &gt; Sky Duplex</g:product_type>
-      <g:product_highlight>Double-Height Living Room Volumes &amp; Private Sky Terrace</g:product_highlight>
-      <g:shipping>
-        <g:country>IN</g:country>
-        <g:service>On-Site Handover &amp; Possession</g:service>
-        <g:price>0 INR</g:price>
-      </g:shipping>
-      <g:custom_label_0>MahaRERA: P52100052096</g:custom_label_0>
-      <g:custom_label_1>Location: Hadapsar Annexe Manjari Pune</g:custom_label_1>
-      <g:custom_label_2>Contact: +91 77440 09295</g:custom_label_2>
-    </item>
-
-    <!-- Item 4: Sovereign NA Villa Bungalow Plot -->
+    <!-- Item 3: Sovereign NA Villa Bungalow Plot -->
     <item>
       <g:id>KM-PLOT-1700</g:id>
       <g:title>Kumar Magnacity NA Villa Bungalow Plot (1700+ Sq.Ft)</g:title>
-      <g:description>100% Clear Title Land Plot with individual 7/12 extract and G+2 custom villa sanction inside Kumar Magnacity Phase 2, Hadapsar Annexe, Pune.</g:description>
+      <g:description>Clear Title Land Plot with individual 7/12 extract and G+2 custom villa sanction inside Kumar Magnacity Phase 2, Hadapsar Annexe, Manjari Pune.</g:description>
       <g:link>https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-concept</g:link>
       <g:image_link>https://kumarmagnacitytownship.com/assets/masterplan.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
