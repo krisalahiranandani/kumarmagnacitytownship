@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     const origin = request.headers.get("origin") || "";
     const referer = request.headers.get("referer") || "";
     const isLocalhost = origin.includes("localhost") || referer.includes("localhost");
-    const isDomain = origin.includes("kumarmagnacitytownship.com") || referer.includes("kumarmagnacitytownship.com");
+    const isDomain = origin.includes("kumarmagnacitytownship.com") || referer.includes("kumarmagnacitytownship.com") || origin.includes("vercel.app") || referer.includes("vercel.app");
     
     if (process.env.NODE_ENV === "production" && !isDomain && !isLocalhost) {
       console.warn("Blocked potential spam bot from origin:", origin);
