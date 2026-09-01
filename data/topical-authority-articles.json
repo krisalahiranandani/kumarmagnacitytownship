@@ -1,0 +1,66 @@
+{
+  "version": "2026.1",
+  "topic": "Pune East & Kumar Magnacity Topical Authority Matrix",
+  "categories": {
+    "manjari_market": [
+      { "id": 1, "title": "Manjari Real Estate Market Guide 2026", "cluster": "manjari-market", "target_url": "/kumar-magnacity-location-advantages-hadapsar-manjari" },
+      { "id": 2, "title": "Why Are Buyers Looking at Manjari Pune?", "cluster": "manjari-growth", "target_url": "/kumar-magnacity-location-advantages-hadapsar-manjari" },
+      { "id": 3, "title": "Manjari Property Prices & Rate Breakdown", "cluster": "manjari-price", "target_url": "/kumar-magnacity-price" },
+      { "id": 4, "title": "Best Residential Projects in Manjari BK", "cluster": "manjari-projects", "target_url": "/kumar-magnacity-hadapsar" },
+      { "id": 5, "title": "2 BHK Flats in Manjari — Price & Availability Guide", "cluster": "manjari-2bhk", "target_url": "/kumar-magnacity-2bhk-flats-hadapsar-pune-price" },
+      { "id": 6, "title": "3 BHK Apartments in Manjari — Luxury Suites Guide", "cluster": "manjari-3bhk", "target_url": "/kumar-magnacity-3bhk-apartments-manjari-pune-price" },
+      { "id": 7, "title": "Residential Plots in Manjari Pune", "cluster": "manjari-plots", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 8, "title": "NA Plots in Manjari — Legal Documentation & 7/12", "cluster": "manjari-na-plots", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 9, "title": "Bungalow Plots & Custom Villas in Manjari", "cluster": "manjari-bungalow", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 10, "title": "Manjari Property Investment & Growth Corridors", "cluster": "manjari-investment", "target_url": "/kumar-magnacity-investment-plan-pune-east" }
+    ],
+    "pune_east_market": [
+      { "id": 11, "title": "Pune East Real Estate Market Overview 2026", "cluster": "pune-east-overview", "target_url": "/kumar-magnacity-market-data-pune-east" },
+      { "id": 12, "title": "Best Areas to Buy Property in Pune East", "cluster": "pune-east-areas", "target_url": "/kumar-magnacity-market-data-pune-east" },
+      { "id": 13, "title": "Pune East Property Rates & Locality Trends", "cluster": "pune-east-rates", "target_url": "/kumar-magnacity-market-data-pune-east" },
+      { "id": 14, "title": "2 BHK Apartments in Pune East IT Corridor", "cluster": "pune-east-2bhk", "target_url": "/kumar-magnacity-2bhk-flats-hadapsar-pune-price" },
+      { "id": 15, "title": "3 BHK Luxury Homes in Pune East", "cluster": "pune-east-3bhk", "target_url": "/kumar-magnacity-3bhk-apartments-manjari-pune-price" },
+      { "id": 16, "title": "Integrated Mega Townships in Pune East", "cluster": "pune-east-townships", "target_url": "/kumar-magnacity-hadapsar" },
+      { "id": 17, "title": "Pune East Real Estate Investment Opportunities", "cluster": "pune-east-investment", "target_url": "/kumar-magnacity-investment-plan-pune-east" },
+      { "id": 18, "title": "Pune East IT Corridor: EON, WTC & Magarpatta", "cluster": "pune-east-it", "target_url": "/kumar-magnacity-location-advantages-hadapsar-manjari" },
+      { "id": 19, "title": "Upcoming Infrastructure Projects in Pune East", "cluster": "pune-east-infra", "target_url": "/insights/pune-ring-road-impact" },
+      { "id": 20, "title": "PMRDA Ring Road & Transit Connectivity Pune East", "cluster": "pune-east-connectivity", "target_url": "/insights/pune-ring-road-impact" }
+    ],
+    "comparisons": [
+      { "id": 21, "title": "Kharadi vs Manjari Real Estate Comparison", "cluster": "compare-kharadi-manjari", "target_url": "/insights/2bhk-3bhk-4bhk-flats-hadapsar-vs-kharadi-comparison" },
+      { "id": 22, "title": "Hadapsar vs Manjari Livability & Price Matrix", "cluster": "compare-hadapsar-manjari", "target_url": "/compare/kumar-magnacity-vs-godrej-rivergreens-manjari" },
+      { "id": 23, "title": "Manjari vs Wagholi Property Comparison", "cluster": "compare-manjari-wagholi", "target_url": "/kumar-magnacity-market-data-pune-east" },
+      { "id": 24, "title": "Magarpatta vs Manjari Investment Analysis", "cluster": "compare-magarpatta-manjari", "target_url": "/compare/kumar-magnacity-vs-amanora-park-town-hadapsar" },
+      { "id": 25, "title": "Kumar Magnacity vs Godrej Rivergreens Manjari", "cluster": "compare-godrej-kumar", "target_url": "/compare/kumar-magnacity-vs-godrej-rivergreens-manjari" },
+      { "id": 26, "title": "Kumar Magnacity vs Amanora Park Town Hadapsar", "cluster": "compare-amanora-kumar", "target_url": "/compare/kumar-magnacity-vs-amanora-park-town-hadapsar" },
+      { "id": 27, "title": "Kumar Magnacity vs Shapoorji Joyville Hadapsar", "cluster": "compare-shapoorji-kumar", "target_url": "/compare/kumar-magnacity-vs-shapoorji-joyville-hadapsar" },
+      { "id": 28, "title": "Kumar Magnacity vs VTP Pegasus Kharadi", "cluster": "compare-vtp-kumar", "target_url": "/compare/kumar-magnacity-vs-vtp-pegasus-kharadi" },
+      { "id": 29, "title": "Hadapsar Annexe vs Keshav Nagar Property Rates", "cluster": "compare-annexe-keshavnagar", "target_url": "/kumar-magnacity-market-data-pune-east" },
+      { "id": 30, "title": "Standalone Apartments vs 150-Acre Township Living", "cluster": "compare-standalone-township", "target_url": "/kumar-magnacity-hadapsar" }
+    ],
+    "buyer_guides": [
+      { "id": 31, "title": "Complete Homebuyer Guide for Pune Real Estate", "cluster": "guide-homebuyer", "target_url": "/insights/kumar-magnacity-hadapsar-township-complete-buyer-guide" },
+      { "id": 32, "title": "Flat Buying Due Diligence Checklist Pune", "cluster": "guide-checklist", "target_url": "/insights/kumar-magnacity-hadapsar-township-complete-buyer-guide" },
+      { "id": 33, "title": "Documents Required to Buy Residential Property in Maharashtra", "cluster": "guide-documents", "target_url": "/kumar-magnacity-rera" },
+      { "id": 34, "title": "How to Verify MahaRERA Project Registration Online", "cluster": "guide-rera-check", "target_url": "/kumar-magnacity-rera" },
+      { "id": 35, "title": "How to Conduct Property Legal Due Diligence in Pune", "cluster": "guide-due-diligence", "target_url": "/kumar-magnacity-rera" },
+      { "id": 36, "title": "Stamp Duty & Property Registration Charges in Maharashtra 2026", "cluster": "guide-stamp-duty", "target_url": "/kumar-magnacity-price" },
+      { "id": 37, "title": "Home Loan Eligibility & Interest Rates Guide Pune", "cluster": "guide-home-loan", "target_url": "/kumar-magnacity-price" },
+      { "id": 38, "title": "Carpet Area vs Built-Up Area Explained Under MahaRERA", "cluster": "guide-carpet-area", "target_url": "/kumar-magnacity-floor-plan-2bhk-3bhk" },
+      { "id": 39, "title": "Understanding Ready Reckoner Rates in Pune East", "cluster": "guide-ready-reckoner", "target_url": "/kumar-magnacity-price" },
+      { "id": 40, "title": "NRI Property Buying Guide & FEMA Compliance in India", "cluster": "guide-nri-fema", "target_url": "/nri-investment" }
+    ],
+    "plot_guides": [
+      { "id": 41, "title": "NA Plot Buying Guide Maharashtra 2026", "cluster": "guide-na-plot", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 42, "title": "Crucial Documents to Check Before Buying a Residential Plot", "cluster": "guide-plot-docs", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 43, "title": "Residential NA Plot vs High-Rise Apartment Investment", "cluster": "guide-plot-vs-flat", "target_url": "/kumar-magnacity-market-data-pune-east" },
+      { "id": 44, "title": "Sanctioned G+2 Custom Villa Construction Guidelines", "cluster": "guide-villa-construction", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 45, "title": "Plot Registration & Conveyance Deed Process in Pune", "cluster": "guide-plot-registration", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 46, "title": "What is a 7/12 Extract (७/१२ उतारा) and How to Read It?", "cluster": "guide-7-12-extract", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 47, "title": "Property Card vs 7/12 Extract Differences in Maharashtra", "cluster": "guide-property-card", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 48, "title": "Land Title Due Diligence & Search Report Guide", "cluster": "guide-title-search", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 49, "title": "Common Pitfalls When Buying Private Plotted Land", "cluster": "guide-land-pitfalls", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" },
+      { "id": 50, "title": "Collector NA vs PMRDA Sanctioned Residential Land", "cluster": "guide-collector-pmrda", "target_url": "/kumar-magnacity-na-bungalow-plots-concept" }
+    ]
+  }
+}

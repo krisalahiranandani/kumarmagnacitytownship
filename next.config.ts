@@ -102,8 +102,18 @@ const nextConfig: NextConfig = {
       { old: '/kumar-magnacity-amenities', new: '/kumar-magnacity-na-bungalow-plots-amenities' },
       { old: '/kumar-magnacity-floor-plans', new: '/kumar-magnacity-floor-plan-2bhk-3bhk' },
       { old: '/kumar-magnacity-location', new: '/kumar-magnacity-location-advantages-hadapsar-manjari' },
+      { old: '/kumar-magnacity-plots-price', new: '/kumar-magnacity-price' },
+      { old: '/kumar-magnacity-plots-sizes', new: '/kumar-magnacity-na-bungalow-plots-concept' },
+      { old: '/kumar-magnacity-buyer-guide', new: '/insights/kumar-magnacity-hadapsar-township-complete-buyer-guide' },
       { old: '/manjari-real-estate', new: '/kumar-magnacity-location-advantages-hadapsar-manjari' },
+      { old: '/manjari-property-prices', new: '/kumar-magnacity-price' },
+      { old: '/manjari-2-bhk', new: '/kumar-magnacity-2bhk-flats-hadapsar-pune-price' },
+      { old: '/manjari-3-bhk', new: '/kumar-magnacity-3bhk-apartments-manjari-pune-price' },
+      { old: '/manjari-plots', new: '/kumar-magnacity-na-bungalow-plots-concept' },
+      { old: '/manjari-na-plots', new: '/kumar-magnacity-na-bungalow-plots-concept' },
       { old: '/pune-east-real-estate', new: '/kumar-magnacity-market-data-pune-east' },
+      { old: '/kharadi-vs-manjari', new: '/insights/2bhk-3bhk-4bhk-flats-hadapsar-vs-kharadi-comparison' },
+      { old: '/hadapsar-vs-manjari', new: '/compare/kumar-magnacity-vs-godrej-rivergreens-manjari' },
     ];
 
     let redirectsList: Array<{ source: string; destination: string; permanent: boolean }> = [

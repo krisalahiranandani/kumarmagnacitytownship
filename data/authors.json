@@ -1,0 +1,15 @@
+{
+  "research_team": {
+    "name": "Pune East Real Estate Research & Advisory Team",
+    "organization": "Propsmart Realty",
+    "rera_registration": "A52100025458",
+    "official_portal": "https://kumarmagnacitytownship.com",
+    "description": "Specialized real estate market intelligence, MahaRERA compliance auditing, and property valuation advisory team covering Pune East micro-markets (Manjari, Hadapsar Annexe, Kharadi, Magarpatta, and Solapur Road).",
+    "methodology": {
+      "price_verification": "Quarterly aggregation of prevailing developer cost sheets, ready reckoner rates, and recorded registry trends.",
+      "rera_verification": "Direct cross-referencing with the official Maharashtra Real Estate Regulatory Authority portal (maharera.maharashtra.gov.in).",
+      "connectivity_audit": "Standard GPS-calculated arterial driving distances and public transit corridor timelines under typical traffic conditions."
+    },
+    "last_reviewed": "2026-09-01"
+  }
+}
