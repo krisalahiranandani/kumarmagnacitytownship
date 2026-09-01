@@ -113,13 +113,13 @@ export default function MarketInsightsPage() {
              <div className="p-12 rounded-[3rem] bg-gradient-to-br from-primary/30 to-dark border border-primary/30 relative overflow-hidden">
                 <div className="absolute -top-20 -right-20 w-64 h-64 bg-accent/20 blur-[100px] rounded-full" />
                 <div className="relative z-10">
-                   <span className="text-accent font-bold tracking-[0.2em] uppercase text-[10px]">The Sovereign Asset</span>
-                   <h3 className="text-3xl font-heading font-bold text-white mt-4 mb-6">Horizontal Luxury</h3>
-                   <ul className="space-y-4 text-white/90">
-                      <li className="flex items-center gap-3"><span className="text-accent">✓</span> 150-Acre Master Township at Manjari</li>
-                      <li className="flex items-center gap-3"><span className="text-accent">✓</span> Accelerated 14-18% projected CAGR</li>
-                      <li className="flex items-center gap-3"><span className="text-accent">✓</span> 100% individual 7/12 extract ownership</li>
-                   </ul>
+                    <span className="text-accent font-bold tracking-[0.2em] uppercase text-[10px]">The Plotted Advantage</span>
+                    <h3 className="text-3xl font-heading font-bold text-white mt-4 mb-6">Horizontal Luxury</h3>
+                    <ul className="space-y-4 text-white/90">
+                       <li className="flex items-center gap-3"><span className="text-accent">✓</span> Approx. 150-Acre Master Township at Manjari BK</li>
+                       <li className="flex items-center gap-3"><span className="text-accent">✓</span> High appreciation potential driven by Ring Road &amp; River Bridge</li>
+                       <li className="flex items-center gap-3"><span className="text-accent">✓</span> Individual 7/12 extract and MahaRERA Phase 2 registration</li>
+                    </ul>
                 </div>
              </div>
           </div>

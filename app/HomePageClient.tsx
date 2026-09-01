@@ -60,6 +60,8 @@ const WhatsAppCallbackScheduler = dynamic(() => import("@/components/WhatsAppCal
 const GoogleMapsCommandHub = dynamic(() => import("@/components/GoogleMapsCommandHub"), { ssr: false });
 const GoogleReviewsShowcase = dynamic(() => import("@/components/GoogleReviewsShowcase"), { ssr: false });
 const PuneMarketIntelligenceHub = dynamic(() => import("@/components/PuneMarketIntelligenceHub"), { ssr: false });
+const ProjectFactSheet = dynamic(() => import("@/components/ProjectFactSheet"), { ssr: true });
+const SemanticKeywordsCloud = dynamic(() => import("@/components/SemanticKeywordsCloud"), { ssr: true });
 
 export default function Home() {
   const { openModal } = useModal();
@@ -131,9 +133,9 @@ export default function Home() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent-hover italic font-light">New Pune</span>
               </h1>
               
-              <p className="max-w-3xl mx-auto text-base md:text-xl lg:text-2xl text-white/50 font-light leading-relaxed px-4">
-                100+ Acres of integrated township living by <span className="text-white font-medium">Kumar Properties</span> (59 Years Trust). 
-                Featuring Podar International School, G+30 High-Rise 2 & 3 BHK Luxury Apartments, and Premium NA Villa Plots.
+              <p className="max-w-3xl mx-auto text-base md:text-xl lg:text-2xl text-white/70 font-light leading-relaxed px-4">
+                Approx. 150-Acre master-planned integrated township development by <span className="text-white font-medium">Kumar Properties</span> (60-Year Legacy). 
+                Featuring on-campus Podar International School, G+30 High-Rise 2 & 3 BHK Luxury Residences, and Sovereign NA Villa Plots.
               </p>
             </div>
 
@@ -148,16 +150,13 @@ export default function Home() {
               >
                 <span className="relative z-10">EXPLORE MASTERPLAN</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform relative z-10" />
-                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               </motion.button>
-              <motion.button 
-                whileHover={{ scale: 1.05, boxShadow: "0px 20px 60px rgba(255,255,255,0.1)" }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => openModal({ title: "Instant Brochure Access", source: "Hero Secondary" })}
-                className="w-full sm:w-auto bg-white/5 text-white px-12 py-5 rounded-full font-bold uppercase tracking-[0.25em] text-[11px] border border-white/10 backdrop-blur-xl transition-all"
+              <button 
+                onClick={() => openModal({ title: "Schedule VIP Site Visit", source: "Hero Secondary" })}
+                className="w-full sm:w-auto px-10 py-5 rounded-full glass-obsidian border border-accent/40 text-accent font-bold uppercase tracking-[0.25em] text-[11px] hover:bg-accent/10 transition-all cursor-pointer"
               >
-                REQUEST BROCHURE
-              </motion.button>
+                SCHEDULE SITE VISIT
+              </button>
             </div>
           </motion.div>
         </div>
@@ -173,16 +172,19 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 2. THE VISIONARY MASTERPLAN (Comprehensive Detailing) */}
-      <section className="py-24 md:py-48 bg-white relative overflow-hidden">
+      {/* 1.5 VERIFIED PROJECT FACTS & DISCLOSURES TABLE */}
+      <ProjectFactSheet />
+
+      {/* 2. TOWNSHIP MASTER VISION */}
+      <section className="py-24 md:py-40 bg-light relative overflow-hidden">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 md:gap-40 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-12">
               <SectionHeader 
                 align="left"
-                badge="100+ Acre Master Plan"
+                badge="150-Acre Master Plan"
                 title="A Complete Ecosystem <br/> For Modern Life."
-                subtitle="Integrated within Pune East&apos;s most successful residential ecosystem, Kumar Magnacity combines Podar International School, high-street shopping, healthcare, and 40+ lifestyle amenities under one roof."
+                subtitle="Integrated within Pune East's premier residential corridor, Kumar Magnacity combines Podar International School, high-street shopping, healthcare, and 40+ lifestyle amenities under one master plan with separately registered MahaRERA phases."
               />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -198,7 +200,7 @@ export default function Home() {
                       <Building2 size={24} />
                    </div>
                    <h4 className="text-xl font-bold text-primary">Established Heritage</h4>
-                   <p className="text-sm text-primary/60 leading-relaxed">Built on Kumar Props&apos; 59-year legacy of delivering high-appreciation assets.</p>
+                   <p className="text-sm text-primary/60 leading-relaxed">Built on Kumar Properties&apos; 60-year legacy of engineering and structural excellence.</p>
                 </motion.div>
                 <motion.div 
                   initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
@@ -211,8 +213,8 @@ export default function Home() {
                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                       <ShieldCheck size={24} />
                    </div>
-                   <h4 className="text-xl font-bold text-primary">Complete NA Title</h4>
-                   <p className="text-sm text-primary/60 leading-relaxed">Individual 7/12 extracts and full RERA compliance for 100% legal security.</p>
+                   <h4 className="text-xl font-bold text-primary">Title &amp; RERA Sanctions</h4>
+                   <p className="text-sm text-primary/60 leading-relaxed">Individual 7/12 land titles and full phase compliance registered under MahaRERA.</p>
                 </motion.div>
               </div>
 
@@ -406,14 +408,15 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
              <SectionHeader 
                align="left"
-               badge="Market Intelligence"
-               title="Capitalizing on <br/> Pune East Dominance."
-               subtitle="As Kharadi and Magarpatta reach peak saturation, the Manjari-BK corridor is emerging as the chosen ROI hub for horizontal luxury."
+               badge="Market Analysis"
+               title="Pune East Corridor <br/> Real Estate Growth."
+               subtitle="Driven by sustained hiring in Magarpatta, SP Infocity, and Kharadi EON IT Park, the Manjari-Hadapsar corridor offers strong residential and plotted capital growth potential."
                className="max-w-3xl"
              />
-             <div className="flex flex-col items-center md:items-end gap-3 p-8 bg-white rounded-[2.5rem] border border-dark/5 shadow-xl">
-                <div className="text-3xl font-heading font-bold text-primary italic">15-18%</div>
-                <div className="text-[10px] font-bold uppercase tracking-widest text-dark/30">AVG. ANNUAL APPRECIATION</div>
+             <div className="flex flex-col items-center md:items-end gap-2 p-6 bg-white rounded-3xl border border-dark/5 shadow-md">
+                <div className="text-2xl font-heading font-bold text-primary">Indicative Trends</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-500">PUNE EAST CORRIDOR 2026</div>
+                <div className="text-[9px] text-stone-400 font-sans">*Historical locality data; not a guaranteed return</div>
              </div>
           </div>
           <InvestmentMatrix />
@@ -490,38 +493,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. SEMANTIC SEO AUTHORITY BLOCK (Rank #1 Hardening) */}
-      <section className="py-12 bg-white/5 border-t border-primary/10">
-        <div className="container mx-auto max-w-7xl px-6">
-           <h2 className="sr-only">Comprehensive Pune East Real Estate Directory & Micro-Market Data</h2>
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="space-y-3">
-                 <h3 className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Premium Corridors</h3>
-                 <p className="text-xs text-primary/30 leading-relaxed text-justify">
-                   Explore our ultra-luxury 2 BHK and 3 BHK apartments located strategically near the bustling Kharadi IT Park, EON IT Park Phase 2, and Magarpatta City. Ideal for IT professionals seeking zero-commute premium residences near SP Infocity and the World Trade Center Pune.
-                 </p>
-              </div>
-              <div className="space-y-3">
-                 <h3 className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Infrastructure Impact</h3>
-                 <p className="text-xs text-primary/30 leading-relaxed text-justify">
-                   Positioned adjacent to the proposed Pune Ring Road and Solapur Highway, Kumar Magnacity offers unparalleled connectivity to Pune Airport, Pune Railway Station, and the upcoming Hadapsar Gadital metro extensions.
-                 </p>
-              </div>
-              <div className="space-y-3">
-                 <h3 className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Property Typology</h3>
-                 <p className="text-xs text-primary/30 leading-relaxed text-justify">
-                   From expansive NA Villa Bungalow plots in Manjari to high-rise luxury towers in Hadapsar Annexe, our 150-acre township integrates Podar International School, healthcare, and retail into a cohesive urban ecosystem.
-                 </p>
-              </div>
-              <div className="space-y-3">
-                 <h3 className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Surrounding Micro-Markets</h3>
-                 <p className="text-xs text-primary/30 leading-relaxed text-justify">
-                   Serving the elite communities of Viman Nagar, Koregaon Park, Keshav Nagar, Mundhwa, Fatima Nagar, Shewalewadi, Loni Kalbhor, Uruli Kanchan, and the greater Saswad Road industrial corridor with generational wealth assets.
-                 </p>
-              </div>
-           </div>
-        </div>
-      </section>
+      {/* 7. TOWNSHIP RESOURCE DIRECTORY & DEEP-LINKS */}
+      <SemanticKeywordsCloud />
 
       <Footer />
       <SovereignBar />

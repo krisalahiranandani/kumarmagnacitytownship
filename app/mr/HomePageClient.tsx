@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SovereignBar from "@/components/SovereignBar";
+import ProjectFactSheet from "@/components/ProjectFactSheet";
 import { ArrowRight, ShieldCheck, LandPlot, TrendingUp, Gem } from "lucide-react";
 import { useModal } from "@/lib/modal-context";
 import { useEffect } from "react";
@@ -88,6 +89,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Project Fact Sheet */}
+      <ProjectFactSheet isMarathi={true} />
+
       {/* Trust Highlights */}
       <section className="bg-light py-32 border-b">
         <div className="container mx-auto max-w-7xl px-4">
@@ -96,27 +100,27 @@ export default function Home() {
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-primary transition-all">
                 <ShieldCheck size={32} />
               </div>
-              <h3 className="text-2xl font-heading font-bold">१००% लीगल टायटल</h3>
+              <h3 className="text-2xl font-heading font-bold">महारेरा नोंदणीकृत</h3>
               <p className="text-dark/60 leading-relaxed font-light">
-                रेरा नोंदणीकृत (P52100052096) आणि वैयक्तिक ७/१२ उतारा. पिढ्यानपिढ्या टिकणारी पारदर्शकता.
+                फेज १ टॉवर्स: P52100052096 • फेज २ प्लॉट्स: P52100054476 आणि वैयक्तिक ७/१२ उतारा.
               </p>
             </div>
             <div className="group space-y-6 text-center md:text-left">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-primary transition-all">
                 <LandPlot size={32} />
               </div>
-              <h3 className="text-2xl font-heading font-bold">टाउनशिप मास्टर</h3>
+              <h3 className="text-2xl font-heading font-bold">टाउनशिप मास्टर प्लॅन</h3>
               <p className="text-dark/60 leading-relaxed font-light">
-                भव्य क्लबहाऊस, रुंद रस्ते आणि भूमिगत युटिलिटी ग्रिडसह १५०-एकर नियोजित शहरात एकात्मिक.
+                भव्य क्लबहाऊस, पोदार इंटरनॅशनल स्कूल आणि २५+ एकर हिरवळीसह १५०-एकर नियोजित शहरात एकात्मिक.
               </p>
             </div>
             <div className="group space-y-6 text-center md:text-left">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-xl text-primary mb-6 group-hover:bg-primary group-hover:text-primary transition-all">
                 <TrendingUp size={32} />
               </div>
-              <h3 className="text-2xl font-heading font-bold">गुंतवणूक हब</h3>
+              <h3 className="text-2xl font-heading font-bold">कनेक्टिव्हिटी आणि ग्रोथ</h3>
               <p className="text-dark/60 leading-relaxed font-light">
-                पुणे-सोलापूर हायवे आणि आगामी रिंग रोडच्या जंक्शनवर झपाट्याने वाढणारे मूल्य.
+                मगरपट्टा, खराडी IT हब आणि आगामी रिंग रोडच्या जंक्शनवर स्ट्रॅटेजिक लोकेशन.
               </p>
             </div>
           </div>
