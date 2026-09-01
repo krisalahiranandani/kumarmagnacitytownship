@@ -131,11 +131,13 @@ export default function Footer() {
                 </a>
                 
                 <a 
-                  href="mailto:propsmartrealty@gmail.com"
+                  href="https://wa.me/917744009295?text=Hello%20Kumar%20Magnacity%20Team%2C%20I%20would%20like%20more%20information%20on%20pricing%20and%20floor%20plans."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-stone-300 hover:text-accent transition-colors"
                 >
-                  <Mail size={14} className="text-accent shrink-0" />
-                  <span>propsmartrealty@gmail.com</span>
+                  <span className="w-3.5 h-3.5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[9px] font-bold">WA</span>
+                  <span>WhatsApp Priority Desk</span>
                 </a>
 
                 <div className="flex items-start gap-2 pt-1 text-[11px] text-stone-400">
