@@ -52,10 +52,10 @@ export default function NRIInvestmentPage() {
 
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center gap-2 bg-white/5 px-4 py-3 rounded-2xl border border-primary/10">
-                <TrendingUp className="text-accent" size={20} />
+                <ShieldCheck className="text-accent" size={20} />
                 <div className="text-left">
-                    <p className="text-[10px] text-white/50 uppercase">Capital Appreciation</p>
-                    <p className="font-bold">12-15% Est. YoY</p>
+                    <p className="text-[10px] text-white/50 uppercase">MahaRERA Sanctioned</p>
+                    <p className="font-bold">P52100052096 &amp; 54476</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 bg-white/5 px-4 py-3 rounded-2xl border border-primary/10">
