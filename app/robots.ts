@@ -9,8 +9,8 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     rules: [
       {
         userAgent: 'Googlebot',
-        allow: ['/', '/*.js', '/*.css', '/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif', '/*.svg', '/assets/'],
-        disallow: ['/api/', '/admin/', '/_next/'],
+        allow: ['/', '/_next/static/', '/*.js', '/*.css', '/*.jpg', '/*.jpeg', '/*.png', '/*.webp', '/*.avif', '/*.svg', '/assets/'],
+        disallow: ['/api/', '/admin/'],
       },
       {
         userAgent: 'Googlebot-Image',

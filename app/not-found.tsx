@@ -47,18 +47,24 @@ export default function NotFound() {
                     </Link>
                 </div>
                 
-                <div className="pt-12 border-t border-stone-200/60 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="pt-12 border-t border-stone-200/60 grid grid-cols-2 md:grid-cols-6 gap-3 text-center">
+                    <Link href="/kumar-magnacity-hadapsar" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
+                        Township
+                    </Link>
                     <Link href="/kumar-magnacity-2bhk-flats-hadapsar-pune-price" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
                         2 BHK Flats
                     </Link>
                     <Link href="/kumar-magnacity-3bhk-apartments-manjari-pune-price" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
-                        3 BHK Residences
+                        3 BHK Suites
                     </Link>
                     <Link href="/kumar-magnacity-na-bungalow-plots-concept" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
-                        NA Villa Plots
+                        NA Plots
                     </Link>
-                    <Link href="/kumar-magnacity-floor-plan-2bhk-3bhk" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
-                        Floor Plans
+                    <Link href="/kumar-magnacity-price" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
+                        Price List
+                    </Link>
+                    <Link href="/kumar-magnacity-rera" className="text-xs font-bold uppercase tracking-wider text-stone-600 hover:text-accent transition-colors py-2">
+                        MahaRERA
                     </Link>
                 </div>
              </div>
