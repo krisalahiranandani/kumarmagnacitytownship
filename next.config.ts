@@ -94,6 +94,7 @@ const nextConfig: NextConfig = {
       { old: '/privacy-policy', new: '/kumar-magnacity-na-bungalow-plots-privacy-policy' },
       { old: '/thank-you', new: '/kumar-magnacity-na-bungalow-plots-thank-you' },
       { old: '/faq', new: '/kumar-magnacity-na-bungalow-plots-faq' },
+      { old: '/kumar-magnacity', new: '/kumar-magnacity-hadapsar' },
       { old: '/kumar-magnacity-plots', new: '/kumar-magnacity-na-bungalow-plots-concept' },
       { old: '/kumar-magnacity-2-bhk', new: '/kumar-magnacity-2bhk-flats-hadapsar-pune-price' },
       { old: '/kumar-magnacity-3-bhk', new: '/kumar-magnacity-3bhk-apartments-manjari-pune-price' },
@@ -101,6 +102,8 @@ const nextConfig: NextConfig = {
       { old: '/kumar-magnacity-amenities', new: '/kumar-magnacity-na-bungalow-plots-amenities' },
       { old: '/kumar-magnacity-floor-plans', new: '/kumar-magnacity-floor-plan-2bhk-3bhk' },
       { old: '/kumar-magnacity-location', new: '/kumar-magnacity-location-advantages-hadapsar-manjari' },
+      { old: '/manjari-real-estate', new: '/kumar-magnacity-location-advantages-hadapsar-manjari' },
+      { old: '/pune-east-real-estate', new: '/kumar-magnacity-market-data-pune-east' },
     ];
 
     let redirectsList: Array<{ source: string; destination: string; permanent: boolean }> = [
