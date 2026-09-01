@@ -21,7 +21,6 @@ export default function StructuredData({
     name: `Kumar Magnacity Hadapsar - ${locationName}`,
     alternateName: [
       "Kumar Magnacity",
-      "Magnacity by Kumar Realty",
       "Kumar Magnacity Hadapsar",
       "Kumar Magnacity Hadapsar Pune",
       "Kumar Magnacity Hadapsar Annexe",
@@ -39,7 +38,6 @@ export default function StructuredData({
       "Kumar Magnacity Township",
       "Kumar Magnacity Pune",
       "Kumar Magnacity Hadapsar Annexe",
-      "Magnacity by Kumar Realty",
       "Kumar Properties Hadapsar Manjari",
       "2 BHK Kumar Magnacity Hadapsar",
       "2 BHK flats in Hadapsar Manjari ₹72.99L",
@@ -184,8 +182,7 @@ export default function StructuredData({
   const agentSchema: OrganizationSchema = {
     "@type": "RealEstateAgent",
     "@id": "https://kumarmagnacitytownship.com/#agent",
-    name: "Kumar Properties Partner Desk",
-    email: "propsmartrealty@gmail.com",
+    name: "Propsmart Realty - Authorized Marketing Partner",
     url: "https://kumarmagnacitytownship.com",
     telephone: "+917744009295",
     areaServed: [
@@ -200,7 +197,6 @@ export default function StructuredData({
     ],
     sameAs: [
       "https://www.kumarmagnacitytownship.com",
-      "https://www.google.com/maps/place/Magnacity+by+Kumar+Realty/@18.4948931,73.9828496,16z/data=!4m6!3m5!1s0x3bc2c3aeb2585a9d:0xf198bb1c684e72e1!8m2!3d18.4948931!4d73.9828496!16s%2Fg%2F11rzskhbtj",
       "https://maps.google.com/?cid=17409054707127972577",
       "https://www.google.com/search?q=kumar+magnacity",
       "https://www.wikidata.org/wiki/Q5637762",
@@ -228,7 +224,7 @@ export default function StructuredData({
   const googleBusinessProfileSchema: LocalBusinessSchema = {
     "@type": "LocalBusiness",
     "@id": "https://kumarmagnacitytownship.com/#googlebusiness",
-    name: "Magnacity by Kumar Realty",
+    name: "Kumar Magnacity Experience Center",
     alternateName: [
       "Kumar Magnacity",
       "Kumar Magnacity Hadapsar",
