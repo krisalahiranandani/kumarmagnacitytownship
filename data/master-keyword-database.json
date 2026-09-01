@@ -1,0 +1,357 @@
+{
+  "version": "2026.1",
+  "project": "Kumar Magnacity",
+  "developer": "Kumar Properties (Established 1966)",
+  "promoter_marketing_partner": "Propsmart Realty (MahaRERA: A52100025458)",
+  "total_clusters": 30,
+  "clusters": {
+    "cluster_01_brand_core": {
+      "name": "Brand Core & Official Township Entity",
+      "target_canonical_url": "/kumar-magnacity-hadapsar",
+      "parent_silo": "PUNE REAL ESTATE > PUNE EAST > MANJARI > KUMAR MAGNACITY",
+      "priority": "P0",
+      "intent": "Brand + Commercial Investigation",
+      "funnel": "BOFU",
+      "anchor_variations": [
+        "Kumar Magnacity",
+        "Kumar Magnacity Hadapsar Annexe",
+        "Kumar Magnacity 150-Acre Township",
+        "Kumar Magnacity Township Pune"
+      ],
+      "keywords": [
+        "Kumar Magnacity",
+        "Kumar Magnacity Pune",
+        "Kumar Magnacity Manjari",
+        "Kumar Magnacity Manjari Pune",
+        "Kumar Magnacity Hadapsar",
+        "Kumar Magnacity Hadapsar Annexe",
+        "Kumar Magnacity Pune East",
+        "Kumar Magnacity township",
+        "Kumar Magnacity project",
+        "Kumar Magnacity residential project",
+        "Kumar Magnacity property",
+        "Kumar Magnacity apartments",
+        "Kumar Magnacity homes",
+        "Kumar Magnacity residences",
+        "Kumar Magnacity official website",
+        "Kumar Magnacity developer"
+      ]
+    },
+    "cluster_02_residences_2bhk": {
+      "name": "2 BHK Smart Luxury Suites",
+      "target_canonical_url": "/kumar-magnacity-2bhk-flats-hadapsar-pune-price",
+      "parent_silo": "KUMAR MAGNACITY > APARTMENTS > 2 BHK",
+      "priority": "P0",
+      "intent": "Transactional / Commercial Investigation",
+      "funnel": "BOFU",
+      "specs": "757 sq.ft carpet area, starting ₹72.99 Lakhs*, RERA: P52100052096",
+      "anchor_variations": [
+        "Kumar Magnacity 2 BHK",
+        "2 BHK flats in Kumar Magnacity",
+        "Kumar Magnacity 2 BHK price & carpet area",
+        "2 BHK luxury apartments Manjari"
+      ],
+      "keywords": [
+        "Kumar Magnacity 2 BHK",
+        "Kumar Magnacity 2 BHK Pune",
+        "Kumar Magnacity 2 BHK Manjari",
+        "Kumar Magnacity 2 BHK Hadapsar",
+        "Kumar Magnacity 2 BHK flat",
+        "Kumar Magnacity 2 BHK apartment",
+        "Kumar Magnacity 2 BHK price",
+        "Kumar Magnacity 2 BHK cost",
+        "Kumar Magnacity 2 BHK price list",
+        "Kumar Magnacity 2 BHK floor plan",
+        "Kumar Magnacity 2 BHK carpet area",
+        "Kumar Magnacity 2 BHK brochure",
+        "Kumar Magnacity 2 BHK RERA",
+        "Kumar Magnacity 2 BHK booking",
+        "Kumar Magnacity 2 BHK availability",
+        "buy 2 BHK in Kumar Magnacity",
+        "2 BHK flat for sale Kumar Magnacity",
+        "2 BHK apartment in Manjari Kumar Magnacity",
+        "2 BHK near Hadapsar Kumar Magnacity",
+        "2 BHK near Kharadi Kumar Magnacity"
+      ]
+    },
+    "cluster_03_residences_3bhk": {
+      "name": "3 BHK Grand Family Suites",
+      "target_canonical_url": "/kumar-magnacity-3bhk-apartments-manjari-pune-price",
+      "parent_silo": "KUMAR MAGNACITY > APARTMENTS > 3 BHK",
+      "priority": "P0",
+      "intent": "Transactional / High-Ticket Commercial",
+      "funnel": "BOFU",
+      "specs": "1,053 sq.ft carpet area, starting ₹1.05 Crore*, RERA: P52100052096",
+      "anchor_variations": [
+        "Kumar Magnacity 3 BHK",
+        "3 BHK Grand Family Suites",
+        "Kumar Magnacity 3 BHK floor plans",
+        "luxury 3 BHK apartments Hadapsar Annexe"
+      ],
+      "keywords": [
+        "Kumar Magnacity 3 BHK",
+        "Kumar Magnacity 3 BHK Pune",
+        "Kumar Magnacity 3 BHK Manjari",
+        "Kumar Magnacity 3 BHK Hadapsar",
+        "Kumar Magnacity 3 BHK apartment",
+        "Kumar Magnacity 3 BHK flat",
+        "Kumar Magnacity 3 BHK price",
+        "Kumar Magnacity 3 BHK cost",
+        "Kumar Magnacity 3 BHK price list",
+        "Kumar Magnacity 3 BHK floor plan",
+        "Kumar Magnacity 3 BHK carpet area",
+        "Kumar Magnacity 3 BHK brochure",
+        "Kumar Magnacity 3 BHK RERA",
+        "Kumar Magnacity 3 BHK booking",
+        "Kumar Magnacity 3 BHK availability",
+        "buy 3 BHK Kumar Magnacity",
+        "3 BHK for sale Manjari",
+        "3 BHK luxury apartments Manjari",
+        "3 BHK flats near Kharadi"
+      ]
+    },
+    "cluster_04_sovereign_plots": {
+      "name": "Sovereign NA Villa Bungalow Plots",
+      "target_canonical_url": "/kumar-magnacity-na-bungalow-plots-concept",
+      "parent_silo": "KUMAR MAGNACITY > VILLA PLOTS > NA PLOTS",
+      "priority": "P0",
+      "intent": "High-Ticket Land Acquisition",
+      "funnel": "BOFU",
+      "specs": "1,700–3,500+ sq.ft, starting ₹1.49 Crore*, Individual 7/12, RERA: P52100054476",
+      "anchor_variations": [
+        "Kumar Magnacity Plots",
+        "Sovereign NA Villa Plots",
+        "Kumar Magnacity NA bungalow plots",
+        "clear title residential plots Manjari"
+      ],
+      "keywords": [
+        "Kumar Magnacity plots",
+        "Kumar Magnacity NA plots",
+        "Kumar Magnacity villa plots",
+        "Kumar Magnacity bungalow plots",
+        "Kumar Magnacity NA bungalow plots",
+        "Kumar Magnacity residential plots",
+        "Kumar Magnacity plot booking",
+        "Kumar Magnacity plot price",
+        "Kumar Magnacity plot sizes",
+        "Kumar Magnacity plot availability",
+        "Kumar Magnacity plot layout",
+        "Kumar Magnacity plot RERA",
+        "Kumar Magnacity plots Manjari",
+        "Kumar Magnacity plots Pune",
+        "Kumar Magnacity plots Hadapsar",
+        "NA plots Manjari",
+        "NA bungalow plots Manjari",
+        "villa plots Manjari",
+        "bungalow plots Pune East",
+        "residential plots Manjari",
+        "buy Kumar Magnacity plots",
+        "Kumar Magnacity plots for sale"
+      ]
+    },
+    "cluster_05_unified_pricing": {
+      "name": "Unified Price Schedule & Cost Sheet",
+      "target_canonical_url": "/kumar-magnacity-price",
+      "parent_silo": "KUMAR MAGNACITY > PRICING > COST SHEET",
+      "priority": "P0",
+      "intent": "Commercial / Transactional",
+      "funnel": "MOFU-BOFU",
+      "anchor_variations": [
+        "Kumar Magnacity Price List",
+        "Kumar Magnacity Cost Sheet",
+        "2 BHK & 3 BHK Prices",
+        "NA Plot Pricing Schedule"
+      ],
+      "keywords": [
+        "Kumar Magnacity price",
+        "Kumar Magnacity price list",
+        "Kumar Magnacity cost",
+        "Kumar Magnacity rates",
+        "Kumar Magnacity property price",
+        "Kumar Magnacity apartment price",
+        "Kumar Magnacity flat price",
+        "Kumar Magnacity 2 BHK price",
+        "Kumar Magnacity 3 BHK price",
+        "Kumar Magnacity plot price",
+        "Kumar Magnacity booking amount",
+        "Kumar Magnacity payment plan",
+        "Kumar Magnacity maintenance charges",
+        "Kumar Magnacity stamp duty and registration"
+      ]
+    },
+    "cluster_06_maharera_compliance": {
+      "name": "MahaRERA Registration & Legal Due Diligence",
+      "target_canonical_url": "/kumar-magnacity-rera",
+      "parent_silo": "KUMAR MAGNACITY > COMPLIANCE > RERA",
+      "priority": "P1",
+      "intent": "Institutional Verification / Trust",
+      "funnel": "MOFU-BOFU",
+      "specs": "Phase 1 Towers: P52100052096 | Phase 2 Plots: P52100054476",
+      "anchor_variations": [
+        "Kumar Magnacity RERA",
+        "MahaRERA P52100052096",
+        "MahaRERA P52100054476",
+        "MahaRERA verification hub"
+      ],
+      "keywords": [
+        "Kumar Magnacity RERA",
+        "Kumar Magnacity MahaRERA",
+        "Kumar Magnacity RERA number",
+        "Kumar Magnacity RERA registration",
+        "Kumar Magnacity RERA status",
+        "Kumar Magnacity RERA certificate",
+        "Kumar Magnacity RERA details",
+        "Kumar Magnacity project registration",
+        "Kumar Magnacity RERA approved",
+        "Kumar Magnacity RERA possession",
+        "Kumar Magnacity Phase 1 RERA P52100052096",
+        "Kumar Magnacity Phase 2 RERA P52100054476"
+      ]
+    },
+    "cluster_07_floor_plans_layouts": {
+      "name": "Floor Plans, Unit Layouts & Dimensions",
+      "target_canonical_url": "/kumar-magnacity-floor-plan-2bhk-3bhk",
+      "parent_silo": "KUMAR MAGNACITY > ARCHITECTURE > FLOOR PLANS",
+      "priority": "P1",
+      "intent": "Commercial Investigation",
+      "funnel": "MOFU",
+      "anchor_variations": [
+        "Kumar Magnacity floor plans",
+        "2 BHK unit layout",
+        "3 BHK floor plan PDF",
+        "Kumar Magnacity apartment dimensions"
+      ],
+      "keywords": [
+        "Kumar Magnacity floor plan",
+        "Kumar Magnacity 2 BHK floor plan",
+        "Kumar Magnacity 3 BHK floor plan",
+        "Kumar Magnacity apartment floor plan",
+        "Kumar Magnacity flat plan",
+        "Kumar Magnacity layout",
+        "Kumar Magnacity unit plan",
+        "Kumar Magnacity tower plan",
+        "Kumar Magnacity floor plans PDF",
+        "Kumar Magnacity floor plan download"
+      ]
+    },
+    "cluster_08_master_plan_amenities": {
+      "name": "Township Master Plan & ~1 Lakh Sq.Ft Amenities",
+      "target_canonical_url": "/kumar-magnacity-na-bungalow-plots-master-plan",
+      "parent_silo": "KUMAR MAGNACITY > MASTER PLAN > INFRASTRUCTURE",
+      "priority": "P1",
+      "intent": "Research / Visual Verification",
+      "funnel": "MOFU",
+      "anchor_variations": [
+        "Kumar Magnacity master plan",
+        "150-Acre township layout",
+        "Kumar Magnacity clubhouse amenities",
+        "Kumar Magnacity Olympic sports hub"
+      ],
+      "keywords": [
+        "Kumar Magnacity master plan",
+        "Kumar Magnacity township master plan",
+        "Kumar Magnacity master layout",
+        "Kumar Magnacity site plan",
+        "Kumar Magnacity township plan",
+        "Kumar Magnacity layout plan",
+        "Kumar Magnacity development plan",
+        "Kumar Magnacity tower layout",
+        "Kumar Magnacity plot layout",
+        "Kumar Magnacity clubhouse amenities",
+        "Kumar Magnacity sports arena"
+      ]
+    },
+    "cluster_09_location_podar_school": {
+      "name": "Location, Podar School & Transit Connectivity",
+      "target_canonical_url": "/kumar-magnacity-location-advantages-hadapsar-manjari",
+      "parent_silo": "KUMAR MAGNACITY > LOCATION > CONNECTIVITY",
+      "priority": "P1",
+      "intent": "Commercial Investigation",
+      "funnel": "MOFU",
+      "anchor_variations": [
+        "Kumar Magnacity location",
+        "Podar International School on campus",
+        "Hadapsar Annexe connectivity",
+        "distance to Magarpatta & Kharadi"
+      ],
+      "keywords": [
+        "Kumar Magnacity location",
+        "Kumar Magnacity address",
+        "Kumar Magnacity Manjari location",
+        "Kumar Magnacity Pune location",
+        "Kumar Magnacity Hadapsar location",
+        "Kumar Magnacity location map",
+        "Kumar Magnacity Google Maps",
+        "Kumar Magnacity connectivity",
+        "Kumar Magnacity near Kharadi",
+        "Kumar Magnacity near Magarpatta",
+        "Kumar Magnacity near EON IT Park",
+        "Podar International School Kumar Magnacity",
+        "homes near Podar School Manjari"
+      ]
+    },
+    "cluster_10_market_data_pune_east": {
+      "name": "Pune East Real Estate Market Intelligence",
+      "target_canonical_url": "/kumar-magnacity-market-data-pune-east",
+      "parent_silo": "PUNE EAST REAL ESTATE > MARKET INTELLIGENCE",
+      "priority": "P3",
+      "intent": "Topical Authority / Market Research",
+      "funnel": "TOFU",
+      "anchor_variations": [
+        "Pune East real estate market",
+        "Manjari property rates 2026",
+        "Hadapsar Annexe real estate report",
+        "Pune East investment analysis"
+      ],
+      "keywords": [
+        "Pune East real estate",
+        "Pune East property market",
+        "Manjari real estate market",
+        "Hadapsar Annexe property prices",
+        "property rates in Manjari Pune",
+        "Manjari property appreciation",
+        "Pune East growth corridors",
+        "Manjari vs Kharadi property rates",
+        "real estate investment Pune East"
+      ]
+    },
+    "cluster_11_competitor_comparisons": {
+      "name": "Objective Comparative Analyses",
+      "target_canonical_url": "/compare/kumar-magnacity-vs-godrej-rivergreens-manjari",
+      "parent_silo": "PUNE EAST > COMPARISONS",
+      "priority": "P3",
+      "intent": "Decision-Stage Evaluation",
+      "funnel": "MOFU",
+      "keywords": [
+        "Kharadi vs Manjari",
+        "Hadapsar vs Manjari",
+        "Magarpatta vs Manjari",
+        "Kumar Magnacity vs Godrej Rivergreens",
+        "Kumar Magnacity vs Amanora Park Town",
+        "Kumar Magnacity vs Shapoorji Joyville",
+        "Kumar Magnacity vs VTP Pegasus",
+        "affordable alternatives to Kharadi",
+        "best township Pune East"
+      ]
+    },
+    "cluster_12_nri_global_investors": {
+      "name": "NRI Property Investment & FEMA Compliance",
+      "target_canonical_url": "/nri-investment",
+      "parent_silo": "INVESTMENT > NRI DESK",
+      "priority": "P1",
+      "intent": "High-Value Transactional / Regulatory",
+      "funnel": "BOFU",
+      "keywords": [
+        "NRI property Pune",
+        "NRI investment Pune real estate",
+        "NRI property investment Pune",
+        "NRI homes Pune",
+        "NRI property Manjari",
+        "NRI property Hadapsar",
+        "NRI home loan Pune",
+        "FEMA property guidelines India",
+        "repatriation Pune property investment"
+      ]
+    }
+  }
+}
