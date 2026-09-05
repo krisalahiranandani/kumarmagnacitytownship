@@ -5,12 +5,15 @@ export default function GoogleSpeculationRules() {
         source: "list",
         urls: [
           "/kumar-magnacity-hadapsar",
-          "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune",
+          "/kumar-magnacity-price",
+          "/kumar-magnacity-rera",
           "/kumar-magnacity-2bhk-flats-hadapsar-pune-price",
           "/kumar-magnacity-3bhk-apartments-manjari-pune-price",
+          "/kumar-magnacity-na-bungalow-plots-concept",
           "/kumar-magnacity-floor-plan-2bhk-3bhk",
           "/kumar-magnacity-location-advantages-hadapsar-manjari",
-          "/kumar-magnacity-na-bungalow-plots-concept",
+          "/kumar-magnacity-market-data-pune-east",
+          "/nri-investment",
           "/roi-calculator",
           "/insights"
         ],

@@ -1,0 +1,51 @@
+# Cloudflare Edge HTML & Asset Caching Rules
+# Global Security & Cloudflare Edge Acceleration
+
+/*
+  X-Robots-Tag: all, max-image-preview:large, max-snippet:-1, max-video-preview:-1, index, follow
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self)
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  CDN-Cache-Control: public, max-age=31536000, s-maxage=31536000, stale-while-revalidate=86400, stale-if-error=604800
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000, s-maxage=31536000, stale-while-revalidate=86400, stale-if-error=604800
+  Cache-Tag: kumar-magnacity-edge,kumar-magnacity-html,kumar-properties,pune-realestate
+  Link: </assets/hero-bg.webp>; rel=preload; as=image; fetchpriority=high, </assets/elevation.jpg>; rel=preload; as=image, <https://fonts.googleapis.com>; rel=preconnect; crossorigin, <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000, immutable
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000, immutable
+  Cache-Tag: kumar-magnacity-assets
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000, immutable
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000, immutable
+  Cache-Tag: kumar-magnacity-static
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/xml; charset=utf-8
+
+/robots.txt
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: text/plain; charset=utf-8
+
+/google-product-feed.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/xml; charset=utf-8
+
+/image-sitemap.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/xml; charset=utf-8
+
+/video-sitemap.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/xml; charset=utf-8
+
+/news-sitemap.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/xml; charset=utf-8
