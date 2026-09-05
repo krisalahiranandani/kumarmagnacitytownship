@@ -47,16 +47,27 @@ async function notifyGoogleIndexingApi() {
     // but for now, we hit the absolute priority pages.
     const priorityUrls = [
       'https://kumarmagnacitytownship.com/',
-      'https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-hadapsar',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-price',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-rera',
       'https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-flats-hadapsar-pune-price',
       'https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price',
       'https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-concept',
       'https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-availability',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-floor-plan-2bhk-3bhk',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-master-plan',
       'https://kumarmagnacitytownship.com/kumar-magnacity-location-advantages-hadapsar-manjari',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-market-data-pune-east',
+      'https://kumarmagnacitytownship.com/nri-investment',
       'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-godrej-rivergreens-manjari',
       'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-amanora-park-town-hadapsar',
       'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-shapoorji-joyville-hadapsar',
-      'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-vtp-pegasus-kharadi'
+      'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-vtp-pegasus-kharadi',
+      'https://kumarmagnacitytownship.com/insights/kumar-magnacity-hadapsar-township-complete-buyer-guide',
+      'https://kumarmagnacitytownship.com/insights/2bhk-3bhk-4bhk-flats-hadapsar-vs-kharadi-comparison',
+      'https://kumarmagnacitytownship.com/insights/pune-ring-road-impact',
+      'https://kumarmagnacitytownship.com/insights/sky-duplex-penthouses-luxury-residences-pune',
+      'https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune',
     ];
 
     for (const url of priorityUrls) {
