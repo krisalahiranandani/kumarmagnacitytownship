@@ -38,14 +38,62 @@ export interface AccommodationSchema {
   description?: string;
 }
 
+export interface MerchantReturnPolicySchema {
+  "@type": "MerchantReturnPolicy";
+  applicableCountry: string;
+  returnPolicyCategory: string;
+  merchantReturnDays?: number;
+  returnMethod?: string;
+  returnFees?: string;
+  name?: string;
+}
+
+export interface OfferShippingDetailsSchema {
+  "@type": "OfferShippingDetails";
+  shippingRate: {
+    "@type": "MonetaryAmount";
+    value: string | number;
+    currency: string;
+  };
+  shippingDestination: {
+    "@type": "DefinedRegion";
+    addressCountry: string;
+  };
+  deliveryTime: {
+    "@type": "ShippingDeliveryTime";
+    handlingTime: {
+      "@type": "QuantitativeValue";
+      minValue: number;
+      maxValue: number;
+      unitCode: string;
+    };
+    transitTime?: {
+      "@type": "QuantitativeValue";
+      minValue: number;
+      maxValue: number;
+      unitCode: string;
+    };
+  };
+}
+
 export interface OfferSchema {
   "@type": "Offer";
   name: string;
   priceCurrency: "INR" | string;
   price: string | number;
+  validFrom?: string;
   priceValidUntil?: string;
+  itemCondition?: string;
   availability: string;
   url?: string;
+  seller?: {
+    "@type": "Organization" | "RealEstateAgent";
+    name: string;
+    telephone?: string;
+    url?: string;
+  };
+  hasMerchantReturnPolicy?: MerchantReturnPolicySchema;
+  shippingDetails?: OfferShippingDetailsSchema;
   itemOffered?: AccommodationSchema;
 }
 
@@ -58,6 +106,13 @@ export interface RealEstateListingSchema {
   description: string;
   url: string;
   image: string | string[];
+  brand?: {
+    "@type": "Brand";
+    name: string;
+  };
+  sku?: string;
+  mpn?: string;
+  category?: string;
   offers: OfferSchema[];
   geo: GeoCoordinatesSchema;
   hasMap?: string;
