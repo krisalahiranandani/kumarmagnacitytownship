@@ -32,8 +32,8 @@ export default function GoogleRealEstateComplexSchema() {
       "box": "18.491000,73.978000 18.498000,73.987000",
       "description": "150-Acre Kumar Magnacity Township Geographic Footprint"
     },
-    "numberOfBedrooms": [2, 3, 4],
-    "numberOfFullBathrooms": [2, 3, 4],
+    "numberOfBedrooms": [2, 3],
+    "numberOfFullBathrooms": [2, 3],
     "petsAllowed": "Yes",
     "wheelchairAccessible": "Yes",
     "smokingAllowed": "No",
