@@ -22,6 +22,16 @@ export default function QuickSearchDialog() {
   const router = useRouter();
 
   useEffect(() => {
+    // Detect Google Sitelinks Searchbox or OpenSearch incoming query (?q=)
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const initialQ = params.get("q");
+      if (initialQ && initialQ.trim().length > 0) {
+        setQuery(initialQ.trim());
+        setIsOpen(true);
+      }
+    }
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();

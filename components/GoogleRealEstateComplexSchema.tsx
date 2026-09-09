@@ -11,8 +11,8 @@ export default function GoogleRealEstateComplexSchema() {
     "telephone": "+917744009295",
     "image": [
       "https://kumarmagnacitytownship.com/assets/hero-bg.jpg",
-      "https://kumarmagnacitytownship.com/assets/elevation.jpg",
-      "https://kumarmagnacitytownship.com/assets/masterplan.jpg"
+      "https://kumarmagnacitytownship.com/assets/master-layout.jpg",
+      "https://kumarmagnacitytownship.com/assets/amenities.jpg"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -91,7 +91,7 @@ export default function GoogleRealEstateComplexSchema() {
           "value": 757,
           "unitCode": "FTK"
         },
-        "image": "https://kumarmagnacitytownship.com/assets/floor_plan_2bhk.jpg",
+        "image": "https://kumarmagnacitytownship.com/assets/2bhk-floor-plan.jpg",
         "amenityFeature": ["Balcony Sundeck", "Vastu Compliant", "Video Door Phone", "Modular Kitchen Provision"],
         "isPlanForApartment": {
           "@type": "Accommodation",
@@ -108,7 +108,7 @@ export default function GoogleRealEstateComplexSchema() {
           "value": 1053,
           "unitCode": "FTK"
         },
-        "image": "https://kumarmagnacitytownship.com/assets/floor_plan_3bhk.jpg",
+        "image": "https://kumarmagnacitytownship.com/assets/3bhk-floor-plan.jpg",
         "amenityFeature": ["Dual Sundeck Balconies", "Pooja Space", "Master Bedroom Walk-in Closet", "Panoramic Skyline Views"],
         "isPlanForApartment": {
           "@type": "Accommodation",
@@ -123,7 +123,7 @@ export default function GoogleRealEstateComplexSchema() {
           "value": 1700,
           "unitCode": "FTK"
         },
-        "image": "https://kumarmagnacitytownship.com/assets/masterplan.jpg",
+        "image": "https://kumarmagnacitytownship.com/assets/master-layout.jpg",
         "amenityFeature": ["Individual 7/12 Extract", "G+2 Villa Sanction", "Private Garden Boundary", "Township Club Access"],
         "isPlanForApartment": {
           "@type": "Landform",

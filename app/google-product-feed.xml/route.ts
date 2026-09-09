@@ -51,7 +51,7 @@ export async function GET() {
       <g:title>Kumar Magnacity 3 BHK Grand Family Suite (1053 Sq.Ft Carpet)</g:title>
       <g:description>Spacious 3 BHK luxury apartment with dual balconies, master suite with pooja alcove, and 270-degree panoramic views in Kumar Magnacity, Hadapsar Annexe, Pune.</g:description>
       <g:link>https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price</g:link>
-      <g:image_link>https://kumarmagnacitytownship.com/assets/elevation.jpg</g:image_link>
+      <g:image_link>https://kumarmagnacitytownship.com/assets/3bhk-floor-plan.jpg</g:image_link>
       <g:additional_image_link>https://kumarmagnacitytownship.com/assets/hero-bg.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:price>10500000 INR</g:price>
@@ -83,7 +83,7 @@ export async function GET() {
       <g:title>Kumar Magnacity NA Villa Bungalow Plot (1700+ Sq.Ft)</g:title>
       <g:description>Clear Title Land Plot with individual 7/12 extract and G+2 custom villa sanction inside Kumar Magnacity Phase 2, Hadapsar Annexe, Manjari Pune.</g:description>
       <g:link>https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-concept</g:link>
-      <g:image_link>https://kumarmagnacitytownship.com/assets/masterplan.jpg</g:image_link>
+      <g:image_link>https://kumarmagnacitytownship.com/assets/master-layout.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>14900000 INR</g:price>
       <g:brand>Kumar Properties</g:brand>

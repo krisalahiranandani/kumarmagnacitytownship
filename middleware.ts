@@ -54,7 +54,7 @@ export function middleware(request: NextRequest) {
     response.headers.set('Cache-Tag', 'kumar-magnacity-edge,kumar-magnacity-html,kumar-properties,pune-realestate');
     
     // Cloudflare Early Hints & Resource Preloading
-    response.headers.set('Link', '</assets/hero-bg.webp>; rel=preload; as=image; fetchpriority=high, </assets/elevation.jpg>; rel=preload; as=image, <https://fonts.googleapis.com>; rel=preconnect; crossorigin, <https://fonts.gstatic.com>; rel=preconnect; crossorigin');
+    response.headers.set('Link', '</assets/hero-bg.webp>; rel=preload; as=image; fetchpriority=high, </assets/master-layout.jpg>; rel=preload; as=image, <https://fonts.googleapis.com>; rel=preconnect; crossorigin, <https://fonts.gstatic.com>; rel=preconnect; crossorigin');
 
     // Search Engine Optimization & Instant Indexing Tag
     response.headers.set('X-Robots-Tag', 'all, max-image-preview:large, max-snippet:-1, max-video-preview:-1, index, follow');

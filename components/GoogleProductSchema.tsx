@@ -78,8 +78,8 @@ export default function GoogleProductSchema() {
       "name": "Kumar Magnacity 3 BHK Grand Family Suite",
       "description": "1,053 Sq.Ft Carpet 3 BHK Luxury Residences in Kumar Magnacity Hadapsar Manjari Pune. High-rise living with dual balconies and panoramic skyline views.",
       "image": [
-        "https://kumarmagnacitytownship.com/assets/hero-bg.jpg",
-        "https://kumarmagnacitytownship.com/assets/elevation.jpg"
+        "https://kumarmagnacitytownship.com/assets/3bhk-floor-plan.jpg",
+        "https://kumarmagnacitytownship.com/assets/hero-bg.jpg"
       ],
       "brand": {
         "@type": "Brand",
@@ -148,7 +148,7 @@ export default function GoogleProductSchema() {
       "name": "Kumar Magnacity Sovereign NA Villa Bungalow Plots",
       "description": "PMRDA Sanctioned Sovereign NA Residential Villa Plots from 1,700 to 3,500+ Sq.Ft with individual 7/12 extract in Manjari Hadapsar Annexe Pune.",
       "image": [
-        "https://kumarmagnacitytownship.com/assets/masterplan.jpg",
+        "https://kumarmagnacitytownship.com/assets/master-layout.jpg",
         "https://kumarmagnacitytownship.com/assets/hero-bg.jpg"
       ],
       "brand": {

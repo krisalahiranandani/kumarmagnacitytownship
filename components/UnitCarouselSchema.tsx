@@ -39,7 +39,7 @@ export default function UnitCarouselSchema() {
           "@type": "Accommodation",
           "name": "Kumar Magnacity 3 BHK Grand Family Suite",
           "description": "1053 Sq.Ft carpet spacious 3 BHK apartment with dual balconies, master suite with pooja alcove, and skyline views.",
-          "image": "https://kumarmagnacitytownship.com/assets/elevation.jpg",
+          "image": "https://kumarmagnacitytownship.com/assets/3bhk-floor-plan.jpg",
           "url": "https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price",
           "offers": {
             "@type": "Offer",
@@ -64,7 +64,7 @@ export default function UnitCarouselSchema() {
           "@type": "Place",
           "name": "Kumar Magnacity Sovereign NA Villa Bungalow Plots",
           "description": "1,700 to 3,500+ Sq.Ft clear title NA bungalow land with individual 7/12 extract and G+2 villa sanction.",
-          "image": "https://kumarmagnacitytownship.com/assets/masterplan.jpg",
+          "image": "https://kumarmagnacitytownship.com/assets/master-layout.jpg",
           "url": "https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-concept",
           "offers": {
             "@type": "Offer",

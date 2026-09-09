@@ -3,7 +3,7 @@ title: "2 BHK & 3 BHK Flats in Hadapsar Annexe vs Kharadi: 2026 Price, Infrastru
 date: "2026-08-20"
 excerpt: "Compare property prices, carpet area values, rental yields, and township infrastructure between Hadapsar Annexe (Kumar Magnacity) and Kharadi Pune."
 readTime: "6 Min Read"
-thumbnail: "/assets/elevation.jpg"
+thumbnail: "/assets/3bhk-floor-plan.jpg"
 ---
 
 # 2 BHK & 3 BHK Flats in Hadapsar Annexe vs Kharadi: The 2026 Comparison

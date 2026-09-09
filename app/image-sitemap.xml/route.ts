@@ -7,7 +7,7 @@ export async function GET() {
   const images = [
     {
       url: `${baseUrl}/assets/official-logo.png`,
-      title: "Kumar Realty | Magnacity Official Logo",
+      title: "Kumar Properties | Magnacity Official Logo",
       caption: "Official logo of Kumar Magnacity Township by Kumar Properties in Manjari, Hadapsar Annexe, Pune.",
       geo_location: "Pune, Maharashtra, India"
     },
@@ -18,25 +18,25 @@ export async function GET() {
       geo_location: "Pune, Maharashtra, India"
     },
     {
-      url: `${baseUrl}/assets/master_layout.jpg`,
+      url: `${baseUrl}/assets/master-layout.jpg`,
       title: "Kumar Magnacity 150 Acre Master Plan",
       caption: "The official master layout showing the 150-acre township, residential towers, and NA bungalow plots in Manjari, Pune East.",
       geo_location: "Pune, Maharashtra, India"
     },
     {
-      url: `${baseUrl}/assets/floor_plan_2bhk.jpg`,
+      url: `${baseUrl}/assets/2bhk-floor-plan.jpg`,
       title: "Kumar Magnacity 2BHK Premium Floor Plan",
       caption: "Detailed 2BHK floor plan layout starting at 757 sq.ft carpet area at Kumar Magnacity.",
       geo_location: "Pune, Maharashtra, India"
     },
     {
-      url: `${baseUrl}/assets/floor_plan_3bhk.jpg`,
+      url: `${baseUrl}/assets/3bhk-floor-plan.jpg`,
       title: "Kumar Magnacity 3BHK Luxury Floor Plan",
       caption: "Detailed 3BHK floor plan layout starting at 1053 sq.ft carpet area at Kumar Magnacity.",
       geo_location: "Pune, Maharashtra, India"
     },
     {
-      url: `${baseUrl}/assets/township_layout.jpg`,
+      url: `${baseUrl}/assets/township-layout.jpg`,
       title: "Kumar Magnacity NA Bungalow Plots Layout",
       caption: "Sanctioned NA Bungalow Plots layout within the Kumar Magnacity 150-Acre Township in Pune East.",
       geo_location: "Pune, Maharashtra, India"

@@ -22,8 +22,8 @@ export async function GET() {
     },
     {
       pageUrl: `${baseUrl}/kumar-magnacity-floor-plan-2bhk-3bhk`,
-      videoUrl: `${baseUrl}/assets/elevation.jpg`,
-      thumbnailUrl: `${baseUrl}/assets/elevation.jpg`,
+      videoUrl: `${baseUrl}/assets/3bhk-floor-plan.jpg`,
+      thumbnailUrl: `${baseUrl}/assets/3bhk-floor-plan.jpg`,
       title: "Kumar Magnacity 2 BHK & 3 BHK Luxury Sample Flat Walkthrough",
       description: "Step inside the designer sample apartments at Kumar Magnacity Hadapsar. Inspect the 757 sq.ft 2 BHK smart layout and 1053 sq.ft 3 BHK grand suite with dual sundeck balconies.",
       duration: 180, // 3m 00s
@@ -34,8 +34,8 @@ export async function GET() {
     },
     {
       pageUrl: `${baseUrl}/kumar-magnacity-na-bungalow-plots-concept`,
-      videoUrl: `${baseUrl}/assets/masterplan.jpg`,
-      thumbnailUrl: `${baseUrl}/assets/masterplan.jpg`,
+      videoUrl: `${baseUrl}/assets/master-layout.jpg`,
+      thumbnailUrl: `${baseUrl}/assets/master-layout.jpg`,
       title: "Kumar Magnacity Phase 2 Sovereign NA Villa Plots Land Tour",
       description: "Walkthrough of Phase 2 NA Villa Bungalow plots (1,700 to 3,500+ sq.ft) with clear 7/12 extract and G+2 custom villa sanction in Hadapsar Annexe, Pune.",
       duration: 210, // 3m 30s
