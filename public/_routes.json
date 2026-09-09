@@ -6,9 +6,11 @@
   "exclude": [
     "/api/*",
     "/admin/*",
+    "/_astro/*",
     "/_next/static/*",
     "/assets/*",
     "/favicon.ico",
+    "/favicon.png",
     "/manifest.json",
     "/robots.txt",
     "/sitemap.xml",

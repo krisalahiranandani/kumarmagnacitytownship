@@ -54,6 +54,11 @@ const canonicalUrl = canonical.endsWith("/") && canonical !== "https://kumarmagn
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
 
+    {/* Googlebot, Bingbot & AI Crawler Directives */}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
     {/* Multilingual Alternates */}
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
     <link rel="alternate" hreflang="en-IN" href={canonicalUrl} />
