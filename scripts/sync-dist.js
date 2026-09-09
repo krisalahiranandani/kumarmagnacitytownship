@@ -20,13 +20,15 @@ function copyDir(src, dest, ignoreDirs = []) {
 if (fs.existsSync("dist/client")) {
   copyDir("dist/client", "dist", ["client", "server"]);
   copyDir("dist/client", "out");
+  copyDir("dist/client", ".vercel/output/static");
 } else if (fs.existsSync("dist")) {
-  copyDir("dist", "dist/client", ["client", "server", "out"]);
-  copyDir("dist", "out", ["client", "server", "out"]);
+  copyDir("dist", "dist/client", ["client", "server", "out", ".vercel"]);
+  copyDir("dist", "out", ["client", "server", "out", ".vercel"]);
+  copyDir("dist", ".vercel/output/static", ["client", "server", "out", ".vercel"]);
 }
 
 // Ensure key files exist in root, dist, and out
-const keyFiles = ["_headers", "_redirects", "_routes.json", "wrangler.json"];
+const keyFiles = ["_headers", "_redirects", "_routes.json", "wrangler.json", "wrangler.toml"];
 for (const file of keyFiles) {
   const publicPath = path.join("public", file);
   const rootPath = file;
@@ -35,8 +37,9 @@ for (const file of keyFiles) {
     if (fs.existsSync("dist")) fs.copyFileSync(srcFile, path.join("dist", file));
     if (fs.existsSync("dist/client")) fs.copyFileSync(srcFile, path.join("dist/client", file));
     if (fs.existsSync("out")) fs.copyFileSync(srcFile, path.join("out", file));
+    if (fs.existsSync(".vercel/output/static")) fs.copyFileSync(srcFile, path.join(".vercel/output/static", file));
   }
 }
 
-console.log("✓ Successfully synced universal Cloudflare Pages dist, dist/client, and out/ directories.");
+console.log("✓ Successfully synced universal Cloudflare Pages dist, dist/client, out/, and .vercel/output/static directories.");
 
