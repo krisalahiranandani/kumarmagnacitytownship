@@ -2,8 +2,14 @@
 import { usePathname } from 'next/navigation';
 import { BreadcrumbListSchema, BreadcrumbItemSchema } from '@/types/schema';
 
-export default function BreadcrumbSchema() {
-  const pathname = usePathname();
+export default function BreadcrumbSchema({ pathname: propPathname }: { pathname?: string } = {}) {
+  let rawPathname = null;
+  try {
+    rawPathname = usePathname();
+  } catch {
+    rawPathname = null;
+  }
+  const pathname = propPathname || rawPathname || (typeof window !== 'undefined' ? window.location.pathname : '');
   
   if (!pathname || pathname === '/') return null;
 

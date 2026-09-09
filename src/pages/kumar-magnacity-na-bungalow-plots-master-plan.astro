@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/kumar-magnacity-na-bungalow-plots-master-plan/page";
+
+const title = "Kumar Magnacity Master Plan | 150-Acre Township Layout & Zoning Map";
+const description = "Download official Kumar Magnacity 150-acre master plan layout. Interactive zoning map of residential towers, villa plots, civic center, and green parks.";
+const canonical = "https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-master-plan";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

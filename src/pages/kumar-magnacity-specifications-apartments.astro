@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/kumar-magnacity-specifications-apartments/page";
+
+const title = "Kumar Magnacity Specifications | Premium Finishes, Fittings & Structural Standards";
+const description = "Detailed technical specifications of Kumar Magnacity apartments & villas: Aluform construction, vitrified tiles, Kohler/Grohe CP fittings, Schneider automation.";
+const canonical = "https://kumarmagnacitytownship.com/kumar-magnacity-specifications-apartments";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

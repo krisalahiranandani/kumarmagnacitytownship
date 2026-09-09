@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/flats-in-pune-east/page";
+
+const title = "Flats in Pune East | 2 & 3 BHK Apartments in Hadapsar & Manjari | Kumar Magnacity";
+const description = "Looking for premium 2 & 3 BHK flats in Pune East? Explore Kumar Magnacity in Hadapsar Annexe, Manjari. 150-acre township with world-class amenities.";
+const canonical = "https://kumarmagnacitytownship.com/flats-in-pune-east";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

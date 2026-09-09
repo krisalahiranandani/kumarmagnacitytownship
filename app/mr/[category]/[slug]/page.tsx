@@ -17,8 +17,11 @@ export const runtime = 'nodejs';
 
 
 const getPageData = (category: string, slug: string): SEOPageData | null => {
+  const reg = registry as SEORegistry;
   const key = `mr/${category}/${slug}`;
-  return (registry as SEORegistry)[key] || null;
+  const directKey = `mr/${slug}`;
+  const catKey = `mr/${category}`;
+  return reg[key] || reg[directKey] || reg[catKey] || null;
 };
 
 interface PageProps {

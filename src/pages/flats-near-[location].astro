@@ -1,0 +1,21 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import FlatsNearPage, { generateStaticParams, generateMetadata } from "@/app/flats-near-[location]/page";
+
+export async function getStaticPaths() {
+  const paramsList = await generateStaticParams();
+  return paramsList.map((p) => ({
+    params: { location: p.location }
+  }));
+}
+
+const { location } = Astro.params;
+const meta = await generateMetadata({ params: Promise.resolve({ location }) });
+const title = (meta?.title as string) || "Flats Near Location";
+const description = (meta?.description as string) || "Explore flats and plots near top Pune hubs.";
+const canonical = `https://kumarmagnacitytownship.com/flats-near-${location}`;
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <FlatsNearPage params={Promise.resolve({ location })} client:load />
+</RootLayout>

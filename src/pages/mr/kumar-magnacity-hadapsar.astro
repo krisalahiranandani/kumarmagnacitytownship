@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/mr/kumar-magnacity-hadapsar/page";
+
+const title = "कुमार मॅग्नासिटी हडपसर | १५० एकर टाउनशिप, किंमत व लोकेशन पुणे";
+const description = "कुमार मॅग्नासिटी हडपसर टाउनशिपची अधिकृत माहिती. मगरपट्टा व खराडी जवळ १५० एकर परिसरातील लक्झरी फ्लॅट्स आणि एनए प्लॉट्स.";
+const canonical = "https://kumarmagnacitytownship.com/mr/kumar-magnacity-hadapsar";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

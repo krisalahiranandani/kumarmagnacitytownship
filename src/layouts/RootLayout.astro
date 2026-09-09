@@ -1,0 +1,152 @@
+---
+import "../styles/globals.css";
+import GoogleConsent from "@/components/GoogleConsent";
+import GoogleSpeculationRules from "@/components/GoogleSpeculationRules";
+import StructuredData from "@/components/StructuredData";
+import FeaturedSnippetsSchema from "@/components/FeaturedSnippetsSchema";
+import SiteNavigationSchema from "@/components/SiteNavigationSchema";
+import SpeakableSchema from "@/components/SpeakableSchema";
+import HowToBookingSchema from "@/components/HowToBookingSchema";
+import VideoTourSchema from "@/components/VideoTourSchema";
+import OpenHouseEventSchema from "@/components/OpenHouseEventSchema";
+import UnitCarouselSchema from "@/components/UnitCarouselSchema";
+import GoogleProductSchema from "@/components/GoogleProductSchema";
+import GoogleRealEstateComplexSchema from "@/components/GoogleRealEstateComplexSchema";
+import MarketDatasetSchema from "@/components/MarketDatasetSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import NRIGeoBanner from "@/components/NRIGeoBanner";
+import ScrollProgress from "@/components/ScrollProgress";
+import MobileQuickBar from "@/components/MobileQuickBar";
+import QuickSearchDialog from "@/components/QuickSearchDialog";
+import EnquiryModal from "@/components/EnquiryModal";
+import ExitIntentModal from "@/components/ExitIntentModal";
+import AIChatWidget from "@/components/AIChatWidget";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title = "Kumar Magnacity Hadapsar | ₹72.99L* (4.9★) 2 & 3 BHK Flats & Plots Pune",
+  description = "Kumar Magnacity Hadapsar (Hadapsar Annexe, Manjari) — Pune premier 150-acre mega township. 2BHK apartments from ₹72.99L*, 3BHK from ₹1.05Cr* + NA bungalow plots from ₹1.49Cr*. Podar International School on campus, ~1 Lakh sq.ft clubhouse. By Kumar Properties.",
+  canonical = Astro.url.href.split("?")[0],
+  image = "/assets/hero-bg.jpg",
+  type = "website"
+} = Astro.props;
+
+const canonicalUrl = canonical.endsWith("/") && canonical !== "https://kumarmagnacitytownship.com/" 
+  ? canonical.slice(0, -1) 
+  : canonical;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#c9a227" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    {/* Multilingual Alternates */}
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en-IN" href={canonicalUrl} />
+    <link rel="alternate" hreflang="mr-IN" href={`https://kumarmagnacitytownship.com/mr${Astro.url.pathname.replace(/^\/mr/, "")}`} />
+
+    {/* Favicons & App Icons */}
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="180x180" href="/assets/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    {/* Open Graph & Social Cards */}
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Kumar Magnacity Hadapsar" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={image.startsWith("http") ? image : `https://kumarmagnacitytownship.com${image}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image.startsWith("http") ? image : `https://kumarmagnacitytownship.com${image}`} />
+
+    {/* Geo Meta Tags */}
+    <meta name="geo.position" content="18.4948931;73.9828496" />
+    <meta name="geo.region" content="IN-MH" />
+    <meta name="geo.placename" content="Hadapsar Annexe, Manjari, Pune" />
+    <meta name="ICBM" content="18.4948931, 73.9828496" />
+
+    {/* Google Consent Mode V2 */}
+    <GoogleConsent client:load />
+
+    {/* Google Chrome Speculation Rules for instant <50ms edge navigation */}
+    <GoogleSpeculationRules />
+
+    {/* Core Web Vitals Resource Hints */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preload" as="image" href="/assets/hero-bg.webp" fetchpriority="high" />
+
+    {/* Google Font Styles */}
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+    {/* Browser OpenSearch & Protocol Directives */}
+    <link rel="search" type="application/opensearchdescription+xml" title="Kumar Magnacity Search" href="/opensearch.xml" />
+    <link rel="alternate" type="text/plain" href="https://kumarmagnacitytownship.com/llms.txt" title="LLMs Context" />
+    <link rel="alternate" type="text/plain" href="https://kumarmagnacitytownship.com/llms-full.txt" title="Full LLMs Knowledge Graph" />
+
+    {/* Global Structured Data Graphs */}
+    <StructuredData />
+    <FeaturedSnippetsSchema />
+    <SiteNavigationSchema />
+    <SpeakableSchema />
+    <HowToBookingSchema />
+    <VideoTourSchema />
+    <OpenHouseEventSchema />
+    <UnitCarouselSchema />
+    <GoogleProductSchema />
+    <GoogleRealEstateComplexSchema />
+    <MarketDatasetSchema />
+    <BreadcrumbSchema client:idle />
+
+    {/* Google Sitelinks Search Box Schema */}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Kumar Magnacity Hadapsar",
+      "url": "https://kumarmagnacitytownship.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://kumarmagnacitytownship.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+  </head>
+
+  <body class="font-sans antialiased bg-warm-bg text-primary selection:bg-accent/30 selection:text-primary">
+    <NRIGeoBanner client:idle />
+    <ScrollProgress client:idle />
+
+    <slot />
+
+    <QuickSearchDialog client:idle />
+    <EnquiryModal client:load />
+    <ExitIntentModal client:idle />
+    <AIChatWidget client:idle />
+    <WhatsAppWidget client:idle />
+    <MobileQuickBar client:idle />
+  </body>
+</html>

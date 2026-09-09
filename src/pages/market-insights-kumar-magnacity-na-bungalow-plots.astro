@@ -1,0 +1,15 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import SEONodePage from "@/app/[category]/[slug]/page";
+import registry from "@/data/seo-registry.json";
+
+const pageKey = "market-insights-kumar-magnacity-na-bungalow-plots";
+const data = (registry as any)[pageKey] || {};
+const title = data.title || "Market Insights | Kumar Magnacity";
+const description = data.description || "Market insights and trends for Kumar Magnacity.";
+const canonical = "https://kumarmagnacitytownship.com/market-insights-kumar-magnacity-na-bungalow-plots";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <SEONodePage params={Promise.resolve({ category: "market-insights-kumar-magnacity-na-bungalow-plots", slug: "" })} client:load />
+</RootLayout>

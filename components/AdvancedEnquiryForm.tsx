@@ -7,7 +7,6 @@ import { EnquirySchema, type EnquiryData } from "@/types/enquiry";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Loader2, ArrowRight, Download, ShieldCheck, Gem } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation";
 import { useDataLayer } from "@/hooks/useDataLayer";
 import { submitLead } from "@/lib/submitLead";
 import { sendGAEvent } from "@next/third-parties/google";
@@ -32,7 +31,6 @@ export default function AdvancedEnquiryForm({
   plotId,
   compact = false,
 }: AdvancedEnquiryFormProps) {
-  const router = useRouter();
   const { trackLead } = useDataLayer();
   const [step, setStep] = useState(1);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -97,7 +95,9 @@ export default function AdvancedEnquiryForm({
         }
         
         setTimeout(() => {
-          router.push(isMarathi ? "/mr/kumar-magnacity-na-bungalow-plots-thank-you" : "/kumar-magnacity-na-bungalow-plots-thank-you");
+          if (typeof window !== "undefined") {
+            window.location.href = isMarathi ? "/mr/kumar-magnacity-na-bungalow-plots-thank-you" : "/kumar-magnacity-na-bungalow-plots-thank-you";
+          }
         }, 2500);
         return;
       }
@@ -116,11 +116,13 @@ export default function AdvancedEnquiryForm({
           `✉️ Email: ${data.email || "N/A"}\n` +
           `🕐 Visit: ${data.timing}\n` +
           `🎯 Goal: ${data.intent}\n` +
-          `📍 Source: ${data.source_url || window.location.href}\n` +
+          `📍 Source: ${data.source_url || (typeof window !== "undefined" ? window.location.href : "")}\n` +
           `⏰ Time: ${timestamp}`
         );
         
-        window.open(`https://wa.me/917744009295?text=${waMessage}`, "_blank");
+        if (typeof window !== "undefined") {
+          window.open(`https://wa.me/917744009295?text=${waMessage}`, "_blank");
+        }
       } catch (waErr) {
         console.error("WhatsApp backup failed:", waErr);
       }
@@ -139,7 +141,9 @@ export default function AdvancedEnquiryForm({
       }
       
       setTimeout(() => {
-        router.push(isMarathi ? "/mr/kumar-magnacity-na-bungalow-plots-thank-you" : "/kumar-magnacity-na-bungalow-plots-thank-you");
+        if (typeof window !== "undefined") {
+          window.location.href = isMarathi ? "/mr/kumar-magnacity-na-bungalow-plots-thank-you" : "/kumar-magnacity-na-bungalow-plots-thank-you";
+        }
       }, 2500);
     }
   };

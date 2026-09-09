@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/kumar-magnacity-market-data-pune-east/page";
+
+const title = "Kumar Magnacity Market Data & Real Estate Intelligence | Pune East 2026-2030";
+const description = "Pune East real estate price trends, rental yield data, appreciation forecasts, and micro-market analysis comparing Hadapsar, Manjari, and Kharadi.";
+const canonical = "https://kumarmagnacitytownship.com/kumar-magnacity-market-data-pune-east";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

@@ -28,9 +28,10 @@ const MARATHI_NAV_LINKS = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  const pathname = rawPathname || (typeof window !== "undefined" ? window.location.pathname : "");
   const { openModal } = useModal();
-  const isMarathi = pathname.startsWith("/mr");
+  const isMarathi = pathname ? pathname.startsWith("/mr") : false;
   const links = isMarathi ? MARATHI_NAV_LINKS : NAV_LINKS;
 
   useEffect(() => {

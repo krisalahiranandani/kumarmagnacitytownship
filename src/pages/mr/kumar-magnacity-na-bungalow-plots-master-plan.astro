@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/mr/kumar-magnacity-na-bungalow-plots-master-plan/page";
+
+const title = "कुमार मॅग्नासिटी मास्टर प्लॅन | १५० एकर टाउनशिप लेआउट नकाशा";
+const description = "कुमार मॅग्नासिटीचा अधिकृत १५० एकर मास्टर प्लॅन नकाशा. निवासी टॉवर्स व एनए प्लॉट्सचे लेआउट.";
+const canonical = "https://kumarmagnacitytownship.com/mr/kumar-magnacity-na-bungalow-plots-master-plan";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

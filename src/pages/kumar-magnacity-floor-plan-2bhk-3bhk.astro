@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/kumar-magnacity-floor-plan-2bhk-3bhk/page";
+
+const title = "Kumar Magnacity Floor Plan 2 BHK & 3 BHK | Architectural Layouts & Dimensions";
+const description = "Detailed 2 BHK (757 sq.ft) & 3 BHK (1,053 sq.ft) architectural floor plans of Kumar Magnacity Hadapsar Annexe, Manjari Pune. Zero space wastage layouts.";
+const canonical = "https://kumarmagnacitytownship.com/kumar-magnacity-floor-plan-2bhk-3bhk";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

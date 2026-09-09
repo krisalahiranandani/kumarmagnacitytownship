@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useModal } from "@/lib/modal-context";
-import { useRouter } from "next/navigation";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { useDataLayer } from "@/hooks/useDataLayer";
 import { submitLead } from "@/lib/submitLead";
@@ -25,7 +24,6 @@ export default function EnquiryForm({
   buttonText = "Get Details",
   isModal = false,
 }: EnquiryFormProps) {
-  const router = useRouter();
   const { modalData } = useModal();
   const { trackLead } = useDataLayer();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -95,7 +93,9 @@ export default function EnquiryForm({
           });
         } catch(e) {}
         setTimeout(() => {
-          router.push(isMarathi ? "/mr/kumar-magnacity-na-bungalow-plots-thank-you" : "/kumar-magnacity-na-bungalow-plots-thank-you");
+          if (typeof window !== "undefined") {
+            window.location.href = isMarathi ? "/mr/kumar-magnacity-na-bungalow-plots-thank-you" : "/kumar-magnacity-na-bungalow-plots-thank-you";
+          }
         }, 2000);
         return;
       }
@@ -115,11 +115,13 @@ export default function EnquiryForm({
           `✉️ Email: ${email || "N/A"}\n` +
           `🕐 Visit: ${timing}\n` +
           `🎯 Goal: ${intent}\n` +
-          `📍 Source: ${sourceUrl || window.location.href}\n` +
+          `📍 Source: ${sourceUrl || (typeof window !== "undefined" ? window.location.href : "")}\n` +
           `⏰ Time: ${timestamp}`
         );
         
-        window.open(`https://wa.me/917744009295?text=${waMessage}`, "_blank");
+        if (typeof window !== "undefined") {
+          window.open(`https://wa.me/917744009295?text=${waMessage}`, "_blank");
+        }
       } catch (waErr) {
         console.error("WhatsApp backup also failed:", waErr);
       }
@@ -135,7 +137,9 @@ export default function EnquiryForm({
         });
       } catch(e) {}
       setTimeout(() => {
-        router.push(isMarathi ? "/mr/kumar-magnacity-na-bungalow-plots-thank-you" : "/kumar-magnacity-na-bungalow-plots-thank-you");
+        if (typeof window !== "undefined") {
+          window.location.href = isMarathi ? "/mr/kumar-magnacity-na-bungalow-plots-thank-you" : "/kumar-magnacity-na-bungalow-plots-thank-you";
+        }
       }, 2000);
     }
   };

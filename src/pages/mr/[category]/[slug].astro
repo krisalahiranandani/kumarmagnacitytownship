@@ -1,0 +1,27 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import MarathiSEONodePage, { generateMetadata } from "@/app/mr/[category]/[slug]/page";
+import registry from "@/data/seo-registry.json";
+
+export async function getStaticPaths() {
+  const mrKeys = Object.keys(registry).filter(k => k.startsWith("mr/") && k.split("/").length === 3);
+  return mrKeys.map((key) => {
+    const parts = key.split("/");
+    const category = parts[1];
+    const slug = parts[2];
+    return {
+      params: { category, slug }
+    };
+  });
+}
+
+const { category, slug } = Astro.params;
+const meta = await generateMetadata({ params: Promise.resolve({ category: category!, slug: slug! }) });
+const title = (meta?.title as string) || "कुमार मॅग्नासिटी";
+const description = (meta?.description as string) || "कुमार मॅग्नासिटी हडपसर मांजरी पुणे.";
+const canonical = `https://kumarmagnacitytownship.com/mr/${category}/${slug}`;
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <MarathiSEONodePage params={Promise.resolve({ category: category!, slug: slug! })} client:load />
+</RootLayout>

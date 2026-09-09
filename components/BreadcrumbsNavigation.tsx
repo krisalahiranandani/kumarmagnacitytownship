@@ -23,7 +23,13 @@ const ROUTE_LABELS: Record<string, string> = {
 };
 
 export default function BreadcrumbsNavigation({ className }: { className?: string }) {
-  const pathname = usePathname();
+  let rawPathname = null;
+  try {
+    rawPathname = usePathname();
+  } catch {
+    rawPathname = null;
+  }
+  const pathname = rawPathname || (typeof window !== "undefined" ? window.location.pathname : "");
 
   // Do not render breadcrumbs on homepage
   if (!pathname || pathname === "/" || pathname === "/mr") {

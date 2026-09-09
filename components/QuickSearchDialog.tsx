@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { Search, X, Building2, MapPin, Calculator, FileText, Phone, ShieldCheck, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -19,7 +18,6 @@ const QUICK_ACTIONS = [
 export default function QuickSearchDialog() {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const router = useRouter();
 
   useEffect(() => {
     // Detect Google Sitelinks Searchbox or OpenSearch incoming query (?q=)
@@ -52,11 +50,7 @@ export default function QuickSearchDialog() {
 
   const handleSelect = (path: string) => {
     setIsOpen(false);
-    if (path.startsWith("tel:")) {
-      window.location.href = path;
-    } else {
-      router.push(path);
-    }
+    window.location.href = path;
   };
 
   return (

@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/mr/HomePageClient";
+
+const title = "कुमार मॅग्नासिटी हडपसर | २ आणि ३ बीएचके फ्लॅट्स व एनए प्लॉट्स पुणे";
+const description = "कुमार मॅग्नासिटी हडपसर (मांजरी, पुणे). १५० एकर भव्य टाउनशिप, २ बीएचके ₹७२.९९ लाख*, ३ बीएचके ₹१.०५ कोटी*, एनए व्हिला प्लॉट्स ₹१.४९ कोटी*.";
+const canonical = "https://kumarmagnacitytownship.com/mr";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

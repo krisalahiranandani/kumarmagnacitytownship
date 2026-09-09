@@ -1,18 +1,35 @@
-import { headers } from 'next/headers';
-import Link from 'next/link';
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { Globe, ArrowRight } from 'lucide-react';
 
-export default async function NRIGeoBanner() {
-  const headersList = await headers();
-  const geo = headersList.get('x-user-geo');
+interface NRIGeoBannerProps {
+  country?: string;
+}
 
-  // If running locally or no geo detected, fallback to UNKNOWN
-  const country = geo || 'UNKNOWN';
+export default function NRIGeoBanner({ country }: NRIGeoBannerProps) {
+  const [detectedCountry, setDetectedCountry] = useState<string>(country || "UNKNOWN");
+
+  useEffect(() => {
+    if (!country && typeof window !== "undefined") {
+      // Check for timezone / locale clues if geo header is not directly available
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      if (timeZone.includes("Dubai") || timeZone.includes("Asia/Muscat")) {
+        setDetectedCountry("AE");
+      } else if (timeZone.includes("New_York") || timeZone.includes("Los_Angeles") || timeZone.includes("Chicago")) {
+        setDetectedCountry("US");
+      } else if (timeZone.includes("London")) {
+        setDetectedCountry("GB");
+      } else if (timeZone.includes("Singapore")) {
+        setDetectedCountry("SG");
+      }
+    }
+  }, [country]);
 
   // Target high-value foreign countries
   const nriCountries = ['AE', 'US', 'GB', 'SG', 'QA', 'SA', 'AU'];
   
-  if (!nriCountries.includes(country)) {
+  if (!nriCountries.includes(detectedCountry)) {
     return null; // Do not show for domestic traffic
   }
 
@@ -28,12 +45,12 @@ export default async function NRIGeoBanner() {
         <div className="text-sm font-medium">
           Special pre-launch allocation and structured payment plans available for investors from your region.
         </div>
-        <Link 
+        <a 
           href="/nri-investment" 
           className="inline-flex items-center gap-1 text-[11px] font-bold bg-light text-primary px-3 py-1 rounded-full hover:bg-white transition-colors"
         >
           VIEW NRI OFFERS <ArrowRight size={12} />
-        </Link>
+        </a>
       </div>
     </div>
   );

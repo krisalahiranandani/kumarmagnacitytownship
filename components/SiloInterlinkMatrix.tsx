@@ -103,14 +103,22 @@ const SILO_MAP = {
 };
 
 export default function SiloInterlinkMatrix() {
-  const pathname = usePathname();
+  let rawPathname = null;
+  try {
+    rawPathname = usePathname();
+  } catch {
+    rawPathname = null;
+  }
+  const pathname = rawPathname || (typeof window !== "undefined" ? window.location.pathname : "") || "";
   
   // Determine which silo we are in based on URL triggers
   let activeSilo = null;
-  for (const [key, siloData] of Object.entries(SILO_MAP)) {
-    if (siloData.triggers.some(trigger => pathname.includes(trigger))) {
-      activeSilo = siloData;
-      break;
+  if (pathname) {
+    for (const [key, siloData] of Object.entries(SILO_MAP)) {
+      if (siloData.triggers.some(trigger => pathname.includes(trigger))) {
+        activeSilo = siloData;
+        break;
+      }
     }
   }
 

@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/mr/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune/page";
+
+const title = "कुमार मॅग्नासिटी २ व ३ बीएचके अपार्टमेंट्स मांजरी पुणे | लक्झरी टॉवर्स";
+const description = "कुमार मॅग्नासिटी मांजरी हडपसर मधील २ व ३ बीएचके लक्झरी अपार्टमेंट्स. सर्व आधुनिक सोयीसुविधांसह भव्य जीवनशैली.";
+const canonical = "https://kumarmagnacitytownship.com/mr/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

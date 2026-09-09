@@ -16,8 +16,9 @@ import { SEOPageData, SEORegistry } from "@/types/seo";
 export const runtime = 'nodejs';
 
 const getPageData = (category: string, slug: string): SEOPageData | null => {
+  const reg = registry as SEORegistry;
   const key = `${category}/${slug}`;
-  return (registry as SEORegistry)[key] || null;
+  return reg[key] || reg[slug] || reg[category] || null;
 };
 
 interface PageProps {

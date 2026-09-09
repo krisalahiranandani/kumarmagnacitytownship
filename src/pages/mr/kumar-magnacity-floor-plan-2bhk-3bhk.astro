@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/mr/kumar-magnacity-floor-plan-2bhk-3bhk/page";
+
+const title = "कुमार मॅग्नासिटी फ्लोअर प्लॅन्स २ व ३ बीएचके | वास्तु-सुसंगत लेआउट्स";
+const description = "कुमार मॅग्नासिटी २ व ३ बीएचके फ्लॅट्सचे वास्तु-सुसंगत फ्लोअर प्लॅन्स आणि परिमाणे डाउनलोड करा.";
+const canonical = "https://kumarmagnacitytownship.com/mr/kumar-magnacity-floor-plan-2bhk-3bhk";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

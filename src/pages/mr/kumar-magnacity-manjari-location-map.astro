@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/mr/kumar-magnacity-manjari-location-map/page";
+
+const title = "कुमार मॅग्नासिटी लोकेशन नकाशा व मार्ग | मांजरी हडपसर पुणे";
+const description = "कुमार मॅग्नासिटी टाउनशिपचा गुगल मॅप व मार्गदर्शिका. आयटी पार्क, शाळा व हॉस्पिटल्सची जवळीक.";
+const canonical = "https://kumarmagnacitytownship.com/mr/kumar-magnacity-manjari-location-map";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

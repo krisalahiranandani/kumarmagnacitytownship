@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Send, CheckCircle2, AlertCircle, Loader2, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useDataLayer } from "@/hooks/useDataLayer";
@@ -22,7 +21,6 @@ export default function NRIEnquiryForm({
   subtitle = "Discuss FEMA compliance, ROI, and dedicated NRI inventory with our global relationship managers.",
   buttonText = "Book Virtual Session",
 }: NRIEnquiryFormProps) {
-  const router = useRouter();
   const { trackLead } = useDataLayer();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -81,7 +79,9 @@ export default function NRIEnquiryForm({
           });
         } catch(e) {}
         setTimeout(() => {
-          router.push("/kumar-magnacity-na-bungalow-plots-thank-you");
+          if (typeof window !== "undefined") {
+            window.location.href = "/kumar-magnacity-na-bungalow-plots-thank-you";
+          }
         }, 3000);
         return;
       }
@@ -98,9 +98,11 @@ export default function NRIEnquiryForm({
           `📱 Phone: ${fullPhone}\n` +
           `✉️ Email: ${email}\n` +
           `⏰ Timezone: ${timezone}\n` +
-          `📍 Source: ${sourceUrl || window.location.href}\n`
+          `📍 Source: ${sourceUrl || (typeof window !== "undefined" ? window.location.href : "")}\n`
         );
-        window.open(`https://wa.me/917744009295?text=${waMessage}`, "_blank");
+        if (typeof window !== "undefined") {
+          window.open(`https://wa.me/917744009295?text=${waMessage}`, "_blank");
+        }
       } catch (waErr) {
         console.error("WhatsApp backup also failed:", waErr);
       }
@@ -115,7 +117,9 @@ export default function NRIEnquiryForm({
         });
       } catch(e) {}
       setTimeout(() => {
-        router.push("/kumar-magnacity-na-bungalow-plots-thank-you");
+        if (typeof window !== "undefined") {
+          window.location.href = "/kumar-magnacity-na-bungalow-plots-thank-you";
+        }
       }, 3000);
     }
   };

@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/luxury-apartments-pune/page";
+
+const title = "Luxury Apartments in Pune | 2 & 3 BHK High-Rise Residences | Kumar Magnacity";
+const description = "Experience premium luxury living in Pune at Kumar Magnacity. G+30 towers, grand sundecks, ~1 Lakh sq.ft clubhouse, and sprawling green landscapes.";
+const canonical = "https://kumarmagnacitytownship.com/luxury-apartments-pune";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

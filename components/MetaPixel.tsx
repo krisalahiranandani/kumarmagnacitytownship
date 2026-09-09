@@ -5,15 +5,12 @@ import Script from "next/script";
 import { useEffect } from "react";
 
 export default function MetaPixel() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
   useEffect(() => {
     // Only trigger if fbq is fully loaded
-    if (typeof window !== "undefined" && window.fbq) {
-      window.fbq("track", "PageView");
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "PageView");
     }
-  }, [pathname, searchParams]);
+  }, []);
 
   const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 

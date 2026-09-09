@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/roi-calculator/page";
+
+const title = "Kumar Magnacity ROI & EMI Calculator | Interactive Financial Estimator";
+const description = "Calculate expected capital appreciation, rental yield, and monthly EMI for 2 BHK, 3 BHK flats and NA bungalow plots at Kumar Magnacity Pune East.";
+const canonical = "https://kumarmagnacitytownship.com/roi-calculator";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

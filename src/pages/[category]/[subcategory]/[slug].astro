@@ -1,0 +1,27 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import SEONodePage from "@/app/[category]/[slug]/page";
+import registry from "@/data/seo-registry.json";
+
+export async function getStaticPaths() {
+  const enKeys = Object.keys(registry).filter(k => !k.startsWith("mr/") && k.split("/").length === 3);
+  return enKeys.map((key) => {
+    const [category, subcategory, slug] = key.split("/");
+    return {
+      params: { category, subcategory, slug }
+    };
+  });
+}
+
+const { category, subcategory, slug } = Astro.params;
+const fullSlug = `${subcategory}/${slug}`;
+const pageKey = `${category}/${fullSlug}`;
+const data = (registry as any)[pageKey] || {};
+const title = data.title || "Kumar Magnacity Real Estate";
+const description = data.description || "Explore Kumar Magnacity Hadapsar Annexe, Manjari Pune.";
+const canonical = `https://kumarmagnacitytownship.com/${category}/${subcategory}/${slug}`;
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <SEONodePage params={Promise.resolve({ category: category!, slug: fullSlug })} client:load />
+</RootLayout>

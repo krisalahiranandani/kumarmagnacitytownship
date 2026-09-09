@@ -8,7 +8,13 @@ import { CheckCircle2, ArrowRight, MessageSquareCode } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ThankYou() {
-  const pathname = usePathname();
+  let rawPathname = null;
+  try {
+    rawPathname = usePathname();
+  } catch {
+    rawPathname = null;
+  }
+  const pathname = rawPathname || (typeof window !== "undefined" ? window.location.pathname : "") || "";
   const isMarathi = pathname.includes("/mr");
 
   const waBase = "https://wa.me/917744009295";

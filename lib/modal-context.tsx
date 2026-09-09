@@ -2,6 +2,9 @@
 
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
+import { $modalState, openModal as openStoreModal, closeModal as closeStoreModal } from "./modal-store";
+import { useStore } from "@nanostores/react";
+
 interface ModalContextType {
   isOpen: boolean;
   modalData: {
@@ -28,10 +31,12 @@ export function ModalProvider({ children }: { children: ReactNode }) {
   const openModal = (data = {}) => {
     setModalData(data);
     setIsOpen(true);
+    openStoreModal(data);
   };
 
   const closeModal = () => {
     setIsOpen(false);
+    closeStoreModal();
   };
 
   return (
@@ -43,8 +48,17 @@ export function ModalProvider({ children }: { children: ReactNode }) {
 
 export function useModal() {
   const context = useContext(ModalContext);
-  if (context === undefined) {
-    throw new Error("useModal must be used within a ModalProvider");
+  const storeState = useStore($modalState);
+
+  if (context !== undefined) {
+    return context;
   }
-  return context;
+
+  // Fallback to Nano Store for standalone Astro React islands
+  return {
+    isOpen: storeState.isOpen,
+    modalData: storeState.modalData,
+    openModal: openStoreModal,
+    closeModal: closeStoreModal,
+  };
 }

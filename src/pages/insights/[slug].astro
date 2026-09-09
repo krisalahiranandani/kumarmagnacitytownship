@@ -1,0 +1,21 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import InsightDetailPage, { generateStaticParams, generateMetadata } from "@/app/insights/[slug]/page";
+
+export async function getStaticPaths() {
+  const paramsList = await generateStaticParams();
+  return paramsList.map((p) => ({
+    params: { slug: p.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const meta = await generateMetadata({ params: Promise.resolve({ slug }) });
+const title = (meta?.title as string) || "Kumar Magnacity Insights";
+const description = (meta?.description as string) || "Real estate analysis and insights for Pune East.";
+const canonical = `https://kumarmagnacitytownship.com/insights/${slug}`;
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <InsightDetailPage params={Promise.resolve({ slug })} client:load />
+</RootLayout>

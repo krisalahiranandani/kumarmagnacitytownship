@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/mr/kumar-magnacity-na-bungalow-plots-amenities/page";
+
+const title = "कुमार मॅग्नासिटी सोयीसुविधा | १ लाख चौ.फूट क्लबहाऊस व क्रीडा संकुल";
+const description = "कुमार मॅग्नासिटीमधील जागतिक दर्जाच्या सोयीसुविधा: ऑलिम्पिक स्विमिंग पूल, टेनिस कोर्ट, जॉगिंग ट्रॅक.";
+const canonical = "https://kumarmagnacitytownship.com/mr/kumar-magnacity-na-bungalow-plots-amenities";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

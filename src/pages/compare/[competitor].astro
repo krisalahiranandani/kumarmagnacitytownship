@@ -1,0 +1,21 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import ComparePage, { generateStaticParams, generateMetadata } from "@/app/compare/[competitor]/page";
+
+export async function getStaticPaths() {
+  const paramsList = await generateStaticParams();
+  return paramsList.map((p) => ({
+    params: { competitor: p.competitor }
+  }));
+}
+
+const { competitor } = Astro.params;
+const meta = await generateMetadata({ params: Promise.resolve({ competitor }) });
+const title = (meta?.title as string) || "Kumar Magnacity Comparison";
+const description = (meta?.description as string) || "Compare Kumar Magnacity with top Pune developments.";
+const canonical = `https://kumarmagnacitytownship.com/compare/${competitor}`;
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <ComparePage params={Promise.resolve({ competitor })} client:load />
+</RootLayout>

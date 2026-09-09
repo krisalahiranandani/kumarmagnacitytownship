@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/investment-pune-east/page";
+
+const title = "Real Estate Investment in Pune East | High Growth Corridors | Kumar Magnacity";
+const description = "Discover top real estate investment opportunities in Pune East. High-yield apartments and NA bungalow plots in the high-growth Hadapsar-Manjari corridor.";
+const canonical = "https://kumarmagnacitytownship.com/investment-pune-east";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>

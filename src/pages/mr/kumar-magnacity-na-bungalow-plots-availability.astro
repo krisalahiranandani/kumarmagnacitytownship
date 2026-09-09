@@ -1,0 +1,12 @@
+---
+import RootLayout from "@/src/layouts/RootLayout.astro";
+import PageComponent from "@/app/mr/kumar-magnacity-na-bungalow-plots-availability/page";
+
+const title = "कुमार मॅग्नासिटी एनए व्हिला प्लॉट्स उपलब्धता व किंमत सूची";
+const description = "कुमार मॅग्नासिटी फेज २ सोव्हेरीन प्लॉट्सची थेट उपलब्धता. स्वतंत्र ७/१२ उतारा असलेले एनए प्लॉट्स.";
+const canonical = "https://kumarmagnacitytownship.com/mr/kumar-magnacity-na-bungalow-plots-availability";
+---
+
+<RootLayout title={title} description={description} canonical={canonical}>
+  <PageComponent client:load />
+</RootLayout>
