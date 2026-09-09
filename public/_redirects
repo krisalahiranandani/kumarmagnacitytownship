@@ -6,8 +6,6 @@
 /default.html / 301
 /index / 301
 
-# Sitemaps
-/sitemap.xml /sitemap/0.xml 301
 
 # Core Legacy Path Canonical 301 Redirects
 /availability /kumar-magnacity-na-bungalow-plots-availability 301
