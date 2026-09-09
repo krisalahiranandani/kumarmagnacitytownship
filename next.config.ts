@@ -118,11 +118,6 @@ const nextConfig: NextConfig = {
 
     let redirectsList: Array<{ source: string; destination: string; permanent: boolean }> = [
       {
-        source: '/sitemap.xml',
-        destination: '/sitemap/0.xml',
-        permanent: true,
-      },
-      {
         source: '/index.html',
         destination: '/',
         permanent: true,

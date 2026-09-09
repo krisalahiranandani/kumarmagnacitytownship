@@ -7,6 +7,7 @@ import path from "path";
 export default defineConfig({
   site: "https://kumarmagnacitytownship.com",
   output: "static",
+  trailingSlash: "ignore",
   integrations: [
     react(),
   ],
