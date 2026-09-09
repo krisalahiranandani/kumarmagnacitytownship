@@ -7,9 +7,6 @@ import path from "path";
 export default defineConfig({
   site: "https://kumarmagnacitytownship.com",
   output: "static",
-  adapter: cloudflare({
-    imageService: "cloudflare",
-  }),
   integrations: [
     react(),
   ],
@@ -18,6 +15,9 @@ export default defineConfig({
     resolve: {
       alias: {
         "@": path.resolve(process.cwd(), "./"),
+        "next/link": path.resolve(process.cwd(), "./lib/shims/link.tsx"),
+        "next/image": path.resolve(process.cwd(), "./lib/shims/image.tsx"),
+        "next/navigation": path.resolve(process.cwd(), "./lib/shims/navigation.ts"),
       },
     },
   },

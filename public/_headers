@@ -62,6 +62,12 @@
   Cloudflare-CDN-Cache-Control: public, max-age=31536000, immutable
   Cache-Tag: kumar-magnacity-assets
 
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000, immutable
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000, immutable
+  Cache-Tag: kumar-magnacity-astro
+
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
   CDN-Cache-Control: public, max-age=31536000, immutable

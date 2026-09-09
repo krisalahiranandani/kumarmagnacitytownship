@@ -4,15 +4,15 @@
     "/*"
   ],
   "exclude": [
-    "/api/*",
-    "/admin/*",
     "/_astro/*",
-    "/_next/static/*",
+    "/_next/*",
     "/assets/*",
     "/favicon.ico",
-    "/favicon.png",
+    "/apple-touch-icon.png",
+    "/icon.png",
     "/manifest.json",
     "/robots.txt",
+    "/ads.txt",
     "/sitemap.xml",
     "/google-product-feed.xml",
     "/image-sitemap.xml",
@@ -23,6 +23,8 @@
     "/llms-faq.json",
     "/openapi.json",
     "/opensearch.xml",
-    "/f8a3b8d91c7e462a8019cf3994a5e2f1.txt"
+    "/inventory.json",
+    "/f8a3b8d91c7e462a8019cf3994a5e2f1.txt",
+    "/9c1a5f6e8b4d2a1c7e9f3b5d.txt"
   ]
 }
