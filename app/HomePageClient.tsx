@@ -11,55 +11,38 @@ import { useModal } from "@/lib/modal-context";
 import { ArrowRight, Download, MapPin, ShieldCheck, Gem, Sparkles, Building2, Landmark } from "lucide-react";
 
 // Lazy-loaded Below-the-fold components (Reduces First-Load JS payload significantly, Skeleton loaders prevent CLS)
-const AmenityGrid = dynamic(() => import("@/components/AmenityGrid"), { 
-  ssr: false,
-  loading: () => <div className="w-full h-[600px] bg-white/5 animate-pulse rounded-[3rem]" />
-});
-const InvestmentMatrix = dynamic(() => import("@/components/InvestmentMatrix"), { 
-  ssr: false,
-  loading: () => <div className="w-full h-[400px] bg-primary/5 animate-pulse rounded-[3rem]" />
-});
-const InvestmentCalculator = dynamic(() => import("@/components/InvestmentCalculator"), { 
-  ssr: false,
-  loading: () => <div className="w-full h-[500px] bg-primary/5 animate-pulse rounded-[3rem]" />
-});
-const AdvancedEnquiryForm = dynamic(() => import("@/components/AdvancedEnquiryForm"), { 
-  ssr: false,
-  loading: () => <div className="w-full max-w-2xl mx-auto h-[600px] bg-white/5 animate-pulse rounded-[3rem]" />
-});
+// Below-the-fold components enabled with SSR: true so Googlebot and Search Indexers crawl 100% of the textual content
+const AmenityGrid = dynamic(() => import("@/components/AmenityGrid"), { ssr: true });
+const InvestmentMatrix = dynamic(() => import("@/components/InvestmentMatrix"), { ssr: true });
+const InvestmentCalculator = dynamic(() => import("@/components/InvestmentCalculator"), { ssr: true });
+const AdvancedEnquiryForm = dynamic(() => import("@/components/AdvancedEnquiryForm"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
-const SovereignBar = dynamic(() => import("@/components/SovereignBar"), { 
-  ssr: false,
-  loading: () => <div className="w-full h-[80px] bg-primary/5 animate-pulse" />
-});
-const InteractiveLayoutViewer = dynamic(() => import("@/components/InteractiveLayoutViewer"), { 
-  ssr: false,
-  loading: () => <div className="w-full aspect-video md:aspect-[21/9] bg-white/5 animate-pulse rounded-[2rem]" />
-});
+const SovereignBar = dynamic(() => import("@/components/SovereignBar"), { ssr: true });
+const InteractiveLayoutViewer = dynamic(() => import("@/components/InteractiveLayoutViewer"), { ssr: true });
 const InteractiveTownshipMap = dynamic(() => import("@/components/InteractiveTownshipMap"), { ssr: false });
-const MasterplanSectorInspector = dynamic(() => import("@/components/MasterplanSectorInspector"), { ssr: false });
-const WhatsAppCostSheetGenerator = dynamic(() => import("@/components/WhatsAppCostSheetGenerator"), { ssr: false });
-const UnitComparisonMatrix = dynamic(() => import("@/components/UnitComparisonMatrix"), { ssr: false });
-const PropertyComparison = dynamic(() => import("@/components/PropertyComparison"), { ssr: false });
+const MasterplanSectorInspector = dynamic(() => import("@/components/MasterplanSectorInspector"), { ssr: true });
+const WhatsAppCostSheetGenerator = dynamic(() => import("@/components/WhatsAppCostSheetGenerator"), { ssr: true });
+const UnitComparisonMatrix = dynamic(() => import("@/components/UnitComparisonMatrix"), { ssr: true });
+const PropertyComparison = dynamic(() => import("@/components/PropertyComparison"), { ssr: true });
 const NRICurrencySuite = dynamic(() => import("@/components/NRICurrencySuite"), { ssr: false });
-const SiteVisitScheduler = dynamic(() => import("@/components/SiteVisitScheduler"), { ssr: false });
+const SiteVisitScheduler = dynamic(() => import("@/components/SiteVisitScheduler"), { ssr: true });
 const Township3DVisualizer = dynamic(() => import("@/components/Township3DVisualizer"), { ssr: false });
-const MortgageEligibilitySuite = dynamic(() => import("@/components/MortgageEligibilitySuite"), { ssr: false });
+const MortgageEligibilitySuite = dynamic(() => import("@/components/MortgageEligibilitySuite"), { ssr: true });
 const VirtualVRHub = dynamic(() => import("@/components/VirtualVRHub"), { ssr: false });
-const InstantTokenBooking = dynamic(() => import("@/components/InstantTokenBooking"), { ssr: false });
+const InstantTokenBooking = dynamic(() => import("@/components/InstantTokenBooking"), { ssr: true });
 const SiteVisitCabTracker = dynamic(() => import("@/components/SiteVisitCabTracker"), { ssr: false });
-const LiveConstructionTracker = dynamic(() => import("@/components/LiveConstructionTracker"), { ssr: false });
+const LiveConstructionTracker = dynamic(() => import("@/components/LiveConstructionTracker"), { ssr: true });
 const AIVoiceAssistant = dynamic(() => import("@/components/AIVoiceAssistant"), { ssr: false });
-const SolarSustainabilitySuite = dynamic(() => import("@/components/SolarSustainabilitySuite"), { ssr: false });
-const LegalTransparencyVault = dynamic(() => import("@/components/LegalTransparencyVault"), { ssr: false });
-const PriceEscalationTimer = dynamic(() => import("@/components/PriceEscalationTimer"), { ssr: false });
-const PriceComparisonMatrix = dynamic(() => import("@/components/PriceComparisonMatrix"), { ssr: false });
-const CommuteTimeMatrix = dynamic(() => import("@/components/CommuteTimeMatrix"), { ssr: false });
-const RentalYieldCalculator = dynamic(() => import("@/components/RentalYieldCalculator"), { ssr: false });
-const WhatsAppCallbackScheduler = dynamic(() => import("@/components/WhatsAppCallbackScheduler"), { ssr: false });
-const GoogleMapsCommandHub = dynamic(() => import("@/components/GoogleMapsCommandHub"), { ssr: false });
-const GoogleReviewsShowcase = dynamic(() => import("@/components/GoogleReviewsShowcase"), { ssr: false });
-const PuneMarketIntelligenceHub = dynamic(() => import("@/components/PuneMarketIntelligenceHub"), { ssr: false });
+const SolarSustainabilitySuite = dynamic(() => import("@/components/SolarSustainabilitySuite"), { ssr: true });
+const LegalTransparencyVault = dynamic(() => import("@/components/LegalTransparencyVault"), { ssr: true });
+const PriceEscalationTimer = dynamic(() => import("@/components/PriceEscalationTimer"), { ssr: true });
+const PriceComparisonMatrix = dynamic(() => import("@/components/PriceComparisonMatrix"), { ssr: true });
+const CommuteTimeMatrix = dynamic(() => import("@/components/CommuteTimeMatrix"), { ssr: true });
+const RentalYieldCalculator = dynamic(() => import("@/components/RentalYieldCalculator"), { ssr: true });
+const WhatsAppCallbackScheduler = dynamic(() => import("@/components/WhatsAppCallbackScheduler"), { ssr: true });
+const GoogleMapsCommandHub = dynamic(() => import("@/components/GoogleMapsCommandHub"), { ssr: true });
+const GoogleReviewsShowcase = dynamic(() => import("@/components/GoogleReviewsShowcase"), { ssr: true });
+const PuneMarketIntelligenceHub = dynamic(() => import("@/components/PuneMarketIntelligenceHub"), { ssr: true });
 const ProjectFactSheet = dynamic(() => import("@/components/ProjectFactSheet"), { ssr: true });
 const SemanticKeywordsCloud = dynamic(() => import("@/components/SemanticKeywordsCloud"), { ssr: true });
 
@@ -124,11 +107,12 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-obsidian border border-accent/40 text-accent font-bold text-[10px] md:text-[11px] uppercase tracking-[0.4em] backdrop-blur-3xl shadow-2xl mx-auto ring-1 ring-white/10">
                <Gem size={14} className="animate-pulse text-accent" />
-               150-ACRE MEGA TOWNSHIP • HADAPSAR ANNEXE, MANJARI PUNE
+               KUMAR MAGNACITY • 150-ACRE MEGA TOWNSHIP • HADAPSAR ANNEXE, MANJARI PUNE
             </div>
             
             <div className="space-y-6">
               <h1 className="text-5xl md:text-8xl lg:text-[9rem] font-heading font-bold text-white leading-[0.88] tracking-tighter">
+                <span className="sr-only">Kumar Magnacity Hadapsar Manjari Pune — </span>
                 The Heart of <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent-hover italic font-light">New Pune</span>
               </h1>

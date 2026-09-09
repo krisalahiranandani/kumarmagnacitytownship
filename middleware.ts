@@ -6,6 +6,13 @@ const RATE_LIMIT = 15;
 const WINDOW_MS = 60 * 1000; 
 
 export function middleware(request: NextRequest) {
+  // 0. Host Canonicalization (www -> non-www 301 Permanent Redirect)
+  const host = request.headers.get('host') || '';
+  if (host.startsWith('www.kumarmagnacitytownship.com')) {
+    const redirectUrl = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://kumarmagnacitytownship.com');
+    return NextResponse.redirect(redirectUrl, 301);
+  }
+
   const response = NextResponse.next();
   
   // 1. Cloudflare Edge Geolocation (NRI & India Personalization)
