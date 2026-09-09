@@ -22,11 +22,42 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!post) return { title: 'Not Found' };
 
+  const postImage = post.thumbnail.startsWith("http")
+    ? post.thumbnail
+    : `https://kumarmagnacitytownship.com${post.thumbnail.startsWith("/") ? post.thumbnail : `/${post.thumbnail}`}`;
+
   return {
     title: `${post.title} | Kumar Magnacity Insights`,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://kumarmagnacitytownship.com/insights/${post.slug}`,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Kumar Properties Technical Research & Advisory Board"],
+      images: [
+        {
+          url: postImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [postImage],
+    },
     alternates: {
       canonical: `https://kumarmagnacitytownship.com/insights/${post.slug}`,
+      languages: {
+        'x-default': `https://kumarmagnacitytownship.com/insights/${post.slug}`,
+        'en-IN': `https://kumarmagnacitytownship.com/insights/${post.slug}`,
+        'mr-IN': `https://kumarmagnacitytownship.com/mr/insights/${post.slug}`,
+      }
     }
   };
 }

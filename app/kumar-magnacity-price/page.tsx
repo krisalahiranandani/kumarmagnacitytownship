@@ -9,8 +9,25 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Kumar Magnacity Price List 2026 | 2 & 3 BHK Flats & NA Plots Hadapsar",
   description: "Official indicative pricing and cost sheet for Kumar Magnacity Township, Manjari BK near Hadapsar Pune. 2 BHK from ₹72.99L*, 3 BHK from ₹1.05Cr*, NA Plots from ₹1.49Cr*.",
+  openGraph: {
+    title: "Kumar Magnacity Price List 2026 | 2 & 3 BHK Flats & NA Plots",
+    description: "Official indicative pricing and cost sheet for Kumar Magnacity Township, Hadapsar Annexe, Manjari, Pune. 2 BHK from ₹72.99L*, 3 BHK from ₹1.05Cr*.",
+    url: "https://kumarmagnacitytownship.com/kumar-magnacity-price",
+    images: ["/assets/hero-bg.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kumar Magnacity Price List 2026",
+    description: "2 BHK from ₹72.99L*, 3 BHK from ₹1.05Cr*, NA Plots from ₹1.49Cr*.",
+    images: ["/assets/hero-bg.jpg"],
+  },
   alternates: {
     canonical: "https://kumarmagnacitytownship.com/kumar-magnacity-price",
+    languages: {
+      "x-default": "https://kumarmagnacitytownship.com/kumar-magnacity-price",
+      "en-IN": "https://kumarmagnacitytownship.com/kumar-magnacity-price",
+      "mr-IN": "https://kumarmagnacitytownship.com/mr/kumar-magnacity-price",
+    },
   },
 };
 

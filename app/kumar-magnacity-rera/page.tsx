@@ -10,8 +10,25 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Kumar Magnacity MahaRERA Details | P52100052096 & P52100054476",
   description: "Official MahaRERA registration details for Kumar Magnacity Township at Manjari BK, Hadapsar Annexe Pune. Verified promoter, sanctioned layouts, and compliance documents.",
+  openGraph: {
+    title: "Kumar Magnacity MahaRERA Verification Hub | P52100052096",
+    description: "Verified promoter, sanctioned layouts, and compliance documents for Kumar Magnacity Township, Pune East.",
+    url: "https://kumarmagnacitytownship.com/kumar-magnacity-rera",
+    images: ["/assets/hero-bg.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kumar Magnacity MahaRERA Details",
+    description: "MahaRERA: Phase 1 P52100052096 & Phase 2 P52100054476.",
+    images: ["/assets/hero-bg.jpg"],
+  },
   alternates: {
     canonical: "https://kumarmagnacitytownship.com/kumar-magnacity-rera",
+    languages: {
+      "x-default": "https://kumarmagnacitytownship.com/kumar-magnacity-rera",
+      "en-IN": "https://kumarmagnacitytownship.com/kumar-magnacity-rera",
+      "mr-IN": "https://kumarmagnacitytownship.com/mr/kumar-magnacity-rera",
+    },
   },
 };
 

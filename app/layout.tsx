@@ -32,6 +32,7 @@ import UnitCarouselSchema from "@/components/UnitCarouselSchema";
 import GoogleProductSchema from "@/components/GoogleProductSchema";
 import GoogleRealEstateComplexSchema from "@/components/GoogleRealEstateComplexSchema";
 import MarketDatasetSchema from "@/components/MarketDatasetSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import QuickSearchDialog from "@/components/QuickSearchDialog";
 
 export const runtime = "nodejs";
@@ -212,6 +213,7 @@ export default function RootLayout({
         <GoogleProductSchema />
         <GoogleRealEstateComplexSchema />
         <MarketDatasetSchema />
+        <BreadcrumbSchema />
         
         {/* Google Sitelinks Search Box Schema */}
         <script
