@@ -8,13 +8,15 @@ import { ArrowRight, Network } from "lucide-react";
 // The 6 Master Programmatic Silos centered on Kumar Magnacity Township
 const SILO_MAP = {
   township_brand: {
-    hub: { title: "Kumar Magnacity Master Township", url: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" },
+    hub: { title: "Kumar Magnacity Master Township", url: "/kumar-magnacity-hadapsar" },
     spokes: [
-      { title: "Project Overview & Overview", url: "/kumar-magnacity-2bhk-3bhk-apartments-manjari-pune" },
+      { title: "Kumar Magnacity Hadapsar Township", url: "/kumar-magnacity-hadapsar" },
       { title: "Specifications & Fittings", url: "/kumar-magnacity-specifications-apartments" },
       { title: "Floor Plans (2BHK & 3BHK)", url: "/kumar-magnacity-floor-plan-2bhk-3bhk" },
-      { title: "Location Advantages", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" },
-      { title: "NRI Investment Guide", url: "/nri-investment" }
+      { title: "Location & Podar School Campus", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" },
+      { title: "MahaRERA Due Diligence Hub", url: "/kumar-magnacity-rera" },
+      { title: "Verified Price List 2026", url: "/kumar-magnacity-price" },
+      { title: "NRI Investment Advisory", url: "/nri-investment" }
     ],
     triggers: ["magnacity", "township", "kumar", "project", "brand", "overview", "residential", "sovereign"]
   },
@@ -56,7 +58,8 @@ const SILO_MAP = {
       { title: "2 BHK Price & Layout (757 sq.ft)", url: "/kumar-magnacity-2bhk-flats-hadapsar-pune-price" },
       { title: "3 BHK Price & Layout (1053 sq.ft)", url: "/kumar-magnacity-3bhk-apartments-manjari-pune-price" },
       { title: "Luxury Apartments Hub", url: "/luxury-apartments-pune" },
-      { title: "Apartment Specifications", url: "/kumar-magnacity-specifications-apartments" }
+      { title: "Apartment Specifications", url: "/kumar-magnacity-specifications-apartments" },
+      { title: "Verified Cost Sheet 2026", url: "/kumar-magnacity-price" }
     ],
     triggers: ["2bhk", "3bhk", "floor-plan", "flats", "apartments", "homes", "g+30", "carpet", "price"]
   },
@@ -66,7 +69,8 @@ const SILO_MAP = {
       { title: "NA Plots Master Layout", url: "/kumar-magnacity-na-bungalow-plots-master-plan" },
       { title: "NA Plot Availability", url: "/kumar-magnacity-na-bungalow-plots-availability" },
       { title: "NA Plot Amenities", url: "/kumar-magnacity-na-bungalow-plots-amenities" },
-      { title: "NA Plots FAQ", url: "/kumar-magnacity-na-bungalow-plots-faq" }
+      { title: "NA Plots FAQ", url: "/kumar-magnacity-na-bungalow-plots-faq" },
+      { title: "MahaRERA Plot Registration", url: "/kumar-magnacity-rera" }
     ],
     triggers: ["plots", "bungalow", "land", "villa-plots", "concept", "availability", "master-plan"]
   },
@@ -75,12 +79,13 @@ const SILO_MAP = {
     spokes: [
       { title: "Kumar Magnacity Hadapsar Master Guide", url: "/insights/kumar-magnacity-hadapsar-township-complete-buyer-guide" },
       { title: "Hadapsar vs Kharadi Comparison", url: "/insights/2bhk-3bhk-4bhk-flats-hadapsar-vs-kharadi-comparison" },
-      { title: "NA Villa Bungalow Plots Guide 2027", url: "/insights/na-villa-bungalow-plots-pune-investment-guide-2027" },
+      { title: "NA Villa Bungalow Plots Guide", url: "/insights/na-villa-bungalow-plots-pune-investment-guide-2027" },
       { title: "Podar School Township Living", url: "/insights/podar-school-township-hadapsar-family-living" },
-      { title: "Sky Duplex & 4 BHK Luxury Suites", url: "/insights/sky-duplex-penthouses-luxury-residences-pune" },
+      { title: "3 BHK Grand Family Residences", url: "/insights/sky-duplex-penthouses-luxury-residences-pune" },
       { title: "Hinjewadi to Hadapsar Migration Guide", url: "/insights/hinjewadi-to-hadapsar-pune-real-estate-corridor-guide" },
       { title: "Ring Road Growth Impact", url: "/insights/pune-ring-road-impact" },
       { title: "NRI Investment Guide", url: "/insights/nri-investment-manjari" },
+      { title: "MahaRERA Due Diligence", url: "/kumar-magnacity-rera" },
       { title: "Interactive ROI Calculator", url: "/roi-calculator" }
     ],
     triggers: ["investment", "market-data", "roi", "calculator", "cost", "appreciation", "rental", "ring-road", "insights", "guide", "comparison", "duplex", "hinjewadi"]
@@ -90,7 +95,8 @@ const SILO_MAP = {
     spokes: [
       { title: "Podar International School Campus", url: "/kumar-magnacity-location-advantages-hadapsar-manjari" },
       { title: "1 Lakh Sq.Ft Clubhouse", url: "/kumar-magnacity-na-bungalow-plots-amenities" },
-      { title: "Competitor Comparison Guide", url: "/kumar-magnacity-market-data-pune-east" }
+      { title: "Competitor Comparison Guide", url: "/kumar-magnacity-market-data-pune-east" },
+      { title: "Kumar Magnacity vs Godrej Rivergreens", url: "/compare/kumar-magnacity-vs-godrej-rivergreens-manjari" }
     ],
     triggers: ["amenities", "clubhouse", "podar", "school", "lifestyle", "hospitals", "malls", "vs", "godrej", "vtp", "amanora"]
   }

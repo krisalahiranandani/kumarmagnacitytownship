@@ -1,0 +1,120 @@
+{
+  "version": "2026.3-EDGE-360",
+  "project": "Kumar Magnacity 360-Degree Master Ecosystem",
+  "developer": "Kumar Properties (Established 1966)",
+  "promoter_marketing_partner": "Propsmart Realty (MahaRERA: A52100025458)",
+  "framework": "360-Degree Edge HTML Rewrite & Customer-First Trust Architecture",
+  "funnel_layers": [
+    {
+      "layer": "Layer 1: Top of Funnel (TOFU) — Discovery & Macro Infrastructure",
+      "search_intent": "Broad Information & Regional Trends",
+      "target_queries": [
+        "Pune East real estate",
+        "Pune East property market",
+        "best areas to buy property in Pune East",
+        "Manjari real estate market",
+        "Hadapsar Annexe property prices",
+        "Pune Ring Road real estate impact",
+        "Kharadi river bridge property appreciation",
+        "Manjari to Magarpatta commute time",
+        "integrated townships in Pune East",
+        "Kumar Properties new projects Pune"
+      ],
+      "canonical_url": "/kumar-magnacity-market-data-pune-east",
+      "edge_html_directives": {
+        "cache_ttl": "1 Year (Edge S-MaxAge)",
+        "prerender": true,
+        "schema_stack": ["Article", "ResearchReport", "BreadcrumbList"]
+      }
+    },
+    {
+      "layer": "Layer 2: Middle of Funnel (MOFU) — Micro-Market & Project Comparison",
+      "search_intent": "Comparative Evaluation & Livability Analysis",
+      "target_queries": [
+        "Kharadi vs Manjari real estate",
+        "Hadapsar vs Manjari livability",
+        "Magarpatta vs Manjari investment",
+        "Manjari vs Wagholi property comparison",
+        "Kumar Magnacity vs Godrej Rivergreens Manjari",
+        "Kumar Magnacity vs Amanora Park Town",
+        "Kumar Magnacity vs Shapoorji Joyville Hadapsar",
+        "Kumar Magnacity vs VTP Pegasus Kharadi"
+      ],
+      "canonical_url": "/compare/kumar-magnacity-vs-godrej-rivergreens-manjari",
+      "edge_html_directives": {
+        "cache_ttl": "1 Year (Edge S-MaxAge)",
+        "prerender": true,
+        "schema_stack": ["Review", "Table", "BreadcrumbList"]
+      }
+    },
+    {
+      "layer": "Layer 3: Project Authority (MOFU-BOFU) — Configurations, Master Plan & School",
+      "search_intent": "Deep Project Inspection & Campus Life",
+      "target_queries": [
+        "Kumar Magnacity master plan",
+        "Kumar Magnacity floor plans 2BHK 3BHK",
+        "Kumar Magnacity Podar International School",
+        "Kumar Magnacity clubhouse 1 lakh sq ft",
+        "Kumar Magnacity 2 BHK carpet area 757 sq ft",
+        "Kumar Magnacity 3 BHK carpet area 1053 sq ft",
+        "Kumar Magnacity Sovereign NA Villa Plots",
+        "Kumar Magnacity location map Hadapsar Annexe",
+        "Kumar Magnacity sample flat 360 tour"
+      ],
+      "canonical_url": "/kumar-magnacity-hadapsar",
+      "edge_html_directives": {
+        "cache_ttl": "1 Year (Edge S-MaxAge)",
+        "prerender": true,
+        "schema_stack": ["ApartmentComplex", "EducationalOrganization", "SportsActivityLocation", "FloorPlan"]
+      }
+    },
+    {
+      "layer": "Layer 4: Bottom of Funnel (BOFU) — Price, Cost Sheets, RERA & Token Booking",
+      "search_intent": "High-Volume Commercial & Purchase Intent",
+      "target_queries": [
+        "Kumar Magnacity price",
+        "Kumar Magnacity price list 2026",
+        "Kumar Magnacity cost sheet",
+        "Kumar Magnacity 2 BHK price ₹72.99L",
+        "Kumar Magnacity 3 BHK price ₹1.05Cr",
+        "Kumar Magnacity plot price ₹1.49Cr",
+        "Kumar Magnacity RERA number P52100052096",
+        "Kumar Magnacity Phase 2 RERA P52100054476",
+        "Kumar Magnacity booking amount",
+        "Kumar Magnacity payment plan",
+        "Kumar Magnacity site visit booking"
+      ],
+      "canonical_url": "/kumar-magnacity-price",
+      "edge_html_directives": {
+        "cache_ttl": "1 Year (Edge S-MaxAge)",
+        "prerender": true,
+        "schema_stack": ["PriceSpecification", "GovernmentPermit", "Product", "Offer", "MerchantReturnPolicy"]
+      }
+    },
+    {
+      "layer": "Layer 5: NRI & Global Investors — FEMA, Repatriation & Currency Suite",
+      "search_intent": "Cross-Border Regulatory Due Diligence & Investment",
+      "target_queries": [
+        "NRI property investment Pune",
+        "NRI buy flat Kumar Magnacity",
+        "Kumar Magnacity USD price",
+        "Kumar Magnacity AED price",
+        "FEMA real estate guidelines India",
+        "NRI home loan Pune real estate",
+        "NRI rental yield Hadapsar Manjari"
+      ],
+      "canonical_url": "/nri-investment",
+      "edge_html_directives": {
+        "cache_ttl": "1 Year (Edge S-MaxAge)",
+        "prerender": true,
+        "schema_stack": ["FinancialService", "Organization", "BreadcrumbList"]
+      }
+    }
+  ],
+  "customer_friendly_standards": {
+    "price_transparency": "Explicit breakdown of base price, stamp duty, registration, GST, and maintenance with 0 hidden surprise costs.",
+    "privacy_protection": "No raw email exposure; all inquiries secured via direct WhatsApp Priority Desk and encrypted server APIs.",
+    "rera_compliance": "Direct links to Maharashtra Real Estate Regulatory Authority (maharera.maharashtra.gov.in) with verified registration certificates.",
+    "instant_access": "1-tap PDF floor plan downloads, verified commute distance tables, and instant WhatsApp cost sheet dispatch."
+  }
+}
