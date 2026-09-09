@@ -14,6 +14,48 @@
   Cache-Tag: kumar-magnacity-edge,kumar-magnacity-html,kumar-properties,pune-realestate
   Link: </assets/hero-bg.webp>; rel=preload; as=image; fetchpriority=high, </assets/elevation.jpg>; rel=preload; as=image, <https://fonts.googleapis.com>; rel=preconnect; crossorigin, <https://fonts.gstatic.com>; rel=preconnect; crossorigin
 
+/favicon.ico
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000, immutable
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/x-icon
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000, immutable
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/png
+
+/icon.png
+  Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000, immutable
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/png
+
+/manifest.json
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/manifest+json; charset=utf-8
+
+/opensearch.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/opensearchdescription+xml; charset=utf-8
+
+/llms.txt
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: text/plain; charset=utf-8
+
+/llms-full.txt
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: text/plain; charset=utf-8
+
+/openapi.json
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=43200
+  Access-Control-Allow-Origin: *
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
   CDN-Cache-Control: public, max-age=31536000, immutable

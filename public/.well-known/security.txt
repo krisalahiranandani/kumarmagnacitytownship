@@ -1,7 +1,8 @@
 # Kumar Magnacity Official Security Policy
 # RFC 9116 Standard Security Disclosure
+# Domain: kumarmagnacitytownship.com
 
-Contact: mailto:propsmartrealty@gmail.com
+Contact: https://kumarmagnacitytownship.com/#contact
 Contact: tel:+917744009295
 Expires: 2027-12-31T23:59:59.000Z
 Preferred-Languages: en, mr, hi

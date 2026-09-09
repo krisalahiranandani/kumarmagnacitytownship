@@ -123,6 +123,31 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/default.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/project-overview/:slug*',
         destination: '/kumar-magnacity-na-bungalow-plots-concept',
         permanent: true,

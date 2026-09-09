@@ -6,11 +6,32 @@ const RATE_LIMIT = 15;
 const WINDOW_MS = 60 * 1000; 
 
 export function middleware(request: NextRequest) {
-  // 0. Host Canonicalization (www -> non-www 301 Permanent Redirect)
   const host = request.headers.get('host') || '';
-  if (host.startsWith('www.kumarmagnacitytownship.com')) {
-    const redirectUrl = new URL(request.nextUrl.pathname + request.nextUrl.search, 'https://kumarmagnacitytownship.com');
+  const proto = request.headers.get('x-forwarded-proto');
+  const pathname = request.nextUrl.pathname;
+  const isLocal = host.includes('localhost') || host.includes('127.0.0.1');
+
+  // 0. Domain Root & Host Canonicalization (301 Permanent Redirect)
+  // a) Insecure HTTP -> Secure HTTPS Redirect
+  if (proto === 'http' && !isLocal) {
+    const httpsUrl = new URL(pathname + request.nextUrl.search, `https://${host}`);
+    return NextResponse.redirect(httpsUrl, 301);
+  }
+
+  // b) www.* and non-canonical hostnames -> https://kumarmagnacitytownship.com
+  if (
+    !isLocal &&
+    (host.startsWith('www.') || 
+     (host && host !== 'kumarmagnacitytownship.com' && !host.endsWith('.vercel.app')))
+  ) {
+    const redirectUrl = new URL(pathname + request.nextUrl.search, 'https://kumarmagnacitytownship.com');
     return NextResponse.redirect(redirectUrl, 301);
+  }
+
+  // c) Root File Canonicalization (/index.html, /home, /index.php -> /)
+  if (pathname === '/index.html' || pathname === '/home' || pathname === '/index.php' || pathname === '/default.html' || pathname === '/index') {
+    const rootUrl = new URL('/' + request.nextUrl.search, 'https://kumarmagnacitytownship.com');
+    return NextResponse.redirect(rootUrl, 301);
   }
 
   const response = NextResponse.next();

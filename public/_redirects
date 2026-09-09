@@ -1,0 +1,47 @@
+# Cloudflare Edge Host & URL Canonicalization Rules
+# Enforce Apex Domain & HTTPS
+https://www.kumarmagnacitytownship.com/* https://kumarmagnacitytownship.com/:splat 301!
+http://www.kumarmagnacitytownship.com/* https://kumarmagnacitytownship.com/:splat 301!
+http://kumarmagnacitytownship.com/* https://kumarmagnacitytownship.com/:splat 301!
+
+# Root Index Canonicalization
+/index.html / 301
+/home / 301
+/index.php / 301
+/default.html / 301
+/index / 301
+
+# Sitemaps
+/sitemap.xml /sitemap/0.xml 301
+
+# Core Legacy Path Canonical 301 Redirects
+/availability /kumar-magnacity-na-bungalow-plots-availability 301
+/market-insights /kumar-magnacity-market-data-pune-east 301
+/concept /kumar-magnacity-na-bungalow-plots-concept 301
+/location /kumar-magnacity-manjari-location-map 301
+/investment /kumar-magnacity-investment-plan-pune-east 301
+/amenities /kumar-magnacity-na-bungalow-plots-amenities 301
+/master-plan /kumar-magnacity-na-bungalow-plots-master-plan 301
+/privacy-policy /kumar-magnacity-na-bungalow-plots-privacy-policy 301
+/thank-you /kumar-magnacity-na-bungalow-plots-thank-you 301
+/faq /kumar-magnacity-na-bungalow-plots-faq 301
+/kumar-magnacity /kumar-magnacity-hadapsar 301
+/kumar-magnacity-plots /kumar-magnacity-na-bungalow-plots-concept 301
+/kumar-magnacity-2-bhk /kumar-magnacity-2bhk-flats-hadapsar-pune-price 301
+/kumar-magnacity-3-bhk /kumar-magnacity-3bhk-apartments-manjari-pune-price 301
+/kumar-magnacity-master-plan /kumar-magnacity-na-bungalow-plots-master-plan 301
+/kumar-magnacity-amenities /kumar-magnacity-na-bungalow-plots-amenities 301
+/kumar-magnacity-floor-plans /kumar-magnacity-floor-plan-2bhk-3bhk 301
+/kumar-magnacity-location /kumar-magnacity-location-advantages-hadapsar-manjari 301
+/kumar-magnacity-plots-price /kumar-magnacity-price 301
+/kumar-magnacity-plots-sizes /kumar-magnacity-na-bungalow-plots-concept 301
+/kumar-magnacity-buyer-guide /insights/kumar-magnacity-hadapsar-township-complete-buyer-guide 301
+/manjari-real-estate /kumar-magnacity-location-advantages-hadapsar-manjari 301
+/manjari-property-prices /kumar-magnacity-price 301
+/manjari-2-bhk /kumar-magnacity-2bhk-flats-hadapsar-pune-price 301
+/manjari-3-bhk /kumar-magnacity-3bhk-apartments-manjari-pune-price 301
+/manjari-plots /kumar-magnacity-na-bungalow-plots-concept 301
+/manjari-na-plots /kumar-magnacity-na-bungalow-plots-concept 301
+/pune-east-real-estate /kumar-magnacity-market-data-pune-east 301
+/kharadi-vs-manjari /insights/2bhk-3bhk-4bhk-flats-hadapsar-vs-kharadi-comparison 301
+/hadapsar-vs-manjari /compare/kumar-magnacity-vs-godrej-rivergreens-manjari 301
