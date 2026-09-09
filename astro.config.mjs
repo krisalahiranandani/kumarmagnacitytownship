@@ -19,6 +19,7 @@ export default defineConfig({
         "next/link": path.resolve(process.cwd(), "./lib/shims/link.tsx"),
         "next/image": path.resolve(process.cwd(), "./lib/shims/image.tsx"),
         "next/navigation": path.resolve(process.cwd(), "./lib/shims/navigation.ts"),
+        "next/dynamic": path.resolve(process.cwd(), "./lib/shims/dynamic.tsx"),
       },
     },
   },
