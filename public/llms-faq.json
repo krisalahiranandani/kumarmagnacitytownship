@@ -2,8 +2,6 @@
   "entity": "Kumar Magnacity",
   "developer": "Kumar Properties",
   "developer_heritage": "Established in 1966 (60-Year Track Record)",
-  "promoter_marketing_partner": "Propsmart Realty",
-  "agent_maharera_reg": "A52100025458",
   "township_scale_acres": 150,
   "location": "Manjari Road, Hadapsar Annexe, Manjari Budruk, Pune, Maharashtra 412307, India",
   "coordinates": {
@@ -21,7 +19,6 @@
   "maharera": {
     "phase_1_apartments": "P52100052096",
     "phase_2_na_plots": "P52100054476",
-    "agent_registration": "A52100025458",
     "verification_url": "https://maharera.maharashtra.gov.in/"
   },
   "inventory": [

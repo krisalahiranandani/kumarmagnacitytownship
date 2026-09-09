@@ -68,10 +68,10 @@ const PROJECT_FACTS: FactItem[] = [
     detail: "Possession as per applicable MahaRERA phase schedules"
   },
   {
-    label: "Authorized Channel Partner",
-    value: "Propsmart Realty (MahaRERA: A52100025458)",
+    label: "Developer & Promoter",
+    value: "Kumar Properties",
     icon: <ShieldCheck size={18} className="text-accent shrink-0" />,
-    detail: "Project Information & Priority Sales Partner Desk"
+    detail: "58+ Years of Construction Excellence & Legacy"
   }
 ];
 

@@ -5,7 +5,7 @@ import { Resend } from "resend";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
-const SALES_EMAIL = 'propsmartrealty@gmail.com';
+const SALES_EMAIL = process.env.SALES_NOTIFICATION_EMAIL || 'sales@kumarmagnacitytownship.com';
 const LEDGER_PATH = path.join(process.cwd(), "data", "leads-ledger.json");
 
 export const runtime = "nodejs";

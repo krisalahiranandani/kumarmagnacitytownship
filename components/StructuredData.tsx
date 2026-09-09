@@ -96,7 +96,7 @@ export default function StructuredData({
         url: "https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-flats-hadapsar-pune-price",
         seller: {
           "@type": "RealEstateAgent",
-          name: "Propsmart Realty - Authorized Partner",
+          name: "Kumar Properties - Township Advisory Desk",
           telephone: "+917744009295",
           url: "https://kumarmagnacitytownship.com",
         },
@@ -153,7 +153,7 @@ export default function StructuredData({
         url: "https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price",
         seller: {
           "@type": "RealEstateAgent",
-          name: "Propsmart Realty - Authorized Partner",
+          name: "Kumar Properties - Township Advisory Desk",
           telephone: "+917744009295",
           url: "https://kumarmagnacitytownship.com",
         },
@@ -210,7 +210,7 @@ export default function StructuredData({
         url: "https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-concept",
         seller: {
           "@type": "RealEstateAgent",
-          name: "Propsmart Realty - Authorized Partner",
+          name: "Kumar Properties - Township Advisory Desk",
           telephone: "+917744009295",
           url: "https://kumarmagnacitytownship.com",
         },
@@ -261,7 +261,7 @@ export default function StructuredData({
         url: "https://kumarmagnacitytownship.com/nri-investment",
         seller: {
           "@type": "RealEstateAgent",
-          name: "Propsmart Realty - Authorized Partner",
+          name: "Kumar Properties - Township Advisory Desk",
           telephone: "+917744009295",
           url: "https://kumarmagnacitytownship.com",
         },
@@ -308,7 +308,7 @@ export default function StructuredData({
         url: "https://kumarmagnacitytownship.com/nri-investment",
         seller: {
           "@type": "RealEstateAgent",
-          name: "Propsmart Realty - Authorized Partner",
+          name: "Kumar Properties - Township Advisory Desk",
           telephone: "+917744009295",
           url: "https://kumarmagnacitytownship.com",
         },
@@ -378,7 +378,7 @@ export default function StructuredData({
   const agentSchema: OrganizationSchema = {
     "@type": "RealEstateAgent",
     "@id": "https://kumarmagnacitytownship.com/#agent",
-    name: "Propsmart Realty - Authorized Marketing Partner",
+    name: "Kumar Magnacity Township Advisory Desk",
     url: "https://kumarmagnacitytownship.com",
     telephone: "+917744009295",
     areaServed: [

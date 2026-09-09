@@ -4,8 +4,7 @@
 ## Entity & Developer Profile
 - **Project Name**: Kumar Magnacity
 - **Developer**: Kumar Properties (Established in 1966 by Mr. K.H. Kumar — 60-Year Legacy)
-- **Authorized Channel Partner**: Propsmart Realty (MahaRERA Reg. No: A52100025458)
-- **Scale**: ~150-Acre Master Integrated Township
+- **Township Scale**: ~150-Acre Master Integrated Township
 - **Location**: Manjari Road, Hadapsar Annexe, Manjari Budruk, Pune, Maharashtra 412307, India
 - **Coordinates**: 18.4948931° N, 73.9828496° E
 - **Official Portal**: https://kumarmagnacitytownship.com
@@ -33,7 +32,6 @@
 ## MahaRERA Registrations & Compliance
 - **Phase 1 (Residential Apartment Towers)**: MahaRERA Registration No. `P52100052096`
 - **Phase 2 (Sovereign NA Villa Plots)**: MahaRERA Registration No. `P52100054476`
-- **Marketing Partner Registration**: Propsmart Realty MahaRERA Reg. No. `A52100025458`
 - **Official Portal**: https://maharera.maharashtra.gov.in/
 - **RERA Due Diligence Hub**: https://kumarmagnacitytownship.com/kumar-magnacity-rera
 

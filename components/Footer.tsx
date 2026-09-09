@@ -31,9 +31,9 @@ export default function Footer() {
                   Kumar Magnacity is a 150-acre master-planned integrated township located at Manjari BK, Hadapsar Annexe, Pune East by Kumar Properties.
                 </p>
                 <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1 text-[11px]">
-                  <p className="text-accent font-bold uppercase tracking-wider">Authorized Marketing Partner</p>
-                  <p className="text-stone-300">Propsmart Realty • MahaRERA Agent Reg. No: <strong className="text-white">A52100025458</strong></p>
-                  <p className="text-stone-400 text-[10px]">Project Information &amp; Direct Homebuyer Sales Desk</p>
+                  <p className="text-accent font-bold uppercase tracking-wider">Project Advisory Desk</p>
+                  <p className="text-stone-300">Kumar Magnacity Township • Manjari BK, Hadapsar Annexe</p>
+                  <p className="text-stone-400 text-[10px]">Official Project Information &amp; Direct Homebuyer Sales Desk</p>
                 </div>
               </div>
 
@@ -163,7 +163,7 @@ export default function Footer() {
                     MAHARERA REGISTRATIONS: P52100052096 (TOWERS) | P52100054476 (PLOTS)
                   </p>
                   <p className="text-stone-500 text-[10px]">
-                    Authorized Real Estate Agent: Propsmart Realty (MahaRERA Reg No: A52100025458)
+                    Developer: Kumar Properties • Location: Manjari BK, Hadapsar Annexe, Pune
                   </p>
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function Footer() {
             </div>
 
             <p>
-              <strong>Disclaimer:</strong> This website is an informational and marketing portal managed by Propsmart Realty, an authorized channel partner (MahaRERA: A52100025458) for Kumar Properties’ project Kumar Magnacity. The information, artist impressions, specifications, floor plans, and pricing provided on this site are indicative and subject to change by the developer without prior notice. Prospective buyers are advised to independently verify all details, sanctioned layouts, RERA approvals, and payment terms directly from official promoter agreements and the Maharashtra Real Estate Regulatory Authority portal (
+              <strong>Disclaimer:</strong> This website is an informational and marketing portal for the project Kumar Magnacity by Kumar Properties. The information, artist impressions, specifications, floor plans, and pricing provided on this site are indicative and subject to change by the developer without prior notice. Prospective buyers are advised to independently verify all details, sanctioned layouts, RERA approvals, and payment terms directly from official promoter agreements and the Maharashtra Real Estate Regulatory Authority portal (
               <a 
                 href="https://maharera.maharashtra.gov.in/" 
                 target="_blank" 

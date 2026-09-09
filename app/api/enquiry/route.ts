@@ -81,9 +81,10 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // FormSubmit AJAX relay to propsmartrealty@gmail.com
+    // FormSubmit AJAX relay
+    const relayTarget = process.env.SALES_NOTIFICATION_EMAIL || "sales@kumarmagnacitytownship.com";
     const relayResponse = await fetch(
-      "https://formsubmit.co/ajax/propsmartrealty@gmail.com",
+      `https://formsubmit.co/ajax/${relayTarget}`,
       {
         method: "POST",
         headers: {

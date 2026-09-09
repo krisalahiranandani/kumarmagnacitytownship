@@ -36,7 +36,7 @@ export default function GoogleProductSchema() {
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "RealEstateAgent",
-          "name": "Propsmart Realty - Authorized Partner",
+          "name": "Kumar Properties - Township Advisory Desk",
           "telephone": "+917744009295",
           "url": "https://kumarmagnacitytownship.com"
         },
@@ -106,7 +106,7 @@ export default function GoogleProductSchema() {
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "RealEstateAgent",
-          "name": "Propsmart Realty - Authorized Partner",
+          "name": "Kumar Properties - Township Advisory Desk",
           "telephone": "+917744009295",
           "url": "https://kumarmagnacitytownship.com"
         },
@@ -176,7 +176,7 @@ export default function GoogleProductSchema() {
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "RealEstateAgent",
-          "name": "Propsmart Realty - Authorized Partner",
+          "name": "Kumar Properties - Township Advisory Desk",
           "telephone": "+917744009295",
           "url": "https://kumarmagnacitytownship.com"
         },

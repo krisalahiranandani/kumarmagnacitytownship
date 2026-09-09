@@ -11,7 +11,7 @@ import { EnquiryData } from "@/types/enquiry";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
-const SALES_EMAIL = 'propsmartrealty@gmail.com';
+const SALES_EMAIL = process.env.SALES_NOTIFICATION_EMAIL || 'sales@kumarmagnacitytownship.com';
 
 export const runtime = "nodejs";
 

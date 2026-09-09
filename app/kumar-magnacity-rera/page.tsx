@@ -162,7 +162,7 @@ export default function ReraPage() {
               Under the Real Estate (Regulation and Development) Act, 2016, buyers are entitled to review sanctioned building layouts, floor plans, commencement certificates, encumbrance certificates, and quarterly construction milestone filings directly from the state regulatory authority portal.
             </p>
             <p className="text-[11px] text-stone-500">
-              Official State Portal: <a href="https://maharera.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer" className="text-accent underline font-semibold">https://maharera.maharashtra.gov.in/</a> • Authorized Channel Partner: Propsmart Realty (MahaRERA Reg. No: A52100025458).
+              Official State Portal: <a href="https://maharera.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer" className="text-accent underline font-semibold">https://maharera.maharashtra.gov.in/</a> • Promoter: Kumar Properties.
             </p>
           </div>
 
