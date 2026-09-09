@@ -195,6 +195,10 @@ export default function RootLayout({
         <link rel="hub" href="https://pubsubhubbub.appspot.com/" />
         <link rel="self" href="https://kumarmagnacitytownship.com/google-product-feed.xml" />
         
+        {/* Generative AI (GEO) / LLM Knowledge Discovery Directives */}
+        <link rel="alternate" type="text/plain" href="https://kumarmagnacitytownship.com/llms.txt" title="LLMs Context" />
+        <link rel="alternate" type="text/plain" href="https://kumarmagnacitytownship.com/llms-full.txt" title="Full LLMs Knowledge Graph" />
+        
         {/* Server-Rendered Google Rich Results Schemas */}
         <StructuredData />
         <FeaturedSnippetsSchema />

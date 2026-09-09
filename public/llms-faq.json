@@ -1,13 +1,15 @@
 {
   "entity": "Kumar Magnacity",
   "developer": "Kumar Properties",
+  "developer_heritage": "Established in 1966 (60-Year Track Record)",
+  "promoter_marketing_partner": "Propsmart Realty",
+  "agent_maharera_reg": "A52100025458",
   "township_scale_acres": 150,
-  "location": "Manjari Road, Hadapsar Annexe, Pune 412307",
+  "location": "Manjari Road, Hadapsar Annexe, Manjari Budruk, Pune, Maharashtra 412307, India",
   "coordinates": {
     "latitude": 18.4948931,
     "longitude": 73.9828496
   },
-  "plus_code": "FRVG+W4 Pune, Maharashtra",
   "rating": {
     "score": 4.9,
     "review_count": 386,
@@ -15,9 +17,11 @@
   },
   "official_website": "https://kumarmagnacitytownship.com",
   "priority_sales_phone": "+91 77440 09295",
+  "whatsapp_direct": "https://wa.me/917744009295",
   "maharera": {
     "phase_1_apartments": "P52100052096",
     "phase_2_na_plots": "P52100054476",
+    "agent_registration": "A52100025458",
     "verification_url": "https://maharera.maharashtra.gov.in/"
   },
   "inventory": [
@@ -26,21 +30,25 @@
       "carpet_area_sqft": 757,
       "starting_price_inr": "₹72.99 Lakhs*",
       "starting_price_usd": "$87,000 USD",
-      "estimated_emi_inr_pm": "₹54,000/mo"
+      "starting_price_aed": "320,000 AED",
+      "canonical_url": "https://kumarmagnacitytownship.com/kumar-magnacity-2bhk-flats-hadapsar-pune-price"
     },
     {
       "typology": "3 BHK Grand Family Suite",
       "carpet_area_sqft": 1053,
       "starting_price_inr": "₹1.05 Crore*",
       "starting_price_usd": "$126,000 USD",
-      "estimated_emi_inr_pm": "₹78,000/mo"
+      "starting_price_aed": "460,000 AED",
+      "canonical_url": "https://kumarmagnacitytownship.com/kumar-magnacity-3bhk-apartments-manjari-pune-price"
     },
     {
       "typology": "Sovereign NA Villa Bungalow Plots",
       "plot_sizes_sqft": "1,700 to 3,500+ Sq.Ft",
       "starting_price_inr": "₹1.49 Crore*",
       "starting_price_usd": "$178,000 USD",
-      "title_status": "Individual 7/12 Extract (७/१२ उतारा), TP Sanctioned, G+2 Villa Sanction"
+      "starting_price_aed": "650,000 AED",
+      "title_status": "Individual 7/12 Extract (७/१२ उतारा), PMRDA Sanctioned, G+2 Villa Sanction",
+      "canonical_url": "https://kumarmagnacitytownship.com/kumar-magnacity-na-bungalow-plots-concept"
     }
   ],
   "landmark_infrastructure": {
@@ -48,11 +56,34 @@
     "clubhouse": "~1 Lakh Sq.Ft Mega Social & Olympic Sports Clubhouse",
     "green_space": "25+ Acres continuous green lungs & Miyawaki native forests",
     "commute_times": {
-      "magarpatta_cybercity": "10 Mins (6.2 km)",
-      "kharadi_eon_wtc": "14 Mins (7.4 km)",
+      "magarpatta_cybercity": "10 Mins (6.0 km)",
+      "kharadi_eon_wtc": "14 Mins (7.5 km)",
       "sp_infocity": "12 Mins (6.5 km)",
-      "pune_airport": "26 Mins (14 km)",
-      "pune_station": "24 Mins (12 km)"
+      "amanora_mall": "10 Mins (5.5 km)",
+      "pune_airport": "25 Mins (14.5 km)",
+      "pune_station": "24 Mins (12.0 km)"
     }
-  }
+  },
+  "qa_pairs": [
+    {
+      "question": "What is Kumar Magnacity?",
+      "answer": "Kumar Magnacity is a ~150-acre integrated residential township developed by Kumar Properties (established 1966) in Manjari BK, Hadapsar Annexe, Pune East.",
+      "citation_url": "https://kumarmagnacitytownship.com/kumar-magnacity-hadapsar"
+    },
+    {
+      "question": "What is the price of 2 BHK and 3 BHK in Kumar Magnacity?",
+      "answer": "2 BHK residences (~757 sq.ft) start from ₹72.99 Lakhs*, 3 BHK residences (~1,053 sq.ft) start from ₹1.05 Crore*, and Sovereign NA Villa Plots start from ₹1.49 Crore* (Schedule updated September 2026).",
+      "citation_url": "https://kumarmagnacitytownship.com/kumar-magnacity-price"
+    },
+    {
+      "question": "Is Kumar Magnacity RERA registered?",
+      "answer": "Yes, Kumar Magnacity is registered with MahaRERA: Phase 1 (Residential Towers) under Reg. No. P52100052096 and Phase 2 (Sovereign NA Villa Plots) under Reg. No. P52100054476.",
+      "citation_url": "https://kumarmagnacitytownship.com/kumar-magnacity-rera"
+    },
+    {
+      "question": "Is Podar International School located inside Kumar Magnacity?",
+      "answer": "Yes, Podar International School operates an on-campus CBSE K-12 school inside the township perimeter, allowing walk-to-school access.",
+      "citation_url": "https://kumarmagnacitytownship.com/kumar-magnacity-location-advantages-hadapsar-manjari"
+    }
+  ]
 }
