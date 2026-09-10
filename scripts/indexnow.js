@@ -1,10 +1,13 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const https = require('https');
 
+const fs = require('fs');
+const path = require('path');
+
 const INDEXNOW_KEY = 'f8a3b8d91c7e462a8019cf3994a5e2f1';
 const HOST = 'kumarmagnacitytownship.com';
 
-const URL_LIST = [
+const coreUrls = [
   'https://kumarmagnacitytownship.com/',
   'https://kumarmagnacitytownship.com/kumar-magnacity-hadapsar',
   'https://kumarmagnacitytownship.com/kumar-magnacity-price',
@@ -18,20 +21,33 @@ const URL_LIST = [
   'https://kumarmagnacitytownship.com/kumar-magnacity-location-advantages-hadapsar-manjari',
   'https://kumarmagnacitytownship.com/kumar-magnacity-market-data-pune-east',
   'https://kumarmagnacitytownship.com/nri-investment',
+  'https://kumarmagnacitytownship.com/flats-in-pune-east',
+  'https://kumarmagnacitytownship.com/mr',
+  'https://kumarmagnacitytownship.com/insights',
   'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-godrej-rivergreens-manjari',
   'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-amanora-park-town-hadapsar',
   'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-shapoorji-joyville-hadapsar',
   'https://kumarmagnacitytownship.com/compare/kumar-magnacity-vs-vtp-pegasus-kharadi',
-  'https://kumarmagnacitytownship.com/insights/kumar-magnacity-hadapsar-township-complete-buyer-guide',
-  'https://kumarmagnacitytownship.com/insights/2bhk-3bhk-4bhk-flats-hadapsar-vs-kharadi-comparison',
-  'https://kumarmagnacitytownship.com/insights/pune-ring-road-impact',
 ];
+
+let programmaticUrls = [];
+const registryPath = path.join(__dirname, '..', 'data', 'seo-registry.json');
+if (fs.existsSync(registryPath)) {
+  try {
+    const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+    programmaticUrls = Object.keys(registry).map(k => `https://${HOST}/${k}`);
+  } catch (err) {
+    console.warn('Could not read seo-registry.json:', err.message);
+  }
+}
+
+const allUrls = Array.from(new Set([...coreUrls, ...programmaticUrls]));
 
 const payload = JSON.stringify({
   host: HOST,
   key: INDEXNOW_KEY,
   keyLocation: `https://${HOST}/${INDEXNOW_KEY}.txt`,
-  urlList: URL_LIST,
+  urlList: allUrls.slice(0, 10000),
 });
 
 const endpoints = [
@@ -40,7 +56,7 @@ const endpoints = [
   'yandex.com',
 ];
 
-console.log(`⚡ Dispatching IndexNow notification for ${URL_LIST.length} URLs...`);
+console.log(`⚡ Dispatching IndexNow notification for ${allUrls.length} URLs across global search engines...`);
 
 endpoints.forEach((hostname) => {
   const req = https.request(

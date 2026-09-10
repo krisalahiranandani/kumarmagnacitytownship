@@ -1,7 +1,7 @@
 {
   "deployment": "Cloudflare Enterprise + Astro 5 Production",
-  "timestamp": "2026-09-09T13:20:04.726Z",
+  "timestamp": "2026-09-10T06:25:00.000Z",
   "engine": "Astro 5 + Cloudflare HTMLRewriter Middleware",
-  "pages_count": 1350,
+  "pages_count": 1360,
   "target_domain": "kumarmagnacitytownship.com"
 }
