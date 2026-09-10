@@ -57,9 +57,9 @@ export default function SiteVisitCabTracker() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Pickup Selection Left */}
-          <div className="lg:col-span-7 bg-white border border-primary/10 rounded-3xl p-8 backdrop-blur-xl space-y-6">
+          <div className="lg:col-span-7 bg-white border border-stone-200/90 rounded-3xl p-8 shadow-xl space-y-6">
             <div>
-              <label className="text-xs font-mono font-bold uppercase tracking-wider text-gray-400 mb-3 block">
+              <label className="text-xs font-mono font-bold uppercase tracking-wider text-stone-700 mb-3 block">
                 1. Select Pickup Zone
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -69,17 +69,17 @@ export default function SiteVisitCabTracker() {
                     <button
                       key={loc.id}
                       onClick={() => setSelectedLocation(loc)}
-                      className={`p-4 rounded-xl border text-left transition-all ${
+                      className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
                         isSelected
-                          ? "border-accent bg-accent/10 ring-1 ring-accent/40"
-                          : "border-primary/10 bg-primary/5 hover:border-primary/20"
+                          ? "border-accent bg-amber-50/70 ring-2 ring-accent/40 shadow-sm"
+                          : "border-stone-200 bg-stone-50/60 hover:border-accent/40 hover:bg-white"
                       }`}
                     >
                       <div className="flex items-center gap-2 mb-1">
-                        <MapPin size={16} className={isSelected ? "text-accent" : "text-gray-400"} />
+                        <MapPin size={16} className={isSelected ? "text-accent-dark" : "text-stone-400"} />
                         <h4 className="text-xs font-bold text-primary">{loc.name}</h4>
                       </div>
-                      <span className="text-[10px] text-emerald-400 font-mono">Est. Transit: {loc.duration}</span>
+                      <span className="text-[11px] text-emerald-700 font-bold font-mono">Est. Transit: {loc.duration}</span>
                     </button>
                   );
                 })}
@@ -87,7 +87,7 @@ export default function SiteVisitCabTracker() {
             </div>
 
             <div>
-              <label className="text-xs font-mono font-bold uppercase tracking-wider text-gray-400 mb-3 block">
+              <label className="text-xs font-mono font-bold uppercase tracking-wider text-stone-700 mb-3 block">
                 2. Select Preferred Time Slot
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -97,14 +97,14 @@ export default function SiteVisitCabTracker() {
                     <button
                       key={idx}
                       onClick={() => setSelectedSlot(slot)}
-                      className={`p-3 rounded-xl border text-center transition-all ${
+                      className={`p-3.5 rounded-2xl border text-center transition-all cursor-pointer ${
                         isSelected
-                          ? "border-accent bg-accent text-white font-bold"
-                          : "border-primary/10 bg-primary/5 text-primary/70 hover:border-primary/20"
+                          ? "border-accent bg-[#0D0B08] text-white font-bold shadow-md"
+                          : "border-stone-200 bg-stone-50/60 text-stone-700 hover:border-stone-400 hover:bg-white"
                       }`}
                     >
-                      <Clock size={14} className="mx-auto mb-1 opacity-70" />
-                      <span className="text-xs font-mono">{slot}</span>
+                      <Clock size={14} className={isSelected ? "mx-auto mb-1 text-accent" : "mx-auto mb-1 text-stone-400"} />
+                      <span className="text-xs font-sans font-medium">{slot}</span>
                     </button>
                   );
                 })}
@@ -113,61 +113,61 @@ export default function SiteVisitCabTracker() {
           </div>
 
           {/* Booking Confirmation Form Right */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-primary/5 to-transparent border border-accent/30 rounded-3xl p-8 backdrop-blur-2xl shadow-2xl space-y-6">
+          <div className="lg:col-span-5 bg-white border border-stone-200/90 rounded-3xl p-8 shadow-2xl space-y-6">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 mb-2">
-                <ShieldCheck size={16} /> Zero Cost • Doorstep Pickup
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-xs font-sans font-bold text-emerald-800 mb-3">
+                <ShieldCheck size={16} className="text-emerald-600" /> Zero Cost • Direct Doorstep Pickup
               </div>
-              <h3 className="text-2xl font-serif font-bold text-primary">Confirm Cab Dispatch</h3>
-              <p className="text-xs text-primary/60 mt-1">Zone: <span className="text-primary font-mono">{selectedLocation.name}</span></p>
+              <h3 className="text-2xl font-heading font-bold text-primary">Confirm Cab Dispatch</h3>
+              <p className="text-xs text-stone-600 mt-1">Zone: <span className="text-primary font-bold">{selectedLocation.name}</span></p>
             </div>
 
             {isBooked ? (
-              <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 text-center space-y-3">
-                <CheckCircle2 size={36} className="text-emerald-400 mx-auto" />
-                <h4 className="text-lg font-serif font-bold text-primary">Chauffeur Scheduled</h4>
-                <p className="text-xs text-primary/60">Driver details will be dispatched via SMS to {form.phone} 1 hour prior to your {selectedSlot} slot.</p>
+              <div className="bg-emerald-50 border border-emerald-300 rounded-2xl p-6 text-center space-y-3">
+                <CheckCircle2 size={36} className="text-emerald-600 mx-auto" />
+                <h4 className="text-lg font-heading font-bold text-emerald-900">Chauffeur Scheduled</h4>
+                <p className="text-xs text-emerald-800">Driver details will be dispatched via SMS to {form.phone} 1 hour prior to your {selectedSlot} slot.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="text-[10px] uppercase font-mono text-gray-400 block mb-1">Full Name*</label>
+                  <label className="text-[11px] font-bold uppercase text-stone-700 block mb-1">Full Name*</label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Enter your name"
-                    className="w-full bg-white border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-accent"
+                    placeholder="Enter your full name"
+                    className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-accent focus:bg-white transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] uppercase font-mono text-gray-400 block mb-1">Mobile Number*</label>
+                  <label className="text-[11px] font-bold uppercase text-stone-700 block mb-1">Mobile Number*</label>
                   <input
                     type="tel"
                     required
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     placeholder="+91 98765 43210"
-                    className="w-full bg-white border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-accent"
+                    className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-accent focus:bg-white transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] uppercase font-mono text-gray-400 block mb-1">Pickup Address / Society Name</label>
+                  <label className="text-[11px] font-bold uppercase text-stone-700 block mb-1">Pickup Address / Society Name</label>
                   <input
                     type="text"
                     required
                     value={form.address}
                     onChange={(e) => setForm({ ...form, address: e.target.value })}
                     placeholder="Enter pickup society name / landmark"
-                    className="w-full bg-white border border-primary/10 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-accent"
+                    className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-xs text-primary focus:outline-none focus:border-accent focus:bg-white transition-colors"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 rounded-xl bg-accent text-white font-bold text-xs uppercase tracking-widest hover:bg-accent/90 transition-all flex items-center justify-center gap-2 shadow-xl"
+                  className="w-full btn-gold py-4 rounded-xl text-xs uppercase font-bold tracking-widest flex items-center justify-center gap-2 shadow-lg cursor-pointer"
                 >
                   {loading ? "Dispatching..." : "Dispatch Free AC Cab"} <ArrowRight size={16} />
                 </button>
